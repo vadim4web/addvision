@@ -3,6 +3,10 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
 
+  app: {
+    baseURL: '/addvision/'  // 👈 важливо для GH Pages!
+  },
+
   plugins: ['~/plugins/v-click-outside.ts'],
 
   css: [
