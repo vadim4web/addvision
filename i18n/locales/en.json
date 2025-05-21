@@ -1,0 +1,32 @@
+{
+  "meta": {
+    "title": "AddVision — digital agency to realize your vision",
+    "description": "Web design, branding, astro-psychology, and ambient experience. We help bring your vision to life online and offline."
+  },
+  "agency": "agency",
+  "navigation": {
+    "title": "Main navigation",
+    "cases": "Cases",
+    "why-us": "Why us",
+    "services": "Services",
+    "contacts": "Contacts"
+  },
+  "we-do": {
+    "sences": "senses",
+    "texts": "texts",
+    "visual": "visual",
+    "dev": "development"
+  },
+  "moto": "digital solutions to embody your vision",
+  "aria": {
+    "hero": "Hero banner",
+    "cases": "Cases",
+    "casesVideo": "Video cases",
+    "whyUs": "Why us",
+    "whatWeDo": "What we do",
+    "services": "Services",
+    "testimonials": "Client testimonials",
+    "faq": "Frequently asked questions",
+    "contact": "Contact information"
+  }
+}

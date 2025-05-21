@@ -1,0 +1,183 @@
+<template>
+  <nav
+    v-click-outside="handleClickOutside"
+    :aria-label="$t('navigation.title')"
+    class="nav"
+  >
+    <!-- Navigation list -->
+    <ul class="nav-list" :class="{ open: isOpen }">
+      <li>
+        <a href="#cases">{{ $t('navigation.cases') }}</a>
+      </li>
+      <li>
+        <a href="#why-us">{{ $t('navigation.why-us') }}</a>
+      </li>
+      <li>
+        <a href="#services">{{ $t('navigation.services') }}</a>
+      </li>
+      <li>
+        <a href="#contacts">{{ $t('navigation.contacts') }}</a>
+      </li>
+      <!-- Burger button -->
+    <button
+      class="burger"
+      type="button"
+      aria-label="Toggle navigation"
+      @click="toggleMenu"
+    >
+      <svg width="60" height="100" viewBox="0 0 100 100">
+        <!-- Один V-подібний трикутник ABC -->
+        <path d="M0 0 L50 86.6 L100 0" stroke="var(--text-main)" stroke-width="6" fill="none" />
+      </svg>
+    </button>
+    </ul>
+
+  </nav>
+</template>
+
+<script setup>
+import { ref } from 'vue'
+
+const isOpen = ref(false)
+
+const toggleMenu = () => isOpen.value = !isOpen.value
+const handleClickOutside = () => isOpen.value = false
+</script>
+
+<style lang="scss" scoped>
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.burger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25em;
+  grid-area: toggler;
+}
+
+/* Desktop styles */
+.nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0 auto;
+
+  li a {
+    text-decoration: none;
+    color: var(--text-main);
+    position: relative;
+    transition: font-weight 0.25s;
+
+    &:hover,
+    &:focus {
+      font-weight: bolder;
+    }
+
+    &::after {
+      position: absolute;
+      content: '';
+      bottom: 0.33em;
+      left: 0.25em;
+      width: 0;
+      height: 2px;
+      background: var(--text-main);
+      transition: width 0.25s;
+    }
+
+    &:hover::after,
+    &:focus::after {
+      width: calc(100% - 0.5em);
+    }
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 960px) {
+  .burger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    height: 5.5rem;
+    transition: transform 1s;
+
+    svg {
+      width: 60%;
+      aspect-ratio: 6 / 10;
+      overflow: hidden;
+      transform: scale(0.5) translateY(5%);
+
+      path {
+        transition: stroke 1s, stroke-width 1s;
+      }
+    }
+  }
+
+  .nav-list {
+    padding: 1rem;
+    overflow: hidden;
+    transition: transform 1s ease;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas:
+      '. . .'
+      '. cases .'
+      '. whyUs .'
+      '. services .'
+      '. contacts .'
+      '. toggler .';
+    gap: 0.5rem;
+
+    justify-items: center;
+    position: absolute;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translate(0, calc(5.5rem - 100%));
+    background: var(--bg);
+    padding: 0 1rem;
+    border-radius: 0.5rem;
+
+    li {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      a {
+        text-align: center;
+        display: block;
+      }
+    }
+
+    li:nth-child(1) { grid-area: cases; }
+    li:nth-child(2) { grid-area: whyUs; }
+    li:nth-child(3) { grid-area: services; }
+    li:nth-child(4) { grid-area: contacts; }
+  }
+
+  .nav-list.open {
+    height: fit-content;
+    transform: translate(0, 0);
+
+    & .burger {
+      transform: rotateX(180deg);
+
+      & svg path {
+        stroke: var(--accent);
+        stroke-width: 8px;
+      }
+    }
+  }
+}
+</style>

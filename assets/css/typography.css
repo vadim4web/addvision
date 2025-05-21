@@ -1,0 +1,61 @@
+/* === Inter (всі стилі) === */
+.font-inter-regular {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+
+.font-inter-medium {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+}
+
+.font-inter-semibold {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+}
+
+.font-inter-bold {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+}
+
+.font-inter-italic {
+  font-family: 'Inter', sans-serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* === Montserrat === */
+.font-montserrat-regular {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+
+.font-montserrat-medium {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+}
+
+/* === Yanone Kaffeesatz Light === */
+.font-yanone-light {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-weight: 300;
+}
+
+/* === Bebas Neue Regular === */
+.font-bebas-regular {
+  font-family: 'Bebas Neue', cursive;
+  font-weight: 400;
+}
+
+/* === Kanit Black === */
+.font-kanit-black {
+  font-family: 'Kanit', sans-serif;
+  font-weight: 900;
+}
+
+/* === Galada Regular === */
+.font-galada-regular {
+  font-family: 'Galada', cursive;
+  font-weight: 400;
+}
