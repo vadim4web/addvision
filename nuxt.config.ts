@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   app: {
-    baseURL: '/addvision/'  // 👈 важливо для GH Pages!
+    baseURL: process.env.NUXT_APP_BASE_URL || '/'
   },
 
   plugins: ['~/plugins/v-click-outside.ts'],
