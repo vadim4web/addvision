@@ -1,0 +1,11 @@
+export default {
+  lazy: true,
+  langDir: 'i18n/locales',
+  defaultLocale: 'uk',
+  strategy: 'prefix_except_default',
+  locales: [
+    { code: 'uk', iso: 'uk-UA', file: 'uk.json', name: 'Українська' },
+    { code: 'ru', iso: 'ru-RU', file: 'ru.json', name: 'Русский' },
+    { code: 'en', iso: 'en-US', file: 'en.json', name: 'English' },
+  ],
+}

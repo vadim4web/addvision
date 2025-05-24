@@ -1,5 +1,6 @@
 {
-  "name": "nuxt-app",
+  "name": "addvision",
+  "homepage": "http://vadim4web.github.io/addvision/",
   "private": true,
   "type": "module",
   "scripts": {
@@ -8,7 +9,9 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "deploy": "nuxt generate --dotenv .env.deploy && gh-pages -d .output/public"
+    "deploy": "nuxi generate && gh-pages -d dist",
+    "deploy_": "nuxt generate && gh-pages -d .output/public"
+
   },
   "dependencies": {
     "@nuxt/eslint": "^1.4.1",

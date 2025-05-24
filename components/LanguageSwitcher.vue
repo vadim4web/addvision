@@ -16,6 +16,7 @@ const languages = [
         :aria-current="locale === lang.code ? 'page' : null"
         :class="{ active: locale === lang.code }"
         class="language-link"
+        :data-text="lang.label"
       >
         {{ lang.label }}
       </NuxtLink>
@@ -34,18 +35,10 @@ const languages = [
 
 .language-link {
   position: relative;
-  transition: color 0.25s, font-weight 0.25s;
 
   // Активний стан + ховер/фокус
-  &.active,
-  &:hover,
-  &:focus {
+  &.active {
     color: var(--accent);
-  }
-
-  &:hover,
-  &:focus {
-    font-weight: bolder;
   }
 
   &::after {
@@ -55,7 +48,7 @@ const languages = [
     left: 0.25em;
     height: 2px;
     width: 0;
-    transition: width 0.25s, background 0.25s;
+    transition: width 0.5s, background 0.5s;
   }
 
   &:not(.active):after {
@@ -66,11 +59,45 @@ const languages = [
     background: var(--accent);
   }
 
-  // Показуємо лінію при ховері, фокусі чи активному стані
-  &:hover::after,
-  &:focus::after {
+  &::before,
+  &::after {
+    position: absolute;
+    transition: width 0.5s, opacity 0.5s;
+  }
+
+  &:not(:hover, :focus)::before,
+  &:not(:hover, :focus)::after {
+    width: 0;
+    opacity: 0;
+    overflow: hidden;
+  }
+
+  &::before {
+    content: attr(data-text);
+    top: -1px;
+    left: 0;
+    height: 100%;
+    font-weight: bolder;
+    padding: inherit;
+    text-wrap: nowrap;
+  }
+
+  &::after {
+    content: '';
+    bottom: 0.33em;
+    left: 0.25em;
+    height: 2px;
+    background: var(--text-main);
+  }
+
+  &:hover::before,
+  &:focus::before {
+    width: 100%;
+    opacity: 1;
+  }
+
+  &:hover::after {
     width: calc(100% - 0.5em);
-    background: var(--accent);
   }
 }
 </style>

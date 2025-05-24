@@ -7,16 +7,16 @@
     <!-- Navigation list -->
     <ul class="nav-list" :class="{ open: isOpen }">
       <li>
-        <a href="#cases">{{ $t('navigation.cases') }}</a>
+        <a href="#cases" :data-text="$t('navigation.cases')" >{{ $t('navigation.cases') }}</a>
       </li>
       <li>
-        <a href="#why-us">{{ $t('navigation.why-us') }}</a>
+        <a href="#why-us" :data-text="$t('navigation.why-us')" >{{ $t('navigation.why-us') }}</a>
       </li>
       <li>
-        <a href="#services">{{ $t('navigation.services') }}</a>
+        <a href="#services" :data-text="$t('navigation.services')" >{{ $t('navigation.services') }}</a>
       </li>
       <li>
-        <a href="#contacts">{{ $t('navigation.contacts') }}</a>
+        <a href="#contacts" :data-text="$t('navigation.contacts')" >{{ $t('navigation.contacts') }}</a>
       </li>
       <!-- Burger button -->
     <button
@@ -36,8 +36,6 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
-
 const isOpen = ref(false)
 
 const toggleMenu = () => isOpen.value = !isOpen.value
@@ -74,22 +72,42 @@ const handleClickOutside = () => isOpen.value = false
     text-decoration: none;
     color: var(--text-main);
     position: relative;
-    transition: font-weight 0.25s;
 
-    &:hover,
-    &:focus {
+    &::before,
+    &::after {
+      position: absolute;
+      transition: width 0.5s, opacity 0.5s;
+    }
+
+    &:not(:hover, :focus)::before,
+    &:not(:hover, :focus)::after {
+      width: 0;
+      opacity: 0;
+      overflow: hidden;
+    }
+
+    &::before {
+      content: attr(data-text);
+      top: -1px;
+      left: 0;
+      height: 100%;
       font-weight: bolder;
+      padding: inherit;
+      text-wrap: nowrap;
     }
 
     &::after {
-      position: absolute;
       content: '';
       bottom: 0.33em;
       left: 0.25em;
-      width: 0;
       height: 2px;
       background: var(--text-main);
-      transition: width 0.25s;
+    }
+
+    &:hover::before,
+    &:focus::before {
+      width: 100%;
+      opacity: 1;
     }
 
     &:hover::after,

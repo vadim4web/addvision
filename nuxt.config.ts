@@ -4,8 +4,16 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   app: {
-    baseURL: process.env.NUXT_APP_BASE_URL || '/'
+    baseURL: '/',  // ✅ впливає на <script>, <link>
+    cdnURL: '/',   // ✅ впливає на шрифти, зображення тощо
   },
+  nitro: {
+    preset: 'static',
+    prerender: {
+      routes: ['/', '/ru', '/en'], // важливо!
+    },
+  },
+  ssr: false, // 🔁 Важливо для статичного сайту на GitHub Pages!
 
   plugins: ['~/plugins/v-click-outside.ts'],
 
@@ -17,13 +25,18 @@ export default defineNuxtConfig({
   i18n: {
     strategy: 'prefix_except_default',
     defaultLocale: 'uk',
+    // locales: [
+    //   { code: 'uk', iso: 'uk-UA', file: 'uk.json', name: 'Українська' },
+    //   { code: 'ru', iso: 'ru-RU', file: 'ru.json', name: 'Русский' },
+    //   { code: 'en', iso: 'en-US', file: 'en.json', name: 'English' },
+    // ],
     locales: [
-      { code: 'uk', iso: 'uk-UA', file: 'uk.json', name: 'Українська' },
-      { code: 'ru', iso: 'ru-RU', file: 'ru.json', name: 'Русский' },
-      { code: 'en', iso: 'en-US', file: 'en.json', name: 'English' },
+      { code: 'uk', iso: 'uk', name: 'Українська' },
+      { code: 'ru', iso: 'ru', name: 'Русский' },
+      { code: 'en', iso: 'en', name: 'English' },
     ],
-    lazy: true,
-    langDir: 'locales/',
+    // lazy: true,
+    vueI18n: './i18n.config.ts',
   },
 
   googleFonts: {
