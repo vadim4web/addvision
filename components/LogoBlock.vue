@@ -97,6 +97,8 @@
 
   perspective: 1000px;
 
+  cursor: cell;
+
   &-image {
     width: 5.5rem;
     height: 5.5rem;

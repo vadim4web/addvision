@@ -65,8 +65,8 @@ const languages = [
     transition: width 0.5s, opacity 0.5s;
   }
 
-  &:not(:hover, :focus)::before,
-  &:not(:hover, :focus)::after {
+  &:not(:hover)::before,
+  &:not(:hover)::after {
     width: 0;
     opacity: 0;
     overflow: hidden;
@@ -90,8 +90,7 @@ const languages = [
     background: var(--text-main);
   }
 
-  &:hover::before,
-  &:focus::before {
+  &:hover::before {
     width: 100%;
     opacity: 1;
   }

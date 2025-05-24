@@ -49,7 +49,6 @@ useHead({
 
 <template>
   <NuxtRouteAnnouncer />
-  <HeaderSection />
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>
@@ -66,9 +65,13 @@ useHead({
 
   /* === Основна палітра === */
   --bg: #f1f6fc;                    /* Основний фон */
-  --text-main: #353e43;             /* Основний текст (gun-metal) */
+  --bg66: #f1f6fca8;                    /* Основний фон 66% */
+  --bg80: #f1f6fccc;                    /* Основний фон 66% */
+  --text-main: #040404;             /* Основний текст (gun-metal) */
   --text-main50: #353e4380;             /* Основний текст (gun-metal) */
   --accent: #59cbe8;                /* Головний акцент (blue-shade) */
+  --accent33: #59cbe854;                /* Головний акцент (blue-shade) 33% */
+  --accent50: #59cbe880;                /* Головний акцент (blue-shade) 33% */
 
   /* === Додаткові акценти === */
   --accent-light: #68e2fa;          /* Світлий акцент (electric-blue-nv) */
@@ -82,7 +85,6 @@ useHead({
 }
 
 body {
-  background-color: var(--bg);
   color: var(--text-main);
 }
 

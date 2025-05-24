@@ -162,7 +162,6 @@ const handleClickOutside = () => isOpen.value = false
     left: 0;
     right: 0;
     transform: translate(0, calc(5.5rem - 100%));
-    background: var(--bg);
     padding: 0 1rem;
     border-radius: 0.5rem;
 
