@@ -33,6 +33,60 @@
 </script>
 
 <style lang="scss">
+@keyframes addEffect {
+  0%, 100% {
+    transform: rotateY(0deg) scale(1);
+    color: var(--text-main);
+    text-shadow: none;
+    filter: brightness(1);
+  }
+  50% {
+    transform: rotateY(180deg) scale(1.1);
+    color: var(--accent);
+    text-shadow: 0 0 10px var(--accent), 0 0 20px var(--accent);
+    filter: brightness(1.3);
+  }
+}
+
+@keyframes visionEffect {
+  0% { transform: scale(1) translateX(0) rotateX(0); }
+  25% { transform: scale(1.1) translateX(0) rotateX(0);}
+  50% { transform: scale(1.25) translateX(-10%) rotateX(180deg);}
+  66% {
+    transform: scale(1.2) translateX(0) rotateX(270deg);
+    color: var(--accent);
+  }
+  75% { transform: scale(1.1) translateX(0) rotateX(360deg);}
+  100% { transform: scale(1) translateX(0) rotateX(360deg); }
+}
+
+/* @keyframes addEffect {
+  0%, 100% {
+    transform: translateX(0) scale(1);
+    color: var(--text-main);
+    text-shadow: none;
+    filter: brightness(1);
+  }
+  50% {
+    transform: translateX(-33%) scale(1.1);
+    color: var(--accent);
+    text-shadow: 0 0 10px var(--accent), 0 0 20px var(--accent);
+    filter: brightness(1.3);
+  }
+}
+
+@keyframes visionEffect {
+  0% { transform: scale(1) translate(0); }
+  25% { transform: scale(1.1) translate(0);}
+  50% { transform: scale(1.25) translate(15%, -15%);}
+  66% {
+    transform: scale(1.2) translate(25%, -25%);
+    color: var(--accent);
+  }
+  75% { transform: scale(1.1) translate(15%, -15%);}
+  100% { transform: scale(1) translate(0); }
+} */
+
 .logo {
   justify-self: start;
   display: grid;
@@ -40,6 +94,8 @@
   align-items: center;
   gap: 0.25rem;
   z-index: 1;
+
+  perspective: 1000px;
 
   &-image {
     width: 5.5rem;
@@ -77,6 +133,10 @@
       font-style: italic;
       font-weight: 400;
       position: relative;
+      display: inline-block;
+
+      transform-style: preserve-3d;
+      transform-origin: 33% center;
 
       &::before,
       &::after {
@@ -98,8 +158,29 @@
 
     strong {
       font-weight: 800;
+      display: inline-block;
     }
   }
+
+  &:hover {
+    .logo-brand em {
+      animation: addEffect 4s linear infinite;
+    }
+
+    .logo-brand strong {
+      animation: visionEffect 4s linear infinite;
+    }
+  }
+
+  /* &:hover {
+    .logo-brand em {
+      animation: addEffect 4s linear;
+    }
+
+    .logo-brand strong {
+      animation: visionEffect 4s linear;
+    }
+  } */
 }
 
 [lang="en"] .logo-subline { letter-spacing: 0.7ch }
