@@ -16,12 +16,10 @@
     </video>
 
     <div class="hero-text">
-      <h2 class="brand font-kanit-black">
-        <span class="font-galada-regular add">
-          Add
-        </span>
-        VISION
-      </h2>
+      <h1 class="brand">
+        <em class="font-galada-regular add">&nbsp;&nbsp;Add&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em>
+        <strong class="font-kanit-black vision">&nbsp;&nbsp;&nbsp;VISION</strong>
+      </h1>
 
       <p class="moto">
         {{ $t("moto") }}
@@ -132,19 +130,25 @@
       position: relative;
       grid-area: brand;
       display: inline-flex;
+      flex-direction: column;
       align-items: center;
-      justify-self: end;
+      justify-content: center;
+      justify-self: center;
       border: 1px solid cyan;
       width: min-content;
 
+      * {
+        border :1px solid lime;
+        line-height: 60%;
+      }
 
       .add {
-        font-size: 75%;
-        line-height: 100%;
-        position: absolute;
+        font-size: min(calc(var(--grid-height) / 10), 16vw);
+      }
 
-        top: 0;
-        left: 0;
+      .vision {
+        font-size: min(calc(var(--grid-height) / 6), 26vw);
+        letter-spacing: -0.05ch;
       }
     }
 
@@ -173,82 +177,6 @@
       -webkit-text-stroke: 2px var(--text-main);
       text-stroke: 2px var(--text-main);
       height: var(--row-height);
-    }
-  }
-
-  @media (orientation: portrait) and (min-width: 1024px) {
-    .brand {
-      font-size: calc(var(--row-height) * 0.5);
-      line-height: calc(var(--row-height) * 0.5);
-      margin-right: 1rem;
-
-      .add {
-        transform: translate(-25%, 12.5%);
-      }
-    }
-  }
-
-  @media (orientation: portrait) and (max-width: 1023px) {
-    .brand {
-      font-size: calc(var(--row-height) * 0.4);
-      line-height: calc(var(--row-height) * 0.5);
-      margin-right: min(1.5vw, 0.75rem);
-
-      .add {
-        transform: translate(-15%, 40%);
-      }
-    }
-  }
-
-  @media (orientation: portrait) and (max-width: 1023px) and (aspect-ratio >= 0.75) {
-    .brand {
-      font-size: calc(var(--row-height) * 0.6);
-      margin-right: 2rem;
-
-      .add {
-        transform: translate(-25%, -5%);
-      }
-    }
-  }
-
-  @media (orientation: portrait) and (max-width: 1023px) and (aspect-ratio < 0.75) and (aspect-ratio >= 0.7) {
-    .brand {
-      font-size: calc(var(--row-height) * 0.45);
-      margin-right: 2rem;
-
-      .add {
-        transform: translate(-25%, -5%);
-      }
-    }
-  }
-
-  @media (orientation: portrait) and (min-width: 1023px) {
-    .hero-video {
-      object-position: 75% 75%;
-    }
-  }
-
-  @media (orientation: landscape) and (min-width: 1440px) {
-    .brand {
-      font-size: calc(var(--row-height) * 1.5);
-      line-height: calc(var(--row-height) * 1.5);
-      margin-right: 12vw;
-
-      .add {
-        transform: translate(-33%, -75%);
-      }
-    }
-  }
-
-  @media (orientation: landscape) and (max-width: 1439px) {
-    .brand {
-      font-size: calc(var(--row-height) * 1.25);
-      line-height: calc(var(--row-height) * 1.5);
-      margin-right: 12vw;
-
-      .add {
-        transform: translate(-33%, -75%);
-      }
     }
   }
 }
