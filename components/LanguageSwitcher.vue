@@ -74,7 +74,7 @@ const languages = [
 
   &::before {
     content: attr(data-text);
-    top: -1px;
+    top: 0;
     left: 0;
     height: 100%;
     font-weight: bolder;

@@ -92,7 +92,7 @@
   display: grid;
   grid-template-columns: 5.5rem auto;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0.125rem;
   z-index: 1;
 
   perspective: 1000px;
@@ -131,6 +131,10 @@
     position: relative;
     left: -0.1rem;
 
+    @media (orientation: portrait) and (max-width: 959px) {
+      font-size: 1.2rem;
+    }
+
     em {
       font-style: italic;
       font-weight: 400;
@@ -164,6 +168,13 @@
     }
   }
 
+  @media (orientation: portrait) and (max-width: 959px) {
+    
+  }
+  @media (orientation: landscape) {
+    
+  }
+
   &:hover {
     .logo-brand em {
       animation: addEffect 4s linear infinite;
@@ -188,4 +199,10 @@
 [lang="en"] .logo-subline { letter-spacing: 0.7ch }
 [lang="ru"] .logo-subline { letter-spacing: 0.3ch }
 [lang="uk"] .logo-subline { letter-spacing: 0.6ch }
+
+@media (orientation: portrait) and (max-width: 959px) {
+  [lang="en"] .logo-subline { letter-spacing: 0.3ch }
+  [lang="ru"] .logo-subline { letter-spacing: 0 }
+  [lang="uk"] .logo-subline { letter-spacing: 0.25ch }
+}
 </style>

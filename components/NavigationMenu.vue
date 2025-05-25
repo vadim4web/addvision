@@ -1,22 +1,46 @@
 <template>
   <nav
-    v-click-outside="handleClickOutside"
+    v-click-outside="closeMenu"
     :aria-label="$t('navigation.title')"
     class="nav"
   >
     <!-- Navigation list -->
     <ul class="nav-list" :class="{ open: isOpen }">
       <li>
-        <a href="#cases" :data-text="$t('navigation.cases')" >{{ $t('navigation.cases') }}</a>
+        <a
+          href="#cases"
+          :data-text="$t('navigation.cases')"
+          @click="closeMenu"
+        >
+          {{ $t('navigation.cases') }}
+        </a>
       </li>
       <li>
-        <a href="#why-us" :data-text="$t('navigation.why-us')" >{{ $t('navigation.why-us') }}</a>
+        <a
+          href="#why-us"
+          :data-text="$t('navigation.why-us')"
+          @click="closeMenu"
+        >
+          {{ $t('navigation.why-us') }}
+        </a>
       </li>
       <li>
-        <a href="#services" :data-text="$t('navigation.services')" >{{ $t('navigation.services') }}</a>
+        <a
+          href="#services"
+          :data-text="$t('navigation.services')"
+          @click="closeMenu"
+        >
+          {{ $t('navigation.services') }}
+        </a>
       </li>
       <li>
-        <a href="#contacts" :data-text="$t('navigation.contacts')" >{{ $t('navigation.contacts') }}</a>
+        <a
+          href="#contacts"
+          :data-text="$t('navigation.contacts')"
+          @click="closeMenu"
+        >
+          {{ $t('navigation.contacts') }}
+        </a>
       </li>
       <!-- Burger button -->
     <button
@@ -39,7 +63,7 @@
 const isOpen = ref(false)
 
 const toggleMenu = () => isOpen.value = !isOpen.value
-const handleClickOutside = () => isOpen.value = false
+const closeMenu = () => isOpen.value = false
 </script>
 
 <style lang="scss" scoped>
@@ -88,7 +112,7 @@ const handleClickOutside = () => isOpen.value = false
 
     &::before {
       content: attr(data-text);
-      top: -1px;
+      top: 0;
       left: 0;
       height: 100%;
       font-weight: bolder;
@@ -134,6 +158,7 @@ const handleClickOutside = () => isOpen.value = false
       transform: scale(0.5) translateY(5%);
 
       path {
+        mix-blend-mode: color-burn;
         transition: stroke 1s, stroke-width 1s;
       }
     }
@@ -142,7 +167,7 @@ const handleClickOutside = () => isOpen.value = false
   .nav-list {
     padding: 1rem;
     overflow: hidden;
-    transition: transform 1s ease;
+    transition: transform 1s ease, background 1s ease-in;
     display: grid;
     grid-template-columns: 1.5fr 1fr 1fr;
     grid-template-rows: repeat(6, 1fr);
@@ -186,6 +211,7 @@ const handleClickOutside = () => isOpen.value = false
   .nav-list.open {
     height: fit-content;
     transform: translate(0, 0);
+    background: var(--bg50);
 
     & .burger {
       transform: rotateX(180deg);

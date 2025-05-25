@@ -14,19 +14,20 @@
 .header-section {
   min-height: 5.5rem;
   display: grid;
+  gap: 0.25rem;
   grid-template-columns: 1.5fr 2fr 1fr;
-  gap: 1rem;
-  padding-inline: 1rem;
+  padding-inline: 0.25rem;
   align-items: center;
 
   position: relative;
+  z-index: 2;
 
   & > * {
     width: 100%;
   }
 
   a {
-    padding: 0.5em;
+    padding: 0.5em 0.25em;
   }
 }
 
