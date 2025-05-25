@@ -134,20 +134,32 @@
       align-items: center;
       justify-content: center;
       justify-self: center;
-      border: 1px solid cyan;
       width: min-content;
 
       * {
-        border :1px solid lime;
         line-height: 60%;
       }
 
-      .add {
-        font-size: min(calc(var(--grid-height) / 10), 16vw);
+      @media (orientation: portrait) {
+        .add {
+          font-size: min(10vh, 16.6vw);
+        }
+
+        .vision {
+          font-size: min(16vh, 26.6vw);
+        }
+      }
+      @media (orientation: landscape) {
+        .add {
+          font-size: min(16.6vh, 10vw);
+        }
+
+        .vision {
+          font-size: min(26.6vh, 16vw);
+        }
       }
 
       .vision {
-        font-size: min(calc(var(--grid-height) / 6), 26vw);
         letter-spacing: -0.05ch;
       }
     }

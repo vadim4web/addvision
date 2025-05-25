@@ -170,7 +170,7 @@ const closeMenu = () => isOpen.value = false
     transition: transform 1s ease, background 1s ease-in;
     display: grid;
     grid-template-columns: 1.5fr 1fr 1fr;
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-rows: 0.5fr repeat(5, 1fr);
     grid-template-areas:
       '. . .'
       '. cases .'
@@ -178,7 +178,7 @@ const closeMenu = () => isOpen.value = false
       '. services .'
       '. contacts .'
       '. toggler .';
-    gap: 0.5rem;
+    gap: 0;
 
     justify-items: center;
     position: absolute;
