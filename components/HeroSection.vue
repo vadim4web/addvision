@@ -5,6 +5,10 @@
     role="region"
     :aria-label="$t('aria.hero')"
   >
+    <h1 style="display: none;">
+      <em>Add</em> <strong>VISION</strong> — {{ $t("moto") }} | {{ $t("we-do.sences") }}, {{ $t("we-do.texts") }}, {{ $t("we-do.visual") }}, {{ $t("we-do.dev") }}
+    </h1>
+
     <HeaderSection />
 
     <video autoplay muted loop playsinline class="hero-video">
@@ -12,31 +16,23 @@
     </video>
 
     <div class="hero-text">
-      <h1 class="brand">
-        <em class="font-galada-regular add" data-text="Add"> Add </em>
-        <strong class="font-kanit-black vision" data-text="VISION">
-          VISION
-        </strong>
-      </h1>
+      <h2 class="brand font-kanit-black">
+        <span class="font-galada-regular add">
+          Add
+        </span>
+        VISION
+      </h2>
 
-      <p class="moto" :data-text="$t('moto')">
+      <p class="moto">
         {{ $t("moto") }}
       </p>
 
       <aside class="we-do">
         <ul>
-          <li :data-text="$t('we-do.sences')">
-            {{ $t("we-do.sences") }}
-          </li>
-          <li :data-text="$t('we-do.texts')">
-            {{ $t("we-do.texts") }}
-          </li>
-          <li :data-text="$t('we-do.visual')">
-            {{ $t("we-do.visual") }}
-          </li>
-          <li :data-text="$t('we-do.dev')">
-            {{ $t("we-do.dev") }}
-          </li>
+          <li>{{ $t("we-do.sences") }}</li>
+          <li>{{ $t("we-do.texts") }}</li>
+          <li>{{ $t("we-do.visual") }}</li>
+          <li>{{ $t("we-do.dev") }}</li>
         </ul>
       </aside>
     </div>
@@ -86,23 +82,6 @@
 
   --grid-height: calc(100vh - 5.5rem);
   --row-height: calc(var(--grid-height) / 3);
-  --brand-row-height: calc(var(--row-height) / 3);
-
-  /*
-
-  background-image: radial-gradient(
-    circle at center,
-    var(--bg66) 0%,
-    var(--accent33) 40%,
-    transparent 70%
-  );
-
-  background-repeat: no-repeat;
-  background-size: 200% 200%; // Щоб було з чим працювати
-  background-position: left bottom;
-  animation: floatingRadial 24s -12s ease-in-out infinite alternate;
-
-  */
 
   &::before {
     content: "";
@@ -141,41 +120,31 @@
   .hero-text {
     width: 100%;
     height: var(--grid-height);
-
-    &,
-    .brand {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      grid-template-rows: repeat(3, 1fr);
-    }
-
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     grid-template-areas:
-      ".      .      .      .      wedo"
+      ".      .      .      wedo   wedo"
       "brand  brand  brand  brand  brand"
       "moto   moto   moto   moto   moto";
 
     .brand {
       position: relative;
       grid-area: brand;
+      display: inline-flex;
+      align-items: center;
+      justify-self: end;
+      border: 1px solid cyan;
+      width: min-content;
 
-      grid-template-areas:
-        "add1    add1    .       .       ."
-        "vision2 vision2 vision2 vision2 vision2"
-        "vision2 vision2 vision2 vision2 vision2";
 
       .add {
-        grid-area: add1;
-      }
+        font-size: 75%;
+        line-height: 100%;
+        position: absolute;
 
-      .add,
-      .vision {
-        display: flex;
-        flex-direction: column;
-        align-items: end;
-      }
-
-      .vision {
-        grid-area: vision2;
+        top: 0;
+        left: 0;
       }
     }
 
@@ -207,124 +176,79 @@
     }
   }
 
-  @media (orientation: portrait) {
-    .add {
-      font-size: var(--brand-row-height);
-      line-height: var(--brand-row-height);
-    }
+  @media (orientation: portrait) and (min-width: 1024px) {
+    .brand {
+      font-size: calc(var(--row-height) * 0.5);
+      line-height: calc(var(--row-height) * 0.5);
+      margin-right: 1rem;
 
-    .vision {}
+      .add {
+        transform: translate(-25%, 12.5%);
+      }
+    }
   }
 
   @media (orientation: portrait) and (max-width: 1023px) {
-    .add {
-      transform: translate(5%, 15%);
-    }
+    .brand {
+      font-size: calc(var(--row-height) * 0.4);
+      line-height: calc(var(--row-height) * 0.5);
+      margin-right: min(1.5vw, 0.75rem);
 
-    .vision {
-      font-size: calc(var(--brand-row-height) * 1.5);
-      line-height: calc(var(--brand-row-height) * 1.5);
-      transform: translate(-5%, -15%);
-    }
-  }
-
-  @media (orientation: portrait) and (max-width: 767px) {
-    .add {
-      transform: translate(5%, 20%);
-    }
-
-    .vision {
-      font-size: calc(var(--brand-row-height) * 1.1);
-      line-height: calc(var(--brand-row-height) * 1.5);
-      transform: translate(-5%, -20%);
+      .add {
+        transform: translate(-15%, 40%);
+      }
     }
   }
 
-  @media (orientation: portrait) and (max-width: 767px) and (aspect-ratio >= 0.75) {
-    .add {
-      transform: translate(5%, 15%);
-    }
+  @media (orientation: portrait) and (max-width: 1023px) and (aspect-ratio >= 0.75) {
+    .brand {
+      font-size: calc(var(--row-height) * 0.6);
+      margin-right: 2rem;
 
-    .vision {
-      font-size: calc(var(--brand-row-height) * 1.5);
-      line-height: calc(var(--brand-row-height) * 1.5);
-      transform: translate(-5%, -15%);
-    }
-  }
-
-  @media (orientation: portrait) and (max-width: 479px) {
-    .add {
-      transform: translate(5%, 20%);
-    }
-
-    .vision {
-      font-size: calc(var(--brand-row-height) * 1.1);
-      line-height: calc(var(--brand-row-height) * 1.5);
-      transform: translate(-5%, -20%);
+      .add {
+        transform: translate(-25%, -5%);
+      }
     }
   }
 
-  @media (orientation: portrait) and (max-width: 479px) and (aspect-ratio < 0.5) {
-    .add {
-      transform: translate(15%, 20%);
-    }
+  @media (orientation: portrait) and (max-width: 1023px) and (aspect-ratio < 0.75) and (aspect-ratio >= 0.7) {
+    .brand {
+      font-size: calc(var(--row-height) * 0.45);
+      margin-right: 2rem;
 
-    .vision {
-      font-size: calc(var(--brand-row-height) * 1);
-      line-height: calc(var(--brand-row-height) * 1.5);
-      transform: translate(0, -20%);
+      .add {
+        transform: translate(-25%, -5%);
+      }
     }
   }
 
   @media (orientation: portrait) and (min-width: 1023px) {
-    .add {
-      transform: translate(10%, 15%);
-    }
-
-    .vision {
-      font-size: calc(var(--brand-row-height) * 1.5);
-      line-height: calc(var(--brand-row-height) * 1.5);
-      transform: translate(-0%, -15%);
-    }
-
     .hero-video {
       object-position: 75% 75%;
     }
   }
 
-  @media (orientation: portrait) and (max-width: 1023px) and (aspect-ratio < 0.695) and (aspect-ratio > 0.5) {
-    .add {
-      transform: translate(0%, 15%);
-    }
+  @media (orientation: landscape) and (min-width: 1440px) {
+    .brand {
+      font-size: calc(var(--row-height) * 1.5);
+      line-height: calc(var(--row-height) * 1.5);
+      margin-right: 12vw;
 
-    .vision {
-      transform: translate(-0%, -15%);
-    }
-  }
-
-  @media (orientation: portrait) and (max-width: 479px) and (aspect-ratio < 0.695) and (aspect-ratio > 0.5) {
-    .add {
-      transform: translate(-15%, 15%);
-    }
-
-    .vision {
-      font-size: calc(var(--brand-row-height) * 1.5);
-      line-height: calc(var(--brand-row-height) * 1.5);
-      transform: translate(-0%, -15%);
+      .add {
+        transform: translate(-33%, -75%);
+      }
     }
   }
 
-  @media (orientation: landscape) {
-    .add {
-      font-size: calc(var(--brand-row-height) * 2.5);
-      line-height: calc(var(--brand-row-height) * 1.5);
-      transform: translate(10%, -30%);
-    }
+  @media (orientation: landscape) and (max-width: 1439px) {
+    .brand {
+      font-size: calc(var(--row-height) * 1.25);
+      line-height: calc(var(--row-height) * 1.5);
+      margin-right: 12vw;
 
-    .vision {
-      font-size: calc(var(--brand-row-height) * 3.5);
-      line-height: calc(var(--brand-row-height) * 1.5);
-      transform: translate(-5%, -15%);
+      .add {
+        transform: translate(-33%, -75%);
+      }
     }
   }
 }
