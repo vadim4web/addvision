@@ -15,7 +15,7 @@
   min-height: 5.5rem;
   display: grid;
   gap: 0.25rem;
-  grid-template-columns: 1.5fr 2fr 1fr;
+  grid-template-columns: 1fr 1.5fr 1fr;
   padding-inline: 0.25rem;
   align-items: center;
 
@@ -33,7 +33,7 @@
 
 @media (max-width: 960px) {
   .header-section {
-    grid-template-columns: 3fr 1fr 2fr;
+    grid-template-columns: 2fr 3fr 2fr;
   }
 }
 </style>

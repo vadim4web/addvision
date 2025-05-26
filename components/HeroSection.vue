@@ -142,20 +142,20 @@
 
       @media (orientation: portrait) {
         .add {
-          font-size: min(10vh, 16.6vw);
+          font-size: min(10vh, 16vw);
         }
 
         .vision {
-          font-size: max(16vh, 26.6vw);
+          font-size: min(16vh, 26vw);
         }
       }
       @media (orientation: landscape) {
         .add {
-          font-size: min(16.6vh, 10vw);
+          font-size: max(16vh, 10vw);
         }
 
         .vision {
-          font-size: max(26.6vh, 16vw);
+          font-size: max(26vh, 16vw);
         }
       }
 

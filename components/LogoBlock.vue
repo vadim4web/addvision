@@ -91,6 +91,7 @@
     font-weight: bold;
     text-transform: uppercase;
     color: var(--text-main50);
+    width: max-content;
 
     &::after {
       content: "";

@@ -142,7 +142,7 @@ const closeMenu = () => isOpen.value = false
 }
 
 /* Mobile styles */
-@media (max-width: 960px) {
+@media (max-width: 42rem) {
   .burger {
     display: inline-flex;
     align-items: center;
@@ -169,7 +169,7 @@ const closeMenu = () => isOpen.value = false
     overflow: hidden;
     transition: transform 1s ease, background 1s ease-in;
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr;
+    grid-template-columns: 1fr 1.5fr 1fr;
     grid-template-rows: 0.5fr repeat(5, 1fr);
     grid-template-areas:
       '. . .'
