@@ -146,7 +146,7 @@
         }
 
         .vision {
-          font-size: min(16vh, 26.6vw);
+          font-size: max(16vh, 26.6vw);
         }
       }
       @media (orientation: landscape) {
@@ -155,7 +155,7 @@
         }
 
         .vision {
-          font-size: min(26.6vh, 16vw);
+          font-size: max(26.6vh, 16vw);
         }
       }
 
