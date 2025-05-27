@@ -19,6 +19,7 @@
   padding-inline: 0.25rem;
   position: relative;
   z-index: 2;
+  font-size: 1.2rem;
 
   & > * {
     width: 100%;
