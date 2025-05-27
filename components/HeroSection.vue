@@ -17,8 +17,8 @@
 
     <div class="hero-text">
       <h1 class="brand">
-        <em class="font-galada-regular add">&nbsp;&nbsp;Add&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em>
-        <strong class="font-kanit-black vision">&nbsp;&nbsp;&nbsp;VISION</strong>
+        <em class="font-galada-regular add">&nbsp;&nbsp;&nbsp;Add&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em>
+        <strong class="font-kanit-black vision">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VISION&nbsp;&nbsp;</strong>
       </h1>
 
       <p class="moto">
@@ -142,20 +142,20 @@
 
       @media (orientation: portrait) {
         .add {
-          font-size: min(10vh, 16vw);
+          font-size: min(9vh, 17vw);
         }
 
         .vision {
-          font-size: min(16vh, 26vw);
+          font-size: max(14vh, 24vw);
         }
       }
       @media (orientation: landscape) {
         .add {
-          font-size: max(16vh, 10vw);
+          font-size: min(25vh, 10vw);
         }
 
         .vision {
-          font-size: max(26vh, 16vw);
+          font-size: min(42vh, 17vw);
         }
       }
 
