@@ -17,8 +17,6 @@
   gap: 0.25rem;
   grid-template-columns: 1fr 1.5fr 1fr;
   padding-inline: 0.25rem;
-  align-items: center;
-
   position: relative;
   z-index: 2;
 
@@ -31,7 +29,7 @@
   }
 }
 
-@media (max-width: 960px) {
+@media (max-width: 42rem) {
   .header-section {
     grid-template-columns: 2fr 3fr 2fr;
   }

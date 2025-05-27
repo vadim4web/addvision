@@ -17,8 +17,8 @@
 
     <div class="hero-text">
       <h1 class="brand">
-        <em class="font-galada-regular add">&nbsp;&nbsp;&nbsp;Add&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em>
-        <strong class="font-kanit-black vision">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VISION&nbsp;&nbsp;</strong>
+        <em class="font-galada-regular add">Add&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em>
+        <strong class="font-kanit-black vision">&nbsp;VISION&nbsp;</strong>
       </h1>
 
       <p class="moto">
@@ -125,6 +125,8 @@
       ".      .      .      wedo   wedo"
       "brand  brand  brand  brand  brand"
       "moto   moto   moto   moto   moto";
+    align-content: center;
+    justify-items: center;
 
     .brand {
       position: relative;
@@ -142,22 +144,28 @@
 
       @media (orientation: portrait) {
         .add {
-          font-size: min(9vh, 17vw);
+          font-size: max(8vh, 17vw);
         }
 
         .vision {
-          font-size: max(14vh, 24vw);
+          font-size: max(11vh, 27vw);
         }
       }
       @media (orientation: landscape) {
         .add {
-          font-size: min(25vh, 10vw);
+          font-size: max(25vh, 9vw);
         }
 
         .vision {
-          font-size: min(42vh, 17vw);
+          font-size: min(32vh, 24vw);
         }
       }
+
+        .add {
+          display: block;
+          width: 100%;
+          text-align: left;
+        }
 
       .vision {
         letter-spacing: -0.05ch;
@@ -169,6 +177,8 @@
       font-size: 3.5rem;
       line-height: 3.5rem;
       text-align: center;
+      text-wrap: wrap;
+      width: 80%;
     }
 
     .moto,

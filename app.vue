@@ -86,12 +86,12 @@ useHead({
 
 @media (orientation: portrait) {
   :root {
-    font-size: min(1.25vh, 3vw);
+    font-size: min(1.2vh, 3vw);
   }
 }
 @media (orientation: landscape) {
   :root {
-    font-size: min(3vh, 1.25vw);
+    font-size: max(3vh, 1.2vw);
   }
 }
 
