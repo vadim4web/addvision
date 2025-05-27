@@ -157,7 +157,7 @@
         }
 
         .vision {
-          font-size: min(32vh, 24vw);
+          font-size: max(30vh, 15vw);
         }
       }
 
