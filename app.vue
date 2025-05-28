@@ -94,9 +94,10 @@ useHead({
   --powder-blue: #b6d0e2;           /* Пудровий синій, фони секцій */
   --brown-deep: #003539;            /* Темно-коричневий (може бути для контрасту, футера) */
 
-    cursor: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='10' fill='transparent' stroke='%2359cbe880' stroke-width='4'/%3E%3Ccircle cx='24' cy='24' r='10' fill='none' stroke='%23353e4380' stroke-width='1'/%3E%3Ccircle cx='24' cy='24' r='16' fill='none' stroke='%2359cbe880' stroke-width='10'/%3E%3Ccircle cx='24' cy='24' r='20' fill='transparent' stroke='%2359cbe880' stroke-width='4'/%3E%3Ccircle cx='24' cy='24' r='20' fill='none' stroke='%23353e4380' stroke-width='1'/%3E%3C/svg%3E") 24 24, auto;
+   /* cursor: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='10' fill='transparent' stroke='%2359cbe880' stroke-width='4'/%3E%3Ccircle cx='24' cy='24' r='10' fill='none' stroke='%23353e4380' stroke-width='1'/%3E%3Ccircle cx='24' cy='24' r='16' fill='none' stroke='%2359cbe880' stroke-width='10'/%3E%3Ccircle cx='24' cy='24' r='20' fill='transparent' stroke='%2359cbe880' stroke-width='4'/%3E%3Ccircle cx='24' cy='24' r='20' fill='none' stroke='%23353e4380' stroke-width='1'/%3E%3C/svg%3E") 24 24, auto; */
 
-    cursor: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='20' fill='%23353e4380' stroke='%2359cbe840' stroke-width='6'/%3E%3Ccircle cx='32' cy='32' r='20' fill='none' stroke='%23353e4380' stroke-width='1'/%3E%3Ccircle cx='32' cy='32' r='12' fill='transparent'/%3E%3C/svg%3E") 32 32, auto;
+cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><defs><filter id='shadow' x='-50%' y='-50%' width='400%' height='400%'><feDropShadow dx='0' dy='0' stdDeviation='5' flood-color='%2359cbe8' flood-opacity='1'/></filter></defs><circle cx='32' cy='32' r='20' fill='%2359cbe880' stroke='%2359cbe840' stroke-width='1' filter='url(%23shadow)'/><circle cx='32' cy='32' r='20' fill='%2359cbe880' stroke='%2359cbe840' stroke-width='1'/><circle cx='32' cy='32' r='12' fill='transparent'/></svg>") 32 32, auto;
+
 }
 
 @media (orientation: portrait) {

@@ -39,33 +39,6 @@
 </script>
 
 <style lang="scss">
-@keyframes addEffect {
-  0%, 100% {
-    transform: rotateY(0deg) scale(1);
-    color: var(--text-main);
-    text-shadow: none;
-    filter: brightness(1);
-  }
-  50% {
-    transform: rotateY(180deg) scale(1.1);
-    color: var(--accent);
-    text-shadow: 0 0 10px var(--accent), 0 0 20px var(--accent);
-    filter: brightness(1.3);
-  }
-}
-
-@keyframes visionEffect {
-  0% { transform: scale(1) translateX(0) rotateX(0); }
-  25% { transform: scale(1.1) translateX(0) rotateX(0);}
-  50% { transform: scale(1.25) translateX(-10%) rotateX(180deg);}
-  66% {
-    transform: scale(1.2) translateX(0) rotateX(270deg);
-    color: var(--accent);
-  }
-  75% { transform: scale(1.1) translateX(0) rotateX(360deg);}
-  100% { transform: scale(1) translateX(0) rotateX(360deg); }
-}
-
 .logo {
   display: grid;
   justify-content: start;
@@ -103,7 +76,7 @@
       top: -0.33em;
       content: '';
       background:
-        linear-gradient(180deg, var(--accent) 10%, transparent 10%, transparent 90%, var(--accent)90%),
+        linear-gradient(180deg, var(--accent) 8%, transparent 8%, transparent 92%, var(--accent)92%),
       linear-gradient(90deg, var(--accent10), var(--accent25), var(--accent10)90%);
       transition: width 1s;
       filter: drop-shadow(0 0 0.16em var(--accent50)) contrast(1.5);
