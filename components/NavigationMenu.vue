@@ -52,7 +52,7 @@
         >
           <svg width="60" height="100" viewBox="0 0 100 100">
             <!-- Один V-подібний трикутник ABC -->
-            <path d="M0 0 L50 86.6 L100 0" stroke="var(--text-main)" stroke-width="6" fill="none" />
+            <path d="M0 0 L50 86.6 L100 0" stroke="var(--bg)" stroke-width="6" fill="none" />
           </svg>
         </button>
       </li>
@@ -73,6 +73,7 @@ const closeMenu = () => isOpen.value = false
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 
 .burger {
@@ -163,7 +164,7 @@ const closeMenu = () => isOpen.value = false
 }
 
 /* Mobile styles */
-@media (max-width: 54rem) or (aspect-ratio < 0.58) {
+@media (max-width: 54rem) {
   .burger {
     display: inline-flex;
     align-items: center;
@@ -187,6 +188,7 @@ const closeMenu = () => isOpen.value = false
   }
 
   .nav-list {
+    position: absolute;
     padding: 1rem;
     overflow: hidden;
     transition: transform 1s ease ease-out, background 1s ease-in;
@@ -202,14 +204,12 @@ const closeMenu = () => isOpen.value = false
     gap: 0;
 
     justify-items: center;
-    position: absolute;
     width: 100vw;
     top: 0;
     left: 0;
     right: 0;
     transform: translate(0, calc(6.6rem - 100%));
     padding: 0 1rem;
-    border-radius: 0.5rem;
     width: 100%;
 
     li {
@@ -218,8 +218,17 @@ const closeMenu = () => isOpen.value = false
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: transform 1s;
-      transform: rotateX(180deg);
+
+      &:not(:last-child) {
+        transition: transform 1s ease;
+        transform: rotateX(-90deg);
+        transition-delay: 0.75s;
+      }
+
+      &:is(:last-child) {
+        transition: transform 0.5s linear;
+        transform: rotateX(-180deg);
+      }
 
 
       a {
@@ -228,27 +237,28 @@ const closeMenu = () => isOpen.value = false
       }
     }
 
-    li:nth-child(1) { grid-area: blank; }
-    li:nth-child(2) { grid-area: cases; }
-    li:nth-child(3) { grid-area: whyUs; }
-    li:nth-child(4) { grid-area: services; }
-    li:nth-child(5) { grid-area: contacts; }
+    li:nth-child(1) { grid-area: cases; }
+    li:nth-child(2) { grid-area: whyUs; }
+    li:nth-child(3) { grid-area: services; }
+    li:nth-child(4) { grid-area: contacts; }
+    li:nth-child(5) { grid-area: toggler; }
   }
 
   .nav-list.open {
     height: fit-content;
     transform: translate(0, 0);
+    background: repeating-linear-gradient(var(--bg50), var(--accent50));
+    border-radius: 0  0 0.5rem 0.5rem;
+    transition: transform 1s ease;
 
     li {
-      transition: transform 1s;
-      transform: rotateX(0deg);
-      background: repeating-linear-gradient(var(--bg50), var(--accent50));
+      transform: rotate(0deg);
     }
 
 
     & .burger {
-      transition: filter 0.6s ease;
-      filter: contrast(2) hue-rotate(180deg);
+      transition: filter 1s ease;
+      filter: contrast(1.5) brightness(1.5) drop-shadow(0 0 0.25em var(--accent));
 
       & svg path {
         stroke: var(--accent);

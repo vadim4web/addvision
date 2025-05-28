@@ -20,9 +20,9 @@
   align-content: center;
   justify-items: center;
   padding-inline: 0.25rem;
-  position: relative;
   z-index: 2;
   font-size: 1.4rem;
+  position: relative;
 
   & > * {
     width: 100%;
