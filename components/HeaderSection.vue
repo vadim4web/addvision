@@ -12,27 +12,30 @@
 
 <style lang="scss">
 .header-section {
-  min-height: 5.5rem;
+  color: var(--bg);
+  height: 6.6rem;
   display: grid;
   gap: 0.25rem;
-  grid-template-columns: 1fr 1.5fr 1fr;
+  grid-template-columns: 1fr 1.5fr 0.5fr;
+  align-content: center;
+  justify-items: center;
   padding-inline: 0.25rem;
   position: relative;
   z-index: 2;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 
   & > * {
     width: 100%;
   }
 
   a {
-    padding: 0.5em 0.25em;
+    padding: 0.5em 0.1em;
   }
 }
 
-@media (max-width: 42rem) {
+@media (max-width: 54rem) {
   .header-section {
-    grid-template-columns: 2fr 3fr 2fr;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 </style>

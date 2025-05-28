@@ -35,68 +35,73 @@ const languages = [
 
 .language-link {
   position: relative;
+  overflow: hidden;
 
   // Активний стан + ховер/фокус
   &.active {
     color: var(--accent);
   }
 
+  &::before,
   &::after {
-    content: '';
     position: absolute;
-    bottom: 0.33em;
-    left: 0.25em;
-    height: 2px;
-    width: 0;
-    transition: width 0.5s, background 0.5s;
+    transition: all 1s ease;
   }
 
   &:not(.active):after {
-    background: var(--text-main);
+    background: var(--accent);
   }
 
   &:is(.active):after {
     background: var(--accent);
   }
 
-  &::before,
-  &::after {
-    position: absolute;
-    transition: width 0.5s, opacity 0.5s;
-  }
-
   &:not(:hover)::before,
   &:not(:hover)::after {
     width: 0;
-    opacity: 0;
     overflow: hidden;
+    filter: none;
+    box-shadow: none;
+    text-shadow: none;
+    text-decoration: underline overline transparent 0.2em;
   }
 
   &::before {
     content: attr(data-text);
-    top: 0;
+    color: var(--accent75);
+    top: -0.1rem;
     left: 0;
+    width: 0;
     height: 100%;
     font-weight: bolder;
     padding: inherit;
     text-wrap: nowrap;
+    text-underline-offset: 0.5em;
   }
 
   &::after {
     content: '';
     bottom: 0.33em;
     left: 0.25em;
-    height: 2px;
-    background: var(--text-main);
+    bottom: 0.15em;
+    left: 0.2em;
+    height: 0.15em;
+    background: linear-gradient(90deg, var(--accent50)0%, var(--accent)50%, var(--accent50)75%);
+    z-index: 1;
   }
 
   &:hover::before {
     width: 100%;
     opacity: 1;
+    text-decoration: underline overline var(--accent) 0.2em;
+    text-shadow: 0 0 0.25em var(--accent50);
+    filter: drop-shadow(0 0 0.2em var(--accent));
   }
 
   &:hover::after {
     width: calc(100% - 0.5em);
+    box-shadow: 0 0 0.25em var(--accent);
+    filter: drop-shadow(0 0 0.2em var(--accent));
   }
 }
 </style>

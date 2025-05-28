@@ -20,6 +20,7 @@ export default defineNuxtConfig({
   css: [
     '~/assets/css/reset.css',
     '~/assets/css/typography.css',
+    '~/assets/css/custom.css',
   ],
 
   i18n: {

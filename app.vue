@@ -64,14 +64,25 @@ useHead({
 
   /* === Основна палітра === */
   --bg: #f1f6fc;                    /* Основний фон */
-  --bg50: #f1f6fc80;                    /* Основний фон 50% */
+  --bg80: #f1f6fccc;                    /* Основний фон 100% */
+  --bg75: #f1f6fcbf;                    /* Основний фон 75% */
   --bg66: #f1f6fca8;                    /* Основний фон 66% */
-  --bg80: #f1f6fccc;                    /* Основний фон 66% */
+  --bg50: #f1f6fc80;                    /* Основний фон 50% */
+  --bg33: #f1f6fc54;                    /* Основний фон 33% */
+  --bg25: #f1f6fc40;                    /* Основний фон 25% */
   --text-main: #040404;             /* Основний текст (gun-metal) */
+  --text-main75: #353e43bf;             /* Основний текст (gun-metal) */
+  --text-main66: #353e43a8;             /* Основний текст (gun-metal) */
   --text-main50: #353e4380;             /* Основний текст (gun-metal) */
+  --text-main33: #353e4354;             /* Основний текст (gun-metal) */
+  --text-main25: #353e4340;             /* Основний текст (gun-metal) */
   --accent: #59cbe8;                /* Головний акцент (blue-shade) */
-  --accent33: #59cbe854;                /* Головний акцент (blue-shade) 33% */
+  --accent75: #59cbe8bf;                /* Головний акцент (blue-shade) 33% */
+  --accent66: #59cbe8a8;                /* Головний акцент (blue-shade) 66% */
   --accent50: #59cbe880;                /* Головний акцент (blue-shade) 33% */
+  --accent33: #59cbe854;                /* Головний акцент (blue-shade) 33% */
+  --accent25: #59cbe840;                /* Головний акцент (blue-shade) 25% */
+  --accent10: #59cbe80b;                /* Головний акцент (blue-shade) 25% */
 
   /* === Додаткові акценти === */
   --accent-light: #68e2fa;          /* Світлий акцент (electric-blue-nv) */
@@ -82,24 +93,24 @@ useHead({
   --gray: #d9d9d9;                  /* Світло-сірий, межі, бордери */
   --powder-blue: #b6d0e2;           /* Пудровий синій, фони секцій */
   --brown-deep: #003539;            /* Темно-коричневий (може бути для контрасту, футера) */
+
+    cursor: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='10' fill='transparent' stroke='%2359cbe880' stroke-width='4'/%3E%3Ccircle cx='24' cy='24' r='10' fill='none' stroke='%23353e4380' stroke-width='1'/%3E%3Ccircle cx='24' cy='24' r='16' fill='none' stroke='%2359cbe880' stroke-width='10'/%3E%3Ccircle cx='24' cy='24' r='20' fill='transparent' stroke='%2359cbe880' stroke-width='4'/%3E%3Ccircle cx='24' cy='24' r='20' fill='none' stroke='%23353e4380' stroke-width='1'/%3E%3C/svg%3E") 24 24, auto;
+
+    cursor: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='20' fill='%23353e4380' stroke='%2359cbe840' stroke-width='6'/%3E%3Ccircle cx='32' cy='32' r='20' fill='none' stroke='%23353e4380' stroke-width='1'/%3E%3Ccircle cx='32' cy='32' r='12' fill='transparent'/%3E%3C/svg%3E") 32 32, auto;
 }
 
 @media (orientation: portrait) {
   :root {
-    font-size: min(1.2vh, 3vw);
+    font-size: max(1.15vh, 1.9vw);
   }
 }
 @media (orientation: landscape) {
   :root {
-    font-size: max(3vh, 1.2vw);
+    font-size: max(1.9vh, 1.15vw);
   }
 }
 
 body {
   color: var(--text-main);
-}
-
-.border {
-  border-color: var(--gray);
 }
 </style>

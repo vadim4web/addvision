@@ -6,20 +6,55 @@
     :aria-label="$t('aria.hero')"
   >
     <h1 style="display: none;">
-      <em>Add</em> <strong>VISION</strong> — {{ $t("moto") }} | {{ $t("we-do.sences") }}, {{ $t("we-do.texts") }}, {{ $t("we-do.visual") }}, {{ $t("we-do.dev") }}
+      <em>ADD</em> <strong>VISION</strong> — {{ $t("moto") }} | {{ $t("we-do.sences") }}, {{ $t("we-do.texts") }}, {{ $t("we-do.visual") }}, {{ $t("we-do.dev") }}
     </h1>
 
     <HeaderSection />
 
     <video autoplay muted loop playsinline class="hero-video">
-      <source src="/add_vision_800x480.mp4" type="video/mp4" />
+      <source src="/add_vision_1600x900.mp4" type="video/mp4" />
     </video>
 
     <div class="hero-text">
       <h1 class="brand">
-        <em class="font-galada-regular add">Add&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em>
-        <strong class="font-kanit-black vision">&nbsp;VISION&nbsp;</strong>
+        <em class="font-galada-regular add">
+          ADD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </em>
+        <strong class="font-kanit-black vision">
+          &nbsp;VISION&nbsp;
+        </strong>
       </h1>
+
+<!-- <svg class="text-mask" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <mask id="textMask">
+      <rect width="100%" height="100%" fill="white" />
+      <text
+        x="50"
+        y="35"
+        text-anchor="middle"
+        font-family="'Galada', cursive"
+        font-size="20"
+        fill="black"
+      >
+        Add
+      </text>
+      <text
+        x="50"
+        y="70"
+        text-anchor="middle"
+        font-family="'Kanit', sans-serif"
+        font-weight="900"
+        font-size="28"
+        fill="black"
+      >
+        VISION
+      </text>
+    </mask>
+  </defs>
+
+  <rect width="100%" height="100%" fill="var(--bg)" mask="url(#textMask)" />
+</svg> -->
 
       <p class="moto">
         {{ $t("moto") }}
@@ -42,14 +77,14 @@
 <style lang="scss">
 @keyframes lightningSwing {
   0% {
-    transform: translate(-50%, 50%) scale(1);
+    transform: translate(-50%, 50%) scale(2);
     opacity: 0;
   }
   20% {
     opacity: 1;
   }
   50% {
-    transform: translate(calc(100vw - 50%), calc(50% - 100vh)) scale(1.2);
+    transform: translate(calc(100vw - 50%), calc(50% - 100vh)) scale(1.5);
     opacity: 1;
   }
   80% {
@@ -73,13 +108,26 @@
   }
 }
 
+
+.text-mask {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  inset: 0;
+  width: 100%;
+  z-index: -1;
+  display: block;
+  pointer-events: none;
+  object-fit: cover;
+}
+
 .hero-section {
   position: relative;
   height: 100vh;
   overflow: hidden;
-
-  --grid-height: calc(100vh - 5.5rem);
+  --grid-height: calc(100vh - 6.6rem);
   --row-height: calc(var(--grid-height) / 3);
+
 
   &::before {
     content: "";
@@ -92,13 +140,13 @@
 
     background: radial-gradient(
       circle at center,
-      var(--bg80) 0%,
-      var(--accent50) 40%,
+      var(--bg50) 0%,
+      var(--accent33) 25%,
       transparent 80%
     );
 
     border-radius: 50%;
-    filter: blur(4rem) brightness(1.5);
+    filter: blur(5rem) brightness(1.5);
     pointer-events: none;
     animation: lightningSwing 24s ease-in-out infinite alternate;
   }
@@ -111,11 +159,12 @@
     object-fit: cover;
     object-position: 70% 70%;
     z-index: -1;
-    opacity: 0.42;
+    opacity: 1;
     transform: scale(1.065);
   }
 
   .hero-text {
+    position: relative;
     width: 100%;
     height: var(--grid-height);
     display: grid;
@@ -127,6 +176,13 @@
       "moto   moto   moto   moto   moto";
     align-content: center;
     justify-items: center;
+
+    -webkit-text-stroke: 2px var(--accent);
+    text-stroke: 2px var(--accent);
+    mix-blend-mode: screen;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 1.33rem var(--accent66)) contrast(1.33) brightness(1.66);
 
     .brand {
       position: relative;
@@ -140,6 +196,9 @@
 
       * {
         line-height: 60%;
+        position: relative;
+        -webkit-text-stroke: 0.1rem var(--accent25);
+        text-stroke: 0.1rem var(--accent25);
       }
 
       @media (orientation: portrait) {
@@ -161,21 +220,65 @@
         }
       }
 
-        .add {
-          display: block;
-          width: 100%;
-          text-align: left;
-        }
+      .add {
+        display: block;
+        width: 100%;
+        text-align: left;
+        letter-spacing: 0.1ch;
+      }
 
       .vision {
         letter-spacing: -0.05ch;
+      }
+
+      .add::before,
+      .add::after,
+      .vision::before,
+      .vision::after {
+        position: absolute;
+        color: transparent; // сам текст прозорий
+        -webkit-text-fill-color: transparent; // Safari підтримка
+        left: 0;
+      }
+
+      .add::before,
+      .vision::before {
+        -webkit-text-stroke: 0.1rem var(--accent10);
+        text-stroke: 0.1rem var(--accent10);
+
+
+        color: var(--text-main50);
+        -webkit-text-fill-color: var(--text-main50);
+      }
+
+      .add::after,
+      .vision::after {
+        -webkit-text-stroke: 0.5rem var(--accent50);
+        text-stroke: 0.5rem var(--accent50);
+      }
+
+      .add,
+      .add::before,
+      .add::after {
+        text-transform: lowercase;
+      }
+
+      .add::before,
+      .add::after {
+        content: "ADD\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0";
+        text-transform: lowercase;
+      }
+
+      .vision::before,
+      .vision::after {
+        content: "\00a0VISION\00a0";
       }
     }
 
     .moto {
       grid-area: moto;
-      font-size: 3.5rem;
-      line-height: 3.5rem;
+      font-size: 3rem;
+      line-height: 3rem;
       text-align: center;
       text-wrap: wrap;
       width: 80%;
@@ -195,9 +298,6 @@
     }
 
     & > * {
-      color: transparent;
-      -webkit-text-stroke: 2px var(--text-main);
-      text-stroke: 2px var(--text-main);
       height: var(--row-height);
     }
   }

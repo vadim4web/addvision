@@ -18,11 +18,17 @@
     </svg>
 
     <div class="logo-text">
-      <span class="logo-subline">
+      <span
+        class="logo-subline"
+        :data-text="'WEB-' + $t('agency')"
+      >
         WEB-{{ $t('agency') }}
       </span>
       <div class="logo-brand">
-        <em>Add</em><strong>VISION</strong>
+        <em data-text="{ADD}">{<i>ADD</i>}</em>
+        <strong data-text="VISION" >
+          VISION
+        </strong>
       </div>
     </div>
   </div>
@@ -61,42 +67,83 @@
 }
 
 .logo {
-  justify-self: start;
   display: grid;
-  grid-template-columns: 5.5rem auto;
+  justify-content: start;
+  grid-template-columns: 1rem 6.6rem auto;
+  grid-template-areas: ". img txt";
   align-items: center;
-  gap: 0.125rem;
+  gap: 0.25rem;
   z-index: 1;
 
   perspective: 1000px;
 
-  cursor: cell;
-
   &-image {
-    width: 5.5rem;
-    height: 5.5rem;
+    width: 6.6rem;
+    height: 6.6rem;
+    grid-area: img;
   }
 
   &-text {
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
     line-height: 1;
-    color: var(--text-main, #111);
+    color: var(--bg);
     gap: 0.25rem;
+    grid-area: txt;
+    max-width: fit-content;
+    padding: 0.125em;
+    position: relative;
+    filter: none;
+    transition: filter 1s ease;
+
+    &::before {
+      position: absolute;
+      height: 4rem;
+      left: -0.125em;
+      top: -0.33em;
+      content: '';
+      background:
+        linear-gradient(180deg, var(--accent) 10%, transparent 10%, transparent 90%, var(--accent)90%),
+      linear-gradient(90deg, var(--accent10), var(--accent25), var(--accent10)90%);
+      transition: width 1s;
+      filter: drop-shadow(0 0 0.16em var(--accent50)) contrast(1.5);
+      mix-blend-mode: color-burn;
+      z-index: -1;
+      opacity: 0.75;
+    }
+
+    &:not(:hover)::before {
+      position: absolute;
+      width: 0;
+      height: inherit;
+      content: '';
+      transition: width 1s ease;
+    }
+
+    &:hover::before {
+      width: 12ch;
+    }
   }
 
   &-subline {
-    display: block;
     font-size: 0.875rem;
     font-weight: bold;
     text-transform: uppercase;
-    color: var(--text-main50);
+    color: var(--bg50);
     width: max-content;
+    transition: color 1s ease;
 
     &::after {
       content: "";
       width: 100%;
     }
+  }
+
+  &-text:hover {
+    filter: drop-shadow(0 0 0.2em var(--bg50)) contrast(2);
+  }
+  &:hover &-subline {
+    color: var(--bg75);
   }
 
   &-brand {
@@ -110,45 +157,26 @@
     }
 
     em {
-      font-style: italic;
       font-weight: 400;
-      position: relative;
       display: inline-block;
-
+      text-transform: lowercase;
+      color: var(--accent);
       transform-style: preserve-3d;
       transform-origin: 33% center;
 
-      &::before,
-      &::after {
-        font-style: normal;
-        position: relative;
-        bottom: 0.1rem;
-        color: var(--accent);
+      & i {
+        font-style: italic;
+        color: var(--bg);
       }
 
-      &::before {
-        content: '{';
-        right: -0.1rem;
-      }
       &::after {
-        content: '}';
-        left: 0.1rem;
+        text-transform: lowercase;
       }
     }
 
     strong {
       font-weight: 800;
       display: inline-block;
-    }
-  }
-
-  &:hover {
-    .logo-brand em {
-      animation: addEffect 4s linear infinite;
-    }
-
-    .logo-brand strong {
-      animation: visionEffect 4s linear infinite;
     }
   }
 }
