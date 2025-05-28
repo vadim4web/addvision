@@ -98,7 +98,7 @@
 
     &::before {
       position: absolute;
-      height: 4rem;
+      height: 3.8rem;
       left: -0.125em;
       top: -0.33em;
       content: '';
@@ -109,7 +109,7 @@
       filter: drop-shadow(0 0 0.16em var(--accent50)) contrast(1.5);
       mix-blend-mode: color-burn;
       z-index: -1;
-      opacity: 0.75;
+      opacity: 1;
     }
 
     &:not(:hover)::before {
@@ -140,10 +140,10 @@
   }
 
   &-text:hover {
-    filter: drop-shadow(0 0 0.2em var(--bg50)) contrast(2);
+    filter: drop-shadow(0 0 0.2em var(--bg50)) contrast(1) brightness(1);
   }
   &:hover &-subline {
-    color: var(--bg75);
+    color: var(--bg80);
   }
 
   &-brand {
@@ -151,6 +151,7 @@
     font-weight: 600;
     position: relative;
     left: -0.1rem;
+    top: -0.1em;
 
     @media (orientation: portrait) and (max-width: 959px) {
       font-size: 1.2rem;
@@ -160,7 +161,7 @@
       font-weight: 400;
       display: inline-block;
       text-transform: lowercase;
-      color: var(--accent);
+      color: var(--accent75);
       transform-style: preserve-3d;
       transform-origin: 33% center;
 
@@ -168,10 +169,15 @@
         font-style: italic;
         color: var(--bg);
       }
-
       &::after {
         text-transform: lowercase;
       }
+    }
+
+    em>i,
+    strong {
+      position: relative;
+      top: 0.1em;
     }
 
     strong {
@@ -185,9 +191,13 @@
 [lang="ru"] .logo-subline { letter-spacing: 0.3ch }
 [lang="uk"] .logo-subline { letter-spacing: 0.6ch }
 
-@media (orientation: portrait) and (max-width: 959px) {
+@media (orientation: portrait) and (max-width: 42rem) {
   [lang="en"] .logo-subline { letter-spacing: 0.3ch }
   [lang="ru"] .logo-subline { letter-spacing: 0 }
   [lang="uk"] .logo-subline { letter-spacing: 0.25ch }
+
+  .logo-text:hover::before {
+    width: 7.5rem;
+  }
 }
 </style>

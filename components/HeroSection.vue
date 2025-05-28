@@ -157,7 +157,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: 70% 70%;
+    object-position: 71% 71%;
     z-index: -1;
     opacity: 1;
     transform: scale(1.065);
@@ -207,7 +207,7 @@
         }
 
         .vision {
-          font-size: max(11vh, 27vw);
+          font-size: max(10vh, 26vw);
         }
       }
       @media (orientation: landscape) {
@@ -225,6 +225,7 @@
         width: 100%;
         text-align: left;
         letter-spacing: 0.1ch;
+        left: 0.5rem;
       }
 
       .vision {

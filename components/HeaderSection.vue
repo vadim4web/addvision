@@ -33,7 +33,7 @@
   }
 }
 
-@media (max-width: 54rem) {
+@media (max-width: 42rem) {
   .header-section {
     grid-template-columns: repeat(3, 1fr);
   }

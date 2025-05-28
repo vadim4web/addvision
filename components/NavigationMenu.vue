@@ -164,7 +164,7 @@ const closeMenu = () => isOpen.value = false
 }
 
 /* Mobile styles */
-@media (max-width: 54rem) {
+@media (max-width: 42rem) {
   .burger {
     display: inline-flex;
     align-items: center;
