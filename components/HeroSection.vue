@@ -18,7 +18,7 @@
     <div class="hero-text">
       <h1 class="brand">
         <em class="font-galada-regular add">
-          ADD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;ADD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </em>
         <strong class="font-kanit-black vision">
           &nbsp;VISION&nbsp;
@@ -113,7 +113,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: 71% 71%;
+    object-position: 71.5% 50%;
     z-index: -1;
     opacity: 1;
     transform: scale(1.065);
@@ -157,18 +157,36 @@
         text-stroke: 0.1rem var(--accent25);
       }
 
-      @media (orientation: portrait) {
+            @media (orientation: portrait) {
+        left: 2.5rem;
+
         .add {
           font-size: max(8vh, 17vw);
+          left: -1ch;
         }
 
         .vision {
           font-size: max(10vh, 26vw);
         }
       }
+
+      @media (orientation: portrait) and (aspect-ratio < 0.4) {
+        left: 0;
+
+        .add {
+          left: -0.5rem;
+        }
+
+        .vision {
+          font-size: max(10vh, 26vw);
+        }
+      }
+
       @media (orientation: landscape) {
+          left: 5rem;
         .add {
           font-size: max(25vh, 9vw);
+          left: -2.5rem;
         }
 
         .vision {
@@ -181,7 +199,6 @@
         width: 100%;
         text-align: left;
         letter-spacing: 0.1ch;
-        left: 0.5rem;
       }
 
       .vision {
@@ -223,7 +240,7 @@
 
       .add::before,
       .add::after {
-        content: "ADD\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0";
+        content: "\00a0 ADD\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0";
         text-transform: lowercase;
       }
 
@@ -234,6 +251,8 @@
     }
 
     .moto {
+      position: relative;
+      top: 1.5rem;
       grid-area: moto;
       font-size: 3rem;
       line-height: 3rem;
@@ -242,10 +261,7 @@
       width: 80%;
       color: var(--accent50);
       -webkit-text-fill-color: var(--accent50);
-
-      @media (orientation: landscape) {
-        justify-content: center;
-      }
+      justify-content: center;
     }
 
     .moto,
