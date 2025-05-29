@@ -54,6 +54,11 @@
     width: 6.6rem;
     height: 6.6rem;
     grid-area: img;
+    transition: filter 1s ease;
+  }
+
+  &:has(:hover) &-image {
+    filter: drop-shadow(0 0 0.5em var(--accent75)) contrast(1.1) brightness(1.1);
   }
 
   &-text {
@@ -115,7 +120,7 @@
   }
 
   &-text:hover {
-    filter: drop-shadow(0 0 0.2em var(--bg50)) contrast(1) brightness(1);
+    filter: drop-shadow(0 0 0.2em var(--bg50)) contrast(1.1) brightness(1.1);
   }
   &:hover &-subline {
     color: var(--bg80);
