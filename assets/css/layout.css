@@ -1,0 +1,3 @@
+main section:not(:first-of-type) {
+  background: var(--bg);
+}

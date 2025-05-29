@@ -21,6 +21,7 @@ export default defineNuxtConfig({
     '~/assets/css/reset.css',
     '~/assets/css/typography.css',
     '~/assets/css/custom.css',
+    '~/assets/css/layout.css',
   ],
 
   i18n: {
