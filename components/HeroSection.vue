@@ -1,7 +1,7 @@
 <template>
   <section
-    class="hero-section"
     id="hero"
+    class="hero-section"
     role="region"
     :aria-label="$t('aria.hero')"
   >
@@ -12,7 +12,7 @@
     <HeaderSection />
 
     <video autoplay muted loop playsinline class="hero-video">
-      <source src="/add_vision_1600x900.mp4" type="video/mp4" />
+      <source src="/add_vision_1600x900.mp4" type="video/mp4" >
     </video>
 
     <div class="hero-text">
@@ -84,7 +84,7 @@
     opacity: 1;
   }
   50% {
-    transform: translate(calc(100vw - 50%), calc(50% - 100vh)) scale(1.5);
+    transform: translate(calc(100vw - 50%), calc(50% - 100dvh)) scale(1.5);
     opacity: 1;
   }
   80% {
@@ -123,9 +123,9 @@
 
 .hero-section {
   position: relative;
-  height: 100vh;
+  height: 100dvh;
   overflow: hidden;
-  --grid-height: calc(100vh - 6.6rem);
+  --grid-height: calc(100dvh - 6.6rem);
   --row-height: calc(var(--grid-height) / 3);
 
 
