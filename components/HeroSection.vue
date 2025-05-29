@@ -242,6 +242,10 @@
       width: 80%;
       color: var(--accent50);
       -webkit-text-fill-color: var(--accent50);
+
+      @media (orientation: landscape) {
+        justify-content: center;
+      }
     }
 
     .moto,
@@ -254,7 +258,14 @@
     .we-do {
       grid-area: wedo;
       font-size: 2rem;
-      justify-content: center;
+
+      @media (orientation: portrait) {
+        justify-content: center;
+      }
+
+      @media (orientation: landscape) {
+        justify-content: end;
+      }
     }
 
     & > * {

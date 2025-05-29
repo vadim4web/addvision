@@ -52,7 +52,7 @@
         >
           <svg width="60" height="100" viewBox="0 0 100 100">
             <!-- Один V-подібний трикутник ABC -->
-            <path d="M0 0 L50 86.6 L100 0" stroke="var(--bg)" stroke-width="6" fill="none" />
+            <path d="M0 0 L50 86.6 L100 0" stroke="var(--bg)" stroke-width="12" fill="none" />
           </svg>
         </button>
       </li>
@@ -74,7 +74,6 @@ const closeMenu = () => isOpen.value = false
   align-items: center;
   justify-content: center;
   width: 100%;
-  z-index: 1;
 }
 
 .burger {
@@ -262,7 +261,7 @@ const closeMenu = () => isOpen.value = false
 
       & svg path {
         stroke: var(--accent);
-        stroke-width: 8px;
+        stroke-width: 12px;
       }
     }
   }
