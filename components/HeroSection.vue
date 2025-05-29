@@ -24,38 +24,6 @@
           &nbsp;VISION&nbsp;
         </strong>
       </h1>
-
-<!-- <svg class="text-mask" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
-  <defs>
-    <mask id="textMask">
-      <rect width="100%" height="100%" fill="white" />
-      <text
-        x="50"
-        y="35"
-        text-anchor="middle"
-        font-family="'Galada', cursive"
-        font-size="20"
-        fill="black"
-      >
-        Add
-      </text>
-      <text
-        x="50"
-        y="70"
-        text-anchor="middle"
-        font-family="'Kanit', sans-serif"
-        font-weight="900"
-        font-size="28"
-        fill="black"
-      >
-        VISION
-      </text>
-    </mask>
-  </defs>
-
-  <rect width="100%" height="100%" fill="var(--bg)" mask="url(#textMask)" />
-</svg> -->
-
       <p class="moto">
         {{ $t("moto") }}
       </p>
@@ -93,18 +61,6 @@
   100% {
     transform: translate(-50%, 50%) scale(1);
     opacity: 0;
-  }
-}
-
-@keyframes floatingRadial {
-  0% {
-    background-position: left bottom;
-  }
-  50% {
-    background-position: right top;
-  }
-  100% {
-    background-position: left bottom;
   }
 }
 
@@ -182,7 +138,7 @@
     mix-blend-mode: screen;
     color: transparent;
     -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 0 1.33rem var(--accent)) contrast(1.33) brightness(1.5);
+    filter: drop-shadow(0 0 1.33rem var(--accent)) contrast(1.5) brightness(1.5);
 
     .brand {
       position: relative;
@@ -190,7 +146,7 @@
       display: inline-flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: start;
       justify-self: center;
       width: min-content;
 
@@ -246,8 +202,6 @@
       .vision::before {
         -webkit-text-stroke: 0.1rem var(--accent10);
         text-stroke: 0.1rem var(--accent10);
-
-
         color: var(--text-main75);
         -webkit-text-fill-color: var(--text-main75);
       }
@@ -286,6 +240,8 @@
       text-align: center;
       text-wrap: wrap;
       width: 80%;
+      color: var(--accent50);
+      -webkit-text-fill-color: var(--accent50);
     }
 
     .moto,
@@ -293,12 +249,12 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
     }
 
     .we-do {
       grid-area: wedo;
       font-size: 2rem;
+      justify-content: center;
     }
 
     & > * {
