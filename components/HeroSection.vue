@@ -182,7 +182,7 @@
     mix-blend-mode: screen;
     color: transparent;
     -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 0 1.33rem var(--accent66)) contrast(1.33) brightness(1.66);
+    filter: drop-shadow(0 0 1.33rem var(--accent)) contrast(1.33) brightness(1.5);
 
     .brand {
       position: relative;
@@ -248,14 +248,17 @@
         text-stroke: 0.1rem var(--accent10);
 
 
-        color: var(--text-main50);
-        -webkit-text-fill-color: var(--text-main50);
+        color: var(--text-main75);
+        -webkit-text-fill-color: var(--text-main75);
       }
 
       .add::after,
       .vision::after {
-        -webkit-text-stroke: 0.5rem var(--accent50);
+        -webkit-text-stroke: 0.5rem var(--accent25);
         text-stroke: 0.5rem var(--accent50);
+
+        color: var(--accent25);
+        -webkit-text-fill-color: var(--accent25);
       }
 
       .add,

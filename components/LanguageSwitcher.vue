@@ -31,6 +31,10 @@ const languages = [
   justify-content: center;
   gap: 0.5rem;
   z-index: 1;
+
+  @media (orientation: portrait) or (max-width: 55rem) {
+      justify-content: space-around;
+  }
 }
 
 .language-link {
@@ -63,7 +67,8 @@ const languages = [
     filter: none;
     box-shadow: none;
     text-shadow: none;
-    text-decoration: underline overline transparent 0.2em;
+    // text-decoration: underline overline transparent 0.2em;
+    text-decoration: underline transparent 0.2em;
   }
 
   &::before {
@@ -93,7 +98,8 @@ const languages = [
   &:hover::before {
     width: 100%;
     opacity: 1;
-    text-decoration: underline overline var(--accent) 0.2em;
+    // text-decoration: underline overline var(--accent) 0.2em;
+    text-decoration: underline var(--accent) 0.2em;
     text-shadow: 0 0 0.25em var(--accent50);
     filter: drop-shadow(0 0 0.2em var(--accent));
   }

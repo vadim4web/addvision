@@ -76,10 +76,12 @@
       top: -0.33em;
       content: '';
       background:
-        linear-gradient(180deg, var(--accent) 8%, transparent 8%, transparent 92%, var(--accent)92%),
-      linear-gradient(90deg, var(--accent10), var(--accent25), var(--accent10)90%);
+        linear-gradient( 180deg, var(--accent) 8%, transparent 8%, transparent 92%, var(--accent)92%),
+        // linear-gradient(90deg, var(--accent10), var(--accent25), var(--accent10)90%),
+        radial-gradient(circle at 35% 50%, var(--accent25), transparent 55%)
+      ;
       transition: width 1s;
-      filter: drop-shadow(0 0 0.16em var(--accent50)) contrast(1.5);
+      filter: drop-shadow(0 0 0.16em var(--accent50)) contrast(1.1);
       mix-blend-mode: color-burn;
       z-index: -1;
       opacity: 1;
@@ -126,7 +128,7 @@
     left: -0.1rem;
     top: -0.1em;
 
-    @media (orientation: portrait) and (max-width: 959px) {
+    @media (orientation: portrait) and (max-width: 55rem) {
       font-size: 1.2rem;
     }
 
@@ -164,7 +166,7 @@
 [lang="ru"] .logo-subline { letter-spacing: 0.3ch }
 [lang="uk"] .logo-subline { letter-spacing: 0.6ch }
 
-@media (orientation: portrait) and (max-width: 42rem) {
+@media (orientation: portrait) and (max-width: 55rem) {
   [lang="en"] .logo-subline { letter-spacing: 0.3ch }
   [lang="ru"] .logo-subline { letter-spacing: 0 }
   [lang="uk"] .logo-subline { letter-spacing: 0.25ch }

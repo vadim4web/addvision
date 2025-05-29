@@ -74,6 +74,7 @@ const closeMenu = () => isOpen.value = false
   align-items: center;
   justify-content: center;
   width: 100%;
+  z-index: 1;
 }
 
 .burger {
@@ -87,6 +88,7 @@ const closeMenu = () => isOpen.value = false
 
 /* Desktop styles */
 .nav-list {
+  transition: transform 1s ease, background 1s ease-in;
   list-style: none;
   display: flex;
   align-items: center;
@@ -117,7 +119,7 @@ const closeMenu = () => isOpen.value = false
     &::before {
       transition: all 1s ease;
       content: attr(data-text);
-      text-decoration: underline overline var(--bg) 0.2em;
+      text-decoration: underline var(--bg) 0.2em;
       text-underline-offset: 25%;
       text-underline-offset: 0.5em;
       top: -0.1rem;
@@ -164,7 +166,7 @@ const closeMenu = () => isOpen.value = false
 }
 
 /* Mobile styles */
-@media (max-width: 42rem) {
+@media (max-width: 55rem) {
   .burger {
     display: inline-flex;
     align-items: center;
@@ -191,7 +193,6 @@ const closeMenu = () => isOpen.value = false
     position: absolute;
     padding: 1rem;
     overflow: hidden;
-    transition: transform 1s ease ease-out, background 1s ease-in;
     display: grid;
     grid-template-rows: 6.6rem repeat(5, 1fr);
     grid-template-areas:
@@ -248,8 +249,7 @@ const closeMenu = () => isOpen.value = false
     height: fit-content;
     transform: translate(0, 0);
     background: repeating-linear-gradient(var(--bg50), var(--accent50));
-    border-radius: 0  0 0.5rem 0.5rem;
-    transition: transform 1s ease;
+    border-radius: 0  0 1rem 1rem;
 
     li {
       transform: rotate(0deg);
