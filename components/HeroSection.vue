@@ -11,9 +11,9 @@
 
     <HeaderSection />
 
-    <video autoplay muted loop playsinline class="hero-video">
+    <!-- <video autoplay muted loop playsinline class="hero-video">
       <source src="/add_vision_1600x900.mp4" type="video/mp4" >
-    </video>
+    </video> -->
 
     <div class="hero-text">
       <h1 class="brand">
@@ -40,7 +40,124 @@
   </section>
 </template>
 
-<script setup></script>
+<script setup>
+import { onMounted, onBeforeUnmount } from 'vue'
+import { gsap } from 'gsap'
+
+onMounted(() => {
+  // Початкові анімації
+  gsap.set('.hero-text', { y: 100, opacity: 0, z: 0 })
+  gsap.set('.brand', { scale: 0.8, opacity: 0, z: 50, rotationX: 0, rotationY: 0 })
+  gsap.set('.moto', { y: 50, opacity: 0, z: 30 })
+  gsap.set('.we-do li', { y: 20, opacity: 0, z: 10 })
+
+  const tl = gsap.timeline({ defaults: { ease: 'power2.out' } })
+  tl.to('.hero-text', { y: 0, opacity: 1, duration: 1.2 })
+    .to('.brand', { scale: 1, opacity: 1, duration: 1 }, '-=0.8')
+    .to('.moto', { y: 0, opacity: 1, duration: 1.5 }, '-=0.6')
+    .to('.we-do li', { y: 0, opacity: 1, duration: 2, stagger: 0.33 }, '-=0.4')
+
+  const hero = document.querySelector('.hero-section')
+  const brand = document.querySelector('.brand')
+
+  // Функції руху
+  const moveX = (el) => gsap.quickTo(el, 'x', { duration: 0.6, ease: 'power3.out' })
+  const moveY = (el) => gsap.quickTo(el, 'y', { duration: 0.6, ease: 'power3.out' })
+  const moveZ = (el) => gsap.quickTo(el, 'z', { duration: 0.6, ease: 'power3.out' })
+  const rotateX = (el) => gsap.quickTo(el, 'rotationX', { duration: 0.6, ease: 'power3.out' })
+  const rotateY = (el) => gsap.quickTo(el, 'rotationY', { duration: 0.6, ease: 'power3.out' })
+
+  const moveBrandX = moveX(brand)
+  const moveBrandY = moveY(brand)
+  const moveBrandZ = moveZ(brand)
+  const rotateBrandX = rotateX(brand)
+  const rotateBrandY = rotateY(brand)
+
+  // Рух за мишею
+  const handleMove = (x, y) => {
+    const centerX = window.innerWidth / 2
+    const centerY = window.innerHeight / 2
+    const offsetX = (x - centerX) / centerX
+    const offsetY = (y - centerY) / centerY
+
+    moveBrandX(offsetX * 60)
+    moveBrandY(offsetY * 40)
+    moveBrandZ(Math.abs(offsetX * offsetY) * 20)
+    rotateBrandX(offsetY * 20)
+    rotateBrandY(-offsetX * 20)
+  }
+
+  // Повернення в центр при виході
+  const resetBrand = () => {
+    gsap.to(brand, {
+      x: 0,
+      y: 0,
+      z: 0,
+      rotationX: 0,
+      rotationY: 0,
+      duration: 0.8,
+      ease: 'power2.out'
+    })
+  }
+
+  const onPointerMove = (e) => handleMove(e.clientX, e.clientY)
+  const onTouchMove = (e) => {
+    if (e.touches.length > 0) {
+      handleMove(e.touches[0].clientX, e.touches[0].clientY)
+    }
+  }
+
+  // Навігація
+  hero.addEventListener('pointermove', onPointerMove)
+  hero.addEventListener('touchmove', onTouchMove)
+  hero.addEventListener('mouseleave', resetBrand)
+
+  // Оживлення .we-do li при наведенні
+  const weDoItems = document.querySelectorAll('.we-do li')
+  const weDoHandlers = []
+
+  weDoItems.forEach((item) => {
+    const onEnter = () => {
+      gsap.to(item, {
+        y: -10,
+        scale: 1.1,
+        rotationZ: 2,
+        duration: 1,
+        ease: 'elastic.out(1, 0.4)',
+      })
+    }
+
+    const onLeave = () => {
+      gsap.to(item, {
+        y: 0,
+        scale: 1,
+        rotationZ: 0,
+        duration: 1,
+        ease: 'power2.out',
+      })
+    }
+
+    item.addEventListener('mouseenter', onEnter)
+    item.addEventListener('mouseleave', onLeave)
+
+    // Збережи посилання для видалення
+    weDoHandlers.push({ item, onEnter, onLeave })
+  })
+
+  // Очистка
+  onBeforeUnmount(() => {
+    hero.removeEventListener('pointermove', onPointerMove)
+    hero.removeEventListener('touchmove', onTouchMove)
+    hero.removeEventListener('mouseleave', resetBrand)
+
+      // Очистка .we-do li обробників
+    weDoHandlers.forEach(({ item, onEnter, onLeave }) => {
+      item.removeEventListener('mouseenter', onEnter)
+      item.removeEventListener('mouseleave', onLeave)
+    })
+  })
+})
+</script>
 
 <style lang="scss">
 @keyframes lightningSwing {
@@ -64,25 +181,21 @@
   }
 }
 
-
-.text-mask {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  inset: 0;
-  width: 100%;
-  z-index: -1;
-  display: block;
-  pointer-events: none;
-  object-fit: cover;
-}
-
 .hero-section {
+  transform-style: preserve-3d;
+  perspective: 800px;
+  perspective-origin: center;
   position: relative;
   height: 100dvh;
   overflow: hidden;
   --grid-height: calc(100dvh - 6.6rem);
   --row-height: calc(var(--grid-height) / 3);
+
+  .brand, .moto, .we-do {
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    will-change: transform;
+  }
 
 
   &::before {
@@ -105,18 +218,6 @@
     filter: blur(5rem) brightness(1.5);
     pointer-events: none;
     animation: lightningSwing 24s ease-in-out infinite alternate;
-  }
-
-  .hero-video {
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: 71.5% 50%;
-    z-index: -1;
-    opacity: 1;
-    transform: scale(1.065);
   }
 
   .hero-text {

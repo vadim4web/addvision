@@ -11,7 +11,6 @@
     "postinstall": "nuxt prepare",
     "deploy": "nuxi generate && gh-pages -d dist",
     "deploy_": "nuxt generate && gh-pages -d .output/public"
-
   },
   "dependencies": {
     "@nuxt/eslint": "^1.4.1",
@@ -22,6 +21,7 @@
     "@nuxtjs/i18n": "^9.5.4",
     "@unhead/vue": "^2.0.9",
     "eslint": "^9.27.0",
+    "gsap": "^3.13.0",
     "nuxt": "^3.17.3",
     "vue": "^3.5.14",
     "vue-router": "^4.5.1"

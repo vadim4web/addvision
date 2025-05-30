@@ -43,12 +43,21 @@ useHead({
     { rel: 'alternate', hreflang: 'uk', href: 'https://addvision.dev/' },
     { rel: 'alternate', hreflang: 'ru', href: 'https://addvision.dev/ru/' },
     { rel: 'alternate', hreflang: 'en', href: 'https://addvision.dev/en/' }
+  ],
+  script: [
+    {
+      src: 'https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js',
+      async: true,
+      defer: true,
+      tagPosition: 'body',
+    }
   ]
 })
 </script>
 
 <template>
   <NuxtRouteAnnouncer />
+  <VideoBackground />
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>
