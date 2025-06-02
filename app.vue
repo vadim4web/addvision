@@ -57,7 +57,6 @@ useHead({
 
 <template>
   <NuxtRouteAnnouncer />
-  <VideoBackground />
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>

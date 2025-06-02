@@ -127,7 +127,7 @@
   }
 
   &-brand {
-    font-size: 1.5rem;
+    font-size: 1.55rem;
     font-weight: 600;
     position: relative;
     left: -0.1rem;

@@ -1,6 +1,6 @@
 <template>
   <section class="services-section" id="services" :aria-label="$t('aria.services')">
-    Services Section
+    <SectionHeading v-html="$t('services.title')"/>
   </section>
 </template>
 

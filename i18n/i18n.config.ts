@@ -35,6 +35,68 @@ export default defineI18nConfig(() => ({
         faq: "Поширені запитання",
         contact: "Контактна інформація",
       },
+      what: {
+        title: "ЩО МИ ВКЛЮЧАЄМО<br>В <span class='accent'>УПАКОВКУ</span> БІЗНЕСУ?",
+        sections: {
+          senses: {
+            title: 'Сенси',
+            items: [
+              'концепція бренду',
+              'позиціонування',
+              'стратегія маркетингу',
+            ],
+          },
+          texts: {
+            title: 'Тексти',
+            items: [
+              'статті',
+              'пости',
+              'презентації',
+              'повідомлення',
+            ],
+          },
+          visual: {
+            title: 'Візуал',
+            items: [
+              'концепція бренду',
+              'позиціонування',
+              'стратегія маркетингу',
+            ],
+          },
+          dev: {
+            title: 'Розробка',
+            items: [
+              'сайти',
+              'соцмережі',
+              'анімації',
+            ],
+          },
+        },
+      },
+      why: {
+        title: "ЧОМУ <span class='accent'>МИ</span>?",
+        stats: [
+          'Років досвіду',
+          'Задоволених клієнтів',
+          'Клієнтів повертаються',
+          'Реалізованих проєктів'
+        ],
+      },
+      cases: {
+        title: "КЕЙСИ",
+      },
+      services: {
+        title: "НАШІ ПОСЛУГИ",
+      },
+      testimonials: {
+        title: "ВІДГУКИ <span class='accent'>КЛІЄНТІВ</span>",
+      },
+      faq: {
+        title: "ЧАСТІ ПИТАННЯ",
+      },
+      contacts: {
+        title: "КОНТАКТИ",
+      },
     },
     ru: {
       meta: {
@@ -68,6 +130,68 @@ export default defineI18nConfig(() => ({
         faq: "Часто задаваемые вопросы",
         contact: "Контактная информация",
       },
+      what: {
+        title: "ЧТО МЫ ВКЛЮЧАЕМ<br>В <span class='accent'>УПАКОВКУ</span> БИЗНЕСА?",
+        sections: {
+          senses: {
+            title: 'Смыслы',
+            items: [
+              'концепция бренда',
+              'позиционирование',
+              'стратегия маркетинга',
+            ],
+          },
+          texts: {
+            title: 'Тексты',
+            items: [
+              'статьи',
+              'посты',
+              'презентации',
+              'сообщения',
+            ],
+          },
+          visual: {
+            title: 'Визуал',
+            items: [
+              'концепция бренда',
+              'позиционирование',
+              'стратегия маркетинга',
+            ],
+          },
+          dev: {
+            title: 'Разработка',
+            items: [
+              'сайты',
+              'соцсети',
+              'анимации',
+            ],
+          },
+        },
+      },
+      why: {
+        title: "ПОЧЕМУ <span class='accent'>МЫ</span>?",
+        stats: [
+          'Лет опыта',
+          'Довольных клиентов',
+          'Клиенты возвращаются',
+          'Реализованных проектов'
+        ],
+      },
+      cases: {
+        title: "КЕЙСЫ",
+      },
+      services: {
+        title: "НАШИ УСЛУГИ",
+      },
+      testimonials: {
+        title: "Отзывы <span class='accent'>клиентов</span>",
+      },
+      faq: {
+        title: "ЧАСТЫЕ ВОПРОСЫ",
+      },
+      contacts: {
+        title: "КОНТАКТЫ",
+      },
     },
     en: {
       meta: {
@@ -100,6 +224,68 @@ export default defineI18nConfig(() => ({
         testimonials: "Client testimonials",
         faq: "Frequently asked questions",
         contact: "Contact information",
+      },
+      what: {
+        title: "WHAT WE INCLUDE<br>IN <span class='accent'>BUSINESS</span> BRANDING?",
+        sections: {
+          senses: {
+            title: 'Senses',
+            items: [
+              'brand concept',
+              'positioning',
+              'marketing strategy',
+            ],
+          },
+          texts: {
+            title: 'Texts',
+            items: [
+              'articles',
+              'posts',
+              'presentations',
+              'messages',
+            ],
+          },
+          visual: {
+            title: 'Visual',
+            items: [
+              'brand concept',
+              'positioning',
+              'marketing strategy',
+            ],
+          },
+          dev: {
+            title: 'Development',
+            items: [
+              'websites',
+              'social media',
+              'animations',
+            ],
+          },
+        },
+      },
+      why: {
+        title: "WHY <span class='accent'>US</span>?",
+        stats: [
+          'Years of experience',
+          'Happy clients',
+          'Clients return',
+          'Projects completed'
+        ],
+      },
+      cases: {
+        title: "CASES",
+      },
+      services: {
+        title: "OUR SERVICES",
+      },
+      testimonials: {
+        title: "CLIENT <span class='accent'>TESTIMONIALS</span>",
+      },
+      faq: {
+        title: "FREQUENTLY ASKED QUESTIONS",
+      },
+      contacts: {
+        title: "CONTACTS",
       },
     },
   },

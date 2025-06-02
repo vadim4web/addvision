@@ -9,11 +9,9 @@
       <em>ADD</em> <strong>VISION</strong> — {{ $t("moto") }} | {{ $t("we-do.sences") }}, {{ $t("we-do.texts") }}, {{ $t("we-do.visual") }}, {{ $t("we-do.dev") }}
     </h1>
 
-    <HeaderSection />
+    <VideoBackground />
 
-    <!-- <video autoplay muted loop playsinline class="hero-video">
-      <source src="/add_vision_1600x900.mp4" type="video/mp4" >
-    </video> -->
+    <HeaderSection />
 
     <div class="hero-text">
       <h1 class="brand">
@@ -360,8 +358,6 @@ onMounted(() => {
       text-align: center;
       text-wrap: wrap;
       width: 80%;
-      color: var(--accent50);
-      -webkit-text-fill-color: var(--accent50);
       justify-content: center;
     }
 

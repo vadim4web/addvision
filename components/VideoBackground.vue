@@ -9,9 +9,11 @@
 <style lang="scss">
 .video-container {
   position: fixed;
+  position: absolute;
   inset: 0;
   z-index: -1;
   pointer-events: none;
+  background: black;
 }
 
 .hero-video {

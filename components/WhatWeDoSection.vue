@@ -1,12 +1,16 @@
 <template>
-  <section class="what-we-do-section" id="what-we-do" :aria-label="$t('aria.whatWeDo')">
-    What We Do ?
+  <section
+    id="what-we-do"
+    class="what-we-do-section masked-section"
+    :aria-label="$t('aria.whatWeDo')"
+  >
+    <SectionHeading v-html="$t('what.title')"/>
+
+    <WhatWeDoGrid />
   </section>
 </template>
 
-<script setup>
-
-</script>
+<script setup></script>
 
 <style lang="scss" scoped>
 .what-we-do-section {}

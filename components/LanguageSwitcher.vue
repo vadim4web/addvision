@@ -63,6 +63,7 @@ const languages = [
   &:not(:hover)::before,
   &:not(:hover)::after {
     width: 0;
+    visibility: hidden;
     overflow: hidden;
     filter: none;
     box-shadow: none;

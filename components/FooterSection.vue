@@ -1,6 +1,6 @@
 <template>
   <footer class="contacts-section" id="contacts" :aria-label="$t('aria.contact')" role="contentinfo">
-    Contact
+    <SectionHeading v-html="$t('contacts.title')"/>
   </footer>
 </template>
 
