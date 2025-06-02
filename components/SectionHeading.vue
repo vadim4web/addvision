@@ -8,25 +8,46 @@
 <style lang="scss">
 .section-heading {
   font-size: 5.5rem;
-  color: var(--text-main);
-  line-height: 1 ;
-  position: relative;
-  display: inline;
-  padding-right: 7.5rem;
+  line-height: 1;
+  display: grid;
+  color: inherit;
 
-  &:after {
-    content: '';
-    display: inline-block;
-    width: calc(5.5rem * 1);
+  @media (orientation: landscape) {
+    grid-template-columns: max-content auto;
+
+    .arrow {
+      justify-self: end;
+    }
+  }
+  @media (orientation: portrait) {
+    grid-template-columns: min-content auto;
+
+    .arrow {
+      justify-self: start;
+    }
+  }
+  align-items: start;
+  gap: 0.5rem;
+
+  justify-content: start;
+  text-align: left;
+
+  .arrow {
+    color: inherit;
+    display: block;
+    width: 5.5rem;
     aspect-ratio: 1;
     background: url('./arrow-right-up.svg') no-repeat center;
     background-size: contain;
-    color: inherit;
-    overflow: visible;
-    position: absolute;
-    top: 0.5rem;
-    right: 0;
+
+    svg {
+      width: 100%;
+      height: 100%;
+      stroke: currentColor;
+    }
   }
 }
-.accent { color: var(--accent); }
+.accent {
+  color: var(--accent);
+}
 </style>

@@ -4,7 +4,7 @@
     class="what-we-do-section masked-section"
     :aria-label="$t('aria.whatWeDo')"
   >
-    <SectionHeading v-html="$t('what.title')"/>
+    <SectionHeading v-html="`<span class='heading-text'>${$t('what.title')}</span><span class='arrow'>${svgArrow()}</span>`"/>
 
     <WhatWeDoGrid />
   </section>

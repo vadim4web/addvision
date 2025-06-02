@@ -1,6 +1,6 @@
 <template>
   <section class="services-section" id="services" :aria-label="$t('aria.services')">
-    <SectionHeading v-html="$t('services.title')"/>
+    <SectionHeading v-html="`<span class='heading-text'>${$t('services.title')}</span><span class='arrow'>${svgArrow()}</span>`"/>
   </section>
 </template>
 

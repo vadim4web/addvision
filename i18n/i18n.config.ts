@@ -36,7 +36,7 @@ export default defineI18nConfig(() => ({
         contact: "Контактна інформація",
       },
       what: {
-        title: "ЩО МИ ВКЛЮЧАЄМО<br>В <span class='accent'>УПАКОВКУ</span> БІЗНЕСУ?",
+        title: "ЩО МИ ВКЛЮЧАЄМО<br>В&nbsp;<span class='accent'>УПАКОВКУ</span> БІЗНЕСУ?",
         sections: {
           senses: {
             title: 'Сенси',
@@ -131,7 +131,7 @@ export default defineI18nConfig(() => ({
         contact: "Контактная информация",
       },
       what: {
-        title: "ЧТО МЫ ВКЛЮЧАЕМ<br>В <span class='accent'>УПАКОВКУ</span> БИЗНЕСА?",
+        title: "ЧТО МЫ ВКЛЮЧАЕМ<br>В&nbsp;<span class='accent'>УПАКОВКУ</span> БИЗНЕСА?",
         sections: {
           senses: {
             title: 'Смыслы',
@@ -184,7 +184,7 @@ export default defineI18nConfig(() => ({
         title: "НАШИ УСЛУГИ",
       },
       testimonials: {
-        title: "Отзывы <span class='accent'>клиентов</span>",
+        title: "ОТЗЫВЫ <span class='accent'>КЛИЕНТОВ</span>",
       },
       faq: {
         title: "ЧАСТЫЕ ВОПРОСЫ",
@@ -226,7 +226,7 @@ export default defineI18nConfig(() => ({
         contact: "Contact information",
       },
       what: {
-        title: "WHAT WE INCLUDE<br>IN <span class='accent'>BUSINESS</span> BRANDING?",
+        title: "WHAT WE INCLUDE<br>IN&nbsp;<span class='accent'>BUSINESS</span> BRANDING?",
         sections: {
           senses: {
             title: 'Senses',
