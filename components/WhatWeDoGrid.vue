@@ -1,10 +1,5 @@
 <script setup>
-import { useI18n } from 'vue-i18n'
-import { computed } from 'vue'
-
 const { locale, messages } = useI18n()
-
-// computed, щоб реагувало на зміну мови
 const sections = computed(() => {
   return messages.value[locale.value]?.what?.sections || {}
 })

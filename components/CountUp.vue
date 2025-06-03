@@ -11,7 +11,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 const props = defineProps({
   endVal: { type: Number, required: true },
-  startVal: { type: Number, default: 0 },
+  startVal: { type: Number, default: 1 },
   duration: { type: Number, default: 2 },
   trigger: { type: String, default: '.countup-trigger' },
   postfix: { type: String, default: '' },

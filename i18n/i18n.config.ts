@@ -279,7 +279,7 @@ export default defineI18nConfig(() => ({
         title: "OUR SERVICES",
       },
       testimonials: {
-        title: "CLIENT <span class='accent'>TESTIMONIALS</span>",
+        title: "CLIENT <span class='accent'>TESTI<wbr>MONIALS</span>",
       },
       faq: {
         title: "FREQUENTLY ASKED QUESTIONS",

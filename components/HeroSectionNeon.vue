@@ -9,12 +9,19 @@
       <em>ADD</em> <strong>VISION</strong> — {{ $t("moto") }} | {{ $t("we-do.sences") }}, {{ $t("we-do.texts") }}, {{ $t("we-do.visual") }}, {{ $t("we-do.dev") }}
     </h1>
 
-    <HeaderSection />
     <VideoBackground />
 
-    <div class="hero-text">
-      <div class="brand"></div>
+    <HeaderSection />
 
+    <div class="hero-text">
+      <h1 class="brand">
+        <em class="font-galada-regular add">
+          &nbsp;ADD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </em>
+        <strong class="font-kanit-black vision">
+          &nbsp;VISION&nbsp;
+        </strong>
+      </h1>
       <p class="moto">
         {{ $t("moto") }}
       </p>
@@ -37,10 +44,10 @@ import { gsap } from 'gsap'
 
 onMounted(() => {
   // Початкові анімації
-  gsap.set('.hero-text', { y: 100, z: 0 })
-  gsap.set('.brand', { scale: 1.5, z: 50, rotationX: 0, rotationY: 0 })
-  gsap.set('.moto', { y: 0, z: 30 })
-  gsap.set('.we-do li', { y: 20, z: 10 })
+  gsap.set('.hero-text', { y: 100, opacity: 0, z: 0 })
+  gsap.set('.brand', { scale: 0.8, opacity: 0, z: 50, rotationX: 0, rotationY: 0 })
+  gsap.set('.moto', { y: 50, opacity: 0, z: 30 })
+  gsap.set('.we-do li', { y: 20, opacity: 0, z: 10 })
 
   const tl = gsap.timeline({ defaults: { ease: 'power2.out' } })
   tl.to('.hero-text', { y: 0, opacity: 1, duration: 1.2 })
@@ -151,86 +158,199 @@ onMounted(() => {
 </script>
 
 <style lang="scss">
+@keyframes lightningSwing {
+  0% {
+    transform: translate(-50%, 50%) scale(2);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  50% {
+    transform: translate(calc(100vw - 50%), calc(50% - 100dvh)) scale(1.5);
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, 50%) scale(1);
+    opacity: 0;
+  }
+}
+
 .hero-section {
+  transform-style: preserve-3d;
+  perspective: 800px;
+  perspective-origin: center;
   position: relative;
-  height: fit-content;
+  height: 100dvh;
   overflow: hidden;
-  width: 100%;
+  --grid-height: calc(100dvh - 6.6rem);
+  --row-height: calc(var(--grid-height) / 3);
+
+  .brand, .moto, .we-do {
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    will-change: transform;
+  }
+
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50vmin;
+    height: 50vmin;
+    z-index: 1;
+
+    background: radial-gradient(
+      circle at center,
+      var(--bg50) 0%,
+      var(--accent33) 25%,
+      transparent 80%
+    );
+
+    border-radius: 50%;
+    filter: blur(5rem) brightness(1.5);
+    pointer-events: none;
+    animation: lightningSwing 24s ease-in-out infinite alternate;
+  }
 
   .hero-text {
-    z-index: 1;
+    position: relative;
     width: 100%;
-    max-width: 100%;
-    height: 100%;
+    height: var(--grid-height);
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-
-    @media (orientation: portrait) {
-      grid-template-rows: 1fr 20rem 1fr;
-    }
-
-    @media (orientation: landscape) {
-      grid-template-rows: repeat(3, 1fr);
-    }
-
+    grid-template-rows: repeat(3, 1fr);
     grid-template-areas:
-      ".      .      wedo   wedo   wedo"
-      ".      .      .      .      .   "
+      ".      .      .      wedo   wedo"
+      "brand  brand  brand  brand  brand"
       "moto   moto   moto   moto   moto";
     align-content: center;
     justify-items: center;
 
-    .brand {
-      grid-area: brand;
-      width: 100%;
-      max-width: 100%;
-      z-index: 1;
-      position: absolute;
-      left: 0;
+    -webkit-text-stroke: 2px var(--accent);
+    text-stroke: 2px var(--accent);
+    mix-blend-mode: screen;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 1.33rem var(--accent)) contrast(1.5) brightness(1.5);
 
-      @media (orientation: portrait) {
-        height: 100%;
-        top: -2rem;
+    .brand {
+      position: relative;
+      grid-area: brand;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+      justify-self: center;
+      width: min-content;
+
+      * {
+        line-height: 60%;
+        position: relative;
+        -webkit-text-stroke: 0.1rem var(--accent25);
+        text-stroke: 0.1rem var(--accent25);
+      }
+
+            @media (orientation: portrait) {
+        left: 2.5rem;
+
+        .add {
+          font-size: max(8vh, 17vw);
+          left: -1ch;
+        }
+
+        .vision {
+          font-size: max(10vh, 26vw);
+        }
+      }
+
+      @media (orientation: portrait) and (aspect-ratio < 0.4) {
+        left: 0;
+
+        .add {
+          left: -0.5rem;
+        }
+
+        .vision {
+          font-size: max(10vh, 26vw);
+        }
       }
 
       @media (orientation: landscape) {
-        height: 100vh;
-        top: -7.5rem;
+          left: 5rem;
+        .add {
+          font-size: max(25vh, 9vw);
+          left: -2.5rem;
+        }
+
+        .vision {
+          font-size: max(30vh, 15vw);
+        }
       }
 
-      &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
+      .add {
+        display: block;
         width: 100%;
-        height: 100%;
+        text-align: left;
+        letter-spacing: 0.1ch;
+      }
 
-        @media (orientation: portrait) and (aspect-ratio < 0.5) {
-          transform: scale(2.25);
-        }
+      .vision {
+        letter-spacing: -0.05ch;
+      }
 
-        @media (orientation: portrait) and (aspect-ratio >= 0.5) and (aspect-ratio < 0.75) {
-          transform: scale(2.5);
-        }
+      .add::before,
+      .add::after,
+      .vision::before,
+      .vision::after {
+        position: absolute;
+        color: transparent; // сам текст прозорий
+        -webkit-text-fill-color: transparent; // Safari підтримка
+        left: 0;
+      }
 
-        @media (orientation: portrait) and (aspect-ratio > 0.75) {
-          transform: scale(2.75);
-        }
+      .add::before,
+      .vision::before {
+        -webkit-text-stroke: 0.1rem var(--accent10);
+        text-stroke: 0.1rem var(--accent10);
+        color: var(--text-main75);
+        -webkit-text-fill-color: var(--text-main75);
+      }
 
-        @media (orientation: landscape) {
-          transform: scale(2.66);
-        }
+      .add::after,
+      .vision::after {
+        -webkit-text-stroke: 0.5rem var(--accent25);
+        text-stroke: 0.5rem var(--accent50);
 
-        background-image: url('./add-vision-mask.png');
-        background-size: cover;
-        background-position: center;
-        inset: 0;
-        pointer-events: none;
+        color: var(--accent25);
+        -webkit-text-fill-color: var(--accent25);
+      }
+
+      .add,
+      .add::before,
+      .add::after {
+        text-transform: lowercase;
+      }
+
+      .add::before,
+      .add::after {
+        content: "\00a0 ADD\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0";
+        text-transform: lowercase;
+      }
+
+      .vision::before,
+      .vision::after {
+        content: "\00a0VISION\00a0";
       }
     }
 
     .moto {
+      position: relative;
       top: 1.5rem;
       grid-area: moto;
       font-size: 3rem;
@@ -246,8 +366,6 @@ onMounted(() => {
       display: flex;
       flex-direction: column;
       align-items: center;
-      position: relative;
-      z-index: 1;
     }
 
     .we-do {
@@ -261,6 +379,10 @@ onMounted(() => {
       @media (orientation: landscape) {
         justify-content: end;
       }
+    }
+
+    & > * {
+      height: var(--row-height);
     }
   }
 }

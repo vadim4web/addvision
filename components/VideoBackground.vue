@@ -8,12 +8,10 @@
 
 <style lang="scss">
 .video-container {
-  position: fixed;
-  position: absolute;
   inset: 0;
-  z-index: -1;
+  z-index: 0;
   pointer-events: none;
-  background: black;
+  position: absolute;
 }
 
 .hero-video {
@@ -21,7 +19,6 @@
   height: 100%;
   object-fit: cover;
   object-position: 71.5% 50%;
-  opacity: 1;
   transform: scale(1.065);
 }
 </style>

@@ -65,7 +65,7 @@
     display: inline-flex;
     flex-direction: column;
     line-height: 1;
-    color: var(--text-main);
+    color: var(--bg);
     gap: 0.25rem;
     grid-area: txt;
     max-width: fit-content;
@@ -109,7 +109,7 @@
     font-size: 0.875rem;
     font-weight: bold;
     text-transform: uppercase;
-    color: var(--text-main50);
+    color: var(--bg50);
     width: max-content;
     transition: color 1s ease;
 
@@ -123,7 +123,7 @@
     filter: drop-shadow(0 0 0.2em var(--bg50)) contrast(1.1) brightness(1.1);
   }
   &:hover &-subline {
-    color: var(--text-main75);
+    color: var(--bg80);
   }
 
   &-brand {
@@ -147,7 +147,7 @@
 
       & i {
         font-style: italic;
-        color: var(--text-main);
+        color: var(--bg);
       }
       &::after {
         text-transform: lowercase;

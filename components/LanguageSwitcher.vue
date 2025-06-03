@@ -29,11 +29,12 @@ const languages = [
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 0.25rem;
   z-index: 1;
-
+  
   @media (orientation: portrait) or (max-width: 55rem) {
-      justify-content: space-around;
+    justify-content: space-around;
+    max-width: 10rem;
   }
 }
 
@@ -41,7 +42,6 @@ const languages = [
   position: relative;
   overflow: hidden;
 
-  // Активний стан + ховер/фокус
   &.active {
     color: var(--accent);
   }
@@ -68,8 +68,7 @@ const languages = [
     filter: none;
     box-shadow: none;
     text-shadow: none;
-    // text-decoration: underline overline transparent 0.2em;
-    text-decoration: underline transparent 0.2em;
+    text-decoration: underline transparent 0.15em;
   }
 
   &::before {
@@ -82,33 +81,14 @@ const languages = [
     font-weight: bolder;
     padding: inherit;
     text-wrap: nowrap;
-    text-underline-offset: 0.5em;
-  }
-
-  &::after {
-    content: '';
-    bottom: 0.33em;
-    left: 0.25em;
-    bottom: 0.15em;
-    left: 0.2em;
-    height: 0.15em;
-    background: linear-gradient(90deg, var(--accent50)0%, var(--accent)50%, var(--accent50)75%);
-    z-index: 1;
+    text-underline-offset: 0.25em;
   }
 
   &:hover::before {
     width: 100%;
     opacity: 1;
-    // text-decoration: underline overline var(--accent) 0.2em;
-    text-decoration: underline var(--accent) 0.2em;
-    text-shadow: 0 0 0.25em var(--accent50);
-    filter: drop-shadow(0 0 0.2em var(--accent));
-  }
-
-  &:hover::after {
-    width: calc(100% - 0.5em);
-    box-shadow: 0 0 0.25em var(--accent);
-    filter: drop-shadow(0 0 0.2em var(--accent));
+    text-decoration: underline var(--accent) 0.15em;
+    text-shadow: 0 0 0.1em var(--accent50);
   }
 }
 </style>

@@ -7,7 +7,8 @@
 
 <style lang="scss">
 .section-heading {
-  font-size: 5.5rem;
+  padding-top: 1rem;
+  font-size: 5rem;
   line-height: 1;
   display: grid;
   color: inherit;
@@ -35,7 +36,7 @@
   .arrow {
     color: inherit;
     display: block;
-    width: 5.5rem;
+    width: 5rem;
     aspect-ratio: 1;
     background: url('./arrow-right-up.svg') no-repeat center;
     background-size: contain;

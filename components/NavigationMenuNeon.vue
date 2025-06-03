@@ -92,14 +92,14 @@ const closeMenu = () => isOpen.value = false
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-main);
+  color: var(--bg);
   gap: 0.5rem;
   padding: 0;
   margin: 0 auto;
 
   li a {
     text-decoration: none;
-    color: var(--text-main);
+    color: var(--bg);
     position: relative;
 
     &::before,
@@ -118,25 +118,48 @@ const closeMenu = () => isOpen.value = false
     &::before {
       transition: all 1s ease;
       content: attr(data-text);
-      text-decoration: underline var(--text-main) 0.15em;
+      text-decoration: underline var(--bg) 0.2em;
       text-underline-offset: 25%;
-      text-underline-offset: 0.25em;
+      text-underline-offset: 0.5em;
       top: -0.1rem;
       left: 0;
       height: 100%;
       font-weight: bolder;
       padding: inherit;
       text-wrap: nowrap;
-      color: var(--text-main75);
+      color: var(--bg75);
       overflow: hidden;
     }
 
+    &::after {
+      transition: all 1s ease;
+      content: '';
+      width: 0;
+      bottom: 0.16em;
+      left: 0.125em;
+      height: 0.175em;
+      background: linear-gradient(90deg, var(--bg50)0%, var(--bg)50%, var(--bg50)75%);
+      box-shadow: 0 0 0.3px var(--bg50);
+      z-index: 1;
+    }
+
+    &:hover::after,
+    &:focus::after {
+      text-shadow: 0 0 0.1em var(--bg50);
+      filter: drop-shadow(0 0 0.5ch var(--accent50)) contrast(2);
+    }
 
     &:hover::before,
     &:focus::before {
       width: 100%;
       opacity: 1;
-      text-shadow: 0 0 0.05em var(--text-main50);
+      text-shadow: 0 0 0.25em var(--bg);
+      filter: drop-shadow(0 0 0.5ch var(--accent50));
+    }
+
+    &:hover::after,
+    &:focus::after {
+      width: calc(100% - 0.25em);
     }
   }
 }
@@ -167,7 +190,7 @@ const closeMenu = () => isOpen.value = false
 
   .nav-list {
     position: absolute;
-    width: calc(100% - 3rem);
+    padding: 1rem;
     overflow: hidden;
     display: grid;
     grid-template-rows: 6.6rem repeat(5, 1fr);
@@ -181,11 +204,13 @@ const closeMenu = () => isOpen.value = false
     gap: 0;
 
     justify-items: center;
+    width: 100vw;
     top: 0;
-    left: -3rem;
+    left: 0;
     right: 0;
     transform: translate(0, calc(6.6rem - 100%));
     padding: 0 1rem;
+    width: 100%;
 
     li {
       width: 100vw;
