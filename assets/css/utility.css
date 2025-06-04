@@ -1,0 +1,37 @@
+h2 {
+  padding-bottom: 4rem;
+}
+
+main section:not(:first-of-type), footer {
+  padding: 4rem 2rem;
+}
+
+.glow-on-hover {
+  transition: all 1s;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
+}
+
+.glow-on-hover:hover {
+  filter: drop-shadow(0 0 0.1em var(--accent75)) contrast(1.1) brightness(1.1);
+}
+
+.grid-four {
+  display: grid;
+  gap: 1rem;
+  margin: 0 auto;
+}
+
+@media (orientation: landscape) , (min-width: 1280px) {
+  .grid-four {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 720px) and (max-width: 1279px) {
+  .grid-four {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

@@ -32,7 +32,7 @@ const languages = [
   gap: 0.25rem;
   z-index: 1;
   
-  @media (orientation: portrait) or (max-width: 55rem) {
+  @media (orientation: portrait) , (max-width: 55rem) {
     justify-content: space-around;
     max-width: 10rem;
   }

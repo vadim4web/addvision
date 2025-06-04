@@ -72,9 +72,11 @@ export default defineI18nConfig(() => ({
             ],
           },
         },
+        cta: "Індивідуально підбираємо комплекс послуг під ваш бізнес для максимального результату.",
       },
       why: {
         title: "ЧОМУ <span class='accent'>МИ</span>?",
+        values: " — це партнерство, це більше за відносини “замовник-підрядник”. Ми прагнемо бути корисними з першої зустрічі, допомогти, вкласти наш досвід у новий проект. Якщо ми працюємо з вами, значить безперечно віримо у нього.",
         stats: [
           'Років досвіду',
           'Задоволених клієнтів',
@@ -167,9 +169,11 @@ export default defineI18nConfig(() => ({
             ],
           },
         },
+        cta: "Индивидуально подбираем комплекс услуг под ваш бизнес для максимального результата.",
       },
       why: {
         title: "ПОЧЕМУ <span class='accent'>МЫ</span>?",
+        values: " — это партнёрство, это больше, чем отношения “заказчик-исполнитель”. Мы стремимся быть полезными с первой встречи, помочь, вложить наш опыт в новый проект. Если мы работаем с вами — значит, безусловно верим в него.",
         stats: [
           'Лет опыта',
           'Довольных клиентов',
@@ -262,9 +266,11 @@ export default defineI18nConfig(() => ({
             ],
           },
         },
+        cta: "We tailor a service package specifically for your business to achieve maximum results.",
       },
       why: {
         title: "WHY <span class='accent'>US</span>?",
+        values: " is a partnership — more than just a client-contractor relationship. We aim to bring value from the very first meeting, contribute, and invest our experience into each new project. If we work with you, it means we truly believe in it.",
         stats: [
           'Years of experience',
           'Happy clients',

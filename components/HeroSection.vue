@@ -32,21 +32,20 @@
 </template>
 
 <script setup>
-import { onMounted, onBeforeUnmount } from 'vue'
 import { gsap } from 'gsap'
 
 onMounted(() => {
   // Початкові анімації
   gsap.set('.hero-text', { y: 100, z: 0 })
   gsap.set('.brand', { scale: 1.5, z: 50, rotationX: 0, rotationY: 0 })
-  gsap.set('.moto', { y: 0, z: 30 })
-  gsap.set('.we-do li', { y: 20, z: 10 })
+  gsap.set('.moto', { y: 0, z: 30, opacity: 0, })
+  gsap.set('.we-do li', { y: "5rem", opacity: 0, z: 10 })
 
   const tl = gsap.timeline({ defaults: { ease: 'power2.out' } })
   tl.to('.hero-text', { y: 0, opacity: 1, duration: 1.2 })
     .to('.brand', { scale: 1, opacity: 1, duration: 1 }, '-=0.8')
-    .to('.moto', { y: 0, opacity: 1, duration: 1.5 }, '-=0.6')
-    .to('.we-do li', { y: 0, opacity: 1, duration: 2, stagger: 0.33 }, '-=0.4')
+    .to('.moto', { y: 0, opacity: 1, duration: 1.5, clearProps: true }, '-=0.6')
+    .to('.we-do li', { y: 0, opacity: 1, duration: 2, stagger: 0.33, clearProps: true }, '-=0.4')
 
   const hero = document.querySelector('.hero-section')
   const brand = document.querySelector('.brand')
@@ -86,7 +85,7 @@ onMounted(() => {
       z: 0,
       rotationX: 0,
       rotationY: 0,
-      duration: 0.8,
+      duration: 1,
       ease: 'power2.out'
     })
   }
@@ -103,49 +102,11 @@ onMounted(() => {
   hero.addEventListener('touchmove', onTouchMove)
   hero.addEventListener('mouseleave', resetBrand)
 
-  // Оживлення .we-do li при наведенні
-  const weDoItems = document.querySelectorAll('.we-do li')
-  const weDoHandlers = []
-
-  weDoItems.forEach((item) => {
-    const onEnter = () => {
-      gsap.to(item, {
-        y: -10,
-        scale: 1.1,
-        rotationZ: 2,
-        duration: 1,
-        ease: 'elastic.out(1, 0.4)',
-      })
-    }
-
-    const onLeave = () => {
-      gsap.to(item, {
-        y: 0,
-        scale: 1,
-        rotationZ: 0,
-        duration: 1,
-        ease: 'power2.out',
-      })
-    }
-
-    item.addEventListener('mouseenter', onEnter)
-    item.addEventListener('mouseleave', onLeave)
-
-    // Збережи посилання для видалення
-    weDoHandlers.push({ item, onEnter, onLeave })
-  })
-
   // Очистка
   onBeforeUnmount(() => {
     hero.removeEventListener('pointermove', onPointerMove)
     hero.removeEventListener('touchmove', onTouchMove)
     hero.removeEventListener('mouseleave', resetBrand)
-
-      // Очистка .we-do li обробників
-    weDoHandlers.forEach(({ item, onEnter, onLeave }) => {
-      item.removeEventListener('mouseenter', onEnter)
-      item.removeEventListener('mouseleave', onLeave)
-    })
   })
 })
 </script>
@@ -164,15 +125,7 @@ onMounted(() => {
     height: 100%;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-
-    @media (orientation: portrait) {
-      grid-template-rows: 1fr 20rem 1fr;
-    }
-
-    @media (orientation: landscape) {
-      grid-template-rows: repeat(3, 1fr);
-    }
-
+    grid-template-rows: repeat(3, 1fr);
     grid-template-areas:
       ".      .      wedo   wedo   wedo"
       ".      .      .      .      .   "
@@ -207,26 +160,27 @@ onMounted(() => {
         height: 100%;
 
         @media (orientation: portrait) and (aspect-ratio < 0.5) {
-          transform: scale(2.25);
+          transform: scale(2);
         }
 
         @media (orientation: portrait) and (aspect-ratio >= 0.5) and (aspect-ratio < 0.75) {
-          transform: scale(2.5);
+          transform: scale(2.25);
         }
 
         @media (orientation: portrait) and (aspect-ratio > 0.75) {
-          transform: scale(2.75);
+          transform: scale(2.5);
         }
 
         @media (orientation: landscape) {
           transform: scale(2.66);
         }
 
-        background-image: url('./add-vision-mask.png');
+        background-image: url('./images/add-vision-mask.png');
         background-size: cover;
         background-position: center;
         inset: 0;
         pointer-events: none;
+        filter: blur(0.5px);
       }
     }
 
@@ -260,6 +214,15 @@ onMounted(() => {
 
       @media (orientation: landscape) {
         justify-content: end;
+      }
+
+      li {
+        transition: transform 1s ease;
+        will-change: transform;
+
+        &:hover {
+          transform: translate(15%, -20%) scale(1.1);
+        }
       }
     }
   }

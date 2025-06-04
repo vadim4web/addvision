@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/html-self-closing -->
 <template>
-  <h2 class="section-heading font-inter-semibold"></h2>
+  <h2 class="section-heading font-inter-semibold glow-on-hover"></h2>
 </template>
 
 <script setup></script>
@@ -8,22 +8,24 @@
 <style lang="scss">
 .section-heading {
   padding-top: 1rem;
-  font-size: 5rem;
   line-height: 1;
   display: grid;
   color: inherit;
+  grid-template-columns: max-content auto;
+  transition: filter 1s ease;
 
   @media (orientation: landscape) {
-    grid-template-columns: max-content auto;
-
+    font-size: 5rem;
     .arrow {
+      width: 5rem;
       justify-self: end;
     }
   }
   @media (orientation: portrait) {
-    grid-template-columns: min-content auto;
+    font-size: 3.5rem;
 
     .arrow {
+      width: 3.5rem;
       justify-self: start;
     }
   }
@@ -36,7 +38,6 @@
   .arrow {
     color: inherit;
     display: block;
-    width: 5rem;
     aspect-ratio: 1;
     background: url('./arrow-right-up.svg') no-repeat center;
     background-size: contain;

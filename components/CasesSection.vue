@@ -10,7 +10,6 @@
 
 <style lang="scss" scoped>
 .cases-section {
-  background: var(--accent);
-  color: var(--white);
+  background: var(--bg);
 }
 </style>

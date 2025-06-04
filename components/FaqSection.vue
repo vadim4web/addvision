@@ -9,5 +9,7 @@
 </script>
 
 <style lang="scss" scoped>
-.faq-section {}
+.faq-section {
+  background: var(--bg);
+}
 </style>

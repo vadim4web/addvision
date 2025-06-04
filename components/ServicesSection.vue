@@ -9,5 +9,8 @@
 </script>
 
 <style lang="scss" scoped>
-.services-section {}
+.services-section {
+  background: var(--accent);
+  color: var(--white);
+}
 </style>
