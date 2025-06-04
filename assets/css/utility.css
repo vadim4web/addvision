@@ -1,11 +1,3 @@
-h2 {
-  padding-bottom: 4rem;
-}
-
-main section:not(:first-of-type), footer {
-  padding: 4rem 2rem;
-}
-
 .glow-on-hover {
   transition: all 1s;
   -webkit-transition: all 1s;
@@ -34,4 +26,8 @@ main section:not(:first-of-type), footer {
   .grid-four {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+@media (max-width: 719px) {
+  .grid-four {}
 }

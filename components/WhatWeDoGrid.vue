@@ -102,13 +102,10 @@ onUnmounted(() => {
 
 <style lang="scss">
 .what-we-do-grid {
-  @media (orientation: landscape) {}
-  @media (orientation: portrait) {}
-
   .what-section {
     aspect-ratio: 1;
     display: grid;
-    grid-template-rows: 0.5fr 1fr 8rem;
+    grid-template-rows: 0.25fr 0.5fr 8rem;
     grid-template-areas:
       "."
       "heading"
@@ -170,6 +167,27 @@ onUnmounted(() => {
       font-size: 1.25rem;
       position: relative;
       z-index: 2;
+    }
+
+
+    @media (min-width: 720px) and (max-width: 1279px) {
+      h3 {
+        font-size: 1.75rem;
+      }
+
+      ul {
+        font-size: 1.25rem;
+      }
+    }
+
+    @media (max-width: 719px) {
+      h3 {
+        font-size: 3rem;
+      }
+
+      ul {
+        font-size: 2rem;
+      }
     }
 
   }

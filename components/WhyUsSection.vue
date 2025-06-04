@@ -1,8 +1,26 @@
 <template>
-  <section class="why-us-section" id="why-us" :aria-label="$t('aria.whyUs')">
-    <SectionHeading v-html="`<span class='heading-text'>${$t('why.title')}</span><span class='arrow'>${svgArrow()}</span>`"/>
+  <section id="why-us" class="why-us-section" :aria-label="$t('aria.whyUs')">
+    <div class="coop">
+      <SectionHeading
+        class="coop-heading"
+        v-html="`<span class='heading-text'>${$t('why.title')}</span><span class='arrow'>${svgArrow()}</span>`"
+      />
+
+      <div class="coop-top-right">
+        <strong class="coop-top-right-strong glow-on-hover" v-html="$t('why.coop')"></strong>
+  
+        <div class="coop-top-right-visual"></div>
+      </div>
+
+      <em class="coop-values">
+        <span class="accent">{</span>add<span class="accent">}</span>VISION
+        {{ $t('why.values') }}
+      </em>
+    </div>
 
     <SuccessStatsGrid />
+
+    <WhyUsCTA />
   </section>
 </template>
 
@@ -13,5 +31,78 @@
 <style lang="scss" scoped>
 .why-us-section {
   background: var(--bg);
+
+  .coop {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    @media (orientation: portrait) {
+      aspect-ratio: 2;
+      grid-template-rows: 10rem 1fr;
+    }
+
+    @media (orientation: landscape) {
+      grid-template-rows: repeat(2, minmax(10rem, 1fr));
+      aspect-ratio: 3;
+    }
+
+
+    grid-template-areas:
+      "heading  heading  topRight  topRight"
+      ".        values   values  .";
+
+    &-heading {
+      grid-area: heading;
+    }
+
+    &-top-right {
+
+      grid-area: topRight;
+      display: flex;
+      justify-self: end;
+
+      &-strong {
+        align-self: center;
+        justify-self: end;
+        font-size: 1.75rem;
+        font-variant: small-caps;
+        font-weight: 600;
+      }
+
+      &-visual {
+        height: 100%;
+        aspect-ratio: 1;
+        background: url('./images/coop.webp') center / cover no-repeat;
+        position: relative;
+
+        &::after {
+          position: absolute;
+          content: '';
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: radial-gradient(circle at center, transparent, var(--bg) 71%);
+        }
+      }
+    }
+
+
+    &-values {
+      grid-area: values;
+
+      @media (orientation: portrait) {
+        font-size: 1.2rem;
+      }
+
+      @media (orientation: landscape), (max-width: 719px) {
+        font-size: 1.5rem;
+      }
+
+      @media (min-width: 720px) and (max-width: 1279px) {
+        font-size: 1.25rem;
+      }
+    }
+  }
 }
 </style>

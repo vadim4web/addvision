@@ -79,6 +79,7 @@ useHead({
   --bg33: #f1f6fc54;                    /* Основний фон 33% */
   --bg25: #f1f6fc40;                    /* Основний фон 25% */
   --text-main: #040404;             /* Основний текст (gun-metal) */
+  --text-main: #353e43;             /* Основний текст (gun-metal) */
   --text-main75: #353e43bf;             /* Основний текст (gun-metal) */
   --text-main66: #353e43a8;             /* Основний текст (gun-metal) */
   --text-main50: #353e4380;             /* Основний текст (gun-metal) */

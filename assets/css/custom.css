@@ -34,3 +34,11 @@
 }
 
 /* Для Edge (Chromium) та інших браузерів, що підтримують WebKit-стилі — буде працювати як для Chrome */
+
+h2:not(.coop-heading) {
+  padding-bottom: 4rem;
+}
+
+main section:not(:first-of-type), footer {
+  padding: 8rem 2rem;
+}

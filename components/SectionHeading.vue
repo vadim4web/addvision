@@ -7,7 +7,7 @@
 
 <style lang="scss">
 .section-heading {
-  padding-top: 1rem;
+  padding-top: 0.5rem;
   line-height: 1;
   display: grid;
   color: inherit;

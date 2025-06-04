@@ -76,6 +76,7 @@ export default defineI18nConfig(() => ({
       },
       why: {
         title: "ЧОМУ <span class='accent'>МИ</span>?",
+        coop: "<span class='accent'>Спів</span>творення",
         values: " — це партнерство, це більше за відносини “замовник-підрядник”. Ми прагнемо бути корисними з першої зустрічі, допомогти, вкласти наш досвід у новий проект. Якщо ми працюємо з вами, значить безперечно віримо у нього.",
         stats: [
           'Років досвіду',
@@ -83,6 +84,7 @@ export default defineI18nConfig(() => ({
           'Клієнтів повертаються',
           'Реалізованих проєктів'
         ],
+        cta: "ПРОРАХУВАТИ ВАРТІСТЬ САЙТУ",
       },
       cases: {
         title: "КЕЙСИ",
@@ -173,6 +175,7 @@ export default defineI18nConfig(() => ({
       },
       why: {
         title: "ПОЧЕМУ <span class='accent'>МЫ</span>?",
+        coop: "<span class='accent'>Со</span>творение",
         values: " — это партнёрство, это больше, чем отношения “заказчик-исполнитель”. Мы стремимся быть полезными с первой встречи, помочь, вложить наш опыт в новый проект. Если мы работаем с вами — значит, безусловно верим в него.",
         stats: [
           'Лет опыта',
@@ -180,6 +183,7 @@ export default defineI18nConfig(() => ({
           'Клиенты возвращаются',
           'Реализованных проектов'
         ],
+        cta: "РАССЧИТАТЬ СТОИМОСТЬ САЙТА",
       },
       cases: {
         title: "КЕЙСЫ",
@@ -270,6 +274,7 @@ export default defineI18nConfig(() => ({
       },
       why: {
         title: "WHY <span class='accent'>US</span>?",
+        coop: "<span class='accent'>Co</span>creation",
         values: " is a partnership — more than just a client-contractor relationship. We aim to bring value from the very first meeting, contribute, and invest our experience into each new project. If we work with you, it means we truly believe in it.",
         stats: [
           'Years of experience',
@@ -277,6 +282,7 @@ export default defineI18nConfig(() => ({
           'Clients return',
           'Projects completed'
         ],
+        cta: "ESTIMATE WEBSITE COST",
       },
       cases: {
         title: "CASES",

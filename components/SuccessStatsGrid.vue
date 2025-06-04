@@ -1,7 +1,7 @@
 <template>
   <div class="stats-section">
     <div class="stats-grid grid-four countup-trigger">
-      <div v-for="(stat, i) in stats" :key="i" class="stat-box font-bebas-regular">
+      <div v-for="(stat, i) in stats" :key="i" class="stat-box font-bebas-regular glow-on-hover">
         <CountUp :end-val="stat.value" :postfix="i === 2 ? '%' : i === 3 ? '+' : ''" />
         <p class="label">{{ $t(`why.stats.${i}`) }}</p>
       </div>
@@ -30,12 +30,20 @@ const stats = [
   transition: transform 0.3s ease;
 
   &:hover {
-    transform: translateY(-5px);
+    transform: translateY(-2.5%) scale(1.05);
   }
 
   .label {
-    color: #555;
+    color: var(--text-main80);
     font-size: 1rem;
+    @media (min-width: 720px) and (max-width: 1279px) {
+      font-size: 1.25rem;
+    }
+  
+    @media (max-width: 719px) {
+      font-size: 1.5rem;
+    }
   }
+
 }
 </style>
