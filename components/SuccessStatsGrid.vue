@@ -39,7 +39,7 @@ const stats = [
     @media (min-width: 720px) and (max-width: 1279px) {
       font-size: 1.25rem;
     }
-  
+
     @media (max-width: 719px) {
       font-size: 1.5rem;
     }

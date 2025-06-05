@@ -188,49 +188,8 @@ onMounted(() => {
         height: 100%;
         object-fit: cover;
         pointer-events: none;
-
         transform: scale(2.76);
-
-        /*
-
-        @media (orientation: portrait) and (aspect-ratio < 0.5) {
-          transform: scale(2.75);
-        }
-
-        @media (orientation: portrait) and (aspect-ratio >= 0.5) and (aspect-ratio < 0.75) {
-          transform: scale(2.75);
-        }
-
-        @media (orientation: portrait) and (aspect-ratio >= 0.75) {
-          transform: scale(2.5);
-        }
-
-        @media (orientation: landscape) {
-          transform: scale(2.75);
-        }
-
-        */
-
       }
-
-      /*
-
-      &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url('./images/add-vision-mask.svg');
-        background-size: cover;
-        background-position: center;
-        inset: 0;
-        pointer-events: none;
-        filter: blur(0);
-      }
-
-      */
     }
 
     .moto {

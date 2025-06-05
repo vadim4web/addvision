@@ -1,4 +1,3 @@
-<!-- eslint-disable vue/html-self-closing -->
 <template>
   <h2 class="section-heading font-inter-semibold glow-on-hover"></h2>
 </template>

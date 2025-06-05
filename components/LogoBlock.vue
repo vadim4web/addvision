@@ -82,7 +82,6 @@
       content: '';
       background:
         linear-gradient( 180deg, var(--accent) 8%, transparent 8%, transparent 92%, var(--accent)92%),
-        // linear-gradient(90deg, var(--accent10), var(--accent25), var(--accent10)90%),
         radial-gradient(circle at 35% 50%, var(--accent25), transparent 55%)
       ;
       transition: width 1s;
@@ -146,9 +145,6 @@
       transform-origin: 33% center;
 
       & i {
-        /*
-        font-style: italic;
-        */
         color: var(--text-main);
       }
       &::after {
