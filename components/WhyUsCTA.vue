@@ -97,6 +97,14 @@ onMounted(() => {
     will-change: transform;
     transition: transform 0.5s ease;
 
+    @media (max-width: 719px) and (aspect-ratio < 0.4) {
+      font-size: 1.3rem;
+    }
+
+    @media (max-width: 719px) , (orientation: portrait) {
+      font-size: 1.5rem;
+    }
+
     &:hover::after {
       filter: drop-shadow(0 0 1rem var(--accent));
     }

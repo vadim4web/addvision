@@ -317,7 +317,7 @@ export default defineI18nConfig(() => ({
         title: "CLIENT <span class='accent'>TESTI<wbr>MONIALS</span>",
       },
       faq: {
-        title: "FREQUENTLY ASKED QUESTIONS",
+        title: "FREQUENTLY<br>ASKED <wbr>QUESTIONS",
       },
       contacts: {
         title: "CONTACTS",

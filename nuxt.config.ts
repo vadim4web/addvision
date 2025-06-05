@@ -79,6 +79,6 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/scripts',
     '@nuxtjs/i18n',
-    '@nuxtjs/google-fonts'
+    '@nuxtjs/google-fonts',
   ]
 })

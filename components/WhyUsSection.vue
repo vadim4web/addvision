@@ -42,7 +42,7 @@
     }
 
     @media (orientation: landscape) {
-      grid-template-rows: repeat(2, minmax(10rem, 1fr));
+      grid-template-rows: repeat(2, minmax(12rem, 1fr));
       aspect-ratio: 3;
     }
 
@@ -82,6 +82,7 @@
           left: 0;
           width: 100%;
           height: 100%;
+          scale: 1.02;
           background: radial-gradient(circle at center, transparent, var(--bg) 71%);
         }
       }

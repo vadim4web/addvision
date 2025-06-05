@@ -11,16 +11,16 @@
   line-height: 1;
   display: grid;
   color: inherit;
-  grid-template-columns: max-content auto;
   transition: filter 1s ease;
 
-  @media (orientation: landscape) {
-    font-size: 5rem;
-    .arrow {
-      width: 5rem;
-      justify-self: end;
-    }
+  @media (orientation: portrait), (max-width: 767px) {
+    grid-template-columns: min-content auto;
   }
+
+  @media (orientation: landscape), (min-width: 768px) {
+    grid-template-columns: max-content auto;
+  }
+
   @media (orientation: portrait) {
     font-size: 3.5rem;
 
@@ -29,6 +29,16 @@
       justify-self: start;
     }
   }
+
+  @media (orientation: landscape) {
+    font-size: 5rem;
+
+    .arrow {
+      width: 5rem;
+      justify-self: end;
+    }
+  }
+
   align-items: start;
   gap: 0.5rem;
 

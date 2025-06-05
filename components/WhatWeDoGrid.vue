@@ -105,7 +105,7 @@ onUnmounted(() => {
   .what-section {
     aspect-ratio: 1;
     display: grid;
-    grid-template-rows: 0.25fr 0.5fr 8rem;
+    grid-template-rows: 0.25fr 0.5fr 10rem;
     grid-template-areas:
       "."
       "heading"
@@ -173,21 +173,42 @@ onUnmounted(() => {
 
     @media (min-width: 720px) and (max-width: 1279px) {
       h3 {
-        font-size: 1.75rem;
+        font-size: 2.25rem;
       }
 
       ul {
-        font-size: 1.25rem;
+        font-size: 1.5rem;
       }
     }
 
-    @media (max-width: 719px) {
+    
+    @media (min-width: 1280px) and (orientation: portrait) {
+      h3 {
+        font-size: 1.25rem;
+      }
+
+      ul {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 719px) and (orientation: portrait) {
       h3 {
         font-size: 3rem;
       }
 
       ul {
         font-size: 2rem;
+      }
+    }
+
+    @media (max-width: 719px) and (orientation: landscape) {
+      h3 {
+        font-size: 2rem;
+      }
+
+      ul {
+        font-size: 1.5rem;
       }
     }
 
