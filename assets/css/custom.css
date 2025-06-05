@@ -40,5 +40,9 @@ h2:not(.coop-heading) {
 }
 
 main section:not(:first-of-type), footer {
-  padding: 8rem 2rem;
+  padding: 2rem;
+}
+
+main section:first-of-type {
+  padding-bottom: 2rem;
 }

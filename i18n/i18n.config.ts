@@ -5,7 +5,7 @@ export default defineI18nConfig(() => ({
   messages: {
     uk: {
       meta: {
-        title: "AddVision — агенція цифрового втілення візії",
+        title: "Add Vision — агенція цифрового втілення візії",
         description:
           "Дизайн сайтів, брендинг, астропсихологія та ambient-досвід. Допомагаємо втілити вашу ідею онлайн та офлайн.",
       },
@@ -36,39 +36,46 @@ export default defineI18nConfig(() => ({
         contact: "Контактна інформація",
       },
       what: {
-        title: "ЩО МИ ВКЛЮЧАЄМО<br>В&nbsp;<span class='accent'>УПАКОВКУ</span> БІЗНЕСУ?",
+        title: "ЩО МИ ВКЛЮЧАЄМО<br><span class='brown-deep'>В</span>&nbsp;<span class='accent'>УПАКОВКУ</span> <span class='brown-deep'>БІЗНЕСУ?</span>",
         sections: {
           senses: {
             title: 'Сенси',
             items: [
               'концепція бренду',
+              'місія та бачення',
               'позиціонування',
-              'стратегія маркетингу',
+              'цінності бренду',
+              'дослідження аудиторії',
             ],
           },
           texts: {
             title: 'Тексти',
             items: [
-              'статті',
-              'пости',
-              'презентації',
-              'повідомлення',
+              'слогани',
+              'продажні тексти',
+              'описи продуктів',
+              'сторітелінг',
+              'маніфести',
             ],
           },
           visual: {
             title: 'Візуал',
             items: [
-              'концепція бренду',
-              'позиціонування',
-              'стратегія маркетингу',
+              'логотип',
+              'айдентика',
+              'фірмовий стиль',
+              'соцмедіа-контент',
+              'motion-дизайн',
             ],
           },
           dev: {
             title: 'Розробка',
             items: [
-              'сайти',
-              'соцмережі',
-              'анімації',
+              'сайт або лендінг',
+              'веб-додатки',
+              'веб-анімація',
+              'банер/реклама',
+              'інтерактив у соцмережах',
             ],
           },
         },
@@ -101,10 +108,11 @@ export default defineI18nConfig(() => ({
       contacts: {
         title: "КОНТАКТИ",
       },
+      rights: "Усі права захищено.",
     },
     ru: {
       meta: {
-        title: "AddVision — агентство цифровой реализации идей",
+        title: "Add Vision — агентство цифровой реализации идей",
         description:
           "Дизайн сайтов, брендинг, астропсихология и ambient-опыт. Помогаем воплотить вашу идею онлайн и офлайн.",
       },
@@ -135,39 +143,46 @@ export default defineI18nConfig(() => ({
         contact: "Контактная информация",
       },
       what: {
-        title: "ЧТО МЫ ВКЛЮЧАЕМ<br>В&nbsp;<span class='accent'>УПАКОВКУ</span> БИЗНЕСА?",
+        title: "ЧТО МЫ ВКЛЮЧАЕМ<br><span class='brown-deep'>В</span>&nbsp;<span class='accent'>УПАКОВКУ</span> <span class='brown-deep'>БИЗНЕСА?</span>",
         sections: {
           senses: {
             title: 'Смыслы',
             items: [
               'концепция бренда',
+              'миссия и видение',
               'позиционирование',
-              'стратегия маркетинга',
+              'ценности бренда',
+              'исследование аудитории',
             ],
           },
           texts: {
             title: 'Тексты',
             items: [
-              'статьи',
-              'посты',
-              'презентации',
-              'сообщения',
+              'слоганы',
+              'продающие тексты',
+              'описания продуктов',
+              'сторителлинг',
+              'манифесты',
             ],
           },
           visual: {
             title: 'Визуал',
             items: [
-              'концепция бренда',
-              'позиционирование',
-              'стратегия маркетинга',
+              'айдентика',
+              'логотип',
+              'фирменный стиль',
+              'контент для соцсетей',
+              'motion-дизайн',
             ],
           },
           dev: {
             title: 'Разработка',
             items: [
-              'сайты',
-              'соцсети',
-              'анимации',
+              'сайт или лендинг',
+              'веб-приложения',
+              'веб-анимация',
+              'баннер/реклама',
+              'интерактив в соцсетях',
             ],
           },
         },
@@ -200,10 +215,11 @@ export default defineI18nConfig(() => ({
       contacts: {
         title: "КОНТАКТЫ",
       },
+      rights: "Все права защищены.",
     },
     en: {
       meta: {
-        title: "AddVision — digital agency to realize your vision",
+        title: "Add Vision — digital agency to realize your vision",
         description:
           "Web design, branding, astro-psychology, and ambient experience. We help bring your vision to life online and offline.",
       },
@@ -234,39 +250,46 @@ export default defineI18nConfig(() => ({
         contact: "Contact information",
       },
       what: {
-        title: "WHAT WE INCLUDE<br>IN&nbsp;<span class='accent'>BUSINESS</span> BRANDING?",
+        title: "WHAT WE INCLUDE<br><span class='brown-deep'>IN</span>&nbsp;<span class='accent'>BUSINESS</span> <span class='brown-deep'>BRANDING?</span>",
         sections: {
           senses: {
             title: 'Senses',
             items: [
               'brand concept',
+              'mission and vision',
               'positioning',
-              'marketing strategy',
+              'brand values',
+              'audience research',
             ],
           },
           texts: {
             title: 'Texts',
             items: [
-              'articles',
-              'posts',
-              'presentations',
-              'messages',
+              'slogans',
+              'sales copy',
+              'product descriptions',
+              'storytelling',
+              'manifestos',
             ],
           },
           visual: {
             title: 'Visual',
             items: [
-              'brand concept',
-              'positioning',
-              'marketing strategy',
+              'identity',
+              'logo',
+              'brand style',
+              'social content',
+              'motion design',
             ],
           },
           dev: {
             title: 'Development',
             items: [
-              'websites',
-              'social media',
-              'animations',
+              'website or landing',
+              'web apps',
+              'web animation',
+              'banner/ads',
+              'social media interactive',
             ],
           },
         },
@@ -299,6 +322,7 @@ export default defineI18nConfig(() => ({
       contacts: {
         title: "CONTACTS",
       },
+      rights: "All rights reserved.",
     },
   },
 }));

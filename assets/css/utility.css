@@ -31,3 +31,19 @@
 @media (max-width: 719px) {
   .grid-four {}
 }
+
+.accent {
+  color: var(--accent);
+}
+
+.brown-deep {
+  color: var(--brown-deep);
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}

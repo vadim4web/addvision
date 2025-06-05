@@ -180,7 +180,7 @@ onMounted(() => {
         background-position: center;
         inset: 0;
         pointer-events: none;
-        filter: blur(0.5px);
+        filter: blur(0);
       }
     }
 

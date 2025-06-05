@@ -68,10 +68,11 @@ useHead({
   /* font-size: min(1.33vmax, 3vmin); */
   /* === Базові кольори === */
   --white: #ffffff;
+  --white50: #ffffff80;
   --black: #000000;
 
   /* === Основна палітра === */
-  --bg: rgb(241, 246, 252);                    /* Основний фон */
+  --bg: #f1f6fc;                    /* Основний фон */
   --bg80: #f1f6fccc;                    /* Основний фон 100% */
   --bg75: #f1f6fcbf;                    /* Основний фон 75% */
   --bg66: #f1f6fca8;                    /* Основний фон 66% */
@@ -85,7 +86,7 @@ useHead({
   --text-main50: #353e4380;             /* Основний текст (gun-metal) */
   --text-main33: #353e4354;             /* Основний текст (gun-metal) */
   --text-main25: #353e4340;             /* Основний текст (gun-metal) */
-  --accent: rgb(89, 203, 232);                /* Головний акцент (blue-shade) */
+  --accent: #59cbe8;                /* Головний акцент (blue-shade) */
   --accent75: #59cbe8bf;                /* Головний акцент (blue-shade) 33% */
   --accent66: #59cbe8a8;                /* Головний акцент (blue-shade) 66% */
   --accent50: #59cbe880;                /* Головний акцент (blue-shade) 33% */

@@ -20,7 +20,7 @@ onMounted(async () => {
 
     const onMouseEnter = () => {
       gsap.to(heading, {
-        y: '60%',
+        y: '50%',
         duration: 1,
         ease: 'power1.inOut',
       })
@@ -37,7 +37,7 @@ onMounted(async () => {
         x: 0,
         y: 0,
         duration: 1,
-        ease: 'power2.out',
+        ease: 'power1.inOut',
       })
     }
 
@@ -160,6 +160,7 @@ onUnmounted(() => {
       font-size: 1.75rem;
       position: relative;
       z-index: 1;
+      will-change: transform;
     }
 
     ul {

@@ -146,7 +146,9 @@
       transform-origin: 33% center;
 
       & i {
+        /*
         font-style: italic;
+        */
         color: var(--text-main);
       }
       &::after {

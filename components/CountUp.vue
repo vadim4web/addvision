@@ -45,12 +45,14 @@ onMounted(() => {
 <style scoped lang="scss">
 span {
   font-weight: bold;
-  font-size: 5rem;
+  font-size: 8rem;
   color: var(--accent);
 
+  /*
   @media (min-width: 720px) and (max-width: 1279px) {
     font-size: 7.5rem;
   }
+  */
 
   @media (max-width: 719px) {
     font-size: 10rem;

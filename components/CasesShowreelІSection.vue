@@ -1,6 +1,6 @@
 <template>
   <section class="cases-showreel-section" :aria-label="$t('aria.casesVideo')">
-    <VideoBackground style="height: 30rem; top: 5rem;" />
+    <VideoBackground style="width: 40rem; height: 30rem; margin: 5rem auto;" />
   </section>
 </template>
 
