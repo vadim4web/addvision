@@ -11,7 +11,7 @@
       :aria-label="$t('contacts.aria_label')"
     >
       <!-- Redirect after submit -->
-      <input type="hidden" name="_next" value="/thank-you" />
+      <input type="hidden" name="_next" value="https://vadim4web.fvh.is/thanks" />
       <input type="hidden" name="_captcha" value="false" />
 
       <label>
@@ -60,7 +60,7 @@
   }
 
   @media (orientation: portrait) {
-    width: max(55%, 55ch);
+    width: max(65%, 65ch);
     margin-inline: auto;
   }
 
@@ -75,12 +75,12 @@
     font-weight: 400;
 
     & > * {
-      height: 2.5rem;
+      min-height: 3.75rem;
     }
 
     & > *:not(button) {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 50% 50%;
       align-items: center;
 
       border-bottom: 1px solid var(--text-main);
