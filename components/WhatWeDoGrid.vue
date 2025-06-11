@@ -137,7 +137,7 @@ onUnmounted(() => {
 
     @for $i from 1 through 4 {
       &:nth-child(#{$i}) .bg {
-        background-image: url('./images/services' + $i + '.webp');
+        background-image: url('../assets/images/services' + $i + '.webp');
       }
     }
 

@@ -11,6 +11,22 @@
   display: grid;
   color: inherit;
   transition: filter 1s ease;
+  align-items: start;
+  gap: 0.5rem;
+  justify-content: start;
+  text-align: left;
+
+  .arrow {
+    color: inherit;
+    display: block;
+    aspect-ratio: 1;
+
+    svg {
+      width: 100%;
+      height: 100%;
+      stroke: currentColor;
+    }
+  }
 
   @media (orientation: portrait), (max-width: 767px) {
     grid-template-columns: min-content auto;
@@ -37,27 +53,8 @@
       justify-self: end;
     }
   }
-
-  align-items: start;
-  gap: 0.5rem;
-
-  justify-content: start;
-  text-align: left;
-
-  .arrow {
-    color: inherit;
-    display: block;
-    aspect-ratio: 1;
-    background: url('./arrow-right-up.svg') no-repeat center;
-    background-size: contain;
-
-    svg {
-      width: 100%;
-      height: 100%;
-      stroke: currentColor;
-    }
-  }
 }
+
 .accent {
   color: var(--accent);
 }

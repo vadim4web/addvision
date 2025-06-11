@@ -35,6 +35,9 @@
   .coop {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "heading  heading  topRight  topRight"
+      ".        values   values  .";
 
     @media (orientation: portrait) {
       aspect-ratio: 2;
@@ -45,11 +48,6 @@
       grid-template-rows: repeat(2, minmax(12rem, 1fr));
       aspect-ratio: 3;
     }
-
-
-    grid-template-areas:
-      "heading  heading  topRight  topRight"
-      ".        values   values  .";
 
     &-heading {
       grid-area: heading;
@@ -72,7 +70,7 @@
       &-visual {
         height: 100%;
         aspect-ratio: 1;
-        background: url('./images/coop.webp') center / cover no-repeat;
+        background: url('../assets/images/coop.webp') center / cover no-repeat;
         position: relative;
 
         &::after {

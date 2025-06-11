@@ -3,7 +3,7 @@
     <div class="stats-grid grid-four countup-trigger">
       <div v-for="(stat, i) in stats" :key="i" class="stat-box font-bebas-regular glow-on-hover">
         <CountUp :end-val="stat.value" :postfix="i === 2 ? '%' : i === 3 ? '+' : ''" />
-        <p class="label">{{ $t(`why.stats.${i}`) }}</p>
+        <p class="label font-inter-medium">{{ $t(`why.stats.${i}`) }}</p>
       </div>
     </div>
   </div>

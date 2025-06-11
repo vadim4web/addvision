@@ -142,6 +142,12 @@ onMounted(() => {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+      ".      .      wedo   wedo   wedo"
+      ".      .      .      .      .   "
+      "moto   moto   moto   moto   moto";
+    align-content: center;
+    justify-items: center;
 
     @media (orientation: landscape) and (aspect-ratio > 2.75) {
       grid-template-rows: 1fr 0.75fr 1fr;
@@ -150,13 +156,6 @@ onMounted(() => {
     @media (orientation: landscape) and (aspect-ratio <= 2.75) {
       grid-template-rows: 1fr 1.5fr 1fr;
     }
-
-    grid-template-areas:
-      ".      .      wedo   wedo   wedo"
-      ".      .      .      .      .   "
-      "moto   moto   moto   moto   moto";
-    align-content: center;
-    justify-items: center;
 
     .brand {
       grid-area: brand;
