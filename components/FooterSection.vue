@@ -1,18 +1,22 @@
 <template>
   <footer class="contacts-section" id="contacts" :aria-label="$t('aria.contact')" role="contentinfo">
-
     <SectionHeading class="heading" v-html="`<span class='heading-text'>${$t('contacts.title')}</span><span class='arrow'>${svgArrow()}</span>`"/>
 
     <p class="copy">&copy; 2013 - {{ new Date().getFullYear() }} <span class="dim">{</span><span class="lowercase">Add</span><span class="dim">}</span><span class="uppercase">Vision</span>
     {{ $t('rights') }}
     </p>
 
-    <ContactForm />
+    <ContactForm :setShowThanks />
   </footer>
 </template>
 
 <script setup>
-
+const { setShowThanks } = defineProps({
+  setShowThanks: {
+    type: Function,
+    required: true,
+  },
+})
 </script>
 
 <style lang="scss">

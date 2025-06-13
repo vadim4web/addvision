@@ -1,37 +1,60 @@
 <template>
   <div class="form-container">
-    <h3 class="font-inter-semibold">
-      {{ $t('contacts.emailUs') }}
-    </h3>
+    <h3>{{ $t('contacts.emailUs') }}</h3>
 
     <form
-      action="https://formsubmit.co/vadim4web@gmail.com"
-      method="POST"
-      class="contact-form font-montserrat-regular"
+      class="contact-form"
       :aria-label="$t('contacts.aria_label')"
+      @submit.prevent="submitForm"
     >
-      <!-- Redirect after submit -->
-      <input type="hidden" name="_next" value="https://vadim4web.fvh.is/thanks" />
-      <input type="hidden" name="_captcha" value="false" />
-
       <label>
         {{ $t('contacts.name') }} *
-        <input type="text" name="name" required />
+        <input
+          v-model="form.name"
+          type="text"
+          name="name"
+          required
+          :aria-label="$t('contacts.name')"
+          minlength="2"
+          pattern="^[A-Za-zА-Яа-яЁёІіЇїЄєҐґ\s'-]{2,}$"
+          :title="$t('contacts.name_title')"
+        />
       </label>
 
       <label>
         {{ $t('contacts.email') }} *
-        <input type="email" name="email" required />
+        <input
+          v-model="form.email"
+          type="email"
+          name="email"
+          required
+          :aria-label="$t('contacts.email')"
+          :title="$t('contacts.email_title')"
+        />
       </label>
 
       <label>
         {{ $t('contacts.phone') }} *
-        <input type="text" name="phone" required />
+        <input
+          v-model="form.phone"
+          type="tel"
+          name="phone"
+          required
+          pattern="^\+?[0-9\s\-()]{7,20}$"
+          :aria-label="$t('contacts.phone')"
+          :title="$t('contacts.phone_title')"
+        />
       </label>
 
       <label>
         {{ $t('contacts.type') }} *
-        <select name="type" required>
+        <select
+          v-model="form.type"
+          name="type"
+          required
+          :aria-label="$t('contacts.type')"
+          :title="$t('contacts.type_title')"
+        >
           <option disabled value="">{{ $t('contacts.choose') }}</option>
           <option value="general">{{ $t('contacts.type_general') }}</option>
           <option value="support">{{ $t('contacts.type_support') }}</option>
@@ -41,13 +64,62 @@
 
       <label>
         {{ $t('contacts.notes') }}
-        <input type="text" name="notes"/>
+        <input
+          v-model="form.notes"
+          type="text" name="notes"
+          maxlength="500"
+          :aria-label="$t('contacts.notes')"
+          :title="$t('contacts.notes_title')"
+        />
       </label>
 
       <button type="submit">{{ $t('contacts.send') }}</button>
     </form>
+
+    <ThankYou v-if="showThanks" :set-show-thanks />
   </div>
 </template>
+
+<script setup>
+const form = ref({
+  name: '',
+  email: '',
+  phone: '',
+  type: '',
+  notes: ''
+})
+
+const showThanks = ref(false)
+const setShowThanks = (value) => showThanks.value = value
+
+const submitForm = async () => {
+  try {
+    const response = await fetch('https://formsubmit.co/ajax/vadim4web@gmail.com', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json'
+      },
+      body: JSON.stringify(form.value)
+    })
+
+    if (response.ok) {
+      showThanks.value = true
+      form.value = {
+        name: '',
+        email: '',
+        phone: '',
+        type: '',
+        notes: ''
+      }
+    } else {
+      console.error('Submission failed.')
+    }
+  } catch (err) {
+    console.error('Error:', err)
+  }
+}
+</script>
 
 <style lang="scss">
 .form-container {
