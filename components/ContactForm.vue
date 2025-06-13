@@ -136,6 +136,10 @@ const submitForm = async () => {
     margin-inline: auto;
   }
 
+  @media (orientation: landscape) {
+    transform: scale(0.8);
+  }
+
   .contact-form {
     color: var(--text-main);
     display: grid;

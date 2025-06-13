@@ -9,6 +9,9 @@ const sectionRefs = ref([])
 // Зберігаємо всі слухачі для очищення
 const listeners = []
 
+const isPortraitQuery = window.matchMedia('(orientation: portrait)')
+const getYOffset = () => isPortraitQuery.matches ? '45%' : '15%'
+
 onMounted(async () => {
   await nextTick()
 
@@ -18,7 +21,7 @@ onMounted(async () => {
 
     const onMouseEnter = () => {
       gsap.to(heading, {
-        y: '40%',
+        y: getYOffset(),
         duration: 1,
         ease: 'power1.inOut',
       })
@@ -51,7 +54,6 @@ onMounted(async () => {
         ease: 'power3.out',
       })
     }
-
     // Додаємо слухачі
     section.addEventListener('mouseenter', onMouseEnter)
     section.addEventListener('mouseleave', onMouseLeave)

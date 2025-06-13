@@ -56,7 +56,7 @@ function handleClickOutside() {
 
   .head {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 50vw 1fr;
     grid-template-areas:
       "desc  img"
       ;
@@ -68,18 +68,20 @@ function handleClickOutside() {
       font-size: 1.125rem;
       margin-bottom: 2rem;
       display: block;
-      max-width: 50ch;
+      max-width: 50vw;
       text-align: justify;
     }
 
     .faq-image {
       grid-area: img;
+      max-width: 30ch;
+      margin-inline: auto;
     }
   }
 
   .faq-items {
     margin-block: 2rem;
-    max-width: 50ch;
+    max-width: 50vw;
     align-self: flex-end;
     display: flex;
     flex-direction: column;

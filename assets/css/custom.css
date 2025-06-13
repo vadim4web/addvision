@@ -39,16 +39,32 @@ h2:not(.coop-heading) {
   padding-bottom: 3rem;
 }
 
-main section:not(:first-of-type, .services-section, .why-us-section) {
-  padding: 5rem 2rem;
+@media (orientation: portrait) {
+  :root {
+    --padding-inline: 2rem;
+  }
+}
+
+@media (orientation: landscape) {
+  :root {
+    --padding-inline: 8%;
+  }
+}
+
+main section:not(:first-of-type, .services-section, .why-us-section, .cases-section) {
+  padding: 5rem var(--padding-inline);
 }
 
 footer, .services-section {
-  padding: 2rem;
+  padding: 2rem var(--padding-inline);
 }
 
 .why-us-section {
-  padding: 5rem 2rem 0;
+  padding: 5rem var(--padding-inline) 0;
+}
+
+.cases-section {
+  padding: 0 var(--padding-inline);
 }
 
 main section:first-of-type {

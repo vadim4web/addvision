@@ -57,6 +57,7 @@ const services = computed(() => messages.value[locale.value]?.services || {})
     border-bottom: 0.125rem solid var(--white);
 
     .category {
+      padding-block: 1rem;
       border-top: 0.125rem solid var(--white);
       display: grid;
       align-items: center;
