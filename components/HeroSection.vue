@@ -32,16 +32,16 @@
           </svg>
       </div>
 
-      <p class="moto">
+      <p class="moto glow-on-hover">
         {{ $t("moto") }}
       </p>
 
       <aside class="we-do">
         <ul>
-          <li>{{ $t("we-do.sences") }}</li>
-          <li>{{ $t("we-do.texts") }}</li>
-          <li>{{ $t("we-do.visual") }}</li>
-          <li>{{ $t("we-do.dev") }}</li>
+          <li class="glow-on-hover">{{ $t("we-do.sences") }}</li>
+          <li class="glow-on-hover">{{ $t("we-do.texts") }}</li>
+          <li class="glow-on-hover">{{ $t("we-do.visual") }}</li>
+          <li class="glow-on-hover">{{ $t("we-do.dev") }}</li>
         </ul>
       </aside>
     </div>

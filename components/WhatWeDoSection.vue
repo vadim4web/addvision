@@ -9,7 +9,7 @@
     <WhatWeDoGrid />
 
     <div class="cta-container">
-      <em class="cta">
+      <em class="cta glow-on-hover">
         {{ $t('what.cta') }}
       </em>
     </div>

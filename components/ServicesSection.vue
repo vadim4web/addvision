@@ -2,11 +2,11 @@
   <section id="services" class="services-section" :aria-label="$t('aria.services')">
     <SectionHeading v-html="`<span class='heading-text'>${$t('services.title')}</span><span class='arrow'>${svgArrow()}</span>`"/>
 
-    <strong class="services-title">
+    <strong class="services-title glow-on-hover">
       {{ $t('services.heading') }}
     </strong>
 
-    <p class="services-description">
+    <p class="services-description glow-on-hover">
       {{ $t('services.description') }}
     </p>
 
@@ -14,7 +14,7 @@
       <div
         v-for="(category, index) in services?.categories || []"
         :key="index"
-        class="category"
+        class="category glow-on-hover"
       >
         <h3 class="font-yanone-light category-title">{{ category.title }}</h3>
         <ul class="category-description">

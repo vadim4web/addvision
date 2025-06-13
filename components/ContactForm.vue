@@ -73,7 +73,7 @@
         />
       </label>
 
-      <button type="submit">{{ $t('contacts.send') }}</button>
+      <button type="submit" class="glow-on-hover">{{ $t('contacts.send') }}</button>
     </form>
 
     <ThankYou v-if="showThanks" :set-show-thanks />

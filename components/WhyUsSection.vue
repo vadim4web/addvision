@@ -12,7 +12,7 @@
         <div class="coop-top-right-visual"></div>
       </div>
 
-      <em class="coop-values">
+      <em class="coop-values glow-on-hover">
         <span class="accent">{</span>add<span class="accent">}</span>VISION
         {{ $t('why.values') }}
       </em>

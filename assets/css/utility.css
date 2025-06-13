@@ -7,7 +7,8 @@
 }
 
 .glow-on-hover:hover {
-  filter: drop-shadow(0 0 0.1em var(--accent75)) contrast(1.1) brightness(1.1);
+  filter: drop-shadow(0 0 0.15rem var(--accent75)) contrast(1.15) brightness(1.15);
+  -webkit-filter: drop-shadow(0 0 0.15rem var(--accent75)) contrast(1.15) brightness(1.15);
 }
 
 .grid-four {
