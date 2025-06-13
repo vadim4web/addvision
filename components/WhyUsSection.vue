@@ -89,6 +89,7 @@
 
     &-values {
       grid-area: values;
+      text-align: justify;
 
       @media (orientation: portrait) {
         font-size: 1.2rem;

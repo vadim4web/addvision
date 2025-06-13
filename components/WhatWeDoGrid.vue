@@ -1,7 +1,5 @@
 <script setup>
 import { gsap } from 'gsap'
-import { onMounted, onUnmounted, ref, computed, nextTick } from 'vue'
-import { useI18n } from 'vue-i18n'
 
 const { locale, messages } = useI18n()
 const sections = computed(() => messages.value[locale.value]?.what?.sections || {})

@@ -100,6 +100,38 @@ export default defineI18nConfig(() => ({
       },
       services: {
         title: "НАШІ ПОСЛУГИ",
+        heading: "Ми є партнером з дизайну та технологій для цифрової ери",
+        description:
+          "Ми допомагаємо бізнесу впроваджувати інновації та залишатися актуальними для своїх клієнтів. Наші виняткові цифрові продукти, пропозиції, послуги та рішення для комунікації бренду від ідеї до продукту створюють успішні цифрові послуги для інноваційних стартапів та успішних компаній з модним UX/UI дизайном, розробкою фронтенду та бекенду.",
+        categories: {
+          web: {
+            title: "РОЗРОБКА САЙТІВ",
+            items: [
+              "Розробка сайтів та лендінгів",
+              "Розробка e-commerce",
+              "Розробка telegram mini-app & bot",
+              "Технічне супроводження",
+            ],
+          },
+          branding: {
+            title: "УПАКОВКА БІЗНЕСУ",
+            items: [
+              "Ідентичність бренду",
+              "Візуальна стратегія",
+              "Дизайн система",
+              "Motion, анімації та креативи",
+            ],
+          },
+          content: {
+            title: "КОНТЕНТ-МАРКЕТИНГ",
+            items: [
+              "Створення контенту",
+              "Контент-маркетинг",
+              "Пошукова оптимізація (SEO)",
+              "Social Media (SMM)",
+            ],
+          },
+        },
       },
       testimonials: {
         title: "ВІДГУКИ <span class='accent'>КЛІЄНТІВ</span>",
@@ -228,6 +260,38 @@ export default defineI18nConfig(() => ({
       },
       services: {
         title: "НАШИ УСЛУГИ",
+        heading: "Мы — ваш партнер по дизайну и технологиям в цифровую эпоху",
+        description:
+          "Мы помогаем бизнесу внедрять инновации и оставаться актуальными для своих клиентов. От идеи до продукта, наши цифровые продукты, услуги и решения в области коммуникации бренда создают успешные цифровые сервисы для инновационных стартапов и стабильных компаний — с современным UX/UI-дизайном, фронтенд и бэкенд-разработкой.",
+        categories: {
+          web: {
+            title: "РАЗРАБОТКА САЙТОВ",
+            items: [
+              "Разработка сайтов и лендингов",
+              "Разработка e-commerce",
+              "Разработка telegram mini-app и ботов",
+              "Техническое сопровождение",
+            ],
+          },
+          branding: {
+            title: "УПАКОВКА БИЗНЕСА",
+            items: [
+              "Айдентика бренда",
+              "Визуальная стратегия",
+              "Дизайн-система",
+              "Motion, анимации и креативы",
+            ],
+          },
+          content: {
+            title: "КОНТЕНТ-МАРКЕТИНГ",
+            items: [
+              "Создание контента",
+              "Контент-маркетинг",
+              "Поисковая оптимизация (SEO)",
+              "Социальные сети (SMM)",
+            ],
+          },
+        },
       },
       testimonials: {
         title: "ОТЗЫВЫ <span class='accent'>КЛИЕНТОВ</span>",
@@ -356,6 +420,38 @@ export default defineI18nConfig(() => ({
       },
       services: {
         title: "OUR SERVICES",
+        heading: "We are your design and tech partner for the digital age",
+        description:
+          "We help businesses innovate and stay relevant to their customers. From idea to product, our exceptional digital products, services, branding communication, and solutions create successful digital experiences for innovative startups and established companies — with modern UX/UI design, frontend, and backend development.",
+        categories: {
+          web: {
+            title: "WEB DEVELOPMENT",
+            items: [
+              "Website and landing page development",
+              "E-commerce development",
+              "Telegram mini-app & bot development",
+              "Technical support",
+            ],
+          },
+          branding: {
+            title: "BUSINESS BRANDING",
+            items: [
+              "Brand identity",
+              "Visual strategy",
+              "Design system",
+              "Motion, animations, and creatives",
+            ],
+          },
+          content: {
+            title: "CONTENT MARKETING",
+            items: [
+              "Content creation",
+              "Content marketing",
+              "Search engine optimization (SEO)",
+              "Social Media (SMM)",
+            ],
+          },
+        },
       },
       testimonials: {
         title: "CLIENT <span class='accent'>TESTI<wbr>MONIALS</span>",
