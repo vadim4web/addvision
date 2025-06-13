@@ -228,7 +228,7 @@ onMounted(() => {
       }
 
       li {
-        transition: transform 1s ease;
+        transition: transform 1s ease, filter 4s ease;
         will-change: transform;
 
         &:hover {

@@ -27,14 +27,11 @@ const stats = [
 .stats-grid {}
 
 .stat-box {
-  transition: transform 0.3s ease;
-
   &:hover {
     transform: translateY(-2.5%) scale(1.05);
   }
 
   .label {
-    color: var(--text-main80);
     font-size: 1rem;
     @media (min-width: 720px) and (max-width: 1279px) {
       font-size: 1.25rem;
