@@ -39,8 +39,16 @@ h2:not(.coop-heading) {
   padding-bottom: 3rem;
 }
 
-main section:not(:first-of-type), footer {
+main section:not(:first-of-type, .services-section, .why-us-section) {
+  padding: 5rem 2rem;
+}
+
+footer, .services-section {
   padding: 2rem;
+}
+
+.why-us-section {
+  padding: 5rem 2rem 0;
 }
 
 main section:first-of-type {

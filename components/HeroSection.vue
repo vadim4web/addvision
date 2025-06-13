@@ -154,7 +154,7 @@ onMounted(() => {
     }
 
     @media (orientation: landscape) and (aspect-ratio <= 2.75) {
-      grid-template-rows: 1fr 1.5fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
     }
 
     .brand {
@@ -192,7 +192,7 @@ onMounted(() => {
     }
 
     .moto {
-      top: 1.5rem;
+      top: 0;
       grid-area: moto;
       font-size: 3rem;
       line-height: 3rem;

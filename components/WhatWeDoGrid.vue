@@ -18,7 +18,7 @@ onMounted(async () => {
 
     const onMouseEnter = () => {
       gsap.to(heading, {
-        y: '50%',
+        y: '40%',
         duration: 1,
         ease: 'power1.inOut',
       })

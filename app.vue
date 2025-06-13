@@ -86,6 +86,7 @@ useHead({
   --text-main50: #353e4380;             /* Основний текст (gun-metal) */
   --text-main33: #353e4354;             /* Основний текст (gun-metal) */
   --text-main25: #353e4340;             /* Основний текст (gun-metal) */
+  /* Головний акцент (blue-shade) */
   --accent: #59cbe8;                /* Головний акцент (blue-shade) */
   --accent75: #59cbe8bf;                /* Головний акцент (blue-shade) 33% */
   --accent66: #59cbe8a8;                /* Головний акцент (blue-shade) 66% */

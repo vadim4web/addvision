@@ -138,6 +138,35 @@ export default defineI18nConfig(() => ({
       },
       faq: {
         title: "ЧАСТІ ПИТАННЯ",
+        description:
+          "Ми зібрали відповіді на найпоширеніші запитання щодо нашого процесу, термінів та співпраці з клієнтами. Кожен проєкт для нас — індивідуальний, і багато чого залежить від конкретних цілей та задач. У цьому розділі зібрано типові відповіді, засновані на нашому досвіді. Якщо у вас залишаться питання — звертайтесь. Ми завжди відкриті до діалогу і з радістю обговоримо саме ваш проєкт.",
+        items: [
+          {
+            question: "Як відбувається оплата?",
+            answer:
+              "Зазвичай ми беремо 50% передплати перед початком проєкту, а решту — після завершення.",
+          },
+          {
+            question: "Скільки триває розробка сайту?",
+            answer:
+              "Залежно від складності, розробка займає від 2 до 6 тижнів.",
+          },
+          {
+            question: "Чи надаєте ви підтримку після запуску?",
+            answer:
+              "Так, ми надаємо безкоштовну підтримку протягом 30 днів після запуску. За потреби можливе розширене обслуговування.",
+          },
+          {
+            question: "Чи можна буде редагувати сайт після завершення?",
+            answer:
+              "Звісно. Ми пропонуємо гнучкі пакети підтримки або навчаємо вашу команду працювати з контентом.",
+          },
+          {
+            question: "Ви займаєтесь лише сайтами чи й брендингом?",
+            answer:
+              "Ми також розробляємо айдентику бренду, дизайн-системи та креативні візуальні матеріали.",
+          },
+        ],
       },
       contacts: {
         title: "КОНТАКТИ",
@@ -298,6 +327,35 @@ export default defineI18nConfig(() => ({
       },
       faq: {
         title: "ЧАСТЫЕ ВОПРОСЫ",
+        description:
+          "Мы собрали ответы на самые распространённые вопросы о нашем процессе, сроках и сотрудничестве с клиентами. Каждый проект для нас уникален, и многое зависит от конкретных задач, целей и ожиданий. В этом разделе вы найдёте типовые ответы, основанные на нашей практике. Если у вас останутся вопросы — не стесняйтесь обращаться. Мы всегда открыты к диалогу и с удовольствием обсудим детали именно вашего проекта.",
+        items: [
+          {
+            question: "Как происходит оплата?",
+            answer:
+              "Обычно мы берем 50% предоплаты перед началом проекта, оставшиеся 50% — после завершения.",
+          },
+          {
+            question: "Сколько длится разработка сайта?",
+            answer:
+              "В зависимости от сложности, разработка занимает от 2 до 6 недель.",
+          },
+          {
+            question: "Предоставляете ли вы поддержку после запуска?",
+            answer:
+              "Да, мы предоставляем 30 дней бесплатной поддержки после запуска. Дальнейшее сопровождение — по запросу.",
+          },
+          {
+            question: "Можно ли вносить изменения после завершения проекта?",
+            answer:
+              "Конечно. Мы предлагаем гибкие планы поддержки или обучим вашу команду вносить изменения самостоятельно.",
+          },
+          {
+            question: "Вы занимаетесь только сайтами или еще и брендингом?",
+            answer:
+              "Мы также создаем айдентику бренда, дизайн-системы и креативные визуальные материалы.",
+          },
+        ],
       },
       contacts: {
         title: "КОНТАКТЫ",
@@ -458,6 +516,35 @@ export default defineI18nConfig(() => ({
       },
       faq: {
         title: "FREQUENTLY<br>ASKED <wbr>QUESTIONS",
+        description:
+          "We’ve collected answers to the most common questions about our process, timelines, and working with clients. Every project is unique to us, and much depends on your specific goals and needs. Here you’ll find general answers based on our experience. If you still have questions — feel free to reach out. We’re always open to discussion and happy to tailor things to your project.",
+        items: [
+          {
+            question: "How do you accept payments?",
+            answer:
+              "We usually require a 50% upfront payment, and the remaining 50% is due upon project completion.",
+          },
+          {
+            question: "How long does website development take?",
+            answer:
+              "Depending on the scope, projects typically take between 2 and 6 weeks.",
+          },
+          {
+            question: "Do you provide support after launch?",
+            answer:
+              "Yes, we offer 30 days of free post-launch support. Extended maintenance is available on request.",
+          },
+          {
+            question: "Can I make changes after the website is done?",
+            answer:
+              "Absolutely. We offer flexible support plans or can train your team to make content updates.",
+          },
+          {
+            question: "Do you help with branding or just websites?",
+            answer:
+              "We also create brand identities, design systems, and marketing visuals, not just websites.",
+          },
+        ],
       },
       contacts: {
         title: "CONTACTS",
