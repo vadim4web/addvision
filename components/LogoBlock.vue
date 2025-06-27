@@ -83,7 +83,7 @@
     }
 
     &:hover::before {
-      width: 12ch;
+      width: 7.5em;
     }
   }
 
@@ -109,14 +109,14 @@
   }
 
   &-brand {
-    font-size: 1.55rem;
+    font-size: 1.75rem;
     font-weight: 600;
     position: relative;
     left: -0.1rem;
     top: -0.1em;
 
-    @media (orientation: portrait) and (max-width: 55rem) {
-      font-size: 1.2rem;
+    @media (orientation: portrait) , (max-width: 55rem) {
+      font-size: 1.33rem;
     }
 
     em {
@@ -148,17 +148,17 @@
   }
 }
 
-[lang="en"] .logo-subline { letter-spacing: 0.7ch }
-[lang="ru"] .logo-subline { letter-spacing: 0.3ch }
-[lang="uk"] .logo-subline { letter-spacing: 0.6ch }
+[lang="uk"] .logo-subline { letter-spacing: 0.45em }
+[lang="ru"] .logo-subline { letter-spacing: 0.266em }
+[lang="en"] .logo-subline { letter-spacing: 0.525em }
 
-@media (orientation: portrait) and (max-width: 55rem) {
-  [lang="en"] .logo-subline { letter-spacing: 0.3ch }
-  [lang="ru"] .logo-subline { letter-spacing: 0 }
-  [lang="uk"] .logo-subline { letter-spacing: 0.25ch }
+@media (orientation: portrait) , (max-width: 55rem) {
+  [lang="uk"] .logo-subline { letter-spacing: 0.2em }
+  [lang="ru"] .logo-subline { letter-spacing: 0.05em }
+  [lang="en"] .logo-subline { letter-spacing: 0.25em }
 
   .logo-text:hover::before {
-    width: 7.5rem;
+    width: 5.75em;
   }
 }
 </style>
