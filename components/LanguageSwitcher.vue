@@ -31,10 +31,16 @@ const languages = [
   justify-content: center;
   gap: 0.25rem;
   z-index: 1;
-  
+
   @media (orientation: portrait) , (max-width: 55rem) {
     justify-content: space-around;
     max-width: 10rem;
+  }
+
+  @media (orientation: portrait) and (max-width: 55rem) {
+    .language-link:before {
+      top: 0;
+    }
   }
 }
 
@@ -74,7 +80,7 @@ const languages = [
   &::before {
     content: attr(data-text);
     color: var(--accent75);
-    top: -0.1rem;
+    top: -0.1vmax;
     left: 0;
     width: 0;
     height: 100%;

@@ -113,12 +113,12 @@ cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' wid
 
 @media (orientation: portrait) {
   :root {
-    font-size: max(1.15vh, 1.9vw);
+    font-size: max(1.1vh, 1.8vw);
   }
 }
 @media (orientation: landscape) {
   :root {
-    font-size: max(1.9vh, 1.15vw);
+    font-size: max(1.8vh, 1.1vw);
   }
 }
 

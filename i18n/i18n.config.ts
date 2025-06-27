@@ -190,6 +190,7 @@ export default defineI18nConfig(() => ({
         thank_you_title: "Дякуємо!",
         thank_you_message: "Ваше повідомлення було успішно надіслано.",
       },
+      backToTop: "Повернутися нагору",
       rights: "Усі права захищено.",
     },
     ru: {
@@ -379,6 +380,7 @@ export default defineI18nConfig(() => ({
         thank_you_title: "Спасибо!",
         thank_you_message: "Ваше сообщение было успешно отправлено.",
       },
+      backToTop: "Вернуться наверх",
       rights: "Все права защищены.",
     },
     en: {
@@ -568,6 +570,7 @@ export default defineI18nConfig(() => ({
         thank_you_title: "Thank you!",
         thank_you_message: "Your message has been successfully sent.",
       },
+      backToTop: "Back to top",
       rights: "All rights reserved.",
     },
   },

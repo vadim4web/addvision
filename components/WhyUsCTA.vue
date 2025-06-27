@@ -64,7 +64,10 @@ onMounted(() => {
 }
 
 .why-cta-container {
+  overflow: hidden;
   display: grid;
+  position: relative;
+  left: -2rem;
   width: 100%;
   aspect-ratio: 3;
   grid-template-areas:

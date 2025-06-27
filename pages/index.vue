@@ -1,6 +1,7 @@
 <template>
   <main>
     <HeroSection />
+    <BackToTheTop />
     <WhatWeDoSection />
     <WhyUsSection />
     <CasesSection />

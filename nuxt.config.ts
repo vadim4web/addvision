@@ -15,7 +15,10 @@ export default defineNuxtConfig({
   },
   ssr: false, // 🔁 Важливо для статичного сайту на GitHub Pages!
 
-  plugins: ['~/plugins/v-click-outside.ts'],
+  plugins: [
+    '~/plugins/v-click-outside.ts',
+    '~/plugins/visibility-state.ts',
+  ],
 
   css: [
     '~/assets/css/reset.css',

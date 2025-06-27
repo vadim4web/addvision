@@ -1,12 +1,17 @@
 <template>
-  <header class="header-section">
+  <header id="top" ref="headerRef" class="header-section">
     <LogoBlock />
     <NavigationMenu />
     <LanguageSwitcher />
   </header>
 </template>
 
-<script setup></script>
+<script setup>
+const headerRef = ref(null)
+const headerVisible = useHeaderVisibility()
+
+useObserveVisibility(headerRef, visible => (headerVisible.value = visible))
+</script>
 
 <style lang="scss">
 .header-section {

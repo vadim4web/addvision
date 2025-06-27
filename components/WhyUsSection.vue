@@ -32,6 +32,11 @@
 .why-us-section {
   background: var(--bg);
 
+  .coop,
+  .stats-section {
+    padding-inline: var(--padding-inline);
+  }
+
   .coop {
     display: grid;
     grid-template-columns: repeat(4, 1fr);

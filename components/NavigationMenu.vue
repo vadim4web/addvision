@@ -5,7 +5,7 @@
     class="nav"
   >
     <!-- Navigation list -->
-    <ul class="nav-list" :class="{ open: isOpen }">
+    <ul ref="menuRef" class="nav-list" :class="{ open: isOpen }">
       <li>
         <a
           href="#cases"
@@ -50,9 +50,21 @@
           aria-label="Toggle navigation"
           @click="toggleMenu"
         >
-          <svg width="60" height="100" viewBox="0 0 100 100">
-            <!-- Один V-подібний трикутник ABC -->
-            <path d="M0 0 L50 86.6 L100 0" stroke="var(--bg)" stroke-width="12" fill="none" />
+          <svg width="60" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <filter id="white-glow" x="-50%" y="-50%" width="200%" height="200%">
+                <feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="var(--white)" flood-opacity="1" />
+              </filter>
+            </defs>
+
+            <!-- Triangle path with filter applied -->
+            <path
+              d="M0 0 L50 86.6 L100 0"
+              stroke="var(--text-main)"
+              stroke-width="12"
+              fill="none"
+              filter="url(#white-glow)"
+            />
           </svg>
         </button>
       </li>
@@ -62,10 +74,19 @@
 </template>
 
 <script setup>
+const menuVisible = useMenuVisibility()
+
 const isOpen = ref(false)
+const menuRef = ref(null)
 
 const toggleMenu = () => isOpen.value = !isOpen.value
 const closeMenu = () => isOpen.value = false
+
+useObserveVisibility(menuRef, visible => {
+  (menuVisible.value = visible)
+
+  if (!menuVisible.value && isOpen.value) closeMenu()
+})
 </script>
 
 <style lang="scss" scoped>
@@ -83,11 +104,21 @@ const closeMenu = () => isOpen.value = false
   cursor: pointer;
   padding: 0.25em;
   grid-area: toggler;
+
+  svg {
+    filter: contrast(1) drop-shadow(0 0 0.2em var(--white));
+    transition: transform 1s;
+  }
+
+  &:hover svg {
+    transform: scale(0.6) translateY(5%) rotateX(180deg);
+    filter: contrast(1.5) drop-shadow(0 0 0.33em var(--white));
+  }
 }
 
 /* Desktop styles */
 .nav-list {
-  transition: transform 1s ease, background 1s ease-in;
+  transition: all 1s ease;
   list-style: none;
   display: flex;
   align-items: center;
@@ -105,7 +136,7 @@ const closeMenu = () => isOpen.value = false
     &::before,
     &::after {
       position: absolute;
-      filter: drop-shadow(0 0 0.25em var(--bg66));
+      filter: drop-shadow(0 0 0.25em var(--white));
     }
 
     &:not(:hover, :focus)::after,
@@ -121,10 +152,10 @@ const closeMenu = () => isOpen.value = false
       text-decoration: underline var(--text-main) 0.15em;
       text-underline-offset: 25%;
       text-underline-offset: 0.25em;
-      top: -0.1rem;
       left: 0;
+      top: -0.1vmax;
       height: 100%;
-      font-weight: bolder;
+      font-weight: bold;
       padding: inherit;
       text-wrap: nowrap;
       color: var(--text-main75);
@@ -159,7 +190,7 @@ const closeMenu = () => isOpen.value = false
       transform: scale(0.5) translateY(5%) rotateX(180deg);
 
       path {
-        mix-blend-mode: color-burn;
+        stroke: var(--text-main);
         transition: stroke 1s, stroke-width 1s;
       }
     }
@@ -167,7 +198,7 @@ const closeMenu = () => isOpen.value = false
 
   .nav-list {
     position: absolute;
-    width: calc(100% - 3rem);
+    width: calc(100%);
     overflow: hidden;
     display: grid;
     grid-template-rows: 6.6rem repeat(5, 1fr);
@@ -182,10 +213,12 @@ const closeMenu = () => isOpen.value = false
 
     justify-items: center;
     top: 0;
-    left: -3rem;
+    left: 0;
     right: 0;
     transform: translate(0, calc(6.6rem - 100%));
     padding: 0 1rem;
+
+    box-shadow: inset 0 0 0 0 var(--accent50);
 
     li {
       width: 100vw;
@@ -209,6 +242,10 @@ const closeMenu = () => isOpen.value = false
       a {
         text-align: center;
         display: block;
+
+        &:before {
+          top: 0;
+        }
       }
     }
 
@@ -224,18 +261,17 @@ const closeMenu = () => isOpen.value = false
     transform: translate(0, 0);
     background: repeating-linear-gradient(var(--bg50), var(--accent50));
     border-radius: 0  0 1rem 1rem;
+    box-shadow: inset 0 0 1rem 0.25rem var(--accent50);
+    font-weight: bolder;
+    text-shadow: 0 0 0.2em var(--white);
+    filter: contrast(1.2);
 
     li {
       transform: rotate(0deg);
     }
 
-
     & .burger {
-      transition: filter 1s ease;
-      filter: contrast(1.5) brightness(1.5) drop-shadow(0 0 0.25em var(--accent));
-
       & svg path {
-        stroke: var(--accent);
         stroke-width: 12px;
       }
     }
