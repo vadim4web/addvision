@@ -187,6 +187,18 @@
   color: var(--accent);
 }
 
+.accent-light {
+  color: var(--accent-light);
+}
+
+.accent-cyan {
+  color: var(--accent-cyan);
+}
+
+.accent-electric {
+  color: var(--accent-electric);
+}
+
 .brown-deep {
   color: var(--brown-deep);
 }

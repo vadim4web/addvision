@@ -46,7 +46,7 @@
         />
       </label>
 
-      <label>
+      <!-- <label>
         {{ $t('contacts.type') }} *
         <select
           v-model="form.type"
@@ -60,6 +60,15 @@
           <option value="support">{{ $t('contacts.type_support') }}</option>
           <option value="feedback">{{ $t('contacts.type_feedback') }}</option>
         </select>
+      </label> -->
+
+      <label>
+        {{ $t('contacts.type') }} *
+        <CustomSelect
+          v-model="form.type"
+          :options="options"
+          :placeholder="$t('contacts.choose')"
+        />
       </label>
 
       <label>
@@ -73,7 +82,7 @@
         />
       </label>
 
-      <button type="submit" class="glow-on-hover">{{ $t('contacts.send') }}</button>
+      <button type="submit" class="form-submit glow-on-hover">{{ $t('contacts.send') }}</button>
     </form>
 
     <ThankYou v-if="showThanks" :set-show-thanks />
@@ -81,6 +90,8 @@
 </template>
 
 <script setup>
+const { t } = useI18n()
+
 const form = ref({
   name: '',
   email: '',
@@ -88,6 +99,13 @@ const form = ref({
   type: '',
   notes: ''
 })
+
+
+const options = computed(() => [
+  { label: t('contacts.type_general'), value: 'general' },
+  { label: t('contacts.type_support'), value: 'support' },
+  { label: t('contacts.type_feedback'), value: 'feedback' }
+])
 
 const showThanks = ref(false)
 const setShowThanks = (value) => showThanks.value = value
@@ -126,6 +144,7 @@ const submitForm = async () => {
   display: grid;
   grid-template-rows: 1fr 6fr;
   padding: 3.75rem;
+  color: var(--bg);
 
   h3 {
     font-size: 2.25rem;
@@ -141,7 +160,6 @@ const submitForm = async () => {
   }
 
   .contact-form {
-    color: var(--text-main);
     display: grid;
     grid-template-rows: repeat(5, 1fr);
     gap: 1.5rem;
@@ -159,12 +177,12 @@ const submitForm = async () => {
       grid-template-columns: 50% 50%;
       align-items: center;
 
-      border-bottom: 1px solid var(--text-main);
+      border-bottom: 1px solid var(--bg);
     }
 
-    button {
+    button.form-submit {
       background: var(--accent);
-      color: var(--white);
+      color: var(--bg);
       width: max-content;
       text-transform: uppercase;
       justify-self: center;

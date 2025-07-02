@@ -15,7 +15,6 @@ useObserveVisibility(headerRef, visible => (headerVisible.value = visible))
 
 <style lang="scss">
 .header-section {
-  color: var(--text-main);
   height: 6.6rem;
   display: grid;
   max-width: 100%;

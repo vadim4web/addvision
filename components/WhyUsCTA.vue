@@ -20,8 +20,8 @@ onMounted(() => {
     const relX = e.clientX - rect.left
     const relY = e.clientY - rect.top
 
-    const x = (relX - rect.width / 2) * 0.5
-    const y = (relY - rect.height / 2) * 0.75
+    const x = (relX - rect.width / 2) * 0.34
+    const y = (relY - rect.height / 2) * 0.8
 
     gsap.to(cta.value, {
       x,
@@ -64,12 +64,12 @@ onMounted(() => {
 }
 
 .why-cta-container {
-  overflow: hidden;
+  overflow-x: hidden;
   display: grid;
   position: relative;
-  left: -2rem;
+  left: 0;
   width: 100%;
-  aspect-ratio: 3;
+  aspect-ratio: 2;
   grid-template-areas:
     ".     .     .     ."
     ".     link  link  ."
@@ -95,8 +95,13 @@ onMounted(() => {
     color: var(--white);
     background: var(--accent);
     border-radius: 3rem;
-    position: relative;
-    z-index: 1;
+    position: absolute;
+    width: calc(100% - 10rem);
+    height: calc(50% - 5rem);
+    top: 50%;
+    left: 5rem;
+    transform: translateY(-50%);
+    z-index: 2;
     will-change: transform;
     transition: transform 0.5s ease;
 

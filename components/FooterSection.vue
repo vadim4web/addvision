@@ -22,7 +22,7 @@ const { setShowThanks } = defineProps({
 <style lang="scss">
 .contacts-section {
   background: var(--accent);
-  color: var(--white);
+  color: var(--bg);
   font-weight: bolder;
 
   display: grid;
@@ -46,6 +46,7 @@ const { setShowThanks } = defineProps({
   .heading {
     grid-area: heading;
   }
+
   .form-container {
     grid-area: form;
     background: var(--white);
@@ -53,11 +54,6 @@ const { setShowThanks } = defineProps({
     @media (orientation: portrait) {
       margin-bottom: 4rem;
     }
-
-    h3 {
-      color: var(--text-main);
-    }
-
   }
   .copy {
     grid-area: copyright;

@@ -30,6 +30,9 @@ const menuVisible = useMenuVisibility()
   bottom: 0;
   right: 0;
 
+  mix-blend-mode: difference;
+  mix-blend-mode: exclusion;
+
   a {
     padding-right: 1rem;
     display: flex;

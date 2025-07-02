@@ -72,28 +72,30 @@ useHead({
   --black: #000000;
 
   /* === Основна палітра === */
-  --bg: #f1f6fc;                    /* Основний фон */
-  --bg80: #f1f6fccc;                    /* Основний фон 100% */
-  --bg75: #f1f6fcbf;                    /* Основний фон 75% */
-  --bg66: #f1f6fca8;                    /* Основний фон 66% */
-  --bg50: #f1f6fc80;                    /* Основний фон 50% */
-  --bg33: #f1f6fc54;                    /* Основний фон 33% */
-  --bg25: #f1f6fc40;                    /* Основний фон 25% */
-  --text-main: #040404;             /* Основний текст (gun-metal) */
-  --text-main: #353e43;             /* Основний текст (gun-metal) */
-  --text-main75: #353e43bf;             /* Основний текст (gun-metal) */
-  --text-main66: #353e43a8;             /* Основний текст (gun-metal) */
-  --text-main50: #353e4380;             /* Основний текст (gun-metal) */
-  --text-main33: #353e4354;             /* Основний текст (gun-metal) */
-  --text-main25: #353e4340;             /* Основний текст (gun-metal) */
+  /* --bg: #f1f6fc; */                    /* Основний фон 100% */
+  --bg: #0e0903;                    /* Основний фон */
+  --bg80: #0e0903cc;                    /* Основний фон 100% */
+  --bg75: #0e0903bf;                    /* Основний фон 75% */
+  --bg66: #0e0903a8;                    /* Основний фон 66% */
+  --bg50: #0e090380;                    /* Основний фон 50% */
+  --bg33: #0e090354;                    /* Основний фон 33% */
+  --bg25: #0e090340;                    /* Основний фон 25% */
+  /* --text-main: #040404;
+  --text-main: #353e43;    */          /* Основний текст (gun-metal) */
+  --text-main: #f1f6fc;
+  --text-main75: #f1f6fcbf;
+  --text-main66: #f1f6fca8;
+  --text-main50: #f1f6fc80;
+  --text-main33: #f1f6fc54;
+  --text-main25: #f1f6fc40;
   /* Головний акцент (blue-shade) */
-  --accent: #59cbe8;                /* Головний акцент (blue-shade) */
-  --accent75: #59cbe8bf;                /* Головний акцент (blue-shade) 33% */
-  --accent66: #59cbe8a8;                /* Головний акцент (blue-shade) 66% */
-  --accent50: #59cbe880;                /* Головний акцент (blue-shade) 33% */
-  --accent33: #59cbe854;                /* Головний акцент (blue-shade) 33% */
-  --accent25: #59cbe840;                /* Головний акцент (blue-shade) 25% */
-  --accent10: #59cbe80b;                /* Головний акцент (blue-shade) 25% */
+  --accent: #00ffff;                    /* Головний акцент (blue-shade) */
+  --accent75: #00ffffbf;                /* Головний акцент (blue-shade) 33% */
+  --accent66: #00ffffa8;                /* Головний акцент (blue-shade) 66% */
+  --accent50: #00ffff80;                /* Головний акцент (blue-shade) 33% */
+  --accent33: #00ffff54;                /* Головний акцент (blue-shade) 33% */
+  --accent25: #00ffff40;                /* Головний акцент (blue-shade) 25% */
+  --accent10: #00ffff0b;                /* Головний акцент (blue-shade) 25% */
 
   /* === Додаткові акценти === */
   --accent-light: #68e2fa;          /* Світлий акцент (electric-blue-nv) */
@@ -104,21 +106,22 @@ useHead({
   --gray: #d9d9d9;                  /* Світло-сірий, межі, бордери */
   --powder-blue: #b6d0e2;           /* Пудровий синій, фони секцій */
   --brown-deep: #003539;            /* Темно-коричневий (може бути для контрасту, футера) */
+  --brown-deep: #00AEB8;            /* Темно-коричневий (може бути для контрасту, футера) */
 
-   /* cursor: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='10' fill='transparent' stroke='%2359cbe880' stroke-width='4'/%3E%3Ccircle cx='24' cy='24' r='10' fill='none' stroke='%23353e4380' stroke-width='1'/%3E%3Ccircle cx='24' cy='24' r='16' fill='none' stroke='%2359cbe880' stroke-width='10'/%3E%3Ccircle cx='24' cy='24' r='20' fill='transparent' stroke='%2359cbe880' stroke-width='4'/%3E%3Ccircle cx='24' cy='24' r='20' fill='none' stroke='%23353e4380' stroke-width='1'/%3E%3C/svg%3E") 24 24, auto; */
+   /* cursor: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='10' fill='transparent' stroke='%2300ffff80' stroke-width='4'/%3E%3Ccircle cx='24' cy='24' r='10' fill='none' stroke='%23353e4380' stroke-width='1'/%3E%3Ccircle cx='24' cy='24' r='16' fill='none' stroke='%2300ffff80' stroke-width='10'/%3E%3Ccircle cx='24' cy='24' r='20' fill='transparent' stroke='%2300ffff80' stroke-width='4'/%3E%3Ccircle cx='24' cy='24' r='20' fill='none' stroke='%23353e4380' stroke-width='1'/%3E%3C/svg%3E") 24 24, auto; */
 
-cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><defs><filter id='shadow' x='-50%' y='-50%' width='400%' height='400%'><feDropShadow dx='0' dy='0' stdDeviation='5' flood-color='%2359cbe8' flood-opacity='1'/></filter></defs><circle cx='32' cy='32' r='20' fill='%2359cbe880' stroke='%2359cbe840' stroke-width='1' filter='url(%23shadow)'/><circle cx='32' cy='32' r='20' fill='%2359cbe880' stroke='%2359cbe840' stroke-width='1'/><circle cx='32' cy='32' r='12' fill='transparent'/></svg>") 32 32, auto;
+cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><defs><filter id='shadow' x='-50%' y='-50%' width='400%' height='400%'><feDropShadow dx='0' dy='0' stdDeviation='5' flood-color='%2300ffff' flood-opacity='1'/></filter></defs><circle cx='32' cy='32' r='20' fill='%2300ffff80' stroke='%2300ffff40' stroke-width='1' filter='url(%23shadow)'/><circle cx='32' cy='32' r='20' fill='%2300ffff80' stroke='%2300ffff40' stroke-width='1'/><circle cx='32' cy='32' r='12' fill='transparent'/></svg>") 32 32, auto;
 
 }
 
 @media (orientation: portrait) {
   :root {
-    font-size: max(1.1vh, 1.8vw);
+    font-size: clamp(1.15vh, 18px, 1.9vw);
   }
 }
 @media (orientation: landscape) {
   :root {
-    font-size: max(1.8vh, 1.1vw);
+    font-size: clamp(1.8vh, 17px, 1.1vw);
   }
 }
 

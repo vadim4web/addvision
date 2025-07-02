@@ -130,6 +130,7 @@ onMounted(() => {
 
 <style lang="scss">
 .hero-section {
+  color: var(--bg);
   position: relative;
   height: fit-content;
   overflow: hidden;

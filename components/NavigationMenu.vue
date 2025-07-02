@@ -123,20 +123,19 @@ useObserveVisibility(menuRef, visible => {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-main);
   gap: 0.5rem;
   padding: 0;
   margin: 0 auto;
 
   li a {
     text-decoration: none;
-    color: var(--text-main);
+    color: var(--bg);
     position: relative;
 
     &::before,
     &::after {
       position: absolute;
-      filter: drop-shadow(0 0 0.25em var(--white));
+      filter: drop-shadow(0 0 0.25em var(--bg25));
     }
 
     &:not(:hover, :focus)::after,
@@ -149,16 +148,16 @@ useObserveVisibility(menuRef, visible => {
     &::before {
       transition: all 1s ease;
       content: attr(data-text);
-      text-decoration: underline var(--text-main) 0.15em;
+      text-decoration: underline var(--bg) 0.15em;
       text-underline-offset: 25%;
       text-underline-offset: 0.25em;
       left: 0;
-      top: -0.1vmax;
+      top: -0.125vmax;
       height: 100%;
       font-weight: bold;
       padding: inherit;
       text-wrap: nowrap;
-      color: var(--text-main75);
+      color: var(--bg75);
       overflow: hidden;
     }
 
@@ -167,7 +166,7 @@ useObserveVisibility(menuRef, visible => {
     &:focus::before {
       width: 100%;
       opacity: 1;
-      text-shadow: 0 0 0.05em var(--text-main50);
+      text-shadow: 0 0 0.05em var(--bg50);
     }
   }
 }

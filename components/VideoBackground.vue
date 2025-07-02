@@ -1,6 +1,17 @@
 <template>
-  <div class="video-container">
-    <video autoplay muted loop playsinline class="hero-video">
+  <div class="video-container" aria-hidden="true">
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      class="hero-video"
+      tabindex="-1"
+      aria-hidden="true"
+    >
+      <!-- Optional: <track> with no captions to explicitly state "no captions" -->
+      <track kind="captions" src="" srclang="en" label="No audio content">
+
       <source src="/video/add_vision_3840x2160.mp4" type="video/mp4" media="(min-width: 1920px)">
       <source src="/video/add_vision_1920x1080.mp4" type="video/mp4" media="(min-width: 1600px)">
       <source src="/video/add_vision_1600x900.mp4" type="video/mp4" media="(min-width: 1280px)">

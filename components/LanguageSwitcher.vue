@@ -80,7 +80,7 @@ const languages = [
   &::before {
     content: attr(data-text);
     color: var(--accent75);
-    top: -0.1vmax;
+    top: -0.125vmax;
     left: 0;
     width: 0;
     height: 100%;
