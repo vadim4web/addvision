@@ -21,7 +21,7 @@ onMounted(() => {
     const relY = e.clientY - rect.top
 
     const x = (relX - rect.width / 2) * 0.34
-    const y = (relY - rect.height / 2) * 0.8
+    const y = (relY - rect.height / 2) * 0.72
 
     gsap.to(cta.value, {
       x,
@@ -69,7 +69,6 @@ onMounted(() => {
   position: relative;
   left: 0;
   width: 100%;
-  aspect-ratio: 2;
   grid-template-areas:
     ".     .     .     ."
     ".     link  link  ."
@@ -78,11 +77,13 @@ onMounted(() => {
   @media (orientation: portrait) {
     grid-template-columns: 5rem 1fr 1fr 5rem;
     grid-template-rows: 5rem 1fr 5rem;
+    aspect-ratio: 2;
   }
 
   @media (orientation: landscape) {
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: 5rem 10rem 5rem;
+    aspect-ratio: 4;
   }
 
   .why-cta {
@@ -104,6 +105,14 @@ onMounted(() => {
     z-index: 2;
     will-change: transform;
     transition: transform 0.5s ease;
+
+    @media (orientation: portrait) {
+      height: calc(50% - 5rem);
+    }
+
+    @media (orientation: landscape) {
+      height: 3.5rem;
+    }
 
     @media (max-width: 719px) and (aspect-ratio < 0.4) {
       font-size: 1.3rem;
