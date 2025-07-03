@@ -35,7 +35,7 @@
 
 /* Для Edge (Chromium) та інших браузерів, що підтримують WebKit-стилі — буде працювати як для Chrome */
 
-h2:not(.coop-heading) {
+h2:not(.coop-heading, .cases-heading) {
   padding-bottom: 3rem;
 }
 

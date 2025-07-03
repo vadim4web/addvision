@@ -118,7 +118,7 @@ function handleClickOutside() {
 
       .faq-answer {
         font-size: 1rem;
-        color: #444;
+        color: var(--text-main);
         padding: 0.5rem 0;
         max-height: 500px;
         overflow: hidden;

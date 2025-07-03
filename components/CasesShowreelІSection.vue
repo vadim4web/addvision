@@ -14,5 +14,6 @@
   height: 27rem;
   z-index: 1;
   background: var(--gray);
+  background: linear-gradient(90deg, transparent, var(--accent50), transparent);
 }
 </style>

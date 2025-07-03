@@ -6,5 +6,6 @@ export default withNuxt({
     "vue/no-v-html": 'off',
     "vue/no-v-text-v-html-on-component": 'off',
     "vue/html-self-closing": 'off',
+    "no-unsafe-optional-chaining": 'off',
   },
 })

@@ -97,6 +97,34 @@ export default defineI18nConfig(() => ({
       },
       cases: {
         title: "КЕЙСИ",
+        moreLabel: "БІЛЬШЕ КЕЙСІВ",
+        description: "Ми втілюємо візії бізнесів у реальні цифрові рішення. У цій секції — наші кейси, що демонструють підходи, які ми застосовуємо в роботі: від стратегічного позиціонування до запуску повноцінних digital-продуктів. Подивіться, як ми допомагаємо брендам ставати впізнаваними, сучасними та ефективними.",
+        list: [
+          {
+            title: "Теджовати",
+            url: "https://tedzhovati.com/",
+            preview: "Йога | Ретріти | Астрологія",
+            description: "Багатомовний сайт для йога-бренду з простим оновленням програм, підпискою на анонси та інтеграцією з WhatsApp. Побудовано для зручного самостійного ведення."
+          },
+          {
+            title: "Mozgi Events",
+            url: "https://vadim4web.github.io/mozgi-events/",
+            preview: "Івент агентство | SPA | Vue",
+            description: "Інтерактивна SPA-сторінка з яскравими анімаціями та плавною навігацією. Розроблена на Vue з підтримкою UA, RU, EN та адаптивним UI."
+          },
+          {
+            title: "SandraMaria.Duo",
+            url: "https://www.sandramaria.pro/",
+            preview: "Музичний дует | WP | Концерти",
+            description: "Сайт-лендінг для музичного дуету з теплим стилем, емоційними відеокадрами та атмосферою. Побудований на WordPress для творчої аудиторії."
+          },
+          {
+            title: "Gouri Консалтинг",
+            url: "https://gouri.com.pl/",
+            preview: "Юридична допомога | Польща | Vue",
+            description: "Лендінг для консалтингової компанії в Польщі. Чіткий, локалізований інтерфейс, SEO-оптимізація та підтримка користувачів з України та СНД."
+          }
+        ],
       },
       services: {
         title: "НАШІ ПОСЛУГИ",
@@ -287,6 +315,34 @@ export default defineI18nConfig(() => ({
       },
       cases: {
         title: "КЕЙСЫ",
+        moreLabel: "БОЛЬШЕ КЕЙСОВ",
+        description: "Мы воплощаем бизнес-визии в реальные digital-решения. В этом разделе — кейсы, показывающие наш подход: от стратегии бренда до запуска полноценных цифровых продуктов. Посмотрите, как мы помогаем компаниям становиться узнаваемыми, современными и эффективными.",
+        list: [
+          {
+            title: "Теджовати",
+            url: "https://tedzhovati.com/",
+            preview: "Йога | Ретриты | Астрология",
+            description: "Многоязычный сайт для бренда йоги с удобным обновлением программ, подпиской на анонсы и интеграцией WhatsApp. Разработан для самостоятельного ведения."
+          },
+          {
+            title: "Mozgi Events",
+            url: "https://vadim4web.github.io/mozgi-events/",
+            preview: "Агентство ивентов | SPA | Vue",
+            description: "Интерактивная SPA-страница с эффектной анимацией и плавной навигацией. Создана на Vue с поддержкой RU, UA, EN и адаптивным интерфейсом."
+          },
+          {
+            title: "SandraMaria.Duo",
+            url: "https://www.sandramaria.pro/",
+            preview: "Музыкальный дуэт | WP | Концерты",
+            description: "Лендинг для музыкального дуэта с уютным стилем, видеофреймами и эмоциональной атмосферой. Основан на WordPress для творческой аудитории."
+          },
+          {
+            title: "Gouri Консалтинг",
+            url: "https://gouri.com.pl/",
+            preview: "Юридическая помощь | Польша | Vue",
+            description: "Лендинг для консалтинговой компании в Польше. Чистый интерфейс, локализация, SEO и поддержка мигрантов из СНГ и Украины."
+          }
+        ],
       },
       services: {
         title: "НАШИ УСЛУГИ",
@@ -477,6 +533,34 @@ export default defineI18nConfig(() => ({
       },
       cases: {
         title: "CASES",
+        moreLabel: "MORE CASES",
+        description: "We bring business visions to life through real digital solutions. This section showcases case studies that highlight our approach — from brand strategy to the launch of complete digital products. Explore how we help companies become recognizable, modern, and results-driven.",
+        list: [
+          {
+            title: "Tedzhovati",
+            url: "https://tedzhovati.com/",
+            preview: "Yoga | Retreats | Astrology",
+            description: "Multilingual site for a yoga brand with easy program updates, event subscription, and WhatsApp integration. Built on WordPress for independent maintenance."
+          },
+          {
+            title: "Mozgi Events",
+            url: "https://vadim4web.github.io/mozgi-events/",
+            preview: "Event Agency | SPA | Vue",
+            description: "Interactive single-page site with smooth transitions and modern animations. Built in Vue with full i18n support and mobile-optimized layout."
+          },
+          {
+            title: "SandraMaria.Duo",
+            url: "https://www.sandramaria.pro/",
+            preview: "Music Duo | WP | Live Shows",
+            description: "Landing page for a musical duo with warm design, video visuals, and an emotional tone. Built on WordPress with love and artistry."
+          },
+          {
+            title: "Gouri Consulting",
+            url: "https://gouri.com.pl/",
+            preview: "Legal Aid | Poland | Vue",
+            description: "Landing site for a consulting firm in Poland. Clear UI, SEO optimized, and localized for users from Ukraine and Russian-speaking countries."
+          }
+        ],
       },
       services: {
         title: "OUR SERVICES",
@@ -574,4 +658,4 @@ export default defineI18nConfig(() => ({
       rights: "All rights reserved.",
     },
   },
-}));
+}))
