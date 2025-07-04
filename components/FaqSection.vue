@@ -9,8 +9,8 @@
         {{ $t('faq.description') }}
       </strong>
 
-      <img src="/images/faq_heading.webp" alt="faq_heading.webp" class="faq-image glow-on-hover">
-    </div>
+      <NuxtImg src="/images/faq_heading.webp" width="360" height="300" alt="faq_heading.webp" class="faq-image glow-on-hover">
+    </nuxtimg></div>
 
     <div class="faq-items">
       <div

@@ -9,7 +9,9 @@
       <div class="coop-top-right">
         <strong class="coop-top-right-strong glow-on-hover" v-html="$t('why.coop')"></strong>
   
-        <div class="coop-top-right-visual"></div>
+        <div class="coop-top-right-visual">
+          <NuxtImg src="/images/coop.webp" width="400" height="400" />
+        </div>
       </div>
 
       <em class="coop-values glow-on-hover">
@@ -75,8 +77,12 @@
       &-visual {
         height: 100%;
         aspect-ratio: 1;
-        background: url('../assets/images/coop.webp') center / cover no-repeat;
         position: relative;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
 
         &::after {
           position: absolute;

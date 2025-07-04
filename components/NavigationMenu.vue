@@ -189,7 +189,7 @@ useObserveVisibility(menuRef, visible => {
       transform: scale(0.5) translateY(5%) rotateX(180deg);
 
       path {
-        stroke: var(--text-main);
+        stroke: var(--bg);
         transition: stroke 1s, stroke-width 1s;
       }
     }

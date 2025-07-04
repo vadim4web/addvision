@@ -256,8 +256,8 @@ onMounted(() => {
         text-stroke: 0.1rem var(--accent25);
       }
 
-            @media (orientation: portrait) {
-        left: 2.5rem;
+        @media (orientation: portrait) {
+          left: 2.5rem;
 
         .add {
           font-size: max(8vh, 17vw);

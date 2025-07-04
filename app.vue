@@ -116,16 +116,17 @@ cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' wid
 
 @media (orientation: portrait) {
   :root {
-    font-size: clamp(1.15vh, 18px, 1.9vw);
+    font-size: clamp(16px, 1.15vh, 1.9vw);
   }
 }
 @media (orientation: landscape) {
   :root {
-    font-size: clamp(1.8vh, 17px, 1.1vw);
+    font-size: clamp(16px, 1.8vh, 1.1vw);
   }
 }
 
 body {
   color: var(--text-main);
+  background: var(--bg);
 }
 </style>

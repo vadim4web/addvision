@@ -160,6 +160,22 @@
   -webkit-filter: drop-shadow(0 0 0.15rem var(--accent75)) contrast(1.15) brightness(1.15) hue-rotate(360deg);
 }
 
+@keyframes glow-infinite {
+  from {
+    filter: drop-shadow(0 0 0 var(--accent75)) contrast(1) brightness(1) hue-rotate(0deg);
+    -webkit-filter: drop-shadow(0 0 0 var(--accent75)) contrast(1) brightness(1) hue-rotate(0deg);
+  }
+  to {
+    filter: drop-shadow(0 0 0.15rem var(--accent75)) contrast(1.15) brightness(1.15) hue-rotate(360deg);
+    -webkit-filter: drop-shadow(0 0 0.15rem var(--accent75)) contrast(1.15) brightness(1.15) hue-rotate(360deg);
+  }
+}
+
+.glow-infinite {
+  animation: glow-infinite 5s infinite;
+  -webkit-animation: glow-infinite 5s infinite;
+}
+
 .grid-four {
   display: grid;
   gap: 1rem;

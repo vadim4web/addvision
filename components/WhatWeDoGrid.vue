@@ -84,7 +84,7 @@ onUnmounted(() => {
 <template>
   <div class="what-we-do-grid grid-four">
     <div
-      v-for="(section, key) in sections"
+      v-for="(section, key, index) in sections"
       :key="key"
       ref="sectionRefs"
       class="what-section"
@@ -95,7 +95,9 @@ onUnmounted(() => {
         <li v-for="(item, idx) in section.items" :key="idx" class="glow-on-hover">{{ item }}</li>
       </ul>
 
-      <div class="bg"></div>
+      <div class="bg">
+        <NuxtImg :src="`/images/services${index + 1}.webp`" width="320" height="320" :alt="`${section.title} image`" />
+      </div>
     </div>
   </div>
 </template>
@@ -129,15 +131,11 @@ onUnmounted(() => {
       position: absolute;
       width: 100%;
       height: 100%;
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
       transform: scale(1.2);
-    }
 
-    @for $i from 1 through 4 {
-      &:nth-child(#{$i}) .bg {
-        background-image: url('../assets/images/services' + $i + '.webp');
+      img {
+        width: 100%;
+        height: 100%;
       }
     }
 
@@ -181,7 +179,6 @@ onUnmounted(() => {
       }
     }
 
-    
     @media (min-width: 1280px) and (orientation: portrait) {
       h3 {
         font-size: 1.25rem;

@@ -25,3 +25,6 @@ logs
 
 desktop.ini
 ico.ico
+
+.htaccess_nuxt.bak
+.htaccess.bak
