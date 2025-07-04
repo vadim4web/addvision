@@ -17,7 +17,7 @@
   position: relative;
   height: 27rem;
   z-index: 1;
-  background: linear-gradient(90deg, var(--gray), var(--accent50), var(--gray));
+  background: linear-gradient(90deg, var(--gray), var(--accent25), var(--gray));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,8 +27,8 @@
     width: 100%;
     height: 100%;
     content: '';
-    background: radial-gradient(ellipse at center, transparent 25%, var(--bg) 40%);
-    z-index: 1;
+    background: linear-gradient(0deg, transparent, var(--accent25), transparent);
+    z-index: -1;
   }
 
   h2 {
