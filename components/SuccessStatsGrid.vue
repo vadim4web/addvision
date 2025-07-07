@@ -2,7 +2,7 @@
   <div class="stats-section">
     <div class="stats-grid grid-four countup-trigger">
       <div v-for="(stat, i) in stats" :key="i" class="stat-box font-bebas-regular glow-on-hover">
-        <CountUp :end-val="stat.value" :postfix="i === 2 ? '%' : i === 3 ? '+' : ''" />
+        <CountUp :end-val="stat.value" :postfix="i === 2 ? '%' : i === 3 || i === 1 ? '+' : ''" />
         <p class="label font-inter-medium">{{ $t(`why.stats.${i}`) }}</p>
       </div>
     </div>
@@ -12,9 +12,9 @@
 <script setup>
 const stats = [
   { value: 12 },
-  { value: 77 },
+  { value: 17 },
   { value: 71 },
-  { value: 90 },
+  { value: 27 },
 ]
 </script>
 

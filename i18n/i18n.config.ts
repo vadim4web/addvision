@@ -107,10 +107,10 @@ export default defineI18nConfig(() => ({
             description: "Багатомовний сайт для йога-бренду з простим оновленням програм, підпискою на анонси та інтеграцією з WhatsApp. Побудовано для зручного самостійного ведення."
           },
           {
-            title: "Mozgi Events",
-            url: "https://vadim4web.github.io/mozgi-events/",
+            title: "UniPark",
+            url: "https://vadim4web.github.io/unipark-com-ua/",
             preview: "Івент агентство | SPA | Vue",
-            description: "Інтерактивна SPA-сторінка з яскравими анімаціями та плавною навігацією. Розроблена на Vue з підтримкою UA, RU, EN та адаптивним UI."
+            description: "Інтерактивна SPA-сторінка з яскравими анімаціями та плавною навігацією. Розроблена на Vue з підтримкою UA, EN та адаптивним UI."
           },
           {
             title: "SandraMaria.Duo",
@@ -325,10 +325,10 @@ export default defineI18nConfig(() => ({
             description: "Многоязычный сайт для бренда йоги с удобным обновлением программ, подпиской на анонсы и интеграцией WhatsApp. Разработан для самостоятельного ведения."
           },
           {
-            title: "Mozgi Events",
-            url: "https://vadim4web.github.io/mozgi-events/",
+            title: "UniPark",
+            url: "https://vadim4web.github.io/unipark-com-ua/",
             preview: "Агентство ивентов | SPA | Vue",
-            description: "Интерактивная SPA-страница с эффектной анимацией и плавной навигацией. Создана на Vue с поддержкой RU, UA, EN и адаптивным интерфейсом."
+            description: "Интерактивная SPA-страница с эффектной анимацией и плавной навигацией. Создана на Vue с поддержкой UA, EN и адаптивным интерфейсом."
           },
           {
             title: "SandraMaria.Duo",
@@ -543,8 +543,8 @@ export default defineI18nConfig(() => ({
             description: "Multilingual site for a yoga brand with easy program updates, event subscription, and WhatsApp integration. Built on WordPress for independent maintenance."
           },
           {
-            title: "Mozgi Events",
-            url: "https://vadim4web.github.io/mozgi-events/",
+            title: "UniPark",
+            url: "https://vadim4web.github.io/unipark-com-ua/",
             preview: "Event Agency | SPA | Vue",
             description: "Interactive single-page site with smooth transitions and modern animations. Built in Vue with full i18n support and mobile-optimized layout."
           },

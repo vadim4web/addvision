@@ -1,6 +1,6 @@
 <template>
   <div class="cases-accordion">
-    <div class="cases-frame">      
+    <div class="cases-frame">
       <div
         v-for="(item, index) in casesItems"
         :key="index"
@@ -20,7 +20,9 @@
     </div>
 
     <div class="preview-frame">
-      <iframe :src="opened.url" :title="opened.title" frameborder="0" class="preview"></iframe>
+      <div class="overflow-cutting-wrapper">
+        <iframe :src="opened.url" :title="opened.title" frameborder="0" class="preview"></iframe>
+      </div>
     </div>
   </div>
 </template>
@@ -41,7 +43,7 @@ function handleClick(index) {
 .cases-accordion {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  height: 32rem;
+  max-height: 30rem;
 
   .cases-frame {
     border-top: 0.125rem solid var(--gray);
@@ -82,25 +84,33 @@ function handleClick(index) {
       }
 
       &:not(.closed) .case-description {
-        height: fit-content;
         height: 14rem;
         transition: height 0.5s ease;
       }
     }
   }
 
-
   .preview-frame {
     background: linear-gradient(90deg, transparent, var(--accent50), transparent);
     display: flex;
+    align-items: center;
     justify-content: center;
+    max-height: 33.5rem;
+    height: 33.5rem;
 
-    .preview {
+    .overflow-cutting-wrapper {
+      overflow: hidden;
       aspect-ratio: 9 / 16;
-      height: 100%;
-      object-fit: contain;
-      zoom: 0.45;
+      max-height: 33.5rem;
+      height: 33.5rem;
+
+      .preview {
+        object-fit: cover;
+        aspect-ratio: 9 / 16;
+        height: 34.2rem;
+      }
     }
+
   }
 }
 </style>
