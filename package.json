@@ -10,7 +10,8 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "deploy": "nuxi generate && gh-pages -d dist",
-    "deploy_": "nuxt generate && gh-pages -d .output/public"
+    "deploy_": "nuxt generate && gh-pages -d .output/public",
+    "export:locales": "node scripts/export-locales.js"
   },
   "dependencies": {
     "@nuxt/eslint": "^1.4.1",

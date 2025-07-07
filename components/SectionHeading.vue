@@ -1,5 +1,7 @@
 <template>
-  <h2 class="section-heading font-inter-semibold glow-on-hover"></h2>
+  <h2 class="section-heading font-inter-semibold glow-on-hover">
+    <slot />
+  </h2>
 </template>
 
 <script setup></script>

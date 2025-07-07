@@ -4,7 +4,23 @@
     class="what-we-do-section masked-section"
     :aria-label="$t('aria.whatWeDo')"
   >
-    <SectionHeading v-html="`<span class='heading-text'>${$t('what.title')}</span><span class='arrow'>${svgArrow()}</span>`"/>
+    <SectionHeading>
+      <span class='heading-text'>
+        <span class="before">
+          {{ $t('what.titleParts.before') }}
+        </span>
+        <br>
+        <span class="brown-deep">
+          {{ $t('what.titleParts.brownDeep1') }}
+        </span>
+        <span class="accent">
+          {{ $t('what.titleParts.accent') }}
+        </span>
+        <span class="brown-deep">{{ $t('what.titleParts.brownDeep2') }}</span>
+      </span>
+
+      <i class='arrow'><SvgArrow /></i>
+    </SectionHeading>
 
     <WhatWeDoGrid />
 

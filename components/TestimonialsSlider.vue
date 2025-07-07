@@ -34,8 +34,8 @@
       <vueper-slide
         v-for="(clientImage, i) in clientImages"
         :key="i"
-        @click="$refs.mainSlider.goToSlide(i)"
         :image="clientImage"
+        @click="$refs.mainSlider.goToSlide(i)"
       >
       </vueper-slide>
     </vueper-slides>
@@ -52,7 +52,15 @@ const clientImages = [
   '/clients/client1.jpg',
   '/clients/client2.jpg',
   '/clients/client3.jpg',
-  '/clients/client4.jpg'
+  '/clients/client4.jpg',
+  '/clients/client5.jpg',
+  '/clients/client6.jpg',
+  '/clients/client7.jpg',
+  '/clients/client8.jpg',
+  '/clients/client9.jpg',
+  '/clients/client10.jpg',
+  '/clients/client11.jpg',
+  '/clients/client12.jpg',
 ]
 
 const testimonials = {

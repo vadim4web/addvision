@@ -1,13 +1,30 @@
 <template>
   <section id="why-us" class="why-us-section" :aria-label="$t('aria.whyUs')">
     <div class="coop">
-      <SectionHeading
-        class="coop-heading"
-        v-html="`<span class='heading-text'>${$t('why.title')}</span><span class='arrow'>${svgArrow()}</span>`"
-      />
+      <SectionHeading class="coop-heading">
+        <span class='heading-text'>
+          <span class="before">
+            {{ $t('why.titleParts.before') }}
+          </span>
+          <span class="accent">
+            {{ $t('why.titleParts.accent') }}
+          </span>
+        </span>
+
+        <i class='arrow'>
+          <SvgArrow />
+        </i>
+      </SectionHeading>
 
       <div class="coop-top-right">
-        <strong class="coop-top-right-strong glow-on-hover" v-html="$t('why.coop')"></strong>
+        <strong class="coop-top-right-strong glow-on-hover">
+          <span class="accent">
+            {{ $t('why.coopParts.accent') }}
+          </span>
+          <span class="rest">
+            {{ $t('why.coopParts.rest') }}
+          </span>
+        </strong>
   
         <div class="coop-top-right-visual">
           <NuxtImg src="/images/coop.webp" width="400" height="400" />

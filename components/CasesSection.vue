@@ -1,12 +1,15 @@
 <template>
   <section class="cases-section" id="cases" :aria-label="$t('aria.cases')">
     <div class="head">
-      <SectionHeading class="glow-on-hover cases-heading" v-html="`<span class='heading-text'>${$t('cases.title')}</span><span class='arrow'>${svgArrow()}</span>`"/>
+      <SectionHeading class="cases-heading">
+        <span class='heading-text'>{{ $t('cases.title') }}</span>
+        <i class="arrow"><SvgArrow /></i>
+      </SectionHeading>
 
       <NuxtLink :to="localePath('/cases')" class="more glow-on-hover">
         {{ $t('cases.moreLabel') }}
 
-        <i class="arrow" v-html="`${svgArrow()}`"></i>
+        <i class="arrow"><SvgArrow /></i>
       </NuxtLink>
 
       <strong class="description glow-on-hover">

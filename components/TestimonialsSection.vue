@@ -1,6 +1,21 @@
 <template>
   <section class="testimonials-section" id="testimonials" :aria-label="$t('aria.testimonials')">
-    <SectionHeading v-html="`<span class='heading-text'>${$t('testimonials.title')}</span><span class='arrow'>${svgArrow()}</span>`"/>
+    <SectionHeading>
+      <span class='heading-text'>
+        <span class="before">
+          {{ $t('testimonials.titleParts.before') }}
+        </span>
+        <span class="accent">
+          {{ $t('testimonials.titleParts.accent') }}
+        </span>
+        <wbr />
+        <span class="accent">
+          {{ $t('testimonials.titleParts.accent_') }}
+        </span>
+      </span>
+
+      <i class='arrow'><SvgArrow /></i>
+    </SectionHeading>
 
     <TestimonialsSlider :locale="$i18n.locale" />
   </section>

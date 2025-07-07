@@ -1,32 +1,260 @@
 {
-  "meta": {
-    "title": "AddVision — digital agency to realize your vision",
-    "description": "Web design, branding, astro-psychology, and ambient experience. We help bring your vision to life online and offline."
-  },
-  "agency": "agency",
-  "navigation": {
-    "title": "Main navigation",
-    "cases": "Cases",
-    "why-us": "Why us",
-    "services": "Services",
-    "contacts": "Contacts"
-  },
-  "we-do": {
-    "sences": "senses",
-    "texts": "texts",
-    "visual": "visual",
-    "dev": "development"
-  },
-  "moto": "digital solutions to embody your vision",
-  "aria": {
-    "hero": "Hero banner",
-    "cases": "Cases",
-    "casesVideo": "Video cases",
-    "whyUs": "Why us",
-    "whatWeDo": "What we do",
-    "services": "Services",
-    "testimonials": "Client testimonials",
-    "faq": "Frequently asked questions",
-    "contact": "Contact information"
+  "en": {
+    "meta": {
+      "title": "Add Vision — digital agency to realize your vision",
+      "description": "Web design, branding, astro-psychology, and ambient experience. We help bring your vision to life online and offline."
+    },
+    "agency": "agency",
+    "navigation": {
+      "title": "Main navigation",
+      "cases": "Cases",
+      "why-us": "Why us",
+      "services": "Services",
+      "contacts": "Contacts"
+    },
+    "we-do": {
+      "sences": "senses",
+      "texts": "texts",
+      "visual": "visual",
+      "dev": "development"
+    },
+    "moto": "digital solutions to embody your vision",
+    "aria": {
+      "hero": "Hero banner",
+      "cases": "Cases",
+      "casesVideo": "Video cases",
+      "whyUs": "Why us",
+      "whatWeDo": "What we do",
+      "services": "Services",
+      "testimonials": "Client testimonials",
+      "faq": "Frequently asked questions",
+      "contact": "Contact information"
+    },
+    "what": {
+      "title": "WHAT WE INCLUDE<br><span class='brown-deep'>IN</span>&nbsp;<span class='accent'>BUSINESS</span> <span class='brown-deep'>BRANDING?</span>",
+      "sections": {
+        "senses": {
+          "title": "Senses",
+          "items": [
+            "brand concept",
+            "mission and vision",
+            "positioning",
+            "brand values",
+            "audience research"
+          ]
+        },
+        "texts": {
+          "title": "Texts",
+          "items": [
+            "slogans",
+            "sales copy",
+            "product descriptions",
+            "storytelling",
+            "manifestos"
+          ]
+        },
+        "visual": {
+          "title": "Visual",
+          "items": [
+            "identity",
+            "logo",
+            "brand style",
+            "social content",
+            "motion design"
+          ]
+        },
+        "dev": {
+          "title": "Development",
+          "items": [
+            "website or landing",
+            "web apps",
+            "web animation",
+            "banner/ads",
+            "social media interactive"
+          ]
+        }
+      },
+      "cta": "We tailor a service package specifically for your business to achieve maximum results."
+    },
+    "why": {
+      "title": "WHY <span class='accent'>US</span>?",
+      "coop": "<span class='accent'>Co</span>creation",
+      "values": " is a partnership — more than just a client-contractor relationship. We aim to bring value from the very first meeting, contribute, and invest our experience into each new project. If we work with you, it means we truly believe in it.",
+      "stats": [
+        "Years of experience",
+        "Happy clients",
+        "Clients return",
+        "Projects completed"
+      ],
+      "cta": "ESTIMATE WEBSITE COST"
+    },
+    "cases": {
+      "title": "CASES",
+      "moreLabel": "MORE CASES",
+      "description": "We bring business visions to life through real digital solutions. This section showcases case studies that highlight our approach — from brand strategy to the launch of complete digital products. Explore how we help companies become recognizable, modern, and results-driven.",
+      "list": [
+        {
+          "title": "Tedzhovati",
+          "url": "https://tedzhovati.com/",
+          "preview": "Yoga | Retreats | Astrology",
+          "description": "Multilingual site for a yoga brand with easy program updates, event subscription, and WhatsApp integration. Built on WordPress for independent maintenance."
+        },
+        {
+          "title": "UniPark",
+          "url": "https://vadim4web.github.io/unipark-com-ua/",
+          "preview": "Event Agency | SPA | Vue",
+          "description": "Interactive single-page site with smooth transitions and modern animations. Built in Vue with full i18n support and mobile-optimized layout."
+        },
+        {
+          "title": "SandraMaria.Duo",
+          "url": "https://www.sandramaria.pro/",
+          "preview": "Music Duo | WP | Live Shows",
+          "description": "Landing page for a musical duo with warm design, video visuals, and an emotional tone. Built on WordPress with love and artistry."
+        },
+        {
+          "title": "Gouri Consulting",
+          "url": "https://gouri.com.pl/",
+          "preview": "Legal Aid | Poland | Vue",
+          "description": "Landing site for a consulting firm in Poland. Clear UI, SEO optimized, and localized for users from Ukraine and Russian-speaking countries."
+        }
+      ]
+    },
+    "services": {
+      "title": "OUR SERVICES",
+      "heading": "We are your design and tech partner for the digital age",
+      "description": "We help businesses innovate and stay relevant to their customers. From idea to product, our exceptional digital products, services, branding communication, and solutions create successful digital experiences for innovative startups and established companies — with modern UX/UI design, frontend, and backend development.",
+      "categories": {
+        "web": {
+          "title": "WEB DEVELOPMENT",
+          "items": [
+            "Website and landing page development",
+            "E-commerce development",
+            "Telegram mini-app & bot development",
+            "Technical support"
+          ]
+        },
+        "branding": {
+          "title": "BUSINESS BRANDING",
+          "items": [
+            "Brand identity",
+            "Visual strategy",
+            "Design system",
+            "Motion, animations, and creatives"
+          ]
+        },
+        "content": {
+          "title": "CONTENT MARKETING",
+          "items": [
+            "Content creation",
+            "Content marketing",
+            "Search engine optimization (SEO)",
+            "Social Media (SMM)"
+          ]
+        }
+      }
+    },
+    "testimonials": {
+      "title": "CLIENT <span class='accent'>TESTI<wbr>MONIALS</span>",
+      "list": [
+        {
+          "text": "A complete WordPress site with everything I need — events, chat, subscriptions. It’s easy to manage and just works.",
+          "author": "Tatyana A, yoga mentor, tedzhovati.com"
+        },
+        {
+          "text": "Helped me automate things with Telegram bots and API. Saved me weeks of trial-and-error. I can now focus on my label.",
+          "author": "Victor B, owner of Berbeca Records"
+        },
+        {
+          "text": "We received timely, thoughtful help. Our online presence grew visibly. Everything was done with care. Strongly recommend!",
+          "author": "Maria K, artist, pianist & teacher at sandramaria.pro"
+        },
+        {
+          "text": "Launching my business, I wanted a site that matched the vision. Got design, dev, SEO — a full custom package. Very happy.",
+          "author": "Kira B, founder of Gouri.pl.com"
+        },
+        {
+          "text": "They took most of the development load off my shoulders. Precise, fast, and focused. We now see lots of potential.",
+          "author": "Denys P, founder of UniPark"
+        },
+        {
+          "text": "Got just what I needed — one-page site, SMM setup, and smart guidance. Looks great. I show it to clients as a portfolio!",
+          "author": "Anton S, solo entrepreneur"
+        },
+        {
+          "text": "Thanks for helping with localization and backend setup. This used to be a big headache. Now it just works.",
+          "author": "Max D, DevOps at a multi-profile business"
+        },
+        {
+          "text": "Thanks for the redesign and updated site. Really appreciate the detail-oriented approach and business understanding.",
+          "author": "Yuriy K, SEO co-founder at MediaOffice"
+        },
+        {
+          "text": "Our site had turned into a mess — no clarity, nothing worked. You helped us fix, restructure and support it properly.",
+          "author": "Oleh D, admin at kavaira"
+        },
+        {
+          "text": "We couldn’t have done it without you — full cycle from concept to release. Proud of the outcome, and looking forward!",
+          "author": "Sonya C, head of R&D at N-Code"
+        },
+        {
+          "text": "The site was outdated and unused. Now it works, helps, and sells. Clients can book easily — just in time!",
+          "author": "Alexander S, founder of MONE-Studio"
+        },
+        {
+          "text": "Thanks for your help with the prototype and design thinking. Creative, productive brainstorms. Solid start for the project!",
+          "author": "Vladyslav M, product owner at Unison"
+        }
+      ]
+    },
+    "faq": {
+      "title": "FREQUENTLY<br>ASKED <wbr>QUESTIONS",
+      "description": "We’ve collected answers to the most common questions about our process, timelines, and working with clients. Every project is unique to us, and much depends on your specific goals and needs. Here you’ll find general answers based on our experience. If you still have questions — feel free to reach out. We’re always open to discussion and happy to tailor things to your project.",
+      "items": [
+        {
+          "question": "How do you accept payments?",
+          "answer": "We usually require a 50% upfront payment, and the remaining 50% is due upon project completion."
+        },
+        {
+          "question": "How long does website development take?",
+          "answer": "Depending on the scope, projects typically take between 2 and 6 weeks."
+        },
+        {
+          "question": "Do you provide support after launch?",
+          "answer": "Yes, we offer 30 days of free post-launch support. Extended maintenance is available on request."
+        },
+        {
+          "question": "Can I make changes after the website is done?",
+          "answer": "Absolutely. We offer flexible support plans or can train your team to make content updates."
+        },
+        {
+          "question": "Do you help with branding or just websites?",
+          "answer": "We also create brand identities, design systems, and marketing visuals, not just websites."
+        }
+      ]
+    },
+    "contacts": {
+      "title": "CONTACTS",
+      "emailUs": "CONTACT US",
+      "aria_label": "Contact form to send us a message",
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "type": "Type of Request",
+      "choose": "Select type",
+      "type_general": "General",
+      "type_support": "Support",
+      "type_feedback": "Feedback",
+      "notes": "Notes",
+      "name_title": "Enter your name (letters only, min. 2 characters)",
+      "email_title": "Enter a valid email address",
+      "phone_title": "Enter a phone number like +1...",
+      "type_title": "Choose the type of request",
+      "notes_title": "Optional. Up to 500 characters",
+      "send": "Send",
+      "thank_you_title": "Thank you!",
+      "thank_you_message": "Your message has been successfully sent."
+    },
+    "backToTop": "Back to top",
+    "rights": "All rights reserved."
   }
 }

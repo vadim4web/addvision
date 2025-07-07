@@ -7,6 +7,7 @@ export default defineNuxtConfig({
   //   baseURL: '/nuxt/',  // ✅ впливає на <script>, <link>
   //   cdnURL: '/nuxt/',   // ✅ впливає на шрифти, зображення тощо
   // },
+
   nitro: {
     preset: 'static',
     prerender: {
@@ -35,12 +36,17 @@ export default defineNuxtConfig({
     //   { code: 'ru', iso: 'ru-RU', file: 'ru.json', name: 'Русский' },
     //   { code: 'en', iso: 'en-US', file: 'en.json', name: 'English' },
     // ],
+    // locales: [
+		// 	{ code: 'uk', iso: 'uk-UA', file: 'uk.js', name: 'Українська' },
+		// 	{ code: 'ru', iso: 'ru-RU', file: 'ru.js', name: 'Русский' },
+		// 	{ code: 'en', iso: 'en-US', file: 'en.js', name: 'English' },
+		// ],
     locales: [
       { code: 'uk', iso: 'uk', name: 'Українська' },
       { code: 'ru', iso: 'ru', name: 'Русский' },
       { code: 'en', iso: 'en', name: 'English' },
     ],
-    // lazy: true,
+    lazy: true,
     vueI18n: './i18n.config.ts',
   },
 

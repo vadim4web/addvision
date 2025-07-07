@@ -1,8 +1,15 @@
 <template>
   <section id="faq" v-click-outside="handleClickOutside" class="faq-section" :aria-label="$t('aria.faq')">
-    <SectionHeading
-      v-html="`<span class='faq-heading heading-text'>${$t('faq.title')}</span><span class='arrow'>${svgArrow()}</span>`"
-    />
+    <SectionHeading>
+      <span class='faq-heading heading-text'>
+        {{ $t('faq.titleParts.start') }}
+        <br />
+        {{ $t('faq.titleParts.middle') }}
+        <wbr />
+        {{ $t('faq.titleParts.end') }}
+      </span>
+      <i class="arrow"><SvgArrow /></i>
+    </SectionHeading>
 
     <div class="head">
       <strong class="faq-description glow-on-hover">
@@ -22,7 +29,7 @@
       >
         <div class="faq-question glow-on-hover">
           {{ item.question }}
-          <span class="arrow-icon" :class="{ open: openedIndex === index }" v-html="svgArrow()"></span>
+          <i class="arrow-icon" :class="{ open: openedIndex === index }"><SvgArrow /></i>
         </div>
         <div class="faq-answer glow-on-hover">
           {{ item.answer }}
