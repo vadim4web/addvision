@@ -39,7 +39,6 @@
 </template>
 
 <script setup>
-import { onMounted, onBeforeUnmount } from 'vue'
 import { gsap } from 'gsap'
 
 onMounted(() => {

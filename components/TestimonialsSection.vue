@@ -17,7 +17,7 @@
       <i class='arrow'><SvgArrow /></i>
     </SectionHeading>
 
-    <TestimonialsSlider :locale="$i18n.locale" />
+    <TestimonialsSlider />
   </section>
 </template>
 

@@ -9,32 +9,43 @@
       :infinite="true"
       :bullets="false"
       :arrows="false"
-      fixed-height="15rem"
+      :fixed-height="true"
       @slide="$refs.thumbSlider.goToSlide($event.currentSlide.index, { emit: false })">
 
       <vueper-slide
-        v-for="(testimonial, i) in localizedTestimonials"
+        v-for="(testimonial, i) in testimonials"
         :key="i"
-        :content='`<div><img src="${clientImages[i]}" alt="Author photo" class="author-photo" /><p class="testimonial-text">${testimonial.text}</p><p class="testimonial-author">${testimonial.author}</p></div>`'
+        :content='`
+          <div class="testimonial-content">
+            <img src="/clients/client${i + 1}.jpg" alt="Author photo" class="author-photo" />
+            <p class="testimonial-text font-inter-regular">${testimonial.text}</p>
+            <p class="testimonial-author">
+              <strong class="font-inter-regular">${testimonial.author}</strong>
+              <br />
+              <em class="font-inter-italic">${testimonial.author_}</em>
+            </p>
+          </div>
+        `'
       />
     </vueper-slides>
 
     <vueper-slides
       ref="thumbSlider"
       class="thumbnails"
-      :visible-slides="localizedTestimonials.length"
-      fixed-height="75px"
+      :visible-slides="5"
+      fixed-height="3rem"
       :bullets="false"
+      :bullets-outside="false"
       :touchable="false"
-      :gap="2.5"
+      :gap="1"
       :arrows="false"
       @slide="$refs.mainSlider.goToSlide($event.currentSlide.index, { emit: false })"
     >
 
       <vueper-slide
-        v-for="(clientImage, i) in clientImages"
+        v-for="_, i in testimonials"
         :key="i"
-        :image="clientImage"
+        :image="`/clients/client${i + 1}.jpg`"
         @click="$refs.mainSlider.goToSlide(i)"
       >
       </vueper-slide>
@@ -46,139 +57,144 @@
 import { VueperSlides, VueperSlide } from 'vueperslides'
 import 'vueperslides/dist/vueperslides.css'
 
-const props = defineProps({ locale: { type: String, default: 'en' } })
-
-const clientImages = [
-  '/clients/client1.jpg',
-  '/clients/client2.jpg',
-  '/clients/client3.jpg',
-  '/clients/client4.jpg',
-  '/clients/client5.jpg',
-  '/clients/client6.jpg',
-  '/clients/client7.jpg',
-  '/clients/client8.jpg',
-  '/clients/client9.jpg',
-  '/clients/client10.jpg',
-  '/clients/client11.jpg',
-  '/clients/client12.jpg',
-]
-
-const testimonials = {
-  en: [
-    {
-      text: 'Add Vision helped us completely redefine our digital presence. Their design and development skills are top-notch!',
-      author: 'John Smith, CEO of InnovateX'
-    },
-    {
-      text: 'The branding strategy from Add Vision elevated our business identity to a new level. Highly recommended!',
-      author: 'Lisa Chen, Brand Director at MarketSquare'
-    },
-    {
-      text: 'From website to Telegram mini-app, Add Vision handled everything with creativity and precision.',
-      author: 'Oleh Dmytruk, Co-founder of Localify'
-    },
-    {
-      text: 'Their SEO and content marketing boosted our online visibility significantly. True digital partners!',
-      author: 'Anna Volkova, CMO at Greenstep'
-    }
-  ],
-  uk: [
-    {
-      text: 'Add Vision допомогли повністю змінити наш цифровий імідж. Їхній дизайн та розробка — на найвищому рівні!',
-      author: 'Іван Смолін, CEO InnovateX'
-    },
-    {
-      text: 'Брендинг від Add Vision вивів нашу ідентичність на новий рівень. Щиро рекомендую!',
-      author: 'Ліса Чен, бренд-директорка MarketSquare'
-    },
-    {
-      text: 'Від сайту до Telegram-додатку — Add Vision все зробили креативно й точно.',
-      author: 'Олег Дмитрук, співзасновник Localify'
-    },
-    {
-      text: 'Їхній SEO та контент-маркетинг значно підвищили нашу видимість. Справжні digital-партнери!',
-      author: 'Анна Волкова, CMO Greenstep'
-    }
-  ],
-  ru: [
-    {
-      text: 'Add Vision полностью преобразили наш цифровой образ. Их дизайн и разработка — на высоте!',
-      author: 'Иван Смолин, CEO InnovateX'
-    },
-    {
-      text: 'Брендинг от Add Vision поднял нашу айдентику на новый уровень. Рекомендую!',
-      author: 'Лиза Чен, бренд-директор MarketSquare'
-    },
-    {
-      text: 'От сайта до мини-приложения Telegram — Add Vision справились на отлично.',
-      author: 'Олег Дмитрук, сооснователь Localify'
-    },
-    {
-      text: 'Их SEO и контент-маркетинг значительно увеличили нашу видимость. Отличные партнёры!',
-      author: 'Анна Волкова, CMO Greenstep'
-    }
-  ]
-}
-
-const localizedTestimonials = computed(() => testimonials[props.locale] || testimonials.en)
+const { locale, messages } = useI18n()
+const testimonials = computed(() => messages.value[locale.value]?.testimonials?.list || [])
 </script>
 
-<style>
-.vueperslides--fixed-height { height: 500px; }
-.testimonial-slider {
-  width: 100%;
-}
-</style>
+<!-- .vueperslides--fixed-height { height: 500px; } -->
 
-/* <style>
+<style lang="scss">
 .testimonial-slider {
-  max-width: 700px;
+  position: relative;
+  padding-inline: 10%;
+  width: 90% !important;
+}
+
+.testimonial-slider,
+.main-slider {
   margin: 0 auto;
 }
+
 .main-slider {
-  margin-bottom: 1rem;
+  width: 100%;
+  aspect-ratio: 1.2;
+
+  @media (orientation: landscape) {
+    aspect-ratio: 1.66;
+  }
+
+
+  & .vueperslides__parallax-wrapper,
+  & .vueperslides__track
+  {
+    overflow: visible;
+  }
+
+  .vueperslides__inner {
+    height: 100%;
+  }
 }
+
 .testimonial-content {
   text-align: center;
   padding: 1rem;
+  overflow: visible;
+
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    "text text"
+    "photo author"
+    "photo ."
+  ;
+
+  @media (orientation: portrait) {
+    aspect-ratio: 1.5;
+    gap: 0.5rem
+  }
 }
+
 .author-photo {
-  width: 60px;
-  height: 60px;
+  grid-area: photo;
+  width: 100%;
+  aspect-ratio: 1;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 0.75rem;
+  filter: brightness(1.1) contrast(1.1);
 }
+
 .testimonial-text {
-  font-size: 1rem;
-  font-style: italic;
+  max-width: 80%;
+  text-align: justify;
+  grid-area: text;
+  font-size: 1.25rem;
   margin-bottom: 0.5rem;
+  align-self: center;
+  position: relative;
+  overflow: visible;
+
+  &::before,
+  &::after {
+    font-size: 150%;
+    line-height: 100%;
+    color: var(--accent);
+    padding-inline: 0.1em;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-family: 'Kanit', sans-serif;
+    font-family: 'Galada', cursive;
+  }
+
+  &::before {
+    content: '“';
+    position: absolute;
+    left: calc(-0.25em - 1ch);
+    z-index: 5;
+  }
+  &::after {
+    content: '”';
+  }
 }
+
 .testimonial-author {
-  font-weight: bold;
-  font-size: 0.9rem;
+  text-align: left;
+  grid-area: author;
+  font-size: 1rem;
 }
+
 .thumbnails {
-  max-width: 300px;
-  margin: auto;
+  overflow: visible;
+  border: 1px solid blue;
+  width: 18rem;
+  position: absolute;
+  bottom: 0;
+  right: 11.25%;
 }
+
 .thumbnails .vueperslide {
   box-sizing: border-box;
-  border: 1px solid #fff;
+  border: 1px solid var(--white);
   transition: 0.3s ease-in-out;
   opacity: 0.7;
   cursor: pointer;
-}
-.thumbnails .vueperslide--active {
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
-  opacity: 1;
-  border-color: #000;
-}
-.thumb-image {
-  width: 100%;
   height: 100%;
+  aspect-ratio: 1;
+  overflow: visible;
+}
+
+.thumbnails .vueperslide--active {
+  filter: drop-shadow(0 0 0.5em var(--accent50));
+  opacity: 1;
+  border-color: var(--accent);
+}
+
+.thumb-image {
+  width: 2rem;
+  height: 2rem;
+  aspect-ratio: 1;
   object-fit: cover;
   border-radius: 50%;
+  filter: saturate(0.8);
 }
 </style>
-*/
