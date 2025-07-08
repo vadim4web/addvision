@@ -46,7 +46,7 @@ export default defineNuxtConfig({
       { code: 'ru', iso: 'ru', name: 'Русский' },
       { code: 'en', iso: 'en', name: 'English' },
     ],
-    lazy: true,
+    // lazy: true,
     vueI18n: './i18n.config.ts',
   },
 

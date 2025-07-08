@@ -16,8 +16,14 @@
         {{ $t('faq.description') }}
       </strong>
 
-      <NuxtImg src="/images/faq_heading.webp" width="360" height="300" alt="faq_heading.webp" class="faq-image glow-on-hover">
-    </nuxtimg></div>
+      <img
+        src="/images/faq_heading.webp"
+        width="360"
+        height="300"
+        alt="faq_heading.webp"
+        class="faq-image glow-on-hover"
+      />
+    </div>
 
     <div class="faq-items">
       <div

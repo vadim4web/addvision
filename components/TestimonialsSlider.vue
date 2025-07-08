@@ -6,6 +6,7 @@
       fade
       :autoplay="true"
       :duration="8000"
+      :transition-speed="1200"
       :infinite="true"
       :bullets="false"
       :arrows="false"
@@ -20,7 +21,7 @@
             <img src="/clients/client${i + 1}.jpg" alt="Author photo" class="author-photo" />
             <p class="testimonial-text font-inter-regular">${testimonial.text}</p>
             <p class="testimonial-author">
-              <strong class="font-inter-regular">${testimonial.author}</strong>
+              <strong class="font-inter-regular">${testimonial.author}.</strong>
               <br />
               <em class="font-inter-italic">${testimonial.author_}</em>
             </p>
@@ -60,8 +61,6 @@ import 'vueperslides/dist/vueperslides.css'
 const { locale, messages } = useI18n()
 const testimonials = computed(() => messages.value[locale.value]?.testimonials?.list || [])
 </script>
-
-<!-- .vueperslides--fixed-height { height: 500px; } -->
 
 <style lang="scss">
 .testimonial-slider {
@@ -122,7 +121,7 @@ const testimonials = computed(() => messages.value[locale.value]?.testimonials?.
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 0.75rem;
-  filter: brightness(1.1) contrast(1.1);
+  filter: brightness(1.2) contrast(1.2);
 }
 
 .testimonial-text {
@@ -141,9 +140,8 @@ const testimonials = computed(() => messages.value[locale.value]?.testimonials?.
     line-height: 100%;
     color: var(--accent);
     padding-inline: 0.1em;
-    font-family: 'Yanone Kaffeesatz', sans-serif;
-    font-family: 'Kanit', sans-serif;
     font-family: 'Galada', cursive;
+    font-weight: 400;
   }
 
   &::before {
@@ -165,7 +163,6 @@ const testimonials = computed(() => messages.value[locale.value]?.testimonials?.
 
 .thumbnails {
   overflow: visible;
-  border: 1px solid blue;
   width: 18rem;
   position: absolute;
   bottom: 0;
@@ -174,7 +171,7 @@ const testimonials = computed(() => messages.value[locale.value]?.testimonials?.
 
 .thumbnails .vueperslide {
   box-sizing: border-box;
-  border: 1px solid var(--white);
+  border: 1px solid var(--text-main75);
   transition: 0.3s ease-in-out;
   opacity: 0.7;
   cursor: pointer;
@@ -184,9 +181,9 @@ const testimonials = computed(() => messages.value[locale.value]?.testimonials?.
 }
 
 .thumbnails .vueperslide--active {
-  filter: drop-shadow(0 0 0.5em var(--accent50));
+  filter: drop-shadow(0 0 0.5em var(--accent75));
   opacity: 1;
-  border-color: var(--accent);
+  border-color: var(--accent75);
 }
 
 .thumb-image {

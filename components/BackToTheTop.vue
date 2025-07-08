@@ -40,7 +40,7 @@ const menuVisible = useMenuVisibility()
     justify-content: center;
 
     transition: filter 1s;
-    filter: drop-shadow(0 0 0.5em var(--accent75)) contrast(1.1) brightness(1.1);
+    filter: drop-shadow(0 0 0.1em var(--accent75)) contrast(1.075) brightness(1.05);
 
     .logo-image {
       width: 6.6rem;
@@ -48,7 +48,7 @@ const menuVisible = useMenuVisibility()
     }
 
     &:hover .logo-image {
-      filter: drop-shadow(0 0 0.25em var(--accent75)) contrast(1.15) brightness(1.15);
+      filter: drop-shadow(0 0 0.15em var(--accent75)) contrast(1.125) brightness(1.1);
     }
   }
 }

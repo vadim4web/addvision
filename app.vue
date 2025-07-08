@@ -74,6 +74,7 @@ useHead({
   /* === Основна палітра === */
   /* --bg: #f1f6fc; */                    /* Основний фон 100% */
   --bg: #0e0903;                    /* Основний фон */
+  --bg: #0e0903;                    /* Основний фон */
   --bg80: #0e0903cc;                    /* Основний фон 100% */
   --bg75: #0e0903bf;                    /* Основний фон 75% */
   --bg66: #0e0903a8;                    /* Основний фон 66% */
@@ -89,17 +90,17 @@ useHead({
   --text-main33: #f1f6fc54;
   --text-main25: #f1f6fc40;
   /* Головний акцент (blue-shade) */
-  --accent: #00ffff;                    /* Головний акцент (blue-shade) */
-  --accent75: #00ffffbf;                /* Головний акцент (blue-shade) 33% */
-  --accent66: #00ffffa8;                /* Головний акцент (blue-shade) 66% */
-  --accent50: #00ffff80;                /* Головний акцент (blue-shade) 33% */
-  --accent33: #00ffff54;                /* Головний акцент (blue-shade) 33% */
-  --accent25: #00ffff40;                /* Головний акцент (blue-shade) 25% */
-  --accent10: #00ffff0b;                /* Головний акцент (blue-shade) 25% */
+  --accent: #00ffef;                    /* Головний акцент (blue-shade) */
+  --accent75: #00ffefbf;                /* Головний акцент (blue-shade) 33% */
+  --accent66: #00ffefa8;                /* Головний акцент (blue-shade) 66% */
+  --accent50: #00ffef80;                /* Головний акцент (blue-shade) 33% */
+  --accent33: #00ffef54;                /* Головний акцент (blue-shade) 33% */
+  --accent25: #00ffef40;                /* Головний акцент (blue-shade) 25% */
+  --accent10: #00ffef0b;                /* Головний акцент (blue-shade) 25% */
 
   /* === Додаткові акценти === */
   --accent-light: #68e2fa;          /* Світлий акцент (electric-blue-nv) */
-  --accent-cyan: #00ffff;           /* Яскраво-бірюзовий */
+  --accent-cyan: #00ffef;           /* Яскраво-бірюзовий */
   --accent-electric: #00f0ff;       /* Електричний блакитний */
 
   /* === Службові кольори === */
@@ -108,9 +109,9 @@ useHead({
   --brown-deep: #003539;            /* Темно-коричневий (може бути для контрасту, футера) */
   --brown-deep: #00AEB8;            /* Темно-коричневий (може бути для контрасту, футера) */
 
-   /* cursor: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='10' fill='transparent' stroke='%2300ffff80' stroke-width='4'/%3E%3Ccircle cx='24' cy='24' r='10' fill='none' stroke='%23353e4380' stroke-width='1'/%3E%3Ccircle cx='24' cy='24' r='16' fill='none' stroke='%2300ffff80' stroke-width='10'/%3E%3Ccircle cx='24' cy='24' r='20' fill='transparent' stroke='%2300ffff80' stroke-width='4'/%3E%3Ccircle cx='24' cy='24' r='20' fill='none' stroke='%23353e4380' stroke-width='1'/%3E%3C/svg%3E") 24 24, auto; */
+   /* cursor: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='10' fill='transparent' stroke='%2300ffef80' stroke-width='4'/%3E%3Ccircle cx='24' cy='24' r='10' fill='none' stroke='%23353e4380' stroke-width='1'/%3E%3Ccircle cx='24' cy='24' r='16' fill='none' stroke='%2300ffef80' stroke-width='10'/%3E%3Ccircle cx='24' cy='24' r='20' fill='transparent' stroke='%2300ffef80' stroke-width='4'/%3E%3Ccircle cx='24' cy='24' r='20' fill='none' stroke='%23353e4380' stroke-width='1'/%3E%3C/svg%3E") 24 24, auto; */
 
-cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><defs><filter id='shadow' x='-50%' y='-50%' width='400%' height='400%'><feDropShadow dx='0' dy='0' stdDeviation='5' flood-color='%2300ffff' flood-opacity='1'/></filter></defs><circle cx='32' cy='32' r='20' fill='%2300ffff80' stroke='%2300ffff40' stroke-width='1' filter='url(%23shadow)'/><circle cx='32' cy='32' r='20' fill='%2300ffff80' stroke='%2300ffff40' stroke-width='1'/><circle cx='32' cy='32' r='12' fill='transparent'/></svg>") 32 32, auto;
+cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><defs><filter id='shadow' x='-50%' y='-50%' width='400%' height='400%'><feDropShadow dx='0' dy='0' stdDeviation='5' flood-color='%2300ffef' flood-opacity='1'/></filter></defs><circle cx='32' cy='32' r='20' fill='%2300ffef80' stroke='%2300ffef40' stroke-width='1' filter='url(%23shadow)'/><circle cx='32' cy='32' r='20' fill='%2300ffef80' stroke='%2300ffef40' stroke-width='1'/><circle cx='32' cy='32' r='12' fill='transparent'/></svg>") 32 32, auto;
 
 }
 

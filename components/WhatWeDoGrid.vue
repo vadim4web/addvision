@@ -96,7 +96,7 @@ onUnmounted(() => {
       </ul>
 
       <div class="bg">
-        <NuxtImg :src="`/images/services${index + 1}.webp`" width="320" height="320" :alt="`${section.title} image`" />
+        <img :src="`/images/services${index + 1}.webp`" width="320" height="320" :alt="`${section.title} image`" />
       </div>
     </div>
   </div>

@@ -27,7 +27,7 @@
         </strong>
   
         <div class="coop-top-right-visual">
-          <NuxtImg src="/images/coop.webp" width="400" height="400" />
+          <img src="/images/coop.webp" width="400" height="400" />
         </div>
       </div>
 
