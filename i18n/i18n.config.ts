@@ -302,6 +302,12 @@ export default defineI18nConfig(() => ({
 				send: 'Надіслати',
 				thank_you_title: 'Дякуємо!',
 				thank_you_message: 'Ваше повідомлення було успішно надіслано.',
+				CTA: `Зв’яжіться з нами будь-яким зручним способом — мобільний, WhatsApp або Telegram — або просто надішліть запит на зворотний дзвінок, заповнивши коротку форму зворотного зв’язку.
+
+Ми відповімо вам якнайшвидше.
+
+Не вагайтесь — звертайтесь!
+Ми з радістю відповімо на всі ваші запитання.`,
 			},
 			backToTop: 'Повернутися нагору',
 			rights: 'Усі права захищено.',
@@ -605,6 +611,12 @@ export default defineI18nConfig(() => ({
 				send: 'Отправить',
 				thank_you_title: 'Спасибо!',
 				thank_you_message: 'Ваше сообщение было успешно отправлено.',
+				CTA: `Свяжитесь с нами любым удобным способом — мобильный, WhatsApp или Telegram — или просто оставьте заявку, заполнив короткую форму обратной связи.
+
+Мы ответим вам как можно скорее.
+
+Не стесняйтесь — просто напишите нам!
+Мы будем рады ответить на ваши вопросы.`
 			},
 			backToTop: 'Вернуться наверх',
 			rights: 'Все права защищены.',
@@ -908,6 +920,12 @@ export default defineI18nConfig(() => ({
 				send: 'Send',
 				thank_you_title: 'Thank you!',
 				thank_you_message: 'Your message has been successfully sent.',
+				CTA: `Contact us using any of the methods below — cellphone, WhatsApp, or Telegram — or simply request a callback by submitting the short feedback form.
+
+We’ll get back to you as soon as possible.
+
+Don’t hesitate — just reach out!
+We’ll be happy to answer your questions.`,
 			},
 			backToTop: 'Back to top',
 			rights: 'All rights reserved.',

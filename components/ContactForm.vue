@@ -148,8 +148,8 @@ const submitForm = async () => {
 .form-container {
 	display: grid;
 	grid-template-rows: 1fr 6fr;
-	padding: 3.75rem;
 	color: var(--bg);
+	padding: 3.75rem;
 
 	h3 {
 		font-size: 2.25rem;
@@ -160,9 +160,7 @@ const submitForm = async () => {
 		margin-inline: auto;
 	}
 
-	@media (orientation: landscape) {
-		transform: scale(0.8);
-	}
+	@media (orientation: landscape) {}
 
 	.contact-form {
 		display: grid;

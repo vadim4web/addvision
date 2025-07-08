@@ -1,6 +1,6 @@
 <template>
 	<Transition name="fade">
-		<div v-if="!headerVisible && !menuVisible" class="back-to-the-top">
+		<div v-if="showBackToTop" class="back-to-the-top">
 			<NuxtLink :title="$t('backToTop')" to="#top">
 				<LogoIcon class="logo-small" />
 			</NuxtLink>
@@ -8,9 +8,22 @@
 	</Transition>
 </template>
 
-<script setup>
+<script setup lang="ts">
 const headerVisible = useHeaderVisibility()
 const menuVisible = useMenuVisibility()
+
+const showBackToTop = ref(false)
+
+// Main logic: update when header/menu visibility changes
+watch([headerVisible, menuVisible], ([header, menu]) => {
+	showBackToTop.value = !header && !menu
+})
+
+// Optional: force re-check on route change (useful for i18n jumps)
+const route = useRoute()
+watch(() => route.fullPath, () => {
+	showBackToTop.value = !headerVisible.value && !menuVisible.value
+})
 </script>
 
 <style lang="scss">

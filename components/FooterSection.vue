@@ -10,6 +10,10 @@
 			<i class="arrow"><SvgArrow /></i>
 		</SectionHeading>
 
+		<ContactsBlock />
+
+		<ContactForm :set-show-thanks />
+
 		<p class="copy">
 			&copy; 2013 - {{ new Date().getFullYear() }}
 			<span style="color: var(--gray)">{</span><span class="lowercase">Add</span
@@ -17,8 +21,6 @@
 			><span class="uppercase">Vision</span>
 			{{ $t('rights') }}
 		</p>
-
-		<ContactForm :set-show-thanks />
 	</footer>
 </template>
 
@@ -36,27 +38,32 @@ const { setShowThanks } = defineProps({
 	background: var(--accent);
 	color: var(--bg);
 	font-weight: bolder;
-
 	display: grid;
 
 	@media (orientation: landscape) {
 		grid-template-columns: repeat(2, 1fr);
-		grid-template-rows: 1fr auto;
+		grid-template-rows: 1fr auto 1fr;
 		grid-template-areas:
-			'heading   form'
+			'heading   heading'
+			'contacts   form'
 			'copyright copyright';
 	}
 
 	@media (orientation: portrait) {
-		grid-template-rows: auto 1fr auto;
+		grid-template-rows: auto auto 1fr auto;
 		grid-template-areas:
 			'heading'
+			'contacts'
 			'form'
 			'copyright';
 	}
 
 	.heading {
 		grid-area: heading;
+	}
+
+	.contacts-block {
+		grid-area: contacts;
 	}
 
 	.form-container {
@@ -66,7 +73,12 @@ const { setShowThanks } = defineProps({
 		@media (orientation: portrait) {
 			margin-bottom: 4rem;
 		}
+
+		@media (orientation: landscape) {
+			align-self: start;
+		}
 	}
+
 	.copy {
 		grid-area: copyright;
 		align-self: end;

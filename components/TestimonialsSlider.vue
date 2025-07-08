@@ -20,16 +20,22 @@
 				:key="i"
 				:content="`
           <div class='testimonial-content'>
-            <img alt='${testimonial.author} photo' class='author-photo' src='/clients/client${
-							i + 1
-						}.jpg' />
-            <p class='testimonial-text font-inter-regular'>${
-							testimonial.text
-						}</p>
+            <img
+							alt='${testimonial.author} photo'
+							class='author-photo'
+							src='/clients/client${i + 1}.jpg'
+						/>
+            <p class='testimonial-text font-inter-regular'>
+							${testimonial.text}
+						</p>
             <p class='testimonial-author'>
-              <strong class='font-inter-regular'>${testimonial.author}.</strong>
+              <strong class='font-inter-regular'>
+								${testimonial.author}.
+							</strong>
               <br />
-              <em class='font-inter-italic'>${testimonial.author_}</em>
+              <em class='font-inter-italic'>
+								${testimonial.author}
+							</em>
             </p>
           </div>
         `"
@@ -75,7 +81,7 @@ const testimonials = computed(
 .testimonial-slider {
 	position: relative;
 	padding-inline: 10%;
-	width: 90% !important;
+	width: 90%;
 }
 
 .testimonial-slider,
@@ -156,6 +162,7 @@ const testimonials = computed(
 		left: calc(-0.25em - 1ch);
 		z-index: 5;
 	}
+
 	&::after {
 		content: '”';
 	}
@@ -178,7 +185,7 @@ const testimonials = computed(
 .thumbnails .vueperslide {
 	box-sizing: border-box;
 	border: 1px solid var(--text-main75);
-	transition: 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
 	opacity: 0.7;
 	cursor: pointer;
 	height: 100%;
@@ -197,7 +204,6 @@ const testimonials = computed(
 	height: 2rem;
 	aspect-ratio: 1;
 	object-fit: cover;
-	border-radius: 50%;
 	filter: saturate(0.8);
 }
 </style>
