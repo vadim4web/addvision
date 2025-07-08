@@ -1,94 +1,168 @@
 :root {
-  --transition-default: 1s;
-  --transition-filter: 5s;
+	--transition-default: 1s;
+	--transition-filter: 5s;
 }
 
 .glow-on-hover {
-  filter: drop-shadow(0 0 0 var(--accent75)) contrast(1) brightness(1) hue-rotate(0deg);
-  -webkit-filter: drop-shadow(0 0 0 var(--accent75)) contrast(1) brightness(1) hue-rotate(0deg);
-  
-  transition:    color var(--transition-default),    background-color var(--transition-default),    border var(--transition-default),    border-color var(--transition-default),    border-width var(--transition-default),    border-radius var(--transition-default),    box-shadow var(--transition-default),    opacity var(--transition-default),    transform var(--transition-default),    visibility var(--transition-default),    width var(--transition-default),    height var(--transition-default),    max-width var(--transition-default),    max-height var(--transition-default),    min-width var(--transition-default),    min-height var(--transition-default),    margin var(--transition-default),    padding var(--transition-default),    top var(--transition-default),    right var(--transition-default),    bottom var(--transition-default),    left var(--transition-default),    z-index var(--transition-default),    letter-spacing var(--transition-default),    line-height var(--transition-default),    text-indent var(--transition-default),    text-shadow var(--transition-default),    word-spacing var(--transition-default),    fill var(--transition-default),    stroke var(--transition-default),    outline var(--transition-default),    filter var(--transition-filter);
-  -webkit-transition:    color var(--transition-default),    background-color var(--transition-default),    border var(--transition-default),    border-color var(--transition-default),    border-width var(--transition-default),    border-radius var(--transition-default),    box-shadow var(--transition-default),    opacity var(--transition-default),    transform var(--transition-default),    visibility var(--transition-default),    width var(--transition-default),    height var(--transition-default),    max-width var(--transition-default),    max-height var(--transition-default),    min-width var(--transition-default),    min-height var(--transition-default),    margin var(--transition-default),    padding var(--transition-default),    top var(--transition-default),    right var(--transition-default),    bottom var(--transition-default),    left var(--transition-default),    z-index var(--transition-default),    letter-spacing var(--transition-default),    line-height var(--transition-default),    text-indent var(--transition-default),    text-shadow var(--transition-default),    word-spacing var(--transition-default),    fill var(--transition-default),    stroke var(--transition-default),    outline var(--transition-default),    filter var(--transition-filter);
+	filter: drop-shadow(0 0 0 var(--accent75)) contrast(1) brightness(1)
+		hue-rotate(0deg);
+	-webkit-filter: drop-shadow(0 0 0 var(--accent75)) contrast(1) brightness(1)
+		hue-rotate(0deg);
+
+	transition:
+		color var(--transition-default),
+		background-color var(--transition-default),
+		border var(--transition-default),
+		border-color var(--transition-default),
+		border-width var(--transition-default),
+		border-radius var(--transition-default),
+		box-shadow var(--transition-default),
+		opacity var(--transition-default),
+		transform var(--transition-default),
+		visibility var(--transition-default),
+		width var(--transition-default),
+		height var(--transition-default),
+		max-width var(--transition-default),
+		max-height var(--transition-default),
+		min-width var(--transition-default),
+		min-height var(--transition-default),
+		margin var(--transition-default),
+		padding var(--transition-default),
+		top var(--transition-default),
+		right var(--transition-default),
+		bottom var(--transition-default),
+		left var(--transition-default),
+		z-index var(--transition-default),
+		letter-spacing var(--transition-default),
+		line-height var(--transition-default),
+		text-indent var(--transition-default),
+		text-shadow var(--transition-default),
+		word-spacing var(--transition-default),
+		fill var(--transition-default),
+		stroke var(--transition-default),
+		outline var(--transition-default),
+		filter var(--transition-filter);
+	-webkit-transition:
+		color var(--transition-default),
+		background-color var(--transition-default),
+		border var(--transition-default),
+		border-color var(--transition-default),
+		border-width var(--transition-default),
+		border-radius var(--transition-default),
+		box-shadow var(--transition-default),
+		opacity var(--transition-default),
+		transform var(--transition-default),
+		visibility var(--transition-default),
+		width var(--transition-default),
+		height var(--transition-default),
+		max-width var(--transition-default),
+		max-height var(--transition-default),
+		min-width var(--transition-default),
+		min-height var(--transition-default),
+		margin var(--transition-default),
+		padding var(--transition-default),
+		top var(--transition-default),
+		right var(--transition-default),
+		bottom var(--transition-default),
+		left var(--transition-default),
+		z-index var(--transition-default),
+		letter-spacing var(--transition-default),
+		line-height var(--transition-default),
+		text-indent var(--transition-default),
+		text-shadow var(--transition-default),
+		word-spacing var(--transition-default),
+		fill var(--transition-default),
+		stroke var(--transition-default),
+		outline var(--transition-default),
+		filter var(--transition-filter);
 }
 
 .glow-on-hover:is(.section-heading) {
-  filter: drop-shadow(0 0 0 var(--accent75)) contrast(1) brightness(1) hue-rotate(0deg);
-  -webkit-filter: drop-shadow(0 0 0 var(--accent75)) contrast(1) brightness(1) hue-rotate(0deg);
-  transition: all 5s;
-  -webkit-transition: all 5s;
-  -moz-transition: all 5s;
-  -ms-transition: all 5s;
-  -o-transition: all 5s;
+	filter: drop-shadow(0 0 0 var(--accent75)) contrast(1) brightness(1)
+		hue-rotate(0deg);
+	-webkit-filter: drop-shadow(0 0 0 var(--accent75)) contrast(1) brightness(1)
+		hue-rotate(0deg);
+	transition: all 5s;
+	-webkit-transition: all 5s;
+	-moz-transition: all 5s;
+	-ms-transition: all 5s;
+	-o-transition: all 5s;
 }
 
 .glow-on-hover:hover {
-  filter: drop-shadow(0 0 0.2rem var(--accent75)) contrast(1.15) brightness(1.15) hue-rotate(360deg);
-  -webkit-filter: drop-shadow(0 0 0.2rem var(--accent75)) contrast(1.15) brightness(1.15) hue-rotate(360deg);
+	filter: drop-shadow(0 0 0.2rem var(--accent75)) contrast(1.15)
+		brightness(1.15) hue-rotate(360deg);
+	-webkit-filter: drop-shadow(0 0 0.2rem var(--accent75)) contrast(1.15)
+		brightness(1.15) hue-rotate(360deg);
 }
 
 @keyframes glow-infinite {
-  from {
-    filter: drop-shadow(0 0 0 var(--accent75)) contrast(1) brightness(1) hue-rotate(0deg);
-    -webkit-filter: drop-shadow(0 0 0 var(--accent75)) contrast(1) brightness(1) hue-rotate(0deg);
-  }
-  to {
-    filter: drop-shadow(0 0 0.15rem var(--accent75)) contrast(1.15) brightness(1.15) hue-rotate(360deg);
-    -webkit-filter: drop-shadow(0 0 0.15rem var(--accent75)) contrast(1.15) brightness(1.15) hue-rotate(360deg);
-  }
+	from {
+		filter: drop-shadow(0 0 0 var(--accent75)) contrast(1) brightness(1)
+			hue-rotate(0deg);
+		-webkit-filter: drop-shadow(0 0 0 var(--accent75)) contrast(1) brightness(1)
+			hue-rotate(0deg);
+	}
+	to {
+		filter: drop-shadow(0 0 0.15rem var(--accent75)) contrast(1.15)
+			brightness(1.15) hue-rotate(360deg);
+		-webkit-filter: drop-shadow(0 0 0.15rem var(--accent75)) contrast(1.15)
+			brightness(1.15) hue-rotate(360deg);
+	}
 }
 
 .glow-infinite {
-  animation: glow-infinite 5s infinite;
-  -webkit-animation: glow-infinite 5s infinite;
+	animation: glow-infinite 5s infinite;
+	-webkit-animation: glow-infinite 5s infinite;
 }
 
 .grid-four {
-  display: grid;
-  gap: 1rem;
-  margin: 0 auto;
+	display: grid;
+	gap: 1rem;
+	margin: 0 auto;
 }
 
-
-@media (orientation: landscape) , (min-width: 1280px) {
-  .grid-four {
-    grid-template-columns: repeat(4, 1fr);
-  }
+@media (orientation: landscape), (min-width: 1280px) {
+	.grid-four {
+		grid-template-columns: repeat(4, 1fr);
+	}
 }
 
 @media (min-width: 720px) and (max-width: 1279px) {
-  .grid-four {
-    grid-template-columns: repeat(2, 1fr);
-  }
+	.grid-four {
+		grid-template-columns: repeat(2, 1fr);
+	}
 }
 
 @media (max-width: 719px) {
-  .grid-four {}
+	.grid-four {
+	}
 }
 
 .accent {
-  color: var(--accent);
+	color: var(--accent);
 }
 
 .accent-light {
-  color: var(--accent-light);
+	color: var(--accent-light);
 }
 
 .accent-cyan {
-  color: var(--accent-cyan);
+	color: var(--accent-cyan);
 }
 
 .accent-electric {
-  color: var(--accent-electric);
+	color: var(--accent-electric);
 }
 
 .brown-deep {
-  color: var(--brown-deep);
+	color: var(--brown-deep);
 }
 
 .lowercase {
-  text-transform: lowercase;
+	text-transform: lowercase;
 }
 
 .uppercase {
-  text-transform: uppercase;
+	text-transform: uppercase;
 }

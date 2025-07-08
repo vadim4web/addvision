@@ -5,14 +5,14 @@
 		v-click-outside="close"
 		class="custom-select"
 		@keydown.down.prevent="nextOption"
-		@keydown.up.prevent="prevOption"
 		@keydown.enter.prevent="selectFocusedOption"
+		@keydown.up.prevent="prevOption"
 	>
 		<button
-			type="button"
-			class="select-button"
-			:aria-expanded="isOpen.toString()"
 			:aria-controls="dropdownId"
+			:aria-expanded="isOpen.toString()"
+			class="select-button"
+			type="button"
 			@click="toggle"
 		>
 			<span>{{ selectedLabel || placeholder }}</span>
@@ -23,12 +23,12 @@
 			<li
 				v-for="(option, i) in options"
 				:key="option.value"
+				:aria-selected="option.value === modelValue"
 				:class="{
 					selected: option.value === modelValue,
 					focused: focusedIndex === i,
 				}"
 				role="option"
-				:aria-selected="option.value === modelValue"
 				@click="select(option.value)"
 				@mouseenter="focusedIndex = i"
 			>

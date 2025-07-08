@@ -32,12 +32,12 @@ export default {
 			contact: 'Контактна інформація',
 		},
 		what: {
-      titleParts: {
-        before: "ЩО МИ ВКЛЮЧАЄМО",
-        brownDeep1: "В",
-        accent: "УПАКОВКУ",
-        brownDeep2: "БІЗНЕСУ?"
-      },
+			titleParts: {
+				before: 'ЩО МИ ВКЛЮЧАЄМО',
+				brownDeep1: 'В',
+				accent: 'УПАКОВКУ',
+				brownDeep2: 'БІЗНЕСУ?',
+			},
 			sections: {
 				senses: {
 					title: 'Сенси',
@@ -83,14 +83,14 @@ export default {
 			cta: 'Індивідуально підбираємо комплекс послуг під ваш бізнес для максимального результату.',
 		},
 		why: {
-      titleParts: {
-        before: "ЧОМУ",
-        accent: "МИ"
-      },
-      coopParts: {
-        accent: "Спів",
-        rest: "творення"
-      },
+			titleParts: {
+				before: 'ЧОМУ',
+				accent: 'МИ',
+			},
+			coopParts: {
+				accent: 'Спів',
+				rest: 'творення',
+			},
 			values:
 				' — це партнерство, це більше за відносини “замовник-підрядник”. Ми прагнемо бути корисними з першої зустрічі, допомогти, вкласти наш досвід у новий проект. Якщо ми працюємо з вами, значить безперечно віримо у нього.',
 			stats: [
@@ -173,11 +173,11 @@ export default {
 			},
 		},
 		testimonials: {
-      titleParts: {
-        before: "ВІДГУКИ",
-        accent: "КЛІЄНТІВ",
-        accent_: "",
-      },
+			titleParts: {
+				before: 'ВІДГУКИ',
+				accent: 'КЛІЄНТІВ',
+				accent_: '',
+			},
 			list: [
 				{
 					text: 'Сайт на WordPress з усім потрібним функціоналом — усе працює стабільно, легко оновлюється. Просто додаю подію чи включаю чат — і готово.',

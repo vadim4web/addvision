@@ -11,7 +11,10 @@
     "postinstall": "nuxt prepare",
     "deploy": "nuxi generate && gh-pages -d dist",
     "deploy_": "nuxt generate && gh-pages -d .output/public",
-    "export:locales": "node scripts/export-locales.js"
+    "export:locales": "node scripts/export-locales.js",
+    "prettify": "prettier --write \"**/*.{js,ts,vue}\"",
+    "lint": "eslint \"**/*.{js,ts,vue}\" --fix",
+    "format": "npm run prettify && npm run lint"
   },
   "dependencies": {
     "@nuxt/eslint": "^1.4.1",
@@ -29,6 +32,7 @@
     "vueperslides": "^3.6.0"
   },
   "devDependencies": {
+    "eslint-plugin-vuejs-accessibility": "^2.4.1",
     "gh-pages": "^6.3.0",
     "sass-embedded": "^1.89.0"
   }

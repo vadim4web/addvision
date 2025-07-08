@@ -32,12 +32,12 @@ export default {
 			contact: 'Contact information',
 		},
 		what: {
-      titleParts: {
-        before: "WHAT WE INCLUDE",
-        brownDeep1: "IN",
-        accent: "BUSINESS",
-        brownDeep2: "BRANDING?"
-      },
+			titleParts: {
+				before: 'WHAT WE INCLUDE',
+				brownDeep1: 'IN',
+				accent: 'BUSINESS',
+				brownDeep2: 'BRANDING?',
+			},
 			sections: {
 				senses: {
 					title: 'Senses',
@@ -83,14 +83,14 @@ export default {
 			cta: 'We tailor a service package specifically for your business to achieve maximum results.',
 		},
 		why: {
-      titleParts: {
-        before: "WHY",
-        accent: "US"
-      },
-      coopParts: {
-        accent: "Co",
-        rest: "creation"
-      },
+			titleParts: {
+				before: 'WHY',
+				accent: 'US',
+			},
+			coopParts: {
+				accent: 'Co',
+				rest: 'creation',
+			},
 			values:
 				' is a partnership — more than just a client-contractor relationship. We aim to bring value from the very first meeting, contribute, and invest our experience into each new project. If we work with you, it means we truly believe in it.',
 			stats: [
@@ -173,11 +173,11 @@ export default {
 			},
 		},
 		testimonials: {
-      titleParts: {
-        before: "CLIENT",
-        accent: "TESTI",
-        accent_: "MONIALS",
-      },
+			titleParts: {
+				before: 'CLIENT',
+				accent: 'TESTI',
+				accent_: 'MONIALS',
+			},
 			list: [
 				{
 					text: 'A complete WordPress site with everything I need — events, chat, subscriptions. It’s easy to manage and just works.',

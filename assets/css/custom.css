@@ -1,72 +1,79 @@
 /* Стиль виділення тексту */
 ::selection {
-  background-color: var(--accent);      /* Акцентний колір */
-  color: var(--white);                   /* Білий текст */
-  text-shadow: none;
+	background-color: var(--accent); /* Акцентний колір */
+	color: var(--white); /* Білий текст */
+	text-shadow: none;
 }
 
 /* WebKit-браузери (Chrome, Safari) */
 ::-webkit-scrollbar {
-  width: 12px;
-  height: 12px;
+	width: 12px;
+	height: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg25);
-  border-radius: 8px;
+	background: var(--bg25);
+	border-radius: 8px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--accent75);
-  border-radius: 8px;
-  border: 3px solid var(--bg25);
-  transition: background-color 0.3s ease;
+	background-color: var(--accent75);
+	border-radius: 8px;
+	border: 3px solid var(--bg25);
+	transition: background-color 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: var(--accent-light);
+	background-color: var(--accent-light);
 }
 
 /* Firefox */
 * {
-  scrollbar-width: thin;
-  scrollbar-color: var(--accent75) var(--bg25);
+	scrollbar-width: thin;
+	scrollbar-color: var(--accent75) var(--bg25);
 }
 
 /* Для Edge (Chromium) та інших браузерів, що підтримують WebKit-стилі — буде працювати як для Chrome */
 
 h2:not(.coop-heading, .cases-heading) {
-  padding-bottom: 3rem;
+	padding-bottom: 3rem;
 }
 
 @media (orientation: portrait) {
-  :root {
-    --padding-inline: 2rem;
-  }
+	:root {
+		--padding-inline: 2rem;
+	}
 }
 
 @media (orientation: landscape) {
-  :root {
-    --padding-inline: 8%;
-  }
+	:root {
+		--padding-inline: 8%;
+	}
 }
 
-main section:not(:first-of-type, .services-section, .why-us-section, .cases-section) {
-  padding: 5rem var(--padding-inline);
+main
+	section:not(
+		:first-of-type,
+		.services-section,
+		.why-us-section,
+		.cases-section
+	) {
+	padding: 5rem var(--padding-inline);
 }
 
-footer, .services-section {
-  padding: 2rem var(--padding-inline);
+footer,
+.services-section {
+	padding: 2rem var(--padding-inline);
 }
 
 .why-us-section {
-  padding: 5rem 0;
+	padding: 5rem 0;
 }
 
 .cases-section {
-  padding: 0 var(--padding-inline);
+	padding: 0 var(--padding-inline);
 }
 
 main section:first-of-type {
-  padding-bottom: 2rem;
+	padding-bottom: 2rem;
 }

@@ -1,3 +1,3 @@
 // composables/useHeaderVisibility.ts
 export const useHeaderVisibility = () =>
-  useState<boolean>('header-visible', () => false)
+	useState<boolean>('header-visible', () => false)

@@ -1,29 +1,65 @@
 <template>
-  <div class="video-container" aria-hidden="true">
-    <video
-      autoplay
-      muted
-      loop
-      playsinline
-      class="hero-video"
-      tabindex="-1"
-      aria-hidden="true"
-    >
-      <!-- Optional: <track> with no captions to explicitly state "no captions" -->
-      <track kind="captions" src="" srclang="en" label="No audio content">
+	<div aria-hidden="true" class="video-container">
+		<video
+			aria-hidden="true"
+			autoplay
+			class="hero-video"
+			loop
+			muted
+			playsinline
+			tabindex="-1"
+		>
+			<!-- Optional: <track> with no captions to explicitly state "no captions" -->
+			<track kind="captions" label="No audio content" src="" srclang="en" />
 
-      <source src="/video/add_vision_3840x2160.mp4" type="video/mp4" media="(min-width: 1920px)">
-      <source src="/video/add_vision_1920x1080.mp4" type="video/mp4" media="(min-width: 1600px)">
-      <source src="/video/add_vision_1600x900.mp4" type="video/mp4" media="(min-width: 1280px)">
-      <source src="/video/add_vision_1280x720.mp4" type="video/mp4" media="(min-width: 1024px)">
-      <source src="/video/add_vision_1024x600.mp4" type="video/mp4" media="(min-width: 800px)">
-      <source src="/video/add_vision_854x480.mp4" type="video/mp4" media="(min-width: 768px)">
-      <source src="/video/add_vision_768x480.mp4" type="video/mp4" media="(min-width: 600px)">
-      <source src="/video/add_vision_400x240.mp4" type="video/mp4" media="(min-width: 400px)">
-      <source src="/video/add_vision_384x240.mp4" type="video/mp4" media="(min-width: 300px)">
-      <source src="/video/add_vision_256x160.mp4" type="video/mp4">
-    </video>
-  </div>
+			<source
+				media="(min-width: 1920px)"
+				src="/video/add_vision_3840x2160.mp4"
+				type="video/mp4"
+			/>
+			<source
+				media="(min-width: 1600px)"
+				src="/video/add_vision_1920x1080.mp4"
+				type="video/mp4"
+			/>
+			<source
+				media="(min-width: 1280px)"
+				src="/video/add_vision_1600x900.mp4"
+				type="video/mp4"
+			/>
+			<source
+				media="(min-width: 1024px)"
+				src="/video/add_vision_1280x720.mp4"
+				type="video/mp4"
+			/>
+			<source
+				media="(min-width: 800px)"
+				src="/video/add_vision_1024x600.mp4"
+				type="video/mp4"
+			/>
+			<source
+				media="(min-width: 768px)"
+				src="/video/add_vision_854x480.mp4"
+				type="video/mp4"
+			/>
+			<source
+				media="(min-width: 600px)"
+				src="/video/add_vision_768x480.mp4"
+				type="video/mp4"
+			/>
+			<source
+				media="(min-width: 400px)"
+				src="/video/add_vision_400x240.mp4"
+				type="video/mp4"
+			/>
+			<source
+				media="(min-width: 300px)"
+				src="/video/add_vision_384x240.mp4"
+				type="video/mp4"
+			/>
+			<source src="/video/add_vision_256x160.mp4" type="video/mp4" />
+		</video>
+	</div>
 </template>
 
 <style lang="scss">
@@ -49,12 +85,12 @@
 } */
 
 .video-container {
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  position: absolute;
+	inset: 0;
+	z-index: 0;
+	pointer-events: none;
+	position: absolute;
 
-  /*
+	/*
   &::before {
     content: "";
     position: absolute;
@@ -84,8 +120,8 @@
 }
 
 .hero-video {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
 }
 </style>

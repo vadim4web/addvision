@@ -1,20 +1,18 @@
 <template>
-  <main class="cases-page">
-    <h1>{add}VISION : {{ $t('cases.title') }}</h1>
-    <hr>
+	<main class="cases-page">
+		<h1>{add}VISION : {{ $t('cases.title') }}</h1>
+		<hr />
 
-    * * *
-  </main>
+		* * *
+	</main>
 </template>
 
-<script setup>
-
-</script>
+<script setup></script>
 
 <style lang="scss" scoped>
 .cases-page {
-  background: var(--bg);
-  flex-grow: 1;
-  min-height: 100dvh;
+	background: var(--bg);
+	flex-grow: 1;
+	min-height: 100dvh;
 }
 </style>
