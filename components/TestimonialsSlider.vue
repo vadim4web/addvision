@@ -34,7 +34,7 @@
 							</strong>
               <br />
               <em class='font-inter-italic'>
-								${testimonial.author}
+								${testimonial.author_}
 							</em>
             </p>
           </div>

@@ -3,10 +3,10 @@ export default defineNuxtConfig({
 	compatibilityDate: '2025-05-15',
 	devtools: { enabled: true },
 
-	// app: {
-	//   baseURL: '/nuxt/',  // ✅ впливає на <script>, <link>
-	//   cdnURL: '/nuxt/',   // ✅ впливає на шрифти, зображення тощо
-	// },
+	app: {
+	  baseURL: '/nuxt/',  // ✅ впливає на <script>, <link>
+	  cdnURL: '/nuxt/',   // ✅ впливає на шрифти, зображення тощо
+	},
 
 	nitro: {
 		preset: 'static',
