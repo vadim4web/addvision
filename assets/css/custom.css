@@ -124,21 +124,16 @@ body::after {
 	opacity: 0.02;
 }
 
-section > * {
+section>* {
 	position: relative;
-	z-index: 10;
+	z-index: 5;
 }
 
 a {
 	padding: 0.5em !important;
 }
 
-.hero-section svg {
-	filter: drop-shadow(0 0 0.1em currentColor);
-	-webkit-filter: drop-shadow(0 0 0.1em currentColor);
-}
-
-a,
+/* a,
 em,
 strong,
 span,
@@ -153,13 +148,21 @@ button
 {
 	filter: drop-shadow(0 0 0.04em currentColor);
 	-webkit-filter: drop-shadow(0 0 0.04em currentColor);
-}
+} */
 
+.logo-image,
 .logo span,
 .logo em,
-.logo strong {
-	filter: drop-shadow(0 0 0.04em currentColor);
-	-webkit-filter: drop-shadow(0 0 0.04em currentColor);
+.logo strong,
+.hero-section a,
+.hero-section .moto {
+	filter: drop-shadow(0 0 0.075em var(--bg));
+	-webkit-filter: drop-shadow(0 0 0.075em var(--bg));
+}
+
+.hero-section .brand svg {
+	filter: drop-shadow(0 0 0.5rem var(--bg));
+	-webkit-filter: drop-shadow(0 0 0.5rem var(--bg));
 }
 
 h2:not(.coop-heading, .cases-heading) {

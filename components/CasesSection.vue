@@ -2,7 +2,7 @@
 	<section id="cases" :aria-label="$t('aria.cases')" class="cases-section">
 		<div class="content">
 			<div class="head">
-				<SectionHeading class="cases-heading">
+				<SectionHeading class="cases-heading glow-on-hover">
 					<span class="heading-text">{{ $t('cases.title') }}</span>
 					<i class="arrow"><SvgArrow /></i>
 				</SectionHeading>

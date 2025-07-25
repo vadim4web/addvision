@@ -25,10 +25,10 @@
 							class='author-photo'
 							src='/clients/client${i + 1}.jpg'
 						/>
-            <p class='testimonial-text font-inter-regular'>
+            <p class='testimonial-text font-inter-regular glow-on-hover'>
 							${testimonial.text}
 						</p>
-            <p class='testimonial-author'>
+            <p class='testimonial-author glow-on-hover'>
               <strong class='font-inter-regular'>
 								${testimonial.author}.
 							</strong>

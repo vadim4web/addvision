@@ -5,16 +5,16 @@
 		class="services-section"
 	>
 		<div class="content">
-			<SectionHeading>
+			<SectionHeading class="glow-on-hover-light">
 				<span class="heading-text">{{ $t('services.title') }}</span>
 				<i class="arrow"><SvgArrow /></i>
 			</SectionHeading>
 
-			<strong class="services-title glow-on-hover">
+			<strong class="services-title glow-on-hover-light">
 				{{ $t('services.heading') }}
 			</strong>
 
-			<p class="services-description glow-on-hover">
+			<p class="services-description glow-on-hover-light">
 				{{ $t('services.description') }}
 			</p>
 
@@ -22,7 +22,7 @@
 				<div
 					v-for="(category, index) in services?.categories || []"
 					:key="index"
-					class="category glow-on-hover"
+					class="category glow-on-hover-light"
 				>
 					<h3 class="font-yanone-light category-title">{{ category.title }}</h3>
 					<ul class="category-description">

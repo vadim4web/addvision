@@ -89,7 +89,7 @@ onUnmounted(() => {
 			v-for="(section, key, index) in sections"
 			:key="key"
 			ref="sectionRefs"
-			class="what-section"
+			class="what-section glow-on-hover"
 		>
 			<h3 class="glow-on-hover">{{ section.title }}</h3>
 

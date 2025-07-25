@@ -5,7 +5,7 @@
 		class="what-we-do-section masked-section"
 	>
 		<div class="content">
-			<SectionHeading>
+			<SectionHeading class="glow-on-hover">
 				<span class="heading-text">
 					<span class="before">
 						{{ $t('what.titleParts.before') }}

@@ -1,5 +1,5 @@
 <template>
-	<h2 class="section-heading font-inter-semibold glow-on-hover">
+	<h2 class="section-heading font-inter-semibold">
 		<slot />
 	</h2>
 </template>
@@ -8,6 +8,8 @@
 
 <style lang="scss">
 .section-heading {
+	position: relative;
+	z-index: 5;
 	padding-top: 0.5rem;
 	line-height: 1;
 	display: grid;

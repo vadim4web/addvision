@@ -2,7 +2,7 @@
 	<section id="why-us" :aria-label="$t('aria.whyUs')" class="why-us-section">
 		<div class="content">
 			<div class="coop">
-				<SectionHeading class="coop-heading">
+				<SectionHeading class="coop-heading glow-on-hover">
 					<span class="heading-text">
 						<span class="before">
 							{{ $t('why.titleParts.before') }}
@@ -27,7 +27,7 @@
 						</span>
 					</strong>
 
-					<div class="coop-top-right-visual">
+					<div class="coop-top-right-visual glow-on-hover">
 						<img alt="" height="400" src="/images/coop.webp" width="400" />
 					</div>
 				</div>
@@ -98,6 +98,7 @@
 				img {
 					width: 100%;
 					height: 100%;
+					border-radius: 50%;
 				}
 
 				&::after {
@@ -107,11 +108,12 @@
 					left: 0;
 					width: 100%;
 					height: 100%;
+					border-radius: 50%;
 					scale: 1.02;
 					background: radial-gradient(
 						circle at center,
 						transparent,
-						var(--bg) 71%
+						var(--dark-green) 71%
 					);
 				}
 			}

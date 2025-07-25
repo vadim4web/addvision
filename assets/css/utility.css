@@ -9,97 +9,39 @@
 	margin-inline: auto;
 }
 
-.glow-on-hover {
-	filter: drop-shadow(0 0 0 var(--accent75)) contrast(1) brightness(1)
-		hue-rotate(0deg);
-	-webkit-filter: drop-shadow(0 0 0 var(--accent75)) contrast(1) brightness(1)
-		hue-rotate(0deg);
+.glow-on-hover,
+.glow-on-hover-light {
+	transition:		color var(--transition-default),		background-color var(--transition-default),		border var(--transition-default),		border-color var(--transition-default),		border-width var(--transition-default),		border-radius var(--transition-default),		box-shadow var(--transition-default),		opacity var(--transition-default),		transform var(--transition-default),		visibility var(--transition-default),		width var(--transition-default),		height var(--transition-default),		max-width var(--transition-default),		max-height var(--transition-default),		min-width var(--transition-default),		min-height var(--transition-default),		margin var(--transition-default),		padding var(--transition-default),		top var(--transition-default),		right var(--transition-default),		bottom var(--transition-default),		left var(--transition-default),		z-index var(--transition-default),		letter-spacing var(--transition-default),		line-height var(--transition-default),		text-indent var(--transition-default),		text-shadow var(--transition-default),		word-spacing var(--transition-default),		fill var(--transition-default),		stroke var(--transition-default),		outline var(--transition-default),		filter var(--transition-filter) !important;
+	-webkit-transition:		color var(--transition-default),		background-color var(--transition-default),		border var(--transition-default),		border-color var(--transition-default),		border-width var(--transition-default),		border-radius var(--transition-default),		box-shadow var(--transition-default),		opacity var(--transition-default),		transform var(--transition-default),		visibility var(--transition-default),		width var(--transition-default),		height var(--transition-default),		max-width var(--transition-default),		max-height var(--transition-default),		min-width var(--transition-default),		min-height var(--transition-default),		margin var(--transition-default),		padding var(--transition-default),		top var(--transition-default),		right var(--transition-default),		bottom var(--transition-default),		left var(--transition-default),		z-index var(--transition-default),		letter-spacing var(--transition-default),		line-height var(--transition-default),		text-indent var(--transition-default),		text-shadow var(--transition-default),		word-spacing var(--transition-default),		fill var(--transition-default),		stroke var(--transition-default),		outline var(--transition-default),		filter var(--transition-filter) !important;
+	-moz-transition:		color var(--transition-default),		background-color var(--transition-default),		border var(--transition-default),		border-color var(--transition-default),		border-width var(--transition-default),		border-radius var(--transition-default),		box-shadow var(--transition-default),		opacity var(--transition-default),		transform var(--transition-default),		visibility var(--transition-default),		width var(--transition-default),		height var(--transition-default),		max-width var(--transition-default),		max-height var(--transition-default),		min-width var(--transition-default),		min-height var(--transition-default),		margin var(--transition-default),		padding var(--transition-default),		top var(--transition-default),		right var(--transition-default),		bottom var(--transition-default),		left var(--transition-default),		z-index var(--transition-default),		letter-spacing var(--transition-default),		line-height var(--transition-default),		text-indent var(--transition-default),		text-shadow var(--transition-default),		word-spacing var(--transition-default),		fill var(--transition-default),		stroke var(--transition-default),		outline var(--transition-default),		filter var(--transition-filter) !important;
+	-ms-transition:		color var(--transition-default),		background-color var(--transition-default),		border var(--transition-default),		border-color var(--transition-default),		border-width var(--transition-default),		border-radius var(--transition-default),		box-shadow var(--transition-default),		opacity var(--transition-default),		transform var(--transition-default),		visibility var(--transition-default),		width var(--transition-default),		height var(--transition-default),		max-width var(--transition-default),		max-height var(--transition-default),		min-width var(--transition-default),		min-height var(--transition-default),		margin var(--transition-default),		padding var(--transition-default),		top var(--transition-default),		right var(--transition-default),		bottom var(--transition-default),		left var(--transition-default),		z-index var(--transition-default),		letter-spacing var(--transition-default),		line-height var(--transition-default),		text-indent var(--transition-default),		text-shadow var(--transition-default),		word-spacing var(--transition-default),		fill var(--transition-default),		stroke var(--transition-default),		outline var(--transition-default),		filter var(--transition-filter) !important;
+	-o-transition:		color var(--transition-default),		background-color var(--transition-default),		border var(--transition-default),		border-color var(--transition-default),		border-width var(--transition-default),		border-radius var(--transition-default),		box-shadow var(--transition-default),		opacity var(--transition-default),		transform var(--transition-default),		visibility var(--transition-default),		width var(--transition-default),		height var(--transition-default),		max-width var(--transition-default),		max-height var(--transition-default),		min-width var(--transition-default),		min-height var(--transition-default),		margin var(--transition-default),		padding var(--transition-default),		top var(--transition-default),		right var(--transition-default),		bottom var(--transition-default),		left var(--transition-default),		z-index var(--transition-default),		letter-spacing var(--transition-default),		line-height var(--transition-default),		text-indent var(--transition-default),		text-shadow var(--transition-default),		word-spacing var(--transition-default),		fill var(--transition-default),		stroke var(--transition-default),		outline var(--transition-default),		filter var(--transition-filter) !important;
+}
 
-	transition:
-		color var(--transition-default),
-		background-color var(--transition-default),
-		border var(--transition-default),
-		border-color var(--transition-default),
-		border-width var(--transition-default),
-		border-radius var(--transition-default),
-		box-shadow var(--transition-default),
-		opacity var(--transition-default),
-		transform var(--transition-default),
-		visibility var(--transition-default),
-		width var(--transition-default),
-		height var(--transition-default),
-		max-width var(--transition-default),
-		max-height var(--transition-default),
-		min-width var(--transition-default),
-		min-height var(--transition-default),
-		margin var(--transition-default),
-		padding var(--transition-default),
-		top var(--transition-default),
-		right var(--transition-default),
-		bottom var(--transition-default),
-		left var(--transition-default),
-		z-index var(--transition-default),
-		letter-spacing var(--transition-default),
-		line-height var(--transition-default),
-		text-indent var(--transition-default),
-		text-shadow var(--transition-default),
-		word-spacing var(--transition-default),
-		fill var(--transition-default),
-		stroke var(--transition-default),
-		outline var(--transition-default),
-		filter var(--transition-filter);
-	-webkit-transition:
-		color var(--transition-default),
-		background-color var(--transition-default),
-		border var(--transition-default),
-		border-color var(--transition-default),
-		border-width var(--transition-default),
-		border-radius var(--transition-default),
-		box-shadow var(--transition-default),
-		opacity var(--transition-default),
-		transform var(--transition-default),
-		visibility var(--transition-default),
-		width var(--transition-default),
-		height var(--transition-default),
-		max-width var(--transition-default),
-		max-height var(--transition-default),
-		min-width var(--transition-default),
-		min-height var(--transition-default),
-		margin var(--transition-default),
-		padding var(--transition-default),
-		top var(--transition-default),
-		right var(--transition-default),
-		bottom var(--transition-default),
-		left var(--transition-default),
-		z-index var(--transition-default),
-		letter-spacing var(--transition-default),
-		line-height var(--transition-default),
-		text-indent var(--transition-default),
-		text-shadow var(--transition-default),
-		word-spacing var(--transition-default),
-		fill var(--transition-default),
-		stroke var(--transition-default),
-		outline var(--transition-default),
-		filter var(--transition-filter);
+.glow-on-hover {
+		filter: drop-shadow(0 0 0.2em var(--bg)) contrast(1) brightness(1)		hue-rotate(0deg);
+	-webkit-filter: drop-shadow(0 0 0.2em var(--bg)) contrast(1) brightness(1)		hue-rotate(0deg);
 }
 
 .glow-on-hover:is(.section-heading) {
-	filter: drop-shadow(0 0 0 var(--accent75)) contrast(1) brightness(1)
-		hue-rotate(0deg);
-	-webkit-filter: drop-shadow(0 0 0 var(--accent75)) contrast(1) brightness(1)
-		hue-rotate(0deg);
-	transition: all 5s;
-	-webkit-transition: all 5s;
-	-moz-transition: all 5s;
-	-ms-transition: all 5s;
-	-o-transition: all 5s;
+	filter: drop-shadow(0 0 0.25em var(--bg)) contrast(1) brightness(1)		hue-rotate(0deg);
+	-webkit-filter: drop-shadow(0 0 0.25em var(--bg)) contrast(1) brightness(1)		hue-rotate(0deg);
 }
 
-.glow-on-hover:hover {
-	filter: drop-shadow(0 0 0.2rem var(--accent75)) contrast(1.15)
-		brightness(1.15) hue-rotate(360deg);
-	-webkit-filter: drop-shadow(0 0 0.2rem var(--accent75)) contrast(1.15)
-		brightness(1.15) hue-rotate(360deg);
+.glow-on-hover:hover,
+.glow-on-hover-light:hover {
+	filter: drop-shadow(0 0 0.25em var(--accent75)) contrast(1.15)		brightness(1.15) hue-rotate(360deg);
+	-webkit-filter: drop-shadow(0 0 0.25em var(--accent75)) contrast(1.15)		brightness(1.15) hue-rotate(360deg);
+}
+
+.glow-on-hover-light {
+	filter: drop-shadow(0 0 0.2em var(--accent-electric)) contrast(1) brightness(1)		hue-rotate(0deg);
+	-webkit-filter: drop-shadow(0 0 0.2em var(--accent-electric)) contrast(1) brightness(1)		hue-rotate(0deg);
+}
+
+.glow-on-hover-light:is(.section-heading) {
+	filter: drop-shadow(0 0 0.25em var(--accent75)) contrast(1) brightness(1)		hue-rotate(0deg);
+	-webkit-filter: drop-shadow(0 0 0.25em var(--accent75)) contrast(1) brightness(1)		hue-rotate(0deg);
 }
 
 @keyframes glow-infinite {
@@ -139,11 +81,6 @@
 		grid-template-columns: repeat(2, 1fr);
 	}
 }
-
-/* @media (max-width: 719px) {
-	.grid-four {
-	}
-} */
 
 .accent {
 	color: var(--accent);

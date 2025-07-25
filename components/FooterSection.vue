@@ -6,7 +6,7 @@
 		role="contentinfo"
 	>
 		<div class="content">
-			<SectionHeading class="heading">
+			<SectionHeading class="heading glow-on-hover-light">
 				<span class="heading-text">{{ $t('contacts.title') }}</span>
 				<i class="arrow"><SvgArrow /></i>
 			</SectionHeading>
@@ -43,10 +43,8 @@ const { setShowThanks } = defineProps({
 
 	.content {
 		display: grid;
-		align-items: center;
-		justify-items: center;
 		align-content: center;
-		justify-content: center;
+		gap: 1rem;
 
 		grid-template-columns: repeat(2, 1fr);
 		grid-template-rows: 1fr auto 1fr;

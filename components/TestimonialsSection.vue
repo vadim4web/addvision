@@ -5,7 +5,7 @@
 		class="testimonials-section"
 	>
 		<div class="content">
-			<SectionHeading>
+			<SectionHeading class="glow-on-hover">
 				<span class="heading-text">
 					<span class="before">
 						{{ $t('testimonials.titleParts.before') }}

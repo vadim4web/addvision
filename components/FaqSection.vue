@@ -6,7 +6,7 @@
 		class="faq-section"
 	>
 		<div class="content">
-			<SectionHeading>
+			<SectionHeading class="glow-on-hover">
 				<span class="faq-heading heading-text">
 					{{ $t('faq.titleParts.start') }}
 					<br />

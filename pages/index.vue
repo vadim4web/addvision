@@ -7,7 +7,7 @@
 		<CasesSection />
 		<ServicesSection />
 		<TestimonialsSection />
-		<CasesShowreelІSection />
+		<CasesShowrealSection />
 		<FaqSection />
 	</main>
 </template>

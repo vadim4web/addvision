@@ -157,15 +157,15 @@
 			gap: 0.5rem;
 			align-items: center;
 			padding: 1rem;
-			height: 7.5rem;
+			height: 7rem;
 
 			@media (max-width: 1080px) {
 				height: 6rem;
 			}
 
 			svg {
-				width: 5.5rem;
-				height: 5.5rem;
+				width: 5rem;
+				height: 5rem;
 
 
 				@media (max-width: 1080px) {
