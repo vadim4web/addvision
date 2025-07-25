@@ -115,17 +115,6 @@
 
 				Telegram
 			</a>
-			<!-- <a href="http://">
-        <svg
-  id="Layer_1" enable-background="new 0 0 64 64" height="800px" version="1.0" 
-          viewBox="0 0 64 64" width="800px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <path
-  d="M32,0C18.746,0,8,10.746,8,24c0,5.219,1.711,10.008,4.555,13.93c0.051,0.094,0.059,0.199,0.117,0.289l16,24
-          C29.414,63.332,30.664,64,32,64s2.586-0.668,3.328-1.781l16-24c0.059-0.09,0.066-0.195,0.117-0.289C54.289,34.008,56,29.219,56,24
-          C56,10.746,45.254,0,32,0z M32,32c-4.418,0-8-3.582-8-8s3.582-8,8-8s8,3.582,8,8S36.418,32,32,32z" fill="var(--bg)"/>
-        </svg>
-        Boiarka
-      </a> -->
 		</address>
 	</div>
 </template>
@@ -134,11 +123,10 @@
 
 <style lang="scss">
 .contacts-block {
-	@media (orientation: landscape) {
-		font-size: 1.5rem;
-	}
+	font-size: 1.5rem;
 
-	@media (orientation: portrait) {
+	@media (max-width: 1080px) {
+		font-size: 1rem;
 		padding-bottom: 2rem;
 	}
 
@@ -146,11 +134,9 @@
 		text-wrap: pretty;
 		text-wrap-mode: wrap;
 		text-wrap-style: pretty;
-		@media (orientation: landscape) {
-		}
 
-		@media (orientation: portrait) {
-			width: max(65%, 65ch);
+		@media (max-width: 1080px) {
+			width: min(65%, 65ch);
 			margin-inline: auto;
 		}
 	}
@@ -159,12 +145,10 @@
 		display: flex;
 		justify-content: center;
 		max-height: min-content;
+		flex-direction: column;
 
-		@media (orientation: landscape) {
-			flex-direction: column;
-		}
-
-		@media (orientation: portrait) {
+		@media (max-width: 1080px) {
+			flex-direction: row;
 			align-items: center;
 		}
 
@@ -173,22 +157,18 @@
 			gap: 0.5rem;
 			align-items: center;
 			padding: 1rem;
+			height: 7.5rem;
 
-			@media (orientation: landscape) {
-				height: 7.5rem;
-			}
-
-			@media (orientation: portrait) {
+			@media (max-width: 1080px) {
 				height: 6rem;
 			}
 
 			svg {
-				@media (orientation: landscape) {
-					width: 5.5rem;
-					height: 5.5rem;
-				}
+				width: 5.5rem;
+				height: 5.5rem;
 
-				@media (orientation: portrait) {
+
+				@media (max-width: 1080px) {
 					width: 4rem;
 					height: 4rem;
 				}

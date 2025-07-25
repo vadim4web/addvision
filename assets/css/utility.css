@@ -3,6 +3,12 @@
 	--transition-filter: 5s;
 }
 
+.content {
+	max-width: 1280px;
+	width: 100%;
+	margin-inline: auto;
+}
+
 .glow-on-hover {
 	filter: drop-shadow(0 0 0 var(--accent75)) contrast(1) brightness(1)
 		hue-rotate(0deg);
@@ -134,10 +140,10 @@
 	}
 }
 
-@media (max-width: 719px) {
+/* @media (max-width: 719px) {
 	.grid-four {
 	}
-}
+} */
 
 .accent {
 	color: var(--accent);

@@ -5,22 +5,24 @@
 		class="contacts-section"
 		role="contentinfo"
 	>
-		<SectionHeading class="heading">
-			<span class="heading-text">{{ $t('contacts.title') }}</span>
-			<i class="arrow"><SvgArrow /></i>
-		</SectionHeading>
+		<div class="content">
+			<SectionHeading class="heading">
+				<span class="heading-text">{{ $t('contacts.title') }}</span>
+				<i class="arrow"><SvgArrow /></i>
+			</SectionHeading>
 
-		<ContactsBlock />
+			<ContactsBlock />
 
-		<ContactForm :set-show-thanks />
+			<ContactForm :set-show-thanks />
 
-		<p class="copy">
-			&copy; 2013 - {{ new Date().getFullYear() }}
-			<span style="color: var(--gray)">{</span><span class="lowercase">Add</span
-			><span style="color: var(--gray)">}</span
-			><span class="uppercase">Vision</span>
-			{{ $t('rights') }}
-		</p>
+			<p class="copy">
+				&copy; 2013 - {{ new Date().getFullYear() }}
+				<span style="color: var(--gray)">{</span><span class="lowercase">Add</span
+				><span style="color: var(--gray)">}</span
+				><span class="uppercase">Vision</span>
+				{{ $t('rights') }}
+			</p>
+		</div>
 	</footer>
 </template>
 
@@ -38,50 +40,57 @@ const { setShowThanks } = defineProps({
 	background: var(--accent);
 	color: var(--bg);
 	font-weight: bolder;
-	display: grid;
 
-	@media (orientation: landscape) {
+	.content {
+		display: grid;
+		align-items: center;
+		justify-items: center;
+		align-content: center;
+		justify-content: center;
+
 		grid-template-columns: repeat(2, 1fr);
 		grid-template-rows: 1fr auto 1fr;
 		grid-template-areas:
 			'heading   heading'
 			'contacts   form'
 			'copyright copyright';
-	}
 
-	@media (orientation: portrait) {
-		grid-template-rows: auto auto 1fr auto;
-		grid-template-areas:
-			'heading'
-			'contacts'
-			'form'
-			'copyright';
-	}
-
-	.heading {
-		grid-area: heading;
-	}
-
-	.contacts-block {
-		grid-area: contacts;
-	}
-
-	.form-container {
-		grid-area: form;
-		background: var(--white);
-
-		@media (orientation: portrait) {
-			margin-bottom: 4rem;
+		@media (max-width: 1080px) {
+			grid-template-columns: none;
+			grid-template-rows: auto auto 1fr auto;
+			grid-template-areas:
+				'heading'
+				'contacts'
+				'form'
+				'copyright';
 		}
 
-		@media (orientation: landscape) {
-			align-self: start;
+		.heading {
+			grid-area: heading;
 		}
-	}
 
-	.copy {
-		grid-area: copyright;
-		align-self: end;
+		.contacts-block {
+			grid-area: contacts;
+		}
+
+		.form-container {
+			grid-area: form;
+			background: var(--white);
+
+			@media (orientation: portrait) {
+				margin-bottom: 4rem;
+			}
+
+			@media (orientation: landscape) {
+				align-self: start;
+			}
+		}
+
+		.copy {
+			grid-area: copyright;
+			align-self: end;
+			text-align: center;
+		}
 	}
 }
 

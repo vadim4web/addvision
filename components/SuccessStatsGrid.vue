@@ -26,7 +26,7 @@ const stats = [{ value: 12 }, { value: 17 }, { value: 71 }, { value: 27 }]
 
 <style scoped lang="scss">
 .stats-section {
-	background: var(--bg);
+
 	text-align: center;
 }
 

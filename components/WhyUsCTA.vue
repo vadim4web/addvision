@@ -7,119 +7,101 @@
 			rel="noopener noreferrer"
 			target="_blank"
 		>
-			{{ $t('why.cta') }}
+			<span style="line-height: 100%; font-size: 100%;">
+				&nbsp;<br>
+			</span>
+			{{ $t('why.cta') }}<br />
+			{{ $t('why.cta_') }}<br />
+			{{ $t('why.cta__') }}
 		</a>
 	</div>
 </template>
 
-<script setup>
-import { gsap } from 'gsap'
-
-const container = ref(null)
-const cta = ref(null)
-
-onMounted(() => {
-	const area = container.value
-
-	const move = e => {
-		const rect = area.getBoundingClientRect()
-		const relX = e.clientX - rect.left
-		const relY = e.clientY - rect.top
-
-		const x = (relX - rect.width / 2) * 0.34
-		const y = (relY - rect.height / 2) * 0.72
-
-		gsap.to(cta.value, {
-			x,
-			y,
-			ease: 'power3.out',
-			duration: 0.4,
-		})
-	}
-
-	const reset = () => {
-		gsap.to(cta.value, {
-			x: 0,
-			y: 0,
-			ease: 'power3.out',
-			duration: 0.6,
-		})
-	}
-
-	area.addEventListener('pointermove', move)
-	area.addEventListener('pointerleave', reset)
-
-	onBeforeUnmount(() => {
-		area.removeEventListener('pointermove', move)
-		area.removeEventListener('pointerleave', reset)
-	})
-})
-</script>
+<script setup></script>
 
 <style lang="scss">
+@keyframes ripple-rings {
+	0% {
+		background-size: 500% 500%;
+		opacity: 1;
+		transform: translate(-50%, -50%) scale(0.5);
+	}
+	100% {
+		background-size: 1000% 1000%;
+		opacity: 0;
+		transform: translate(-50%, -50%) scale(2.5);
+	}
+}
+
 @keyframes pulsing {
 	0%,
 	100% {
-		border-radius: 3rem;
 	}
 	50% {
-		width: calc(100% + 2rem);
-		height: calc(100% + 2rem);
-		transform: translate(-1rem, -1rem);
-		border-radius: 0;
+		transform: scale(1.2);
 	}
 }
 
 .why-cta-container {
-	overflow-x: hidden;
 	display: grid;
 	position: relative;
 	left: 0;
 	width: 100%;
-	grid-template-areas:
-		'.     .     .     .'
-		'.     link  link  .'
-		'.     .     .     .';
+	aspect-ratio: 1.5;
 
-	@media (orientation: portrait) {
-		grid-template-columns: 5rem 1fr 1fr 5rem;
-		grid-template-rows: 5rem 1fr 5rem;
-		aspect-ratio: 2;
+	@media (max-width: 1080px) {
+		aspect-ratio: 1;
 	}
 
-	@media (orientation: landscape) {
-		grid-template-columns: repeat(4, 1fr);
-		grid-template-rows: 5rem 10rem 5rem;
-		aspect-ratio: 4;
+	&::before {
+		content: '';
+		position: absolute;
+		width: 50%;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%) scale(0.5);
+		aspect-ratio: 1;
+		border-radius: 100vh;
+		z-index: -2;
+		background-image: repeating-radial-gradient(
+			circle,
+			transparent 0,
+			transparent 10px,
+			var(--accent10) 10px,
+			var(--accent10) 11px,
+			transparent 11px,
+			transparent 20px
+		);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: 0 0;
+		opacity: 0;
+		animation: ripple-rings 6s 2s ease-in-out infinite;
 	}
 
 	.why-cta {
 		grid-area: link;
 		display: inline-flex;
+		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		font-size: 2rem;
+		text-align: center;
+		font-size: 3rem;
 		font-weight: bold;
 		color: var(--white);
-		background: var(--accent);
-		border-radius: 3rem;
+		background: radial-gradient(circle at center, var(--accent10), transparent);
+		border-radius: 50%;
 		position: absolute;
-		width: calc(100% - 10rem);
-		height: calc(50% - 5rem);
+		width: 50vmin;
+		height: 50vmin;
 		top: 50%;
-		left: 5rem;
-		transform: translateY(-50%);
+		left: 50%;
+		transform: translate(-50%, -50%);
 		z-index: 2;
-		will-change: transform;
 		transition: transform 0.5s ease;
+		margin-inline: auto;
 
-		@media (orientation: portrait) {
-			height: calc(50% - 5rem);
-		}
-
-		@media (orientation: landscape) {
-			height: 3.5rem;
-		}
+		overflow: visible;
 
 		@media (max-width: 719px) and (aspect-ratio < 0.4) {
 			font-size: 1.3rem;
@@ -129,22 +111,23 @@ onMounted(() => {
 			font-size: 1.5rem;
 		}
 
-		&:hover::after {
-			filter: drop-shadow(0 0 1rem var(--accent));
-		}
 
 		&::after {
-			position: absolute;
 			content: '';
+			position: absolute;
+			aspect-ratio: 1;
 			width: 100%;
 			height: 100%;
-			top: 0;
-			left: 0;
+			border-radius: 50%;
 			z-index: -1;
+			background: radial-gradient(circle at center, var(--accent50), var(--accent25));
+			box-shadow: 0 0 5rem var(--accent75);
+			animation: pulsing 3.5s ease-in-out infinite;
 			transition: filter 1s ease;
-			animation: pulsing 3s ease-in-out infinite;
-			background: var(--accent);
-			box-shadow: inset 0 0 5rem var(--accent);
+		}
+
+		&:hover::after {
+			filter: drop-shadow(0 0 1rem var(--accent50));
 		}
 	}
 }

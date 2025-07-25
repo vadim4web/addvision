@@ -5,9 +5,17 @@
 		class="nav"
 	>
 		<!-- Navigation list -->
-		<ul ref="menuRef" class="nav-list" :class="{ open: isOpen }">
+		<ul
+			ref="menuRef"
+			class="nav-list"
+			:class="{ open: isOpen }"
+		>
 			<li>
-				<a :data-text="$t('navigation.cases')" href="#cases" @click="closeMenu">
+				<a
+					:data-text="$t('navigation.cases')"
+					href="#cases"
+					@click="closeMenu"
+				>
 					{{ $t('navigation.cases') }}
 				</a>
 			</li>
@@ -140,50 +148,37 @@ useObserveVisibility(menuRef, visible => {
 	margin: 0 auto;
 
 	li a {
-		text-decoration: none;
 		color: var(--bg);
 		position: relative;
 
-		&::before,
 		&::after {
 			position: absolute;
-			filter: drop-shadow(0 0 0.25em var(--bg25));
+			content: '';
+			width: calc(100% - 0.65em);
+			height: 0.15em;
+			bottom: 0.45em;
+			left: 0.35em;
+			background: var(--accent50);
+			transition: height var(--transition-default) ease, filter var(--transition-filter) ease;
+			z-index: -1;
+			filter: drop-shadow(0 0 0 var(--accent75)) contrast(1) brightness(1)
+				hue-rotate(0deg);
+			-webkit-filter: drop-shadow(0 0 0 var(--accent75)) contrast(1) brightness(1)
+				hue-rotate(0deg);
 		}
 
-		&:not(:hover, :focus)::after,
-		&:not(:hover, :focus)::before {
-			text-decoration-color: transparent;
-			width: 0;
-			opacity: 0;
-		}
-
-		&::before {
-			transition: all 1s ease;
-			content: attr(data-text);
-			text-decoration: underline var(--bg) 0.15em;
-			text-underline-offset: 25%;
-			text-underline-offset: 0.25em;
-			left: 0;
-			top: -0.125vmax;
-			height: 100%;
-			font-weight: bold;
-			padding: inherit;
-			text-wrap: nowrap;
-			color: var(--bg75);
-			overflow: hidden;
-		}
-
-		&:hover::before,
-		&:focus::before {
-			width: 100%;
-			opacity: 1;
-			text-shadow: 0 0 0.05em var(--bg50);
+		&:hover::after {
+			height: 1.25em;
+			filter: drop-shadow(0 0 0.15rem var(--accent75)) contrast(1.15)
+			brightness(1.15) hue-rotate(360deg);
+		-webkit-filter: drop-shadow(0 0 0.15rem var(--accent75)) contrast(1.15)
+			brightness(1.15) hue-rotate(360deg);
 		}
 	}
 }
 
 /* Mobile styles */
-@media (max-width: 55rem) {
+@media (max-width: 1080px) {
 	.burger {
 		display: inline-flex;
 		align-items: center;
@@ -256,8 +251,8 @@ useObserveVisibility(menuRef, visible => {
 				text-align: center;
 				display: block;
 
-				&:before {
-					top: 0;
+				&::after {
+					bottom: 0.6em;
 				}
 			}
 		}
@@ -282,7 +277,7 @@ useObserveVisibility(menuRef, visible => {
 	.nav-list.open {
 		height: fit-content;
 		transform: translate(0, 0);
-		background: repeating-linear-gradient(var(--bg50), var(--accent50));
+		background: repeating-linear-gradient(var(--text-main66), var(--bg33));
 		border-radius: 0 0 1rem 1rem;
 		box-shadow: inset 0 0 1rem 0.25rem var(--accent50);
 		font-weight: bolder;

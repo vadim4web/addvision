@@ -20,6 +20,8 @@ export default withNuxt({
     'vuejs-accessibility/img-has-alt': 'off',
 		'vue/html-self-closing': 'off',
 		'no-unsafe-optional-chaining': 'off',
+		'import/no-self-import': 'off',
+		'import/no-duplicates': 'off',
 		'vue/attributes-order': [
 			'error',
 			{

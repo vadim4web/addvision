@@ -46,23 +46,7 @@
 				/>
 			</label>
 
-			<!-- <label>
-        {{ $t('contacts.type') }} *
-        <select
-          v-model="form.type"
-          name="type"
-          required
-          :aria-label="$t('contacts.type')"
-          :title="$t('contacts.type_title')"
-        >
-          <option disabled value="">{{ $t('contacts.choose') }}</option>
-          <option value="general">{{ $t('contacts.type_general') }}</option>
-          <option value="support">{{ $t('contacts.type_support') }}</option>
-          <option value="feedback">{{ $t('contacts.type_feedback') }}</option>
-        </select>
-      </label> -->
-
-			<label>
+			<label class="type">
 				{{ $t('contacts.type') }} *
 				<CustomSelect
 					v-model="form.type"
@@ -150,17 +134,15 @@ const submitForm = async () => {
 	grid-template-rows: 1fr 6fr;
 	color: var(--bg);
 	padding: 3.75rem;
+	z-index: 0;
 
 	h3 {
 		font-size: 2.25rem;
 	}
 
-	@media (orientation: portrait) {
-		width: max(65%, 65ch);
+	@media (max-width: 1080px) {
 		margin-inline: auto;
 	}
-
-	@media (orientation: landscape) {}
 
 	.contact-form {
 		display: grid;
@@ -181,6 +163,11 @@ const submitForm = async () => {
 			align-items: center;
 
 			border-bottom: 1px solid var(--bg);
+			position: relative;
+		}
+
+		.type {
+			z-index: 1;
 		}
 
 		button.form-submit {

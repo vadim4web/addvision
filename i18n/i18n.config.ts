@@ -103,7 +103,9 @@ export default defineI18nConfig(() => ({
 					'Клієнтів повертаються',
 					'Реалізованих проєктів',
 				],
-				cta: 'ПРОРАХУВАТИ ВАРТІСТЬ САЙТУ',
+				cta: 'ПРОРАХУВАТИ',
+				cta_: 'ВАРТІСТЬ',
+				cta__: 'САЙТУ',
 			},
 			cases: {
 				title: 'КЕЙСИ',
@@ -412,7 +414,9 @@ export default defineI18nConfig(() => ({
 					'Клиенты возвращаются',
 					'Реализованных проектов',
 				],
-				cta: 'РАССЧИТАТЬ СТОИМОСТЬ САЙТА',
+				cta: 'РАССЧИТАТЬ',
+				cta_: 'СТОИМОСТЬ',
+				cta__: 'САЙТА',
 			},
 			cases: {
 				title: 'КЕЙСЫ',
@@ -721,7 +725,9 @@ export default defineI18nConfig(() => ({
 					'Clients return',
 					'Projects completed',
 				],
-				cta: 'ESTIMATE WEBSITE COST',
+				cta: 'ESTIMATE',
+				cta_: 'WEBSITE',
+				cta__: 'COST',
 			},
 			cases: {
 				title: 'CASES',

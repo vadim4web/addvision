@@ -1,8 +1,10 @@
 <template>
 	<header id="top" ref="headerRef" class="header-section">
-		<LogoBlock />
-		<NavigationMenu />
-		<LanguageSwitcher />
+		<div class="content">
+			<LogoBlock />
+			<NavigationMenu />
+			<LanguageSwitcher />
+		</div>
 	</header>
 </template>
 
@@ -14,14 +16,12 @@ useObserveVisibility(headerRef, visible => (headerVisible.value = visible))
 </script>
 
 <style lang="scss">
-.header-section {
+.header-section .content {
 	height: 6.6rem;
 	display: grid;
-	max-width: 100%;
 	grid-template-columns: 1fr 1.5fr 0.5fr;
 	align-content: center;
 	justify-items: center;
-	padding-inline: 0.25rem;
 	z-index: 2;
 	font-size: 1.4rem;
 	position: relative;
@@ -29,14 +29,10 @@ useObserveVisibility(headerRef, visible => (headerVisible.value = visible))
 	& > * {
 		width: 100%;
 	}
-
-	a {
-		padding: 0.5em 0.1em;
-	}
 }
 
-@media (max-width: 55rem) {
-	.header-section {
+@media (max-width: 1080px) {
+	.header-section .content {
 		grid-template-columns: 1fr 0.25fr 1fr;
 	}
 }

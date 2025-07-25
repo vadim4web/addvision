@@ -4,24 +4,26 @@
 		:aria-label="$t('aria.testimonials')"
 		class="testimonials-section"
 	>
-		<SectionHeading>
-			<span class="heading-text">
-				<span class="before">
-					{{ $t('testimonials.titleParts.before') }}
+		<div class="content">
+			<SectionHeading>
+				<span class="heading-text">
+					<span class="before">
+						{{ $t('testimonials.titleParts.before') }}
+					</span>
+					<span class="accent">
+						{{ $t('testimonials.titleParts.accent') }}
+					</span>
+					<wbr />
+					<span class="accent">
+						{{ $t('testimonials.titleParts.accent_') }}
+					</span>
 				</span>
-				<span class="accent">
-					{{ $t('testimonials.titleParts.accent') }}
-				</span>
-				<wbr />
-				<span class="accent">
-					{{ $t('testimonials.titleParts.accent_') }}
-				</span>
-			</span>
 
-			<i class="arrow"><SvgArrow /></i>
-		</SectionHeading>
+				<i class="arrow"><SvgArrow /></i>
+			</SectionHeading>
 
-		<TestimonialsSlider />
+			<TestimonialsSlider />
+		</div>
 	</section>
 </template>
 
@@ -29,6 +31,6 @@
 
 <style lang="scss" scoped>
 .testimonials-section {
-	background: var(--bg);
+	background: var(--dark-green);
 }
 </style>

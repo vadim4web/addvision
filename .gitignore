@@ -23,8 +23,7 @@ logs
 .env.*
 !.env.example
 
-desktop.ini
-ico.ico
-
 .htaccess_nuxt.bak
 .htaccess.bak
+
+package-lock.json

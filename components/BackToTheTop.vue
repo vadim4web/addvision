@@ -39,7 +39,7 @@ watch(() => route.fullPath, () => {
 
 .back-to-the-top {
 	position: fixed;
-	z-index: 2;
+	z-index: 5;
 	bottom: 0;
 	right: 0;
 
@@ -47,7 +47,7 @@ watch(() => route.fullPath, () => {
 	mix-blend-mode: exclusion;
 
 	a {
-		padding-right: 1rem;
+		padding-inline: 1.5rem !important;
 		display: flex;
 		align-items: center;
 		justify-content: center;

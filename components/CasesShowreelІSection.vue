@@ -1,11 +1,13 @@
 <template>
 	<section :aria-label="$t('aria.casesVideo')" class="cases-showreel-section">
-		<VideoBackground style="width: 30rem; height: 17rem; margin: 5rem auto" />
+		<div class="content">
+			<h2 class="glow-on-hover">
+				<span class="add">{<em class="font-galada-regular">add</em>}</span
+				><strong class="font-kanit-black vision">VISION</strong>
+			</h2>
 
-		<h2 class="glow-on-hover">
-			<span class="add">{<em class="font-galada-regular">add</em>}</span
-			><strong class="font-kanit-black vision">VISION</strong>
-		</h2>
+			<VideoBackground style="margin: 0 auto" />
+		</div>
 	</section>
 </template>
 
@@ -13,13 +15,15 @@
 
 <style lang="scss" scoped>
 .cases-showreel-section {
-	position: relative;
-	height: 27rem;
 	z-index: 1;
 	background: linear-gradient(90deg, var(--gray), var(--accent25), var(--gray));
+
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	position: relative;
+
+	height: 75vmin;
 
 	&::after {
 		position: absolute;
@@ -41,10 +45,10 @@
 		color: transparent; // сам текст прозорий
 		-webkit-text-fill-color: transparent; // Safari підтримка
 		-webkit-text-stroke: 0.25rem var(--accent25);
-		text-stroke: 0.25rem var(--accent25);
 		letter-spacing: 0.05em;
 		position: relative;
 		top: 3rem;
+		text-align: center;
 
 		& > * {
 			position: relative;

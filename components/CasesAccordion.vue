@@ -26,8 +26,8 @@
 				<iframe
 					class="preview"
 					frameborder="0"
-					:src="opened.url"
-					:title="opened.title"
+					:src="opened?.url"
+					:title="opened?.title"
 				></iframe>
 			</div>
 		</div>
@@ -36,15 +36,28 @@
 
 <script setup>
 const { locale, messages } = useI18n()
-const casesItems = computed(
-	() => (messages.value[locale.value]?.cases?.list).slice(0, 4) || []
+
+const isReady = ref(false)
+
+watch(
+  () => messages.value?.[locale.value],
+  (newVal) => {
+    if (newVal?.cases?.list) {
+      isReady.value = true
+    }
+  },
+  { immediate: true }
+)
+
+const casesItems = computed(() =>
+  isReady.value ? (messages.value[locale.value]?.cases?.list || []).slice(0, 4) : []
 )
 
 const openedIndex = ref(0)
 const opened = computed(() => casesItems.value[openedIndex.value])
 
 function handleClick(index) {
-	openedIndex.value = openedIndex.value === index ? 0 : index
+  openedIndex.value = openedIndex.value === index ? 0 : index
 }
 </script>
 
@@ -55,13 +68,13 @@ function handleClick(index) {
 	max-height: 30rem;
 
 	.cases-frame {
-		border-top: 0.125rem solid var(--gray);
-		border-bottom: 0.125rem solid var(--gray);
+		border-top: 1px solid var(--gray);
+		border-bottom: 1px solid var(--gray);
 
 		.case {
 			overflow: hidden;
-			border-top: 0.125rem solid var(--gray);
-			border-bottom: 0.125rem solid var(--gray);
+			border-top: 1px solid var(--gray);
+			border-bottom: 1px solid var(--gray);
 
 			&:not(.closed) {
 				padding-bottom: 0.5rem;
@@ -110,13 +123,13 @@ function handleClick(index) {
 		align-items: center;
 		justify-content: center;
 		max-height: 33.5rem;
-		height: 33.5rem;
+		height: 33rem;
 
 		.overflow-cutting-wrapper {
 			overflow: hidden;
 			aspect-ratio: 9 / 16;
 			max-height: 33.5rem;
-			height: 33.5rem;
+			height: 33rem;
 
 			.preview {
 				object-fit: cover;

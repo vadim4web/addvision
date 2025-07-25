@@ -1,23 +1,25 @@
 <template>
 	<section id="cases" :aria-label="$t('aria.cases')" class="cases-section">
-		<div class="head">
-			<SectionHeading class="cases-heading">
-				<span class="heading-text">{{ $t('cases.title') }}</span>
-				<i class="arrow"><SvgArrow /></i>
-			</SectionHeading>
+		<div class="content">
+			<div class="head">
+				<SectionHeading class="cases-heading">
+					<span class="heading-text">{{ $t('cases.title') }}</span>
+					<i class="arrow"><SvgArrow /></i>
+				</SectionHeading>
 
-			<NuxtLink class="more glow-on-hover" :to="localePath('/cases')">
-				{{ $t('cases.moreLabel') }}
+				<NuxtLink class="more glow-on-hover" :to="localePath('/cases')">
+					{{ $t('cases.moreLabel') }}
 
-				<i class="arrow"><SvgArrow /></i>
-			</NuxtLink>
+					<i class="arrow"><SvgArrow /></i>
+				</NuxtLink>
 
-			<strong class="description glow-on-hover">
-				{{ $t('cases.description') }}
-			</strong>
+				<strong class="description glow-on-hover">
+					{{ $t('cases.description') }}
+				</strong>
+			</div>
+
+			<CasesAccordion />
 		</div>
-
-		<CasesAccordion />
 	</section>
 </template>
 
@@ -27,7 +29,7 @@ const localePath = useLocalePath()
 
 <style lang="scss">
 .cases-section {
-	background: var(--bg);
+	background: var(--dark-green);
 	padding-bottom: 5rem;
 
 	.head {

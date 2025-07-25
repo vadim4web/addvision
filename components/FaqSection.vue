@@ -5,47 +5,49 @@
 		:aria-label="$t('aria.faq')"
 		class="faq-section"
 	>
-		<SectionHeading>
-			<span class="faq-heading heading-text">
-				{{ $t('faq.titleParts.start') }}
-				<br />
-				{{ $t('faq.titleParts.middle') }}
-				<wbr />
-				{{ $t('faq.titleParts.end') }}
-			</span>
-			<i class="arrow"><SvgArrow /></i>
-		</SectionHeading>
+		<div class="content">
+			<SectionHeading>
+				<span class="faq-heading heading-text">
+					{{ $t('faq.titleParts.start') }}
+					<br />
+					{{ $t('faq.titleParts.middle') }}
+					<wbr />
+					{{ $t('faq.titleParts.end') }}
+				</span>
+				<i class="arrow"><SvgArrow /></i>
+			</SectionHeading>
 
-		<div class="head">
-			<strong class="faq-description glow-on-hover">
-				{{ $t('faq.description') }}
-			</strong>
+			<div class="head">
+				<strong class="faq-description glow-on-hover">
+					{{ $t('faq.description') }}
+				</strong>
 
-			<img
-				alt="faq_heading.webp"
-				class="faq-image glow-on-hover"
-				height="300"
-				src="/images/faq_heading.webp"
-				width="360"
-			/>
-		</div>
+				<img
+					alt="faq_heading.webp"
+					class="faq-image glow-on-hover"
+					height="300"
+					src="/images/faq_heading.webp"
+					width="360"
+				/>
+			</div>
 
-		<div class="faq-items">
-			<div
-				v-for="(item, index) in faqItems"
-				:key="index"
-				class="faq"
-				:class="{ closed: openedIndex !== index }"
-				@click="handleClick(index)"
-			>
-				<div class="faq-question glow-on-hover">
-					{{ item.question }}
-					<i class="arrow-icon" :class="{ open: openedIndex === index }"
-						><SvgArrow
-					/></i>
-				</div>
-				<div class="faq-answer glow-on-hover">
-					{{ item.answer }}
+			<div class="faq-items">
+				<div
+					v-for="(item, index) in faqItems"
+					:key="index"
+					class="faq"
+					:class="{ closed: openedIndex !== index }"
+					@click="handleClick(index)"
+				>
+					<div class="faq-question glow-on-hover">
+						{{ item.question }}
+						<i class="arrow-icon" :class="{ open: openedIndex === index }"
+							><SvgArrow
+						/></i>
+					</div>
+					<div class="faq-answer glow-on-hover">
+						{{ item.answer }}
+					</div>
 				</div>
 			</div>
 		</div>
@@ -69,8 +71,7 @@ function handleClickOutside() {
 
 <style lang="scss">
 .faq-section {
-	padding-block: 5rem;
-	background: var(--bg);
+	background: var(--dark-green);
 	display: flex;
 	flex-direction: column;
 
@@ -102,10 +103,14 @@ function handleClickOutside() {
 		align-self: flex-end;
 		display: flex;
 		flex-direction: column;
-		border-top: 1px solid var(--text-main);
+		border-top: 2px solid var(--text-main);
+
+		@media (max-width: 1080px) {
+			margin-inline: auto;
+		}
 
 		.faq {
-			border-bottom: 1px solid var(--text-main);
+			border-bottom: 2px solid var(--text-main);
 			cursor: pointer;
 			padding: 0.5rem 0;
 

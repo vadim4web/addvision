@@ -4,30 +4,32 @@
 		:aria-label="$t('aria.whatWeDo')"
 		class="what-we-do-section masked-section"
 	>
-		<SectionHeading>
-			<span class="heading-text">
-				<span class="before">
-					{{ $t('what.titleParts.before') }}
+		<div class="content">
+			<SectionHeading>
+				<span class="heading-text">
+					<span class="before">
+						{{ $t('what.titleParts.before') }}
+					</span>
+					<br />
+					<span class="brown-deep">
+						{{ $t('what.titleParts.brownDeep1') }}
+					</span>
+					<span class="accent">
+						{{ $t('what.titleParts.accent') }}
+					</span>
+					<span class="brown-deep">{{ $t('what.titleParts.brownDeep2') }}</span>
 				</span>
-				<br />
-				<span class="brown-deep">
-					{{ $t('what.titleParts.brownDeep1') }}
-				</span>
-				<span class="accent">
-					{{ $t('what.titleParts.accent') }}
-				</span>
-				<span class="brown-deep">{{ $t('what.titleParts.brownDeep2') }}</span>
-			</span>
 
-			<i class="arrow"><SvgArrow /></i>
-		</SectionHeading>
+				<i class="arrow"><SvgArrow /></i>
+			</SectionHeading>
 
-		<WhatWeDoGrid />
+			<WhatWeDoGrid />
 
-		<div class="cta-container">
-			<em class="cta glow-on-hover">
-				{{ $t('what.cta') }}
-			</em>
+			<div class="cta-container">
+				<em class="cta glow-on-hover">
+					{{ $t('what.cta') }}
+				</em>
+			</div>
 		</div>
 	</section>
 </template>
@@ -36,7 +38,7 @@
 
 <style lang="scss" scoped>
 .what-we-do-section {
-	background: var(--bg);
+	background: var(--dark-green);
 
 	.cta-container {
 		display: grid;

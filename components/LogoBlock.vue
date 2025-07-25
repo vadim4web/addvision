@@ -20,10 +20,10 @@
 .logo {
 	display: grid;
 	justify-content: start;
-	grid-template-columns: 1rem 6.6rem auto;
-	grid-template-areas: '. img txt';
+	grid-template-columns: 6.6rem auto;
+	grid-template-areas: 'img txt';
 	align-items: center;
-	gap: 0.25rem;
+	gap: 0.125rem;
 	z-index: 1;
 
 	perspective: 1000px;
@@ -36,7 +36,7 @@
 	}
 
 	&:has(:hover) &-image {
-		filter: drop-shadow(0 0 0.5em var(--accent75)) contrast(1.1) brightness(1.1);
+		filter: drop-shadow(0 0 0.1em var(--accent75)) contrast(1.1) brightness(1.1);
 	}
 
 	&-text {
@@ -51,39 +51,6 @@
 		position: relative;
 		filter: none;
 		transition: filter 1s ease;
-
-		&::before {
-			position: absolute;
-			height: 3.8rem;
-			left: -0.125em;
-			top: -0.33em;
-			content: '';
-			background: linear-gradient(
-					180deg,
-					var(--accent) 8%,
-					transparent 8%,
-					transparent 92%,
-					var(--accent) 92%
-				),
-				radial-gradient(circle at 35% 50%, var(--accent25), transparent 55%);
-			transition: width 1s;
-			filter: drop-shadow(0 0 0.16em var(--accent50)) contrast(1.1);
-			mix-blend-mode: color-burn;
-			z-index: -1;
-			opacity: 1;
-		}
-
-		&:not(:hover)::before {
-			position: absolute;
-			width: 0;
-			height: inherit;
-			content: '';
-			transition: width 1s ease;
-		}
-
-		&:hover::before {
-			width: 7.5em;
-		}
 	}
 
 	&-subline {
@@ -101,8 +68,9 @@
 	}
 
 	&-text:hover {
-		filter: drop-shadow(0 0 0.2em var(--bg50)) contrast(1.1) brightness(1.1);
+		filter: drop-shadow(0 0 0.1em var(--bg50)) contrast(1.1) brightness(1.1);
 	}
+
 	&:hover &-subline {
 		color: var(--bg75);
 	}
@@ -114,7 +82,7 @@
 		left: -0.1rem;
 		top: -0.1em;
 
-		@media (orientation: portrait), (max-width: 55rem) {
+		@media (max-width: 1080px) {
 			font-size: 1.33rem;
 		}
 
@@ -151,25 +119,21 @@
 	letter-spacing: 0.45em;
 }
 [lang='ru'] .logo-subline {
-	letter-spacing: 0.266em;
+	letter-spacing: 0.278em;
 }
 [lang='en'] .logo-subline {
-	letter-spacing: 0.525em;
+	letter-spacing: 0.58em;
 }
 
-@media (orientation: portrait), (max-width: 55rem) {
+@media (max-width: 1080px) {
 	[lang='uk'] .logo-subline {
-		letter-spacing: 0.2em;
+		letter-spacing: 0.22em;
 	}
 	[lang='ru'] .logo-subline {
-		letter-spacing: 0.05em;
+		letter-spacing: 0.04em;
 	}
 	[lang='en'] .logo-subline {
-		letter-spacing: 0.25em;
-	}
-
-	.logo-text:hover::before {
-		width: 5.75em;
+		letter-spacing: 0.255em;
 	}
 }
 </style>

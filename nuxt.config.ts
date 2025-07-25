@@ -4,8 +4,8 @@ export default defineNuxtConfig({
 	devtools: { enabled: true },
 
 	app: {
-	  baseURL: '/nuxt/',  // ✅ впливає на <script>, <link>
-	  cdnURL: '/nuxt/',   // ✅ впливає на шрифти, зображення тощо
+	  // baseURL: '/nuxt/',  // ✅ впливає на <script>, <link>
+	  // cdnURL: '/nuxt/',   // ✅ впливає на шрифти, зображення тощо
 	},
 
 	nitro: {
@@ -28,22 +28,12 @@ export default defineNuxtConfig({
 	i18n: {
 		strategy: 'prefix_except_default',
 		defaultLocale: 'uk',
-		// locales: [
-		//   { code: 'uk', iso: 'uk-UA', file: 'uk.json', name: 'Українська' },
-		//   { code: 'ru', iso: 'ru-RU', file: 'ru.json', name: 'Русский' },
-		//   { code: 'en', iso: 'en-US', file: 'en.json', name: 'English' },
-		// ],
-		// locales: [
-		// 	{ code: 'uk', iso: 'uk-UA', file: 'uk.js', name: 'Українська' },
-		// 	{ code: 'ru', iso: 'ru-RU', file: 'ru.js', name: 'Русский' },
-		// 	{ code: 'en', iso: 'en-US', file: 'en.js', name: 'English' },
-		// ],
 		locales: [
 			{ code: 'uk', iso: 'uk', name: 'Українська' },
 			{ code: 'ru', iso: 'ru', name: 'Русский' },
 			{ code: 'en', iso: 'en', name: 'English' },
 		],
-		// lazy: true,
+		lazy: false,
 		vueI18n: './i18n.config.ts',
 	},
 

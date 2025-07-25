@@ -163,6 +163,10 @@ onMounted(() => {
 	overflow: hidden;
 	width: 100%;
 
+	@media (orientation: landscape) {
+		height: 100dvh;
+	}
+
 	.hero-text {
 		z-index: 1;
 		width: 100%;

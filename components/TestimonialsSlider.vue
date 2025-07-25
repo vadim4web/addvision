@@ -5,7 +5,7 @@
 			:arrows="false"
 			:autoplay="true"
 			:bullets="false"
-			class="main-slider"
+			class="main-slider no-shadow"
 			:duration="8000"
 			fade
 			:fixed-height="true"
@@ -47,7 +47,7 @@
 			:arrows="false"
 			:bullets="false"
 			:bullets-outside="false"
-			class="thumbnails"
+			class="thumbnails no-shadow"
 			fixed-height="3rem"
 			:gap="1"
 			:touchable="false"

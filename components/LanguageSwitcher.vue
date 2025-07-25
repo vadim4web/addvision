@@ -1,6 +1,4 @@
 <script setup>
-const { locale } = useI18n()
-
 const languages = [
 	{ code: 'uk', label: 'Ua' },
 	{ code: 'ru', label: 'Ru' },
@@ -11,15 +9,14 @@ const languages = [
 <template>
 	<ul class="language-switcher">
 		<li v-for="lang in languages" :key="lang.code">
-			<NuxtLink
-				:aria-current="locale === lang.code ? 'page' : null"
+			<NuxtLinkLocale
+				:aria-current="$i18n.locale === lang.code ? 'page' : null"
 				class="language-link"
-				:class="{ active: locale === lang.code }"
+				:class="{ active: $i18n.locale === lang.code }"
 				:data-text="lang.label"
-				:to="$localePath('index', lang.code)"
-			>
-				{{ lang.label }}
-			</NuxtLink>
+				:locale="lang.code"
+				to="/"
+			>{{ lang.label }}</NuxtLinkLocale>
 		</li>
 	</ul>
 </template>
@@ -28,16 +25,16 @@ const languages = [
 .language-switcher {
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: end;
 	gap: 0.25rem;
 	z-index: 1;
 
-	@media (orientation: portrait), (max-width: 55rem) {
+	@media (orientation: portrait), (max-width: 1080px) {
 		justify-content: space-around;
 		max-width: 10rem;
 	}
 
-	@media (orientation: portrait) and (max-width: 55rem) {
+	@media (orientation: portrait) and (max-width: 1080px) {
 		.language-link:before {
 			top: 0;
 		}
@@ -45,56 +42,40 @@ const languages = [
 }
 
 .language-link {
-	position: relative;
 	overflow: hidden;
+	position: relative;
+	transition: color var(--transition-default) ease;
 
-	&.active {
-		color: var(--accent);
+	&.active, &:hover {
+		color: var(--white);
 	}
 
-	&::before,
 	&::after {
+		height: 1.25em;
 		position: absolute;
-		transition: all 1s ease;
+		content: '';
+		width: calc(100% - 0.65em);
+		bottom: 0.45em;
+		left: 0.35em;
+		background: var(--accent50);
+		transition: background var(--transition-default) ease, filter var(--transition-filter) ease;
+		z-index: -1;
+		filter: drop-shadow(0 0 0 var(--accent75)) contrast(1) brightness(1)
+			hue-rotate(0deg);
+		-webkit-filter: drop-shadow(0 0 0 var(--accent75)) contrast(1) brightness(1)
+			hue-rotate(0deg);
 	}
 
-	&:not(.active):after {
-		background: var(--accent);
+	&:not(.active)::after {
+		background: transparent;
 	}
 
-	&:is(.active):after {
-		background: var(--accent);
-	}
-
-	&:not(:hover)::before,
-	&:not(:hover)::after {
-		width: 0;
-		visibility: hidden;
-		overflow: hidden;
-		filter: none;
-		box-shadow: none;
-		text-shadow: none;
-		text-decoration: underline transparent 0.15em;
-	}
-
-	&::before {
-		content: attr(data-text);
-		color: var(--accent75);
-		top: -0.125vmax;
-		left: 0;
-		width: 0;
-		height: 100%;
-		font-weight: bolder;
-		padding: inherit;
-		text-wrap: nowrap;
-		text-underline-offset: 0.25em;
-	}
-
-	&:hover::before {
-		width: 100%;
-		opacity: 1;
-		text-decoration: underline var(--accent) 0.15em;
-		text-shadow: 0 0 0.1em var(--accent50);
+	&:hover::after {
+		background: var(--accent50);
+		filter: drop-shadow(0 0 0.15rem var(--accent75)) contrast(1.15)
+		brightness(1.15) hue-rotate(360deg);
+	-webkit-filter: drop-shadow(0 0 0.15rem var(--accent75)) contrast(1.15)
+		brightness(1.15) hue-rotate(360deg);
 	}
 }
 </style>

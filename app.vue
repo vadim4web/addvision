@@ -96,17 +96,45 @@ useHead({
 		},
 	],
 })
+
+function setDimensions() {
+  const w = window.innerWidth
+  const h = window.innerHeight
+  const el = document.getElementById('dev')
+  if (el) {
+    el.innerText = `${w}x${h}`
+  }
+}
+
+onMounted(() => {
+  setDimensions()
+
+  window.addEventListener('resize', setDimensions)
+
+  // Clean up on unmount
+  onUnmounted(() => {
+    window.removeEventListener('resize', setDimensions)
+  })
+})
 </script>
 
 <template>
 	<NuxtRouteAnnouncer />
 	<NuxtLayout>
+		<div id="dev"></div>
 		<NuxtPage />
 	</NuxtLayout>
 	<FooterSection />
 </template>
 
 <style lang="scss">
+#dev {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: green;
+	z-index: 10;
+}
 :root {
 	/* font-size: min(1.33vmax, 3vmin); */
 	/* === Базові кольори === */
@@ -152,27 +180,15 @@ useHead({
 	--brown-deep: #003539; /* Темно-коричневий (може бути для контрасту, футера) */
 	--brown-deep: #00aeb8; /* Темно-коричневий (може бути для контрасту, футера) */
 
-	/* cursor: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='10' fill='transparent' stroke='%2300ffef80' stroke-width='4'/%3E%3Ccircle cx='24' cy='24' r='10' fill='none' stroke='%23353e4380' stroke-width='1'/%3E%3Ccircle cx='24' cy='24' r='16' fill='none' stroke='%2300ffef80' stroke-width='10'/%3E%3Ccircle cx='24' cy='24' r='20' fill='transparent' stroke='%2300ffef80' stroke-width='4'/%3E%3Ccircle cx='24' cy='24' r='20' fill='none' stroke='%23353e4380' stroke-width='1'/%3E%3C/svg%3E") 24 24, auto; */
+	--night-blue: #0A1930;
+	--dark-night-blue: #10182A;
+	--dark-green: #082424;
 
 	cursor:
-		url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><defs><filter id='shadow' x='-50%' y='-50%' width='400%' height='400%'><feDropShadow dx='0' dy='0' stdDeviation='5' flood-color='%2300ffef' flood-opacity='1'/></filter></defs><circle cx='32' cy='32' r='20' fill='%2300ffef80' stroke='%2300ffef40' stroke-width='1' filter='url(%23shadow)'/><circle cx='32' cy='32' r='20' fill='%2300ffef80' stroke='%2300ffef40' stroke-width='1'/><circle cx='32' cy='32' r='12' fill='transparent'/></svg>")
-			32 32,
+		url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='75' height='75' viewBox='0 0 75 75' style='overflow: visible;'><defs><filter id='shadow' x='-125%' y='-125%' width='250%' height='250%'><feDropShadow dx='0' dy='0' stdDeviation='10' flood-color='%23cc40ff' flood-opacity='1'/></filter></defs><circle cx='38' cy='38' r='25' fill='%23ffffffa8' stroke='%2300ffef' stroke-width='1' filter='url(%23shadow)'/><circle cx='38' cy='38' r='25' fill='%2300ffef40' stroke='%2300ffef40' stroke-width='1'/><circle cx='38' cy='38' r='15' fill='transparent' stroke-width='10'/></svg>")
+			38 38,
 		auto;
-}
 
-@media (orientation: portrait) {
-	:root {
-		font-size: clamp(16px, 1.15vh, 1.9vw);
-	}
-}
-@media (orientation: landscape) {
-	:root {
-		font-size: clamp(16px, 1.8vh, 1.1vw);
-	}
-}
-
-body {
-	color: var(--text-main);
-	background: var(--bg);
+	cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='75' height='75' viewBox='0 0 75 75' style='overflow:visible;'><defs><filter id='blur-glow' x='-125%' y='-125%' width='250%' height='250%'><feGaussianBlur in='SourceGraphic' stdDeviation='1' result='blur'/><feDropShadow dx='0' dy='0' stdDeviation='10' flood-color='%23cc40ff' flood-opacity='1'/></filter></defs><circle cx='38' cy='38' r='25' fill='%23ffffffa8' stroke='%2300ffef' stroke-width='1' filter='url(%23blur-glow)'/><circle cx='38' cy='38' r='25' fill='%2300ffef40' stroke='%2300ffef40' stroke-width='1'/><circle cx='38' cy='38' r='15' fill='transparent' stroke-width='10'/></svg>") 38 38, auto;
 }
 </style>

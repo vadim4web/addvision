@@ -1,45 +1,47 @@
 <template>
 	<section id="why-us" :aria-label="$t('aria.whyUs')" class="why-us-section">
-		<div class="coop">
-			<SectionHeading class="coop-heading">
-				<span class="heading-text">
-					<span class="before">
-						{{ $t('why.titleParts.before') }}
+		<div class="content">
+			<div class="coop">
+				<SectionHeading class="coop-heading">
+					<span class="heading-text">
+						<span class="before">
+							{{ $t('why.titleParts.before') }}
+						</span>
+						<span class="accent">
+							{{ $t('why.titleParts.accent') }}
+						</span>
 					</span>
-					<span class="accent">
-						{{ $t('why.titleParts.accent') }}
-					</span>
-				</span>
 
-				<i class="arrow">
-					<SvgArrow />
-				</i>
-			</SectionHeading>
+					<i class="arrow">
+						<SvgArrow />
+					</i>
+				</SectionHeading>
 
-			<div class="coop-top-right">
-				<strong class="coop-top-right-strong glow-on-hover">
-					<span class="accent">
-						{{ $t('why.coopParts.accent') }}
-					</span>
-					<span class="rest">
-						{{ $t('why.coopParts.rest') }}
-					</span>
-				</strong>
+				<div class="coop-top-right">
+					<strong class="coop-top-right-strong glow-on-hover">
+						<span class="accent">
+							{{ $t('why.coopParts.accent') }}
+						</span>
+						<span class="rest">
+							{{ $t('why.coopParts.rest') }}
+						</span>
+					</strong>
 
-				<div class="coop-top-right-visual">
-					<img height="400" src="/images/coop.webp" width="400" />
+					<div class="coop-top-right-visual">
+						<img alt="" height="400" src="/images/coop.webp" width="400" />
+					</div>
 				</div>
+
+				<em class="coop-values glow-on-hover">
+					<span class="accent">{</span>add<span class="accent">}</span>VISION
+					{{ $t('why.values') }}
+				</em>
 			</div>
 
-			<em class="coop-values glow-on-hover">
-				<span class="accent">{</span>add<span class="accent">}</span>VISION
-				{{ $t('why.values') }}
-			</em>
+			<SuccessStatsGrid />
+
+			<WhyUsCTA />
 		</div>
-
-		<SuccessStatsGrid />
-
-		<WhyUsCTA />
 	</section>
 </template>
 
@@ -47,7 +49,7 @@
 
 <style lang="scss" scoped>
 .why-us-section {
-	background: var(--bg);
+	background: var(--dark-green);
 
 	.coop,
 	.stats-section {

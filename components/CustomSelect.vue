@@ -19,7 +19,7 @@
 			<svg class="arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z" /></svg>
 		</button>
 
-		<ul v-if="isOpen" :id="dropdownId" class="options-list" role="listbox">
+		<ul v-show="isOpen" :id="dropdownId" class="options-list" role="listbox">
 			<li
 				v-for="(option, i) in options"
 				:key="option.value"
@@ -100,7 +100,7 @@ const selectFocusedOption = () => {
 }
 </script>
 
-<style scoped>
+<style>
 .custom-select {
 	position: relative;
 	width: 100%;
@@ -127,7 +127,6 @@ const selectFocusedOption = () => {
 	position: absolute;
 	top: 100%;
 	left: 0;
-	z-index: 10;
 	background: white;
 	border: 1px solid var(--accent);
 	width: 100%;

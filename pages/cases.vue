@@ -11,7 +11,7 @@
 
 <style lang="scss" scoped>
 .cases-page {
-	background: var(--bg);
+	background: var(--dark-green);
 	flex-grow: 1;
 	min-height: 100dvh;
 }

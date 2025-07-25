@@ -33,47 +33,161 @@
 	scrollbar-color: var(--accent75) var(--bg25);
 }
 
-/* Для Edge (Chromium) та інших браузерів, що підтримують WebKit-стилі — буде працювати як для Chrome */
+@media (orientation: portrait) {
+	:root {
+		font-size: 16px;
+	}
+}
+@media (orientation: landscape) {
+	:root {
+		font-size: 16px;
+	}
+}
+
+body {
+	color: var(--text-main);
+	background: var(--dark-green);
+	position: relative;
+}
+
+@keyframes lightningSwing {
+  0% {
+    transform: translate(-50%, 0%) scale(1.5);
+    opacity: 0.5;
+  }
+  20% {
+    opacity: 1;
+  }
+  50% {
+    transform: translate(calc(100vw - 50%), calc(-100%)) scale(1);
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, 0%) scale(1.5);
+    opacity: 0.5;
+  }
+}
+
+body::before {
+	position: fixed;
+	/*
+	width: 50vmin;
+	height: 50vmin;
+	*/
+
+	/* background: radial-gradient(
+		circle at center,
+		var(--bg80) 0%,
+		var(--accent50) 40%,
+		var(--bg50) 0%,
+		var(--accent33) 25%,
+		transparent 80%
+	); */
+
+	background: linear-gradient(235deg, var(--accent33), transparent);
+
+	border-radius: 50%;
+	filter: blur(4rem) brightness(1.5);
+	filter: blur(5rem) brightness(1.5);
+	animation: lightningSwing 24s ease-in-out infinite alternate;
+}
+
+body::before,
+body::after {
+	content: '';
+	width: 100%;
+	height: 100%;
+	inset: 0;
+	left: 0;
+	bottom: 0;
+	z-index: 0;
+	pointer-events: none;
+}
+
+body::after {
+	position: absolute;
+
+  background-image: 
+    url('/apple-icon.png'),
+    url('/apple-icon.png');
+  background-repeat: repeat-y, repeat-y;
+  background-size: 75vmin, 150vmin;
+
+  background-position:
+    calc(100% + 25vmin) 0%,  /* Right column */
+    -50vmin 75vmin;   /* Left column offset to mimic a chessboard pattern */
+
+	background-attachment: scroll;
+	opacity: 0.02;
+}
+
+section > * {
+	position: relative;
+	z-index: 10;
+}
+
+a {
+	padding: 0.5em !important;
+}
+
+.hero-section svg {
+	filter: drop-shadow(0 0 0.1em currentColor);
+	-webkit-filter: drop-shadow(0 0 0.1em currentColor);
+}
+
+a,
+em,
+strong,
+span,
+.we-do,
+.glow-on-hover,
+p,
+img:not(.logo-image),
+h3,
+label,
+option,
+button
+{
+	filter: drop-shadow(0 0 0.04em currentColor);
+	-webkit-filter: drop-shadow(0 0 0.04em currentColor);
+}
+
+.logo span,
+.logo em,
+.logo strong {
+	filter: drop-shadow(0 0 0.04em currentColor);
+	-webkit-filter: drop-shadow(0 0 0.04em currentColor);
+}
 
 h2:not(.coop-heading, .cases-heading) {
 	padding-bottom: 3rem;
 }
 
-@media (orientation: portrait) {
-	:root {
-		--padding-inline: 2rem;
-	}
-}
-
-@media (orientation: landscape) {
-	:root {
-		--padding-inline: 8%;
-	}
-}
-
-main
-	section:not(
+main section:not(
 		:first-of-type,
 		.services-section,
 		.why-us-section,
 		.cases-section
 	) {
-	padding: 5rem var(--padding-inline);
-}
-
-footer,
-.services-section {
-	padding: 2rem var(--padding-inline);
-}
-
-.why-us-section {
-	padding: 5rem 0;
-}
-
-.cases-section {
-	padding: 0 var(--padding-inline);
+	padding-block: 5rem;
 }
 
 main section:first-of-type {
 	padding-bottom: 2rem;
+}
+
+footer,
+.services-section {
+	padding-block: 2rem;
+}
+
+.why-us-section {
+	padding-block: 5rem;
+}
+
+.cases-section {
+	padding-block: 0;
 }
