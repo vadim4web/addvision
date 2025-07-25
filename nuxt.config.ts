@@ -11,7 +11,7 @@ export default defineNuxtConfig({
 	nitro: {
 		preset: 'static',
 		prerender: {
-			routes: ['/', '/ru', '/en'], // важливо!
+			routes: ['/', '/ru', '/en', '/404'], // важливо!
 		},
 	},
 	ssr: false, // 🔁 Важливо для статичного сайту на GitHub Pages!

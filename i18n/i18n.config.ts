@@ -313,6 +313,11 @@ export default defineI18nConfig(() => ({
 			},
 			backToTop: 'Повернутися нагору',
 			rights: 'Усі права захищено.',
+			notFoundTitle: 'Ой! Сторінку загублено 😬',
+			notFoundMessage: 'Сторінка, яку ви шукаєте, поїхала у відпустку... 🌴',
+			serverErrorTitle: 'Ой! Помилка сервера 🤖',
+			serverErrorMessage: 'Сервер розлив каву ☕ Спробуйте пізніше.',
+			backHome: 'На головну',
 		},
 		ru: {
 			meta: {
@@ -624,6 +629,11 @@ export default defineI18nConfig(() => ({
 			},
 			backToTop: 'Вернуться наверх',
 			rights: 'Все права защищены.',
+			notFoundTitle: 'Упс! Страница потерялась 😬',
+			notFoundMessage: 'Страница, которую вы ищете, ушла в отпуск... 🌴',
+			serverErrorTitle: 'Ой! Ошибка сервера 🤖',
+			serverErrorMessage: 'Наш сервер пролил кофе ☕ Попробуйте позже.',
+			backHome: 'Назад домой',
 		},
 		en: {
 			meta: {
@@ -935,6 +945,11 @@ We’ll be happy to answer your questions.`,
 			},
 			backToTop: 'Back to top',
 			rights: 'All rights reserved.',
+			notFoundTitle: 'Oops! Page not found 😬',
+			notFoundMessage: "The page you're looking for packed its bags and left... 🌴",
+			serverErrorTitle: 'Uh-oh! Server error 🤖',
+			serverErrorMessage: 'Our servers had a coffee spill ☕ Please try again later.',
+			backHome: 'Back to home',
 		},
 	},
 }))
