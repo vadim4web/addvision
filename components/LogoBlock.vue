@@ -116,7 +116,7 @@
 }
 
 [lang='uk'] .logo-subline {
-	letter-spacing: 0.45em;
+	letter-spacing: 0.5em;
 }
 [lang='ru'] .logo-subline {
 	letter-spacing: 0.278em;
