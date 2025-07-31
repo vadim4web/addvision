@@ -139,6 +139,10 @@ const submitForm = async () => {
 		font-size: 2rem;
 	}
 
+	@media (max-width: 480px) {
+		padding: 1rem;
+	}
+
 	h3 {
 		font-size: 2.25rem;
 
@@ -160,12 +164,17 @@ const submitForm = async () => {
 		font-size: 1.25rem;
 		font-weight: 400;
 
-		@media (orientation: portrait) {
+		@media (max-width: 480px) {
+			padding: 0;
 			font-size: 1rem;
 		}
 
 		& > * {
 			min-height: 3.75rem;
+		}
+
+		input {
+			padding: 0.5rem 1rem;
 		}
 
 		& > *:not(button) {
@@ -175,10 +184,20 @@ const submitForm = async () => {
 
 			border-bottom: 1px solid var(--bg);
 			position: relative;
+
+			@media (max-width: 640px) {
+				grid-template-columns: none;
+			}
 		}
 
 		.type {
 			z-index: 1;
+
+			@media (max-width: 480px) {
+				display: flex;
+				flex-direction: column;
+				align-items: start;
+			}
 		}
 
 		button.form-submit {

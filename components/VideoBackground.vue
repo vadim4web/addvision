@@ -68,6 +68,7 @@
 	z-index: -1;
 	pointer-events: none;
 	position: absolute;
+	filter: contrast(1.2) brightness(1.5);
 }
 
 .hero-video {

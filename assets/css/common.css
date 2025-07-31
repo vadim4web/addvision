@@ -95,16 +95,14 @@ body::after {
 
 body::after {
 	position: absolute;
-  background-image: 
-    url('/apple-icon.png'),
-    url('/apple-icon.png');
-  background-repeat: repeat-y, repeat-y;
-  background-size: 75vmin, 150vmin;
-  background-position:
-    calc(100% + 25vmin) 0%,
-    -50vmin 75vmin;
+	background-image:     url('/apple-icon.png'),    url('/apple-icon.png');
+	background-repeat: repeat-y, repeat-y;
+	background-size: 75vmin, 150vmin;
+	background-position:    calc(100% + 25vmin) 0%,    -50vmin 75vmin;
 	background-attachment: scroll;
-	opacity: 0.02;
+	opacity: 0.05;
+	filter: blur(0.5rem);
+	-webkit-filter: blur(0.5rem);
 }
 
 @media (orientation: portrait) {
@@ -116,13 +114,11 @@ body::after {
 	}
 }
 
-html * {
-	/* border: 1px solid #ff08; */
-}
 
-section:not(.hero-section) > * {
+section:not(.hero-section) > *,
+footer {
 	position: relative;
-	z-index: 5;
+	z-index: 1;
 }
 
 a {
@@ -140,8 +136,8 @@ a {
 }
 
 .hero-section .brand svg {
-	filter: drop-shadow(0 0 0.5rem var(--bg));
-	-webkit-filter: drop-shadow(0 0 0.5rem var(--bg));
+	filter: drop-shadow(0 0 0.75rem var(--bg66));
+	-webkit-filter: drop-shadow(0 0 0.75rem var(--bg66));
 }
 
 .testimonial-slider .testimonial-content .author-photo {
@@ -178,4 +174,15 @@ footer,
 
 .cases-section {
 	padding-block: 0;
+}
+
+@media (max-width: 1440px) {
+	section:not(.hero-section),
+	footer h2 {
+		padding-inline: 1.5rem;
+	}
+
+	h2 {
+		font-size: 3rem;
+	}
 }

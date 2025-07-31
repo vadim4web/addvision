@@ -134,6 +134,7 @@
 		text-wrap: pretty;
 		text-wrap-mode: wrap;
 		text-wrap-style: pretty;
+		padding-inline: 1rem;
 
 		@media (max-width: 1080px) {
 			width: min(65%, 65ch);
@@ -152,9 +153,12 @@
 			align-items: center;
 		}
 
-		// @media (orientation: portrait) {
-		// 	justify-content: space-between;
-		// }
+		@media (max-width: 480px) {
+			flex-direction: column;
+			align-items: start;
+			max-width: fit-content;
+			margin-inline: auto;
+		}
 
 		a {
 			display: inline-flex;

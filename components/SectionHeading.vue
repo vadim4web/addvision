@@ -32,11 +32,11 @@
 		}
 	}
 
-	@media (orientation: portrait), (max-width: 719px) {
+	@media (orientation: portrait), (max-width: 1024px) {
 		grid-template-columns: min-content auto;
 	}
 
-	@media (orientation: landscape), (min-width: 720px) {
+	@media (orientation: landscape), (min-width: 1025px) {
 		grid-template-columns: max-content auto;
 	}
 
@@ -49,11 +49,19 @@
 		}
 	}
 
-	@media (orientation: landscape) {
-		font-size: 5rem;
+	@media (max-width: 480px) {
+		font-size: 1.75rem;
 
 		.arrow {
-			width: 5rem;
+			width: 1.75rem;
+		}
+	}
+
+	@media (orientation: landscape) {
+		font-size: 4.5rem;
+
+		.arrow {
+			width: 4.5rem;
 			justify-self: end;
 		}
 	}

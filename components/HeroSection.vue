@@ -162,13 +162,14 @@ onMounted(() => {
 	height: fit-content;
 	overflow: hidden;
 	width: 100%;
+	z-index: 1;
 
 	@media (orientation: landscape) {
 		height: 100dvh;
 	}
 
 	@media (orientation: portrait) {
-		height: 68svh;
+		height: 100dvh;
 	}
 
 	.hero-text {
@@ -189,7 +190,7 @@ onMounted(() => {
 		}
 
 		@media (orientation: portrait) {
-			height: 68svh;
+			height: 100dvh;
 		}
 
 		@media (orientation: landscape) and (aspect-ratio > 2.75) {
@@ -212,7 +213,7 @@ onMounted(() => {
 			}
 
 			@media (orientation: portrait) {
-				height: 68svh;
+				height: 100dvh;
 			}
 
 			height: 100%;
@@ -232,10 +233,7 @@ onMounted(() => {
 					height: 100dvh;
 				}
 
-				/*
 				@media (orientation: portrait) {
-					height: 68svh;
-					transform: scale(4);
 				}
 
 				@media (max-width: 640px) {
@@ -253,8 +251,6 @@ onMounted(() => {
 				@media (aspect-ratio <= 0.4) {
 					transform: scale(3, 5);
 				}
-
-				*/
 			}
 		}
 

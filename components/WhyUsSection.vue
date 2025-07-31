@@ -60,7 +60,7 @@
 
 		@media (orientation: portrait) {
 			aspect-ratio: 2;
-			grid-template-rows: 5rem 10rem 1fr;
+			grid-template-rows: 6rem 6rem 1fr;
 			grid-template-areas:
 				'heading  heading  heading  heading'
 				'.  . topRight  topRight'

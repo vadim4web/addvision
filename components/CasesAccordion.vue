@@ -102,10 +102,19 @@ function handleClick(index) {
 			.case-title {
 				font-size: 3rem;
 
+				@media (max-width: 480px) {
+					font-size: 2rem;
+				}
+
 				.arrow-icon svg {
 					width: 2rem;
 					height: 2rem;
 					transition: transform 0.5s ease;
+
+					@media (max-width: 480px) {
+						width: 1.25rem;
+						height: 1.25rem;
+					}
 				}
 
 				.arrow-icon:not(.open) svg {
@@ -153,8 +162,7 @@ function handleClick(index) {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		max-height: 33.5rem;
-		height: 33rem;
+		max-height: 33rem;
 
 		@media (orientation: landscape) {
 			position: absolute;
@@ -170,15 +178,16 @@ function handleClick(index) {
 		.overflow-cutting-wrapper {
 			overflow: hidden;
 			aspect-ratio: 9 / 16;
-			max-height: 33.5rem;
-			height: 33rem;
+			max-height: 33rem;
 
 			.preview {
 				object-fit: cover;
+				width: 100%;
 				aspect-ratio: 9 / 16;
-				height: 34.2rem;
+				max-height: 34.2rem;
 				position: relative;
 				left: -2.5%;
+				transform: scale(1.03) translate(0, 1.5%);
 			}
 		}
 	}

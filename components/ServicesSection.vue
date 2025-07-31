@@ -96,6 +96,10 @@ const services = computed(() => messages.value[locale.value]?.services || {})
 			.category-title {
 				grid-area: title;
 				font-size: 5rem;
+
+				@media (max-width: 480px) {
+					font-size: 3.5rem;
+				}
 			}
 
 			.category-description {

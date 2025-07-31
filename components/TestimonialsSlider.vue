@@ -100,6 +100,26 @@ const testimonials = computed(
 		aspect-ratio: 1.66;
 	}
 
+	@media (max-width: 480px) {
+		aspect-ratio: 0.75;
+	}
+
+	@media (max-width: 400px) {
+		aspect-ratio: 0.66;
+	}
+
+	@media (max-width: 340px) {
+		aspect-ratio: 0.5;
+	}
+
+	@media (max-width: 300px) {
+		aspect-ratio: 0.4;
+	}
+
+	@media (max-width: 275px) {
+		aspect-ratio: 0.33;
+	}
+
 	& .vueperslides__parallax-wrapper,
 	& .vueperslides__track {
 		overflow: visible;
@@ -196,6 +216,10 @@ const testimonials = computed(
 
 	@media (orientation: portrait) {
 		right: 0;
+	}
+
+	@media (max-width: 340px) {
+		width: 100%;
 	}
 }
 

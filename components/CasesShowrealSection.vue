@@ -52,7 +52,7 @@
 
 	h2 {
 		z-index: 2;
-		font-size: 4rem;
+		font-size: 10vmin;
 		color: transparent; // сам текст прозорий
 		-webkit-text-fill-color: transparent; // Safari підтримка
 		-webkit-text-stroke: 0.25rem var(--accent25);
@@ -62,21 +62,17 @@
 		text-align: center;
 		width: 100%;
 
-		@media (orientation: landscape) {
-			font-size: 9rem;
-		}
-
 		& > * {
 			position: relative;
 		}
 
 		.add {
-			bottom: 1ch;
+			bottom: 2ch;
 			left: 1ch;
 		}
 
 		.vision {
-			top: 0.5ch;
+			top: 0ch;
 			right: 1ch;
 		}
 	}
