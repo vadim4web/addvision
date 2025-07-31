@@ -51,9 +51,20 @@
 			'.   .   .   .   cta cta cta .'
 			'.   .   .   .   .   .   .   .';
 
+		@media (orientation: portrait) {
+			grid-template-areas:
+				'.   .   .   .   .   .   .   .'
+				'.   .   cta cta cta cta cta .'
+				'.   .   .   .   .   .   .   .';
+		}
+
 		.cta {
 			grid-area: cta;
 			font-size: 1.75rem;
+
+			@media (orientation: portrait) {
+				font-size: 1.25rem;
+			}
 		}
 	}
 }

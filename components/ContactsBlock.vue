@@ -152,6 +152,10 @@
 			align-items: center;
 		}
 
+		// @media (orientation: portrait) {
+		// 	justify-content: space-between;
+		// }
+
 		a {
 			display: inline-flex;
 			gap: 0.5rem;
@@ -163,6 +167,10 @@
 				height: 6rem;
 			}
 
+			@media (orientation: portrait) {
+				height: 4rem;
+			}
+
 			svg {
 				width: 5rem;
 				height: 5rem;
@@ -171,6 +179,11 @@
 				@media (max-width: 1080px) {
 					width: 4rem;
 					height: 4rem;
+				}
+
+				@media (orientation: portrait) {
+					width: 3rem;
+					height: 3rem;
 				}
 			}
 		}

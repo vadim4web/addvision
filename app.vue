@@ -96,45 +96,17 @@ useHead({
 		},
 	],
 })
-
-function setDimensions() {
-  const w = window.innerWidth
-  const h = window.innerHeight
-  const el = document.getElementById('dev')
-  if (el) {
-    el.innerText = `${w}x${h}`
-  }
-}
-
-onMounted(() => {
-  setDimensions()
-
-  window.addEventListener('resize', setDimensions)
-
-  // Clean up on unmount
-  onUnmounted(() => {
-    window.removeEventListener('resize', setDimensions)
-  })
-})
 </script>
 
 <template>
 	<NuxtRouteAnnouncer />
 	<NuxtLayout>
-		<div id="dev"></div>
 		<NuxtPage />
 	</NuxtLayout>
 	<FooterSection />
 </template>
 
 <style lang="scss">
-#dev {
-	position: fixed;
-	top: 0;
-	left: 0;
-	background: green;
-	z-index: 10;
-}
 :root {
 	/* font-size: min(1.33vmax, 3vmin); */
 	/* === Базові кольори === */
@@ -184,11 +156,6 @@ onMounted(() => {
 	--dark-night-blue: #10182A;
 	--dark-green: #082424;
 
-	cursor:
-		url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='75' height='75' viewBox='0 0 75 75' style='overflow: visible;'><defs><filter id='shadow' x='-125%' y='-125%' width='250%' height='250%'><feDropShadow dx='0' dy='0' stdDeviation='10' flood-color='%23cc40ff' flood-opacity='1'/></filter></defs><circle cx='38' cy='38' r='25' fill='%23ffffffa8' stroke='%2300ffef' stroke-width='1' filter='url(%23shadow)'/><circle cx='38' cy='38' r='25' fill='%2300ffef40' stroke='%2300ffef40' stroke-width='1'/><circle cx='38' cy='38' r='15' fill='transparent' stroke-width='10'/></svg>")
-			38 38,
-		auto;
-
-	cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='75' height='75' viewBox='0 0 75 75' style='overflow:visible;'><defs><filter id='blur-glow' x='-125%' y='-125%' width='250%' height='250%'><feGaussianBlur in='SourceGraphic' stdDeviation='1' result='blur'/><feDropShadow dx='0' dy='0' stdDeviation='10' flood-color='%23cc40ff' flood-opacity='1'/></filter></defs><circle cx='38' cy='38' r='25' fill='%23ffffffa8' stroke='%2300ffef' stroke-width='1' filter='url(%23blur-glow)'/><circle cx='38' cy='38' r='25' fill='%2300ffef40' stroke='%2300ffef40' stroke-width='1'/><circle cx='38' cy='38' r='15' fill='transparent' stroke-width='10'/></svg>") 38 38, auto;
+	cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='75' height='75' viewBox='0 0 75 75'><defs><filter id='blur-glow' x='-125%' y='-125%' width='250%' height='250%'><feGaussianBlur in='SourceGraphic' stdDeviation='1' result='blur'/><feDropShadow dx='0' dy='0' stdDeviation='10' flood-color='%23cc40ff' flood-opacity='1'/></filter></defs><circle cx='38' cy='38' r='25' fill='%23ffffffa8' stroke='%2300ffef' stroke-width='1' filter='url(%23blur-glow)'/><circle cx='38' cy='38' r='25' fill='%2300ffef40' stroke='%2300ffef40' stroke-width='1'/><circle cx='38' cy='38' r='15' fill='transparent' stroke-width='10'/></svg>") 38 38, auto;
 }
 </style>

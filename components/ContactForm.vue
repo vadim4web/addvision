@@ -67,7 +67,7 @@
 				/>
 			</label>
 
-			<button class="form-submit glow-on-hover" type="submit">
+			<button class="form-submit glow-on-hover-light" type="submit">
 				{{ $t('contacts.send') }}
 			</button>
 		</form>
@@ -134,10 +134,17 @@ const submitForm = async () => {
 	grid-template-rows: 1fr 6fr;
 	color: var(--bg);
 	padding: 3.75rem;
-	z-index: 0;
+
+	@media (orientation: portrait) {
+		font-size: 2rem;
+	}
 
 	h3 {
 		font-size: 2.25rem;
+
+		@media (orientation: portrait) {
+			font-size: 2rem;
+		}
 	}
 
 	@media (max-width: 1080px) {
@@ -152,6 +159,10 @@ const submitForm = async () => {
 
 		font-size: 1.25rem;
 		font-weight: 400;
+
+		@media (orientation: portrait) {
+			font-size: 1rem;
+		}
 
 		& > * {
 			min-height: 3.75rem;

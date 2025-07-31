@@ -167,48 +167,55 @@ onMounted(() => {
 		height: 100dvh;
 	}
 
+	@media (orientation: portrait) {
+		height: 68svh;
+	}
+
 	.hero-text {
-		z-index: 1;
 		width: 100%;
-		height: 100%;
 		display: grid;
 		grid-template-columns: repeat(5, 1fr);
-		grid-template-rows: repeat(3, 1fr);
+		grid-template-rows: 6.5rem repeat(3, 1fr);
 		grid-template-areas:
+			'.      .      .      .      .   '
 			'.      .      wedo   wedo   wedo'
 			'.      .      .      .      .   '
 			'moto   moto   moto   moto   moto';
 		align-content: center;
 		justify-items: center;
 
+		@media (orientation: landscape) {
+			height: 100dvh;
+		}
+
+		@media (orientation: portrait) {
+			height: 68svh;
+		}
+
 		@media (orientation: landscape) and (aspect-ratio > 2.75) {
-			grid-template-rows: 1fr 0.75fr 1fr;
+			grid-template-rows: 6.5rem 1fr 0.75fr 1fr;
 		}
 
 		@media (orientation: landscape) and (aspect-ratio <= 2.75) {
-			grid-template-rows: 1fr 1fr 1fr;
+			grid-template-rows: 6.5rem 1fr 1fr 1fr;
 		}
 
 		.brand {
 			grid-area: brand;
 			width: 100%;
-			z-index: 1;
 			position: absolute;
 			left: 0;
-
-			@media (orientation: portrait) {
-				height: 100%;
-				top: -2rem;
-			}
+			top: 0;
 
 			@media (orientation: landscape) {
 				height: 100dvh;
-				top: -7.5rem;
 			}
 
-			@media (orientation: landscape) and (aspect-ratio > 2) {
-				top: -5rem;
+			@media (orientation: portrait) {
+				height: 68svh;
 			}
+
+			height: 100%;
 
 			svg {
 				position: absolute;
@@ -220,6 +227,34 @@ onMounted(() => {
 				object-fit: cover;
 				pointer-events: none;
 				transform: scale(2.76);
+
+				@media (orientation: landscape) {
+					height: 100dvh;
+				}
+
+				/*
+				@media (orientation: portrait) {
+					height: 68svh;
+					transform: scale(4);
+				}
+
+				@media (max-width: 640px) {
+					transform: scale(2.76, 3.5);
+				}
+
+				@media (aspect-ratio < 0.54) {
+					transform: scale(3, 4.5);
+				}
+
+				@media (aspect-ratio <= 0.45) {
+					transform: scale(3, 4.5);
+				}
+
+				@media (aspect-ratio <= 0.4) {
+					transform: scale(3, 5);
+				}
+
+				*/
 			}
 		}
 
@@ -232,6 +267,10 @@ onMounted(() => {
 			text-wrap: wrap;
 			width: 80%;
 			justify-content: center;
+
+			@media (max-width: 640px) {
+				font-size: 2.5rem;
+			}
 		}
 
 		.moto,
@@ -240,7 +279,6 @@ onMounted(() => {
 			flex-direction: column;
 			align-items: center;
 			position: relative;
-			z-index: 1;
 		}
 
 		.we-do {
@@ -257,6 +295,10 @@ onMounted(() => {
 
 			@media (orientation: landscape) and (aspect-ratio > 2.5) {
 				font-size: 1.5rem;
+			}
+
+			@media (max-width: 640px) {
+				font-size: 1.25rem;
 			}
 
 			li {

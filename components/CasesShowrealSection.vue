@@ -17,16 +17,28 @@
 .cases-showreel-section {
 	z-index: 1;
 	background: linear-gradient(90deg, var(--gray), var(--accent25), var(--gray));
-
-	display: flex;
-	align-items: center;
-	justify-content: center;
 	position: relative;
+	max-width: 100%;
 
-	height: 75vmin;
+	@media (orientation: landscape) {
+		height: 75vmin;
+	}
+
+	@media (orientation: portrait) {
+		height: 75vmin;
+	}
+
+	.content {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+	}
 
 	&::after {
 		position: absolute;
+		top: 0;
+		left: 0;
 		width: 100%;
 		height: 100%;
 		content: '';
@@ -36,12 +48,11 @@
 			var(--accent25),
 			transparent
 		);
-		z-index: -1;
 	}
 
 	h2 {
 		z-index: 2;
-		font-size: 5rem;
+		font-size: 4rem;
 		color: transparent; // сам текст прозорий
 		-webkit-text-fill-color: transparent; // Safari підтримка
 		-webkit-text-stroke: 0.25rem var(--accent25);
@@ -49,18 +60,24 @@
 		position: relative;
 		top: 3rem;
 		text-align: center;
+		width: 100%;
+
+		@media (orientation: landscape) {
+			font-size: 9rem;
+		}
 
 		& > * {
 			position: relative;
 		}
 
 		.add {
-			bottom: 4.5rem;
-			left: 3rem;
+			bottom: 1ch;
+			left: 1ch;
 		}
 
 		.vision {
-			right: 3rem;
+			top: 0.5ch;
+			right: 1ch;
 		}
 	}
 }

@@ -18,10 +18,21 @@
 				<p class="case-description glow-on-hover">
 					{{ item.description }}
 				</p>
+
+				<div v-if="openedIndex === index" class="preview-frame">
+					<div class="overflow-cutting-wrapper">
+						<iframe
+							class="preview"
+							frameborder="0"
+							:src="opened?.url"
+							:title="opened?.title"
+						></iframe>
+					</div>
+				</div>
 			</div>
 		</div>
 
-		<div class="preview-frame">
+		<!-- <div v-if="!isPortrait" class="preview-frame">
 			<div class="overflow-cutting-wrapper">
 				<iframe
 					class="preview"
@@ -30,7 +41,7 @@
 					:title="opened?.title"
 				></iframe>
 			</div>
-		</div>
+		</div> -->
 	</div>
 </template>
 
@@ -65,7 +76,15 @@ function handleClick(index) {
 .cases-accordion {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
-	max-height: 30rem;
+	position: relative;
+
+	@media (orientation: portrait) {
+		grid-template-columns: none;
+	}
+
+	@media (orientation: landscape) {
+		max-height: 30rem;
+	}
 
 	.cases-frame {
 		border-top: 1px solid var(--gray);
@@ -106,8 +125,20 @@ function handleClick(index) {
 			}
 
 			&:not(.closed) .case-description {
-				height: 14rem;
 				transition: height 0.5s ease;
+			}
+
+
+			@media (orientation: landscape) {
+				&:not(.closed) .case-description {
+					height: 14rem;
+				}
+			}
+
+			@media (orientation: portrait) {
+				&:not(.closed) .case-description {
+					height: fit-content;
+				}
 			}
 		}
 	}
@@ -125,6 +156,17 @@ function handleClick(index) {
 		max-height: 33.5rem;
 		height: 33rem;
 
+		@media (orientation: landscape) {
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 50%;
+		}
+
+		@media (orientation: portrait) {
+			margin-top: 1rem;
+		}
+
 		.overflow-cutting-wrapper {
 			overflow: hidden;
 			aspect-ratio: 9 / 16;
@@ -135,6 +177,8 @@ function handleClick(index) {
 				object-fit: cover;
 				aspect-ratio: 9 / 16;
 				height: 34.2rem;
+				position: relative;
+				left: -2.5%;
 			}
 		}
 	}

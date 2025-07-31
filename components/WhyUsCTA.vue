@@ -53,6 +53,10 @@
 		aspect-ratio: 1;
 	}
 
+	@media (orientation: portrait) {
+		margin-top: 5rem;
+	}
+
 	&::before {
 		content: '';
 		position: absolute;

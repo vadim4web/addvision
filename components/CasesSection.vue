@@ -42,6 +42,14 @@ const localePath = useLocalePath()
 		gap: 1rem;
 		padding-bottom: 2.5rem;
 
+		@media (orientation: portrait) {
+			grid-template-columns: 1fr fit-content;
+			grid-template-rows: fit-content 1fr;
+			grid-template-areas:
+				'heading more'
+				'desc    desc';
+		}
+
 		h2 {
 			grid-area: heading;
 		}
@@ -49,6 +57,12 @@ const localePath = useLocalePath()
 		.more {
 			grid-area: more;
 			font-size: 2rem;
+			line-height: 2rem;
+
+			@media (orientation: portrait) {
+				font-size: 1rem;
+				line-height: 1.5rem;
+			}
 
 			justify-self: end;
 
@@ -56,6 +70,11 @@ const localePath = useLocalePath()
 				width: 2rem;
 				height: 2rem;
 				padding-top: 0.5rem;
+
+				@media (orientation: portrait) {
+					width: 1.5rem;
+					height: 1.5rem;
+				}
 			}
 		}
 

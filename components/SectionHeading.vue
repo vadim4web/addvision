@@ -32,19 +32,19 @@
 		}
 	}
 
-	@media (orientation: portrait), (max-width: 767px) {
+	@media (orientation: portrait), (max-width: 719px) {
 		grid-template-columns: min-content auto;
 	}
 
-	@media (orientation: landscape), (min-width: 768px) {
+	@media (orientation: landscape), (min-width: 720px) {
 		grid-template-columns: max-content auto;
 	}
 
 	@media (orientation: portrait) {
-		font-size: 3.5rem;
+		font-size: 2.5rem;
 
 		.arrow {
-			width: 3.5rem;
+			width: 2.5rem;
 			justify-self: start;
 		}
 	}

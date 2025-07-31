@@ -49,12 +49,7 @@
 
 <style lang="scss" scoped>
 .why-us-section {
-	background: var(--dark-green);
-
-	.coop,
-	.stats-section {
-		padding-inline: var(--padding-inline);
-	}
+	overflow: hidden;
 
 	.coop {
 		display: grid;
@@ -65,7 +60,11 @@
 
 		@media (orientation: portrait) {
 			aspect-ratio: 2;
-			grid-template-rows: 10rem 1fr;
+			grid-template-rows: 5rem 10rem 1fr;
+			grid-template-areas:
+				'heading  heading  heading  heading'
+				'.  . topRight  topRight'
+				'values   values   values  values';
 		}
 
 		@media (orientation: landscape) {
@@ -81,6 +80,10 @@
 			grid-area: topRight;
 			display: flex;
 			justify-self: end;
+
+			@media (orientation: portrait) {
+				margin-bottom: 2rem;
+			}
 
 			&-strong {
 				align-self: center;
@@ -124,7 +127,7 @@
 			text-align: justify;
 
 			@media (orientation: portrait) {
-				font-size: 1.2rem;
+				font-size: 1rem;
 			}
 
 			@media (orientation: landscape), (max-width: 719px) {

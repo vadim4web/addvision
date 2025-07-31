@@ -22,9 +22,12 @@ useObserveVisibility(headerRef, visible => (headerVisible.value = visible))
 	grid-template-columns: 1fr 1.5fr 0.5fr;
 	align-content: center;
 	justify-items: center;
-	z-index: 2;
 	font-size: 1.4rem;
-	position: relative;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 10;
 
 	& > * {
 		width: 100%;

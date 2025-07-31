@@ -63,60 +63,11 @@
 </template>
 
 <style lang="scss">
-/* @keyframes lightningSwing {
-  0% {
-    transform: translate(-50%, 0%) scale(1.5);
-    opacity: 0.5;
-  }
-  20% {
-    opacity: 1;
-  }
-  50% {
-    transform: translate(calc(100vw - 50%), calc(-100%)) scale(1);
-    opacity: 1;
-  }
-  80% {
-    opacity: 1;
-  }
-  100% {
-    transform: translate(-50%, 0%) scale(1.5);
-    opacity: 0.5;
-  }
-} */
-
 .video-container {
 	inset: 0;
-	z-index: 1;
+	z-index: -1;
 	pointer-events: none;
 	position: absolute;
-
-	/*
-  &::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 50vmin;
-    height: 50vmin;
-    z-index: 1;
-    border: 1px solid red;
-
-    background: radial-gradient(
-      circle at center,
-      var(--bg80) 0%,
-      var(--accent50) 40%,
-      var(--bg50) 0%,
-      var(--accent33) 25%,
-      transparent 80%
-    );
-
-    border-radius: 50%;
-    filter: blur(4rem) brightness(1.5);
-    filter: blur(5rem) brightness(1.5);
-    pointer-events: none;
-    animation: lightningSwing 24s ease-in-out infinite alternate;
-  }
-    */
 }
 
 .hero-video {

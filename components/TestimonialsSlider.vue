@@ -80,8 +80,11 @@ const testimonials = computed(
 <style lang="scss">
 .testimonial-slider {
 	position: relative;
-	padding-inline: 10%;
-	width: 90%;
+
+	@media (orientation: landscape) {
+		padding-inline: 10%;
+		width: 90%;
+	}
 }
 
 .testimonial-slider,
@@ -121,8 +124,15 @@ const testimonials = computed(
 		'photo .';
 
 	@media (orientation: portrait) {
-		aspect-ratio: 1.5;
+		aspect-ratio: 1;
 		gap: 0.5rem;
+
+		grid-template-columns: 2fr 3fr;
+		grid-template-rows: 1fr 1fr 1fr;
+		grid-template-areas:
+			'text text'
+			'photo author'
+			'photo .';
 	}
 }
 
@@ -179,7 +189,14 @@ const testimonials = computed(
 	width: 18rem;
 	position: absolute;
 	bottom: 0;
-	right: 11.25%;
+
+	@media (orientation: landscape) {
+		right: 11.25%;
+	}
+
+	@media (orientation: portrait) {
+		right: 0;
+	}
 }
 
 .thumbnails .vueperslide {

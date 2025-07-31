@@ -80,13 +80,18 @@ function handleClickOutside() {
 		grid-template-columns: 50vw 1fr;
 		grid-template-areas: 'desc  img';
 
+		@media (orientation: portrait) {
+			grid-template-columns: none;
+			grid-template-rows: fit-content 1fr;
+			grid-template-areas: 'desc'  'img';
+		}
+
 		.faq-description {
 			grid-area: desc;
 			font-weight: 500;
 			font-size: 1.125rem;
 			margin-bottom: 2rem;
 			display: block;
-			max-width: 50vw;
 			text-align: justify;
 		}
 

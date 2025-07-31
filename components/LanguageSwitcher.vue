@@ -23,15 +23,14 @@ const languages = [
 
 <style lang="scss">
 .language-switcher {
+	height: 6.6rem;
 	display: flex;
 	align-items: center;
-	justify-content: end;
-	gap: 0.25rem;
+	justify-content: center;
+	gap: 1rem;
 	z-index: 1;
 
 	@media (orientation: portrait), (max-width: 1080px) {
-		justify-content: space-around;
-		max-width: 10rem;
 	}
 
 	@media (orientation: portrait) and (max-width: 1080px) {
@@ -76,6 +75,12 @@ const languages = [
 		brightness(1.15) hue-rotate(360deg);
 	-webkit-filter: drop-shadow(0 0 0.15rem var(--accent75)) contrast(1.15)
 		brightness(1.15) hue-rotate(360deg);
+	}
+}
+
+@media (max-width: 640px) {
+  .language-switcher	{
+    font-size: 1rem;
 	}
 }
 </style>

@@ -79,12 +79,32 @@ const services = computed(() => messages.value[locale.value]?.services || {})
 			display: grid;
 			align-items: center;
 			grid-template-columns: 1fr 1fr 2rem;
+			grid-template-areas:
+				"title desc arrow"
+			;
+
+			@media (orientation: portrait) {
+				grid-template-columns: 1fr 2rem;
+				grid-template-rows: repeat(2, 1fr);
+
+				grid-template-areas:
+					"title title arrow"
+					"desc desc arrow"
+				;
+			}
 
 			.category-title {
+				grid-area: title;
 				font-size: 5rem;
 			}
+
 			.category-description {
+				grid-area: desc;
 				font-size: 1.125rem;
+			}
+
+			.category-arrow {
+				grid-area: arrow;
 			}
 
 			.category-arrow svg {

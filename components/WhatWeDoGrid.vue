@@ -201,21 +201,21 @@ onUnmounted(() => {
 
 		@media (max-width: 719px) and (orientation: portrait) {
 			h3 {
-				font-size: 3rem;
+				font-size: 2rem;
 			}
 
 			ul {
-				font-size: 2rem;
+				font-size: 1rem;
 			}
 		}
 
 		@media (max-width: 719px) and (orientation: landscape) {
 			h3 {
-				font-size: 2rem;
+				font-size: 2.5rem;
 			}
 
 			ul {
-				font-size: 1.5rem;
+				font-size: 1.25rem;
 			}
 		}
 	}

@@ -26,13 +26,12 @@
 	gap: 0.125rem;
 	z-index: 1;
 
-	perspective: 1000px;
-
 	&-image {
 		width: 6.6rem;
 		height: 6.6rem;
 		grid-area: img;
 		transition: filter 1s ease;
+		justify-self: center;
 	}
 
 	&:has(:hover) &-image {
@@ -113,6 +112,11 @@
 			display: inline-block;
 		}
 	}
+
+	@media (max-width: 1280px) {
+		grid-template-columns: 1rem 6.6rem auto;
+		grid-template-areas: '. img txt';
+	}
 }
 
 [lang='uk'] .logo-subline {
@@ -134,6 +138,26 @@
 	}
 	[lang='en'] .logo-subline {
 		letter-spacing: 0.255em;
+	}
+}
+
+@media (max-width: 640px) {
+	.logo {
+		grid-template-columns: none;
+		grid-template-rows: 3.5rem auto;
+		grid-template-areas: 'img' 'txt';
+		justify-content: center;
+		padding: 0.25rem;
+	}
+
+	.logo-image {
+		width: 5rem;
+		height: 5rem;
+	}
+
+	.logo-text {
+		transform: scale(0.66);
+		margin: -0.25rem;
 	}
 }
 </style>

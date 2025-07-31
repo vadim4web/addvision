@@ -60,32 +60,34 @@
 						width="60"
 						xmlns="http://www.w3.org/2000/svg"
 					>
-						<defs>
-							<filter
-								id="white-glow"
-								height="200%"
-								width="200%"
-								x="-50%"
-								y="-50%"
-							>
-								<feDropShadow
-									dx="0"
-									dy="0"
-									flood-color="var(--white)"
-									flood-opacity="1"
-									stdDeviation="10"
-								/>
-							</filter>
-						</defs>
+						<g transform="translate(0, 20)">
+							<defs>
+								<filter
+									id="white-glow"
+									height="200%"
+									width="200%"
+									x="-50%"
+									y="-50%"
+								>
+									<feDropShadow
+										dx="0"
+										dy="0"
+										flood-color="var(--white)"
+										flood-opacity="1"
+										stdDeviation="10"
+									/>
+								</filter>
+							</defs>
 
-						<!-- Triangle path with filter applied -->
-						<path
-							d="M0 0 L50 86.6 L100 0"
-							fill="none"
-							filter="url(#white-glow)"
-							stroke="var(--text-main)"
-							stroke-width="12"
-						/>
+							<!-- Triangle path with filter applied -->
+							<path
+								d="M0 0 L50 86.6 L100 0"
+								fill="none"
+								filter="url(#white-glow)"
+								stroke="var(--text-main)"
+								stroke-width="12"
+							/>
+						</g>
 					</svg>
 				</button>
 			</li>
@@ -143,7 +145,7 @@ useObserveVisibility(menuRef, visible => {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	gap: 0.5rem;
+	gap: 0.25rem;
 	padding: 0;
 	margin: 0 auto;
 
@@ -217,7 +219,8 @@ useObserveVisibility(menuRef, visible => {
 			'whyUs'
 			'services'
 			'contacts'
-			'toggler';
+			'toggler'
+			;
 		gap: 0;
 
 		justify-items: center;
@@ -231,7 +234,6 @@ useObserveVisibility(menuRef, visible => {
 
 		li {
 			width: 100vw;
-			height: 100%;
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -239,7 +241,7 @@ useObserveVisibility(menuRef, visible => {
 			&:not(:last-child) {
 				transition: transform 1s ease;
 				transform: rotateX(-90deg);
-				transition-delay: 0.75s;
+				transition-delay: 0.25s;
 			}
 
 			&:is(:last-child) {
@@ -276,6 +278,7 @@ useObserveVisibility(menuRef, visible => {
 
 	.nav-list.open {
 		height: fit-content;
+		max-height: 100svh;
 		transform: translate(0, 0);
 		background: repeating-linear-gradient(var(--text-main66), var(--bg33));
 		border-radius: 0 0 1rem 1rem;

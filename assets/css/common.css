@@ -48,6 +48,7 @@ body {
 	color: var(--text-main);
 	background: var(--dark-green);
 	position: relative;
+	/* overflow: hidden; */
 }
 
 @keyframes lightningSwing {
@@ -73,22 +74,7 @@ body {
 
 body::before {
 	position: fixed;
-	/*
-	width: 50vmin;
-	height: 50vmin;
-	*/
-
-	/* background: radial-gradient(
-		circle at center,
-		var(--bg80) 0%,
-		var(--accent50) 40%,
-		var(--bg50) 0%,
-		var(--accent33) 25%,
-		transparent 80%
-	); */
-
 	background: linear-gradient(235deg, var(--accent33), transparent);
-
 	border-radius: 50%;
 	filter: blur(4rem) brightness(1.5);
 	filter: blur(5rem) brightness(1.5);
@@ -109,22 +95,32 @@ body::after {
 
 body::after {
 	position: absolute;
-
   background-image: 
     url('/apple-icon.png'),
     url('/apple-icon.png');
   background-repeat: repeat-y, repeat-y;
   background-size: 75vmin, 150vmin;
-
   background-position:
-    calc(100% + 25vmin) 0%,  /* Right column */
-    -50vmin 75vmin;   /* Left column offset to mimic a chessboard pattern */
-
+    calc(100% + 25vmin) 0%,
+    -50vmin 75vmin;
 	background-attachment: scroll;
 	opacity: 0.02;
 }
 
-section>* {
+@media (orientation: portrait) {
+	body::after {
+		background-size: 33vmin, 66vmin;
+		background-position:
+			calc(100% + 10vmin) 0%,
+			-21vmin 75vmin;
+	}
+}
+
+html * {
+	/* border: 1px solid #ff08; */
+}
+
+section:not(.hero-section) > * {
 	position: relative;
 	z-index: 5;
 }
@@ -132,23 +128,6 @@ section>* {
 a {
 	padding: 0.5em !important;
 }
-
-/* a,
-em,
-strong,
-span,
-.we-do,
-.glow-on-hover,
-p,
-img:not(.logo-image),
-h3,
-label,
-option,
-button
-{
-	filter: drop-shadow(0 0 0.04em currentColor);
-	-webkit-filter: drop-shadow(0 0 0.04em currentColor);
-} */
 
 .logo-image,
 .logo span,
@@ -166,8 +145,9 @@ button
 }
 
 .testimonial-slider .testimonial-content .author-photo {
-	filter: drop-shadow(0 0 0.25rem var(--bg));
-	-webkit-filter: drop-shadow(0 0 0.25rem var(--bg));
+	/* filter: drop-shadow(0 0 0.5rem var(--bg));
+	-webkit-filter: drop-shadow(0 0 0.5rem var(--bg)); */
+	box-shadow: 0 0 1rem .25rem var(--bg50);
 }
 
 h2:not(.coop-heading, .cases-heading) {
