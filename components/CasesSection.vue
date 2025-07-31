@@ -58,13 +58,12 @@ const localePath = useLocalePath()
 			grid-area: more;
 			font-size: 2rem;
 			line-height: 2rem;
+			justify-self: end;
 
 			@media (orientation: portrait) {
 				font-size: 1rem;
 				line-height: 1.5rem;
 			}
-
-			justify-self: end;
 
 			.arrow svg {
 				width: 2rem;

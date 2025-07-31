@@ -207,6 +207,7 @@ onMounted(() => {
 			position: absolute;
 			left: 0;
 			top: 0;
+			height: 100%;
 
 			@media (orientation: landscape) {
 				height: 100dvh;
@@ -215,8 +216,6 @@ onMounted(() => {
 			@media (orientation: portrait) {
 				height: 100dvh;
 			}
-
-			height: 100%;
 
 			svg {
 				position: absolute;
