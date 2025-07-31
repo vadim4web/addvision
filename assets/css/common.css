@@ -146,7 +146,7 @@ a {
 	box-shadow: 0 0 1rem .25rem var(--bg50);
 }
 
-h2:not(.coop-heading, .cases-heading) {
+h2:not(.coop-heading, .cases-heading, .testimonials-heading) {
 	padding-bottom: 3rem;
 }
 

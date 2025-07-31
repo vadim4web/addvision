@@ -94,18 +94,25 @@ const testimonials = computed(
 
 .main-slider {
 	width: 100%;
-	aspect-ratio: 1.2;
 
 	@media (orientation: landscape) {
 		aspect-ratio: 1.66;
 	}
 
-	@media (max-width: 480px) {
+	@media (orientation: portrait), (max-width: 768px) {
+		aspect-ratio: 1;
+	}
+
+	@media (max-width: 640px) {
 		aspect-ratio: 0.75;
 	}
 
+	@media (max-width: 480px) {
+		aspect-ratio: 0.65;
+	}
+
 	@media (max-width: 400px) {
-		aspect-ratio: 0.66;
+		aspect-ratio: 0.55;
 	}
 
 	@media (max-width: 340px) {
@@ -117,7 +124,7 @@ const testimonials = computed(
 	}
 
 	@media (max-width: 275px) {
-		aspect-ratio: 0.33;
+		aspect-ratio: 0.3;
 	}
 
 	& .vueperslides__parallax-wrapper,
@@ -148,7 +155,7 @@ const testimonials = computed(
 		gap: 0.5rem;
 
 		grid-template-columns: 2fr 3fr;
-		grid-template-rows: 1fr 1fr 1fr;
+		grid-template-rows: 1fr 1fr 0.25fr;
 		grid-template-areas:
 			'text text'
 			'photo author'
@@ -175,6 +182,10 @@ const testimonials = computed(
 	align-self: center;
 	position: relative;
 	overflow: visible;
+
+	@media (orientation: portrait) {
+		max-width: 100%;
+	}
 
 	&::before,
 	&::after {

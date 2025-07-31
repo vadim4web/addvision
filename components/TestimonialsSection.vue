@@ -5,7 +5,7 @@
 		class="testimonials-section"
 	>
 		<div class="content">
-			<SectionHeading class="glow-on-hover">
+			<SectionHeading class="glow-on-hover testimonials-heading">
 				<span class="heading-text">
 					<span class="before">
 						{{ $t('testimonials.titleParts.before') }}
@@ -29,8 +29,4 @@
 
 <script setup></script>
 
-<style lang="scss" scoped>
-.testimonials-section {
-	background: var(--dark-green);
-}
-</style>
+<style lang="scss" scoped></style>

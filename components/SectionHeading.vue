@@ -41,19 +41,19 @@
 	}
 
 	@media (orientation: portrait) {
-		font-size: 2.5rem;
+		font-size: 3.5rem;
 
 		.arrow {
-			width: 2.5rem;
+			width: 3.5rem;
 			justify-self: start;
 		}
 	}
 
 	@media (max-width: 480px) {
-		font-size: 1.75rem;
+		font-size: 2.75rem;
 
 		.arrow {
-			width: 1.75rem;
+			width: 2.75rem;
 		}
 	}
 
