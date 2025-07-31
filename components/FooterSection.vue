@@ -6,7 +6,7 @@
 		role="contentinfo"
 	>
 		<div class="content">
-			<SectionHeading class="heading glow-on-hover-light">
+			<SectionHeading class="heading glow-on-hover-light dark-green">
 				<span class="heading-text">{{ $t('contacts.title') }}</span>
 				<i class="arrow"><SvgArrow /></i>
 			</SectionHeading>
@@ -15,7 +15,7 @@
 
 			<ContactForm :set-show-thanks />
 
-			<p class="copy">
+			<p class="copy glow-on-hover-light dark-green">
 				&copy; 2013 - {{ new Date().getFullYear() }}
 				<span style="color: var(--gray)">{</span><span class="lowercase">Add</span
 				><span style="color: var(--gray)">}</span
@@ -38,7 +38,7 @@ const { setShowThanks } = defineProps({
 <style lang="scss">
 .contacts-section {
 	background: var(--accent);
-	color: var(--bg);
+	color: var(--dark-green);
 	font-weight: bolder;
 
 	.content {

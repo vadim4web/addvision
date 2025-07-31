@@ -35,6 +35,7 @@
 }
 
 .glow-on-hover-light {
+	text-shadow: 0 0 0.05em var(--dark-green);
 	filter: drop-shadow(0 0 0.2em var(--accent-electric)) contrast(1) brightness(1)		hue-rotate(0deg);
 	-webkit-filter: drop-shadow(0 0 0.2em var(--accent-electric)) contrast(1) brightness(1)		hue-rotate(0deg);
 }
@@ -80,6 +81,11 @@
 
 .brown-deep {
 	color: var(--brown-deep);
+}
+
+.dark-green {
+	color: var(--dark-green);
+	text-shadow: 0 0 0.05em var(--dark-green);
 }
 
 .lowercase {

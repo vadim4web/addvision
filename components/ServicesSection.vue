@@ -2,19 +2,19 @@
 	<section
 		id="services"
 		:aria-label="$t('aria.services')"
-		class="services-section"
+		class="services-section dark-green"
 	>
 		<div class="content">
-			<SectionHeading class="glow-on-hover-light">
+			<SectionHeading class="glow-on-hover-light dark-green">
 				<span class="heading-text">{{ $t('services.title') }}</span>
 				<i class="arrow"><SvgArrow /></i>
 			</SectionHeading>
 
-			<strong class="services-title glow-on-hover-light">
+			<strong class="services-title glow-on-hover-light dark-green">
 				{{ $t('services.heading') }}
 			</strong>
 
-			<p class="services-description glow-on-hover-light">
+			<p class="services-description glow-on-hover-light dark-green">
 				{{ $t('services.description') }}
 			</p>
 
@@ -22,14 +22,14 @@
 				<div
 					v-for="(category, index) in services?.categories || []"
 					:key="index"
-					class="category glow-on-hover-light"
+					class="category glow-on-hover-light dark-green"
 				>
-					<h3 class="font-yanone-light category-title">{{ category.title }}</h3>
+					<h3 class="font-yanone-light category-title dark-green">{{ category.title }}</h3>
 					<ul class="category-description">
 						<li
 							v-for="(item, idx) in category.items"
 							:key="idx"
-							class="font-inter-regular"
+							class="font-inter-regular dark-green"
 						>
 							{{ item }}
 						</li>
@@ -50,7 +50,7 @@ const services = computed(() => messages.value[locale.value]?.services || {})
 <style lang="scss">
 .services-section {
 	background: var(--accent);
-	color: var(--bg);
+	color: var(--dark-green);
 	display: flex;
 	flex-direction: column;
 
@@ -69,13 +69,13 @@ const services = computed(() => messages.value[locale.value]?.services || {})
 
 	.services-categories {
 		margin: 4rem 0;
-		border-top: 1px solid var(--bg);
-		border-bottom: 1px solid var(--bg);
+		border-top: 1px solid var(--dark-green);
+		border-bottom: 1px solid var(--dark-green);
 
 		.category {
 			padding-block: 1rem;
-			border-top: 1px solid var(--bg);
-			border-bottom: 1px solid var(--bg);
+			border-top: 1px solid var(--dark-green);
+			border-bottom: 1px solid var(--dark-green);
 			display: grid;
 			align-items: center;
 			grid-template-columns: 1fr 1fr 2rem;

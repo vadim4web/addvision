@@ -1,6 +1,6 @@
 <template>
 	<div class="form-container">
-		<h3>{{ $t('contacts.emailUs') }}</h3>
+		<h3 class="dark-green">{{ $t('contacts.emailUs') }}</h3>
 
 		<form
 			:aria-label="$t('contacts.aria_label')"
@@ -67,7 +67,7 @@
 				/>
 			</label>
 
-			<button class="form-submit glow-on-hover-light" type="submit">
+			<button class="form-submit glow-on-hover-light dark-green" type="submit">
 				{{ $t('contacts.send') }}
 			</button>
 		</form>
@@ -132,7 +132,7 @@ const submitForm = async () => {
 .form-container {
 	display: grid;
 	grid-template-rows: 1fr 6fr;
-	color: var(--bg);
+	color: var(--dark-green);
 	padding: 3.75rem;
 
 	@media (orientation: portrait) {
@@ -182,7 +182,7 @@ const submitForm = async () => {
 			grid-template-columns: 50% 50%;
 			align-items: center;
 
-			border-bottom: 1px solid var(--bg);
+			border-bottom: 1px solid var(--dark-green);
 			position: relative;
 
 			@media (max-width: 640px) {
@@ -202,7 +202,7 @@ const submitForm = async () => {
 
 		button.form-submit {
 			background: var(--accent);
-			color: var(--bg);
+			color: var(--dark-green);
 			width: max-content;
 			text-transform: uppercase;
 			justify-self: center;
