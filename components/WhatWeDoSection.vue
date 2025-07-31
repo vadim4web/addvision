@@ -9,8 +9,9 @@
 				<span class="heading-text">
 					<span class="before">
 						{{ $t('what.titleParts.before') }}
+						<i class="arrow"><SvgArrow /></i>
 					</span>
-					<br />
+					<br>
 					<span class="brown-deep">
 						{{ $t('what.titleParts.brownDeep1') }}
 					</span>
@@ -20,7 +21,6 @@
 					<span class="brown-deep">{{ $t('what.titleParts.brownDeep2') }}</span>
 				</span>
 
-				<i class="arrow"><SvgArrow /></i>
 			</SectionHeading>
 
 			<WhatWeDoGrid />
@@ -39,6 +39,21 @@
 <style lang="scss" scoped>
 .what-we-do-section {
 	background: var(--dark-green);
+
+	.heading-text .before {
+		position: relative;
+		display: inline-block;
+
+		@media (min-width: 360px) {
+			padding-right: 2ch;
+		}
+
+		.arrow {
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+	}
 
 	.cta-container {
 		display: grid;
