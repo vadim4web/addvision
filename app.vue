@@ -124,6 +124,7 @@ useHead({
 	--bg50: #0e090380; /* Основний фон 50% */
 	--bg33: #0e090354; /* Основний фон 33% */
 	--bg25: #0e090340; /* Основний фон 25% */
+	--bg10: #0e09030b; /* Основний фон 25% */
 	/* --text-main: #040404;
   --text-main: #353e43;    */ /* Основний текст (gun-metal) */
 	--text-main: #f1f6fc;
@@ -132,6 +133,7 @@ useHead({
 	--text-main50: #f1f6fc80;
 	--text-main33: #f1f6fc54;
 	--text-main25: #f1f6fc40;
+	--text-main10: #f1f6fc0b;
 	/* Головний акцент (blue-shade) */
 	--accent: #00ffef; /* Головний акцент (blue-shade) */
 	--accent75: #00ffefbf; /* Головний акцент (blue-shade) 33% */

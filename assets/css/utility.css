@@ -28,21 +28,22 @@
 	-webkit-filter: drop-shadow(0 0 0.25em var(--bg)) contrast(1) brightness(1)		hue-rotate(0deg);
 }
 
-.glow-on-hover:hover,
-.glow-on-hover-light:hover {
-	filter: drop-shadow(0 0 0.25em var(--accent75)) contrast(1.15)		brightness(1.15) hue-rotate(360deg);
-	-webkit-filter: drop-shadow(0 0 0.25em var(--accent75)) contrast(1.15)		brightness(1.15) hue-rotate(360deg);
-}
-
 .glow-on-hover-light {
-	text-shadow: 0 0 0.05em var(--dark-green);
+	text-shadow: 0 0 0.25em var(--dark-green);
 	filter: drop-shadow(0 0 0.2em var(--accent-electric)) contrast(1) brightness(1)		hue-rotate(0deg);
 	-webkit-filter: drop-shadow(0 0 0.2em var(--accent-electric)) contrast(1) brightness(1)		hue-rotate(0deg);
 }
 
 .glow-on-hover-light:is(.section-heading) {
-	filter: drop-shadow(0 0 0.25em var(--accent75)) contrast(1) brightness(1)		hue-rotate(0deg);
-	-webkit-filter: drop-shadow(0 0 0.25em var(--accent75)) contrast(1) brightness(1)		hue-rotate(0deg);
+	filter: drop-shadow(0 0 0.25em var(--bg10)) contrast(1) brightness(1)		hue-rotate(0deg);
+	-webkit-filter: drop-shadow(0 0 0.25em var(--bg10)) contrast(1) brightness(1)		hue-rotate(0deg);
+}
+
+.glow-on-hover:hover,
+.glow-on-hover-light:hover,
+.glow-on-hover:is(.section-heading):hover {
+	filter: drop-shadow(0 0 0.25em var(--accent75)) contrast(1.15)		brightness(1.15) hue-rotate(360deg);
+	-webkit-filter: drop-shadow(0 0 0.25em var(--accent75)) contrast(1.15)		brightness(1.15) hue-rotate(360deg);
 }
 
 .grid-four {
