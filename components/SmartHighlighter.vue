@@ -46,11 +46,10 @@ onBeforeUnmount(() => {
   height: 10vmin;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  background: radial-gradient(circle, transparent 0%, var(--accent10), var(--accent) 100%);
+  background: radial-gradient(circle, transparent 0%, var(--accent10), var(--accent50) 100%);
   box-shadow:
     0 0 1vmin 0.5vmin var(--accent50),
     inset 0 0 1vmin 0.5vmin var(--anti-accent50);
-  /* filter: invert(1); */
   backdrop-filter: invert(1);
   mix-blend-mode: exclusion;
   mix-blend-mode: difference;
