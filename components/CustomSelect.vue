@@ -11,7 +11,7 @@
 		<button
 			:aria-controls="dropdownId"
 			:aria-expanded="isOpen.toString()"
-			class="select-button"
+			class="select-button text-shade"
 			type="button"
 			@click="toggle"
 		>

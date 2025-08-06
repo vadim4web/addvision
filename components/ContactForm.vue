@@ -1,6 +1,6 @@
 <template>
-	<div class="form-container">
-		<h3 class="dark-green">{{ $t('contacts.emailUs') }}</h3>
+	<div class="form-container glow-on-hover-light box-shade">
+		<h3 class="dark-green glow-on-hover-light">{{ $t('contacts.emailUs') }}</h3>
 
 		<form
 			:aria-label="$t('contacts.aria_label')"
@@ -20,6 +20,7 @@
 					type="text"
 				/>
 			</label>
+
 
 			<label>
 				{{ $t('contacts.email') }} *
@@ -67,7 +68,7 @@
 				/>
 			</label>
 
-			<button class="form-submit glow-on-hover-light dark-green" type="submit">
+			<button class="form-submit glow-on-hover-light text-shade" type="submit">
 				{{ $t('contacts.send') }}
 			</button>
 		</form>
@@ -133,6 +134,7 @@ const submitForm = async () => {
 	display: grid;
 	grid-template-rows: 1fr 6fr;
 	color: var(--dark-green);
+	background: var(--text-main);
 	padding: 3.75rem;
 
 	@media (orientation: portrait) {
@@ -169,6 +171,20 @@ const submitForm = async () => {
 			font-size: 1rem;
 		}
 
+		label {
+			position: relative;
+		}
+
+		label::after {
+			position: absolute;
+			width: 100%;
+			bottom: 0;
+			content: '';
+			height: 1px;
+			background: var(--bg);
+			box-shadow: 0 0 0.25vmin 0.05vmin var(--bg75);
+		}
+
 		& > * {
 			min-height: 3.75rem;
 		}
@@ -182,7 +198,7 @@ const submitForm = async () => {
 			grid-template-columns: 50% 50%;
 			align-items: center;
 
-			border-bottom: 1px solid var(--dark-green);
+			// border-bottom: 1px solid var(--dark-green);
 			position: relative;
 
 			@media (max-width: 640px) {
@@ -202,11 +218,11 @@ const submitForm = async () => {
 
 		button.form-submit {
 			background: var(--accent);
-			color: var(--dark-green);
 			width: max-content;
 			text-transform: uppercase;
 			justify-self: center;
 			padding: 0.5rem 3.75rem;
+			font-weight: bold;
 		}
 	}
 }

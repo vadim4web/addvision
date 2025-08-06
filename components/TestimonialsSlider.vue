@@ -22,18 +22,18 @@
           <div class='testimonial-content'>
             <img
 							alt='${testimonial.author} photo'
-							class='author-photo'
+							class='author-photo box-shade'
 							src='/clients/client${i + 1}.jpg'
 						/>
-            <p class='testimonial-text font-inter-regular glow-on-hover'>
+            <p class='testimonial-text font-inter-regular glow-on-hover text-shade'>
 							${testimonial.text}
 						</p>
             <p class='testimonial-author glow-on-hover'>
-              <strong class='font-inter-regular'>
+              <strong class='font-inter-regular text-shade'>
 								${testimonial.author}.
 							</strong>
               <br />
-              <em class='font-inter-italic'>
+              <em class='font-inter-italic text-shade'>
 								${testimonial.author_}
 							</em>
             </p>
@@ -47,7 +47,7 @@
 			:arrows="false"
 			:bullets="false"
 			:bullets-outside="false"
-			class="thumbnails no-shadow"
+			class="thumbnails no-shadow box-shade"
 			fixed-height="3rem"
 			:gap="1"
 			:touchable="false"
@@ -59,6 +59,7 @@
 			<vueper-slide
 				v-for="(_, i) in testimonials"
 				:key="i"
+				class="box-shade"
 				:image="`/clients/client${i + 1}.jpg`"
 				@click="$refs.mainSlider.goToSlide(i)"
 			>

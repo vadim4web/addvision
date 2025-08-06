@@ -2,7 +2,7 @@
 	<div ref="container" class="why-cta-container glow-on-hover">
 		<a
 			ref="cta"
-			class="why-cta"
+			class="why-cta text-shade"
 			href="https://t.me/vicharych"
 			rel="noopener noreferrer"
 			target="_blank"

@@ -89,7 +89,7 @@ onUnmounted(() => {
 			v-for="(section, key, index) in sections"
 			:key="key"
 			ref="sectionRefs"
-			class="what-section glow-on-hover"
+			class="what-section glow-on-hover box-shade"
 		>
 			<h3 class="glow-on-hover">{{ section.title }}</h3>
 
@@ -97,7 +97,7 @@ onUnmounted(() => {
 				<li
 					v-for="(item, idx) in section.items"
 					:key="idx"
-					class="glow-on-hover"
+					class="glow-on-hover text-shade"
 				>
 					{{ item }}
 				</li>
@@ -129,9 +129,7 @@ onUnmounted(() => {
 		position: relative;
 		overflow: hidden;
 		z-index: 1;
-
 		color: var(--white);
-		text-shadow: 0 0 0.15em var(--bg);
 		font-weight: 600;
 		padding: 1rem;
 

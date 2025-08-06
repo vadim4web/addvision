@@ -6,7 +6,7 @@
 		class="faq-section"
 	>
 		<div class="content">
-			<SectionHeading class="glow-on-hover">
+			<SectionHeading class="glow-on-hover text-shade">
 				<span class="faq-heading heading-text">
 					{{ $t('faq.titleParts.start') }}
 					<br />
@@ -18,7 +18,7 @@
 			</SectionHeading>
 
 			<div class="head">
-				<strong class="faq-description glow-on-hover">
+				<strong class="faq-description glow-on-hover text-shade">
 					{{ $t('faq.description') }}
 				</strong>
 
@@ -32,6 +32,8 @@
 			</div>
 
 			<div class="faq-items">
+				<hr class="box-shade">
+
 				<div
 					v-for="(item, index) in faqItems"
 					:key="index"
@@ -39,16 +41,22 @@
 					:class="{ closed: openedIndex !== index }"
 					@click="handleClick(index)"
 				>
-					<div class="faq-question glow-on-hover">
+					<hr class="box-shade">
+
+					<div class="faq-question glow-on-hover text-shade">
 						{{ item.question }}
 						<i class="arrow-icon" :class="{ open: openedIndex === index }"
 							><SvgArrow
 						/></i>
 					</div>
-					<div class="faq-answer glow-on-hover">
+					<div class="faq-answer glow-on-hover  text-shade">
 						{{ item.answer }}
 					</div>
+
+					<hr class="box-shade">
 				</div>
+
+				<hr class="box-shade">
 			</div>
 		</div>
 	</section>
@@ -108,16 +116,35 @@ function handleClickOutside() {
 		align-self: flex-end;
 		display: flex;
 		flex-direction: column;
-		border-top: 2px solid var(--text-main);
+		position: relative;
+		padding-block: 1px;
+
+		hr {
+			position: absolute;
+			width: 100%;
+			left: 0;
+			right: 0;
+			margin: 0;
+			height: 1px;
+			background: var(--text-main);
+			border: none;
+
+				&:first-of-type {
+					top: 0;
+				}
+				&:last-of-type {
+					bottom: 0;
+				}
+		}
 
 		@media (max-width: 1080px) {
 			margin-inline: auto;
 		}
 
 		.faq {
-			border-bottom: 2px solid var(--text-main);
 			cursor: pointer;
 			padding: 0.5rem 0;
+			position: relative;
 
 			.faq-question {
 				font-weight: bold;
@@ -146,8 +173,8 @@ function handleClickOutside() {
 			.faq-answer {
 				font-size: 1rem;
 				color: var(--text-main);
-				padding: 0.5rem 0;
-				max-height: 500px;
+				padding: 0.5rem 0 2.5rem;
+				max-height: fit-content;
 				overflow: hidden;
 				transition: all 0.5s ease;
 			}

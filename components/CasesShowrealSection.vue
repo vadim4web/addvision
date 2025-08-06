@@ -1,12 +1,12 @@
 <template>
-	<section :aria-label="$t('aria.casesVideo')" class="cases-showreel-section">
+	<section :aria-label="$t('aria.casesVideo')" class="cases-showreel-section box-shade">
 		<div class="content">
 			<h2 class="glow-on-hover">
 				<span class="add">{<em class="font-galada-regular">add</em>}</span
 				><strong class="font-kanit-black vision">VISION</strong>
 			</h2>
 
-			<VideoBackground style="margin: 0 auto" />
+			<VideoBackground class="box-shade" style="margin: 0 auto" />
 		</div>
 	</section>
 </template>

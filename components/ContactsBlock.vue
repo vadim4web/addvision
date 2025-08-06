@@ -178,6 +178,7 @@
 			svg {
 				width: 5rem;
 				height: 5rem;
+				filter: url(#svg-shade);
 
 
 				@media (max-width: 1080px) {

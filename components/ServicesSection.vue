@@ -2,40 +2,50 @@
 	<section
 		id="services"
 		:aria-label="$t('aria.services')"
-		class="services-section dark-green"
+		class="services-section dark-green box-shade"
 	>
 		<div class="content">
-			<SectionHeading class="glow-on-hover-light dark-green">
+			<SectionHeading class="glow-on-hover-light dark-green text-shade">
 				<span class="heading-text">{{ $t('services.title') }}</span>
 				<i class="arrow"><SvgArrow /></i>
 			</SectionHeading>
 
-			<strong class="services-title glow-on-hover-light dark-green">
+			<strong class="services-title glow-on-hover-light dark-green text-shade">
 				{{ $t('services.heading') }}
 			</strong>
 
-			<p class="services-description glow-on-hover-light dark-green">
+			<p class="services-description glow-on-hover-light dark-green text-shade">
 				{{ $t('services.description') }}
 			</p>
 
 			<div class="services-categories">
+				<hr class="box-shade">
+
 				<div
 					v-for="(category, index) in services?.categories || []"
 					:key="index"
-					class="category glow-on-hover-light dark-green"
+					class="category glow-on-hover-light dark-green text-shade"
 				>
-					<h3 class="font-yanone-light category-title dark-green">{{ category.title }}</h3>
+					<hr class="box-shade">
+
+					<h3 class="font-yanone-light category-title">{{ category.title }}</h3>
+
 					<ul class="category-description">
 						<li
 							v-for="(item, idx) in category.items"
 							:key="idx"
-							class="font-inter-regular dark-green"
+							class="font-inter-regular"
 						>
 							{{ item }}
 						</li>
 					</ul>
+
 					<i class="category-arrow"><SvgArrow /></i>
+
+					<hr class="box-shade">
 				</div>
+
+				<hr class="box-shade">
 			</div>
 		</div>
 	</section>
@@ -69,19 +79,37 @@ const services = computed(() => messages.value[locale.value]?.services || {})
 
 	.services-categories {
 		margin: 4rem 0;
-		border-top: 1px solid var(--dark-green);
-		border-bottom: 1px solid var(--dark-green);
+		padding-block: 1px;
+		position: relative;
+
+		hr {
+			position: absolute;
+			width: 100%;
+			left: 0;
+			right: 0;
+			margin: 0;
+			height: 1px;
+			background: var(--dark-green);
+			border: none;
+			box-shadow: 0 0 0.25vmin 0.05vmin var(--dark-green);
+
+				&:first-of-type {
+					top: 0;
+				}
+				&:last-of-type {
+					bottom: 0;
+				}
+		}
 
 		.category {
 			padding-block: 1rem;
-			border-top: 1px solid var(--dark-green);
-			border-bottom: 1px solid var(--dark-green);
 			display: grid;
 			align-items: center;
 			grid-template-columns: 1fr 1fr 2rem;
 			grid-template-areas:
 				"title desc arrow"
 			;
+			position: relative;
 
 			@media (orientation: portrait) {
 				grid-template-columns: 1fr 2rem;

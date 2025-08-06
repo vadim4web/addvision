@@ -1,6 +1,8 @@
 <template>
 	<div class="cases-accordion">
 		<div class="cases-frame">
+			<hr class="box-shade">
+
 			<div
 				v-for="(item, index) in casesItems"
 				:key="index"
@@ -8,14 +10,16 @@
 				:class="{ closed: openedIndex !== index }"
 				@click="handleClick(index)"
 			>
-				<h3 class="case-title glow-on-hover font-yanone-light">
+				<hr class="box-shade">
+
+				<h3 class="case-title glow-on-hover font-yanone-light text-shade">
 					{{ item.title }}
 					<i class="arrow-icon" :class="{ open: openedIndex === index }"
 						><SvgArrow
 					/></i>
 				</h3>
 
-				<p class="case-description glow-on-hover">
+				<p class="case-description glow-on-hover text-shade">
 					{{ item.description }}
 				</p>
 
@@ -29,19 +33,12 @@
 						></iframe>
 					</div>
 				</div>
-			</div>
-		</div>
 
-		<!-- <div v-if="!isPortrait" class="preview-frame">
-			<div class="overflow-cutting-wrapper">
-				<iframe
-					class="preview"
-					frameborder="0"
-					:src="opened?.url"
-					:title="opened?.title"
-				></iframe>
+				<hr class="box-shade">
 			</div>
-		</div> -->
+
+			<hr class="box-shade">
+		</div>
 	</div>
 </template>
 
@@ -51,24 +48,26 @@ const { locale, messages } = useI18n()
 const isReady = ref(false)
 
 watch(
-  () => messages.value?.[locale.value],
-  (newVal) => {
-    if (newVal?.cases?.list) {
-      isReady.value = true
-    }
-  },
-  { immediate: true }
+	() => messages.value?.[locale.value],
+	newVal => {
+		if (newVal?.cases?.list) {
+			isReady.value = true
+		}
+	},
+	{ immediate: true }
 )
 
 const casesItems = computed(() =>
-  isReady.value ? (messages.value[locale.value]?.cases?.list || []).slice(0, 4) : []
+	isReady.value
+		? (messages.value[locale.value]?.cases?.list || []).slice(0, 4)
+		: []
 )
 
 const openedIndex = ref(0)
 const opened = computed(() => casesItems.value[openedIndex.value])
 
 function handleClick(index) {
-  openedIndex.value = openedIndex.value === index ? 0 : index
+	openedIndex.value = openedIndex.value === index ? 0 : index
 }
 </script>
 
@@ -82,24 +81,21 @@ function handleClick(index) {
 		grid-template-columns: none;
 	}
 
-	@media (orientation: landscape) {
-		max-height: 30rem;
-	}
+	@media (orientation: landscape) {}
 
 	.cases-frame {
-		border-top: 1px solid var(--gray);
-		border-bottom: 1px solid var(--gray);
+		hr {
+			margin: 0;
+			background: var(--gray);
+			border: none;
+			height: 1px;
+		}
 
 		.case {
 			overflow: hidden;
-			border-top: 1px solid var(--gray);
-			border-bottom: 1px solid var(--gray);
-
-			&:not(.closed) {
-				padding-bottom: 0.5rem;
-			}
 
 			.case-title {
+				padding-top: 0.25rem;
 				font-size: 3rem;
 
 				@media (max-width: 480px) {
@@ -137,7 +133,6 @@ function handleClick(index) {
 				transition: height 0.5s ease;
 			}
 
-
 			@media (orientation: landscape) {
 				&:not(.closed) .case-description {
 					height: 14rem;
@@ -162,11 +157,11 @@ function handleClick(index) {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		max-height: 33rem;
+		max-height: 33.5rem;
 
 		@media (orientation: landscape) {
 			position: absolute;
-			top: 0;
+			top: 2px;
 			right: 0;
 			width: 50%;
 		}
@@ -178,7 +173,7 @@ function handleClick(index) {
 		.overflow-cutting-wrapper {
 			overflow: hidden;
 			aspect-ratio: 9 / 16;
-			max-height: 33rem;
+			max-height: 33.5rem;
 
 			.preview {
 				object-fit: cover;

@@ -5,7 +5,7 @@
 		class="what-we-do-section masked-section"
 	>
 		<div class="content">
-			<SectionHeading class="glow-on-hover">
+			<SectionHeading class="glow-on-hover text-shade">
 				<span class="heading-text">
 					<span class="before">
 						{{ $t('what.titleParts.before') }}
@@ -26,7 +26,7 @@
 			<WhatWeDoGrid />
 
 			<div class="cta-container">
-				<em class="cta glow-on-hover">
+				<em class="cta glow-on-hover text-shade">
 					{{ $t('what.cta') }}
 				</em>
 			</div>

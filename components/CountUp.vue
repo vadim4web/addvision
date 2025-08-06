@@ -1,5 +1,5 @@
 <template>
-	<span ref="counterEl">{{ startVal }}{{ postfix }}</span>
+	<span ref="counterEl" class="text-shade">{{ startVal }}{{ postfix }}</span>
 </template>
 
 <script setup>
@@ -46,9 +46,5 @@ span {
 	font-weight: bold;
 	font-size: 8rem;
 	color: var(--accent);
-
-	// @media (max-width: 719px), (min-width: 1440px) {
-	// 	font-size: 10rem;
-	// }
 }
 </style>

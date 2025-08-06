@@ -99,6 +99,15 @@ useHead({
 </script>
 
 <template>
+  <!-- Global SVG Filter -->
+  <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;">
+    <defs>
+      <filter id="svg-shade" color-interpolation-filters="sRGB" height="200%" width="200%" x="-50%" y="-50%">
+        <feDropShadow dx="0" dy="0" flood-color="#082424" flood-opacity="1" stdDeviation="2" />
+      </filter>
+    </defs>
+  </svg>
+
 	<NuxtRouteAnnouncer />
 	<SmartHighlighter />
 	<NuxtLayout>
@@ -109,25 +118,22 @@ useHead({
 
 <style lang="scss">
 :root {
-	/* font-size: min(1.33vmax, 3vmin); */
 	/* === Базові кольори === */
 	--white: #ffffff;
 	--white50: #ffffff80;
 	--black: #000000;
 
 	/* === Основна палітра === */
-	/* --bg: #f1f6fc; */ /* Основний фон 100% */
-	--bg: #0e0903; /* Основний фон */
-	--bg: #0e0903; /* Основний фон */
-	--bg80: #0e0903cc; /* Основний фон 100% */
-	--bg75: #0e0903bf; /* Основний фон 75% */
-	--bg66: #0e0903a8; /* Основний фон 66% */
-	--bg50: #0e090380; /* Основний фон 50% */
-	--bg33: #0e090354; /* Основний фон 33% */
-	--bg25: #0e090340; /* Основний фон 25% */
-	--bg10: #0e09030b; /* Основний фон 25% */
-	/* --text-main: #040404;
-  --text-main: #353e43;    */ /* Основний текст (gun-metal) */
+	--bg: #0e0903;
+	--bg90: #0e0903e6;
+	--bg80: #0e0903cc;
+	--bg75: #0e0903bf;
+	--bg66: #0e0903a8;
+	--bg50: #0e090380;
+	--bg33: #0e090354;
+	--bg25: #0e090340;
+	--bg10: #0e09030b;
+ /* Основний текст (gun-metal) */
 	--text-main: #f1f6fc;
 	--text-main75: #f1f6fcbf;
 	--text-main66: #f1f6fca8;
@@ -136,21 +142,23 @@ useHead({
 	--text-main25: #f1f6fc40;
 	--text-main10: #f1f6fc0b;
 	/* Головний акцент (blue-shade) */
-	--accent: #00ffef; /* Головний акцент (blue-shade) */
-	--accent75: #00ffefbf; /* Головний акцент (blue-shade) 33% */
-	--accent66: #00ffefa8; /* Головний акцент (blue-shade) 66% */
-	--accent50: #00ffef80; /* Головний акцент (blue-shade) 33% */
-	--accent33: #00ffef54; /* Головний акцент (blue-shade) 33% */
-	--accent25: #00ffef40; /* Головний акцент (blue-shade) 25% */
-	--accent10: #00ffef0b; /* Головний акцент (blue-shade) 25% */
+	--accent: #00ffef;
+	--accent90: #00ffeee6;
+	--accent80: #00ffefcc;
+	--accent75: #00ffefbf;
+	--accent66: #00ffefa8;
+	--accent50: #00ffef80;
+	--accent33: #00ffef54;
+	--accent25: #00ffef40;
+	--accent10: #00ffef0b;
 
-	--anti-accent: #ff0010; /* Головний акцент (blue-shade) */
-	--anti-accent75: #ff0010bf; /* Головний акцент (blue-shade) 33% */
-	--anti-accent66: #ff0010a8; /* Головний акцент (blue-shade) 66% */
-	--anti-accent50: #ff001080; /* Головний акцент (blue-shade) 33% */
-	--anti-accent33: #ff001054; /* Головний акцент (blue-shade) 33% */
-	--anti-accent25: #ff001040; /* Головний акцент (blue-shade) 25% */
-	--anti-accent10: #ff00100b; /* Головний акцент (blue-shade) 25% */
+	--anti-accent: #ff0010;
+	--anti-accent75: #ff0010bf;
+	--anti-accent66: #ff0010a8;
+	--anti-accent50: #ff001080;
+	--anti-accent33: #ff001054;
+	--anti-accent25: #ff001040;
+	--anti-accent10: #ff00100b;
 
 	/* === Додаткові акценти === */
 	--accent-light: #68e2fa; /* Світлий акцент (electric-blue-nv) */
@@ -158,15 +166,13 @@ useHead({
 	--accent-electric: #00f0ff; /* Електричний блакитний */
 
 	/* === Службові кольори === */
-	--gray: #808080; /* Світло-сірий, межі, бордери */
-	--powder-blue: #b6d0e2; /* Пудровий синій, фони секцій */
-	--brown-deep: #003539; /* Темно-коричневий (може бути для контрасту, футера) */
-	--brown-deep: #00aeb8; /* Темно-коричневий (може бути для контрасту, футера) */
+	--gray: #808080;
+	--powder-blue: #b6d0e2;
+	--brown-deep: #003539;
+	--brown-deep: #00aeb8;
 
 	--night-blue: #0A1930;
 	--dark-night-blue: #10182A;
 	--dark-green: #082424;
-
-	// cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='75' height='75' viewBox='0 0 75 75'><defs><filter id='blur-glow' x='-125%' y='-125%' width='250%' height='250%'><feGaussianBlur in='SourceGraphic' stdDeviation='1' result='blur'/><feDropShadow dx='0' dy='0' stdDeviation='10' flood-color='%23cc40ff' flood-opacity='1'/></filter></defs><circle cx='38' cy='38' r='25' fill='%23ffffffa8' stroke='%2300ffef' stroke-width='1' filter='url(%23blur-glow)'/><circle cx='38' cy='38' r='25' fill='%2300ffef40' stroke='%2300ffef40' stroke-width='1'/><circle cx='38' cy='38' r='15' fill='transparent' stroke-width='10'/></svg>") 38 38, auto;
 }
 </style>

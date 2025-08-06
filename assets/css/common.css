@@ -140,12 +140,6 @@ a {
 	-webkit-filter: drop-shadow(0 0 0.1rem var(--accent));
 }
 
-.testimonial-slider .testimonial-content .author-photo {
-	/* filter: drop-shadow(0 0 0.5rem var(--bg));
-	-webkit-filter: drop-shadow(0 0 0.5rem var(--bg)); */
-	box-shadow: 0 0 1rem .25rem var(--bg50);
-}
-
 h2:not(.coop-heading, .cases-heading, .testimonials-heading) {
 	padding-bottom: 3rem;
 }

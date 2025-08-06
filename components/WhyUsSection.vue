@@ -2,7 +2,7 @@
 	<section id="why-us" :aria-label="$t('aria.whyUs')" class="why-us-section">
 		<div class="content">
 			<div class="coop">
-				<SectionHeading class="coop-heading glow-on-hover">
+				<SectionHeading class="coop-heading glow-on-hover text-shade">
 					<span class="heading-text">
 						<span class="before">
 							{{ $t('why.titleParts.before') }}
@@ -18,7 +18,7 @@
 				</SectionHeading>
 
 				<div class="coop-top-right">
-					<strong class="coop-top-right-strong glow-on-hover">
+					<strong class="coop-top-right-strong glow-on-hover text-shade">
 						<span class="accent">
 							{{ $t('why.coopParts.accent') }}
 						</span>
@@ -27,12 +27,12 @@
 						</span>
 					</strong>
 
-					<div class="coop-top-right-visual glow-on-hover">
-						<img alt="" height="400" src="/images/coop.webp" width="400" />
+					<div class="coop-top-right-visual">
+						<img alt="" class="box-shade" height="400" src="/images/coop.webp" width="400" />
 					</div>
 				</div>
 
-				<em class="coop-values glow-on-hover">
+				<em class="coop-values glow-on-hover text-shade">
 					<span class="accent">{</span>add<span class="accent">}</span>VISION
 					{{ $t('why.values') }}
 				</em>
@@ -80,6 +80,7 @@
 			grid-area: topRight;
 			display: flex;
 			justify-self: end;
+			gap: 0.5rem;
 
 			@media (orientation: portrait) {
 				margin-bottom: 2rem;
@@ -91,6 +92,8 @@
 				font-size: 1.75rem;
 				font-variant: small-caps;
 				font-weight: 600;
+				position: relative;
+				z-index: 1;
 			}
 
 			&-visual {

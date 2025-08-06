@@ -2,18 +2,18 @@
 	<section id="cases" :aria-label="$t('aria.cases')" class="cases-section">
 		<div class="content">
 			<div class="head">
-				<SectionHeading class="cases-heading glow-on-hover">
+				<SectionHeading class="cases-heading glow-on-hover text-shade">
 					<span class="heading-text">{{ $t('cases.title') }}</span>
 					<i class="arrow"><SvgArrow /></i>
 				</SectionHeading>
 
-				<NuxtLink class="more glow-on-hover" :to="localePath('/cases')">
+				<NuxtLink class="more glow-on-hover text-shade" :to="localePath('/cases')">
 					{{ $t('cases.moreLabel') }}
 
 					<i class="arrow"><SvgArrow /></i>
 				</NuxtLink>
 
-				<strong class="description glow-on-hover">
+				<strong class="description glow-on-hover text-shade">
 					{{ $t('cases.description') }}
 				</strong>
 			</div>
@@ -68,7 +68,8 @@ const localePath = useLocalePath()
 			.arrow svg {
 				width: 2rem;
 				height: 2rem;
-				padding-top: 0.5rem;
+				position: relative;
+				top: 0.25rem;
 
 				@media (orientation: portrait) {
 					width: 1.5rem;

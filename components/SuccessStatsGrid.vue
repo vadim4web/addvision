@@ -14,7 +14,7 @@
 						: ''
 					"
 				/>
-				<p class="label font-inter-medium">{{ $t(`why.stats.${i}`) }}</p>
+				<p class="label font-inter-medium text-shade">{{ $t(`why.stats.${i}`) }}</p>
 			</div>
 		</div>
 	</div>

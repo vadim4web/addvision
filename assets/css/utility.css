@@ -19,24 +19,24 @@
 }
 
 .glow-on-hover {
-		filter: drop-shadow(0 0 0.2em var(--bg)) contrast(1) brightness(1)		hue-rotate(0deg);
-	-webkit-filter: drop-shadow(0 0 0.2em var(--bg)) contrast(1) brightness(1)		hue-rotate(0deg);
+	filter: drop-shadow(0 0 0.25vmin var(--bg)) contrast(1) brightness(1)		hue-rotate(0deg);
+	-webkit-filter: drop-shadow(0 0 0.25vmin var(--bg)) contrast(1) brightness(1)		hue-rotate(0deg);
 }
 
 .glow-on-hover:is(.section-heading) {
-	filter: drop-shadow(0 0 0.25em var(--bg)) contrast(1) brightness(1)		hue-rotate(0deg);
-	-webkit-filter: drop-shadow(0 0 0.25em var(--bg)) contrast(1) brightness(1)		hue-rotate(0deg);
+	filter: drop-shadow(0 0 0.25vmin var(--bg)) contrast(1) brightness(1)		hue-rotate(0deg);
+	-webkit-filter: drop-shadow(0 0 0.25vmin var(--bg)) contrast(1) brightness(1)		hue-rotate(0deg);
 }
 
 .glow-on-hover-light {
-	text-shadow: 0 0 0.25em var(--dark-green);
-	filter: drop-shadow(0 0 0.2em var(--accent-electric)) contrast(1) brightness(1)		hue-rotate(0deg);
-	-webkit-filter: drop-shadow(0 0 0.2em var(--accent-electric)) contrast(1) brightness(1)		hue-rotate(0deg);
+	text-shadow: 0 0 0.25vmin var(--bg);
+	filter: drop-shadow(0 0 0.25vmin var(--accent-electric)) contrast(1) brightness(1)		hue-rotate(0deg);
+	-webkit-filter: drop-shadow(0 0 0.25vmin var(--accent-electric)) contrast(1) brightness(1)		hue-rotate(0deg);
 }
 
 .glow-on-hover-light:is(.section-heading) {
-	filter: drop-shadow(0 0 0.25em var(--bg10)) contrast(1) brightness(1)		hue-rotate(0deg);
-	-webkit-filter: drop-shadow(0 0 0.25em var(--bg10)) contrast(1) brightness(1)		hue-rotate(0deg);
+	filter: drop-shadow(0 0 0.25vmin var(---accent-electric)) contrast(1) brightness(1)		hue-rotate(0deg);
+	-webkit-filter: drop-shadow(0 0 0.25vmin var(---accent-electric)) contrast(1) brightness(1)		hue-rotate(0deg);
 }
 
 .glow-on-hover:hover,
@@ -86,7 +86,6 @@
 
 .dark-green {
 	color: var(--dark-green);
-	text-shadow: 0 0 0.05em var(--dark-green);
 }
 
 .lowercase {
@@ -95,4 +94,12 @@
 
 .uppercase {
 	text-transform: uppercase;
+}
+
+.text-shade {
+	text-shadow: 0 0 0.66vmin var(--bg75);
+}
+
+.box-shade {
+	box-shadow: 0 0 1.5vmin 0.15vmin var(--bg75);
 }
