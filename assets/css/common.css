@@ -135,9 +135,9 @@ a {
 	-webkit-filter: drop-shadow(0 0 0.075em var(--bg));
 }
 
-.hero-section .brand svg {
-	filter: drop-shadow(0 0 0.75rem var(--bg66));
-	-webkit-filter: drop-shadow(0 0 0.75rem var(--bg66));
+.hero-section .brand svg{
+	filter: drop-shadow(0 0 0.25rem var(--accent));
+	-webkit-filter: drop-shadow(0 0 0.25rem var(--accent));
 }
 
 .testimonial-slider .testimonial-content .author-photo {
