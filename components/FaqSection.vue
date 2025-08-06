@@ -156,6 +156,8 @@ function handleClickOutside() {
 			}
 
 			.arrow-icon {
+				position: relative;
+				top: -0.4rem;
 				transform: rotate3d(1, 1, 0, 180deg); // діагональна вісь
 				transform: rotate(180deg);
 				transition: transform 0.5s ease;
