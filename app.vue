@@ -100,6 +100,7 @@ useHead({
 
 <template>
 	<NuxtRouteAnnouncer />
+	<SmartHighlighter />
 	<NuxtLayout>
 		<NuxtPage />
 	</NuxtLayout>
@@ -143,6 +144,14 @@ useHead({
 	--accent25: #00ffef40; /* Головний акцент (blue-shade) 25% */
 	--accent10: #00ffef0b; /* Головний акцент (blue-shade) 25% */
 
+	--anti-accent: #ff0010; /* Головний акцент (blue-shade) */
+	--anti-accent75: #ff0010bf; /* Головний акцент (blue-shade) 33% */
+	--anti-accent66: #ff0010a8; /* Головний акцент (blue-shade) 66% */
+	--anti-accent50: #ff001080; /* Головний акцент (blue-shade) 33% */
+	--anti-accent33: #ff001054; /* Головний акцент (blue-shade) 33% */
+	--anti-accent25: #ff001040; /* Головний акцент (blue-shade) 25% */
+	--anti-accent10: #ff00100b; /* Головний акцент (blue-shade) 25% */
+
 	/* === Додаткові акценти === */
 	--accent-light: #68e2fa; /* Світлий акцент (electric-blue-nv) */
 	--accent-cyan: #00ffef; /* Яскраво-бірюзовий */
@@ -158,6 +167,6 @@ useHead({
 	--dark-night-blue: #10182A;
 	--dark-green: #082424;
 
-	cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='75' height='75' viewBox='0 0 75 75'><defs><filter id='blur-glow' x='-125%' y='-125%' width='250%' height='250%'><feGaussianBlur in='SourceGraphic' stdDeviation='1' result='blur'/><feDropShadow dx='0' dy='0' stdDeviation='10' flood-color='%23cc40ff' flood-opacity='1'/></filter></defs><circle cx='38' cy='38' r='25' fill='%23ffffffa8' stroke='%2300ffef' stroke-width='1' filter='url(%23blur-glow)'/><circle cx='38' cy='38' r='25' fill='%2300ffef40' stroke='%2300ffef40' stroke-width='1'/><circle cx='38' cy='38' r='15' fill='transparent' stroke-width='10'/></svg>") 38 38, auto;
+	// cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='75' height='75' viewBox='0 0 75 75'><defs><filter id='blur-glow' x='-125%' y='-125%' width='250%' height='250%'><feGaussianBlur in='SourceGraphic' stdDeviation='1' result='blur'/><feDropShadow dx='0' dy='0' stdDeviation='10' flood-color='%23cc40ff' flood-opacity='1'/></filter></defs><circle cx='38' cy='38' r='25' fill='%23ffffffa8' stroke='%2300ffef' stroke-width='1' filter='url(%23blur-glow)'/><circle cx='38' cy='38' r='25' fill='%2300ffef40' stroke='%2300ffef40' stroke-width='1'/><circle cx='38' cy='38' r='15' fill='transparent' stroke-width='10'/></svg>") 38 38, auto;
 }
 </style>
