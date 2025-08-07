@@ -136,6 +136,7 @@ const submitForm = async () => {
 	color: var(--dark-green);
 	background: var(--text-main);
 	padding: 3.75rem;
+	position: relative;
 
 	@media (orientation: portrait) {
 		font-size: 2rem;

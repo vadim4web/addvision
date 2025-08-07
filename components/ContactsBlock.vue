@@ -1,6 +1,6 @@
 <template>
 	<div class="contacts-block">
-		<pre class="call-to-action glow-on-hover-light"
+		<pre class="call-to-action glow-on-hover"
 			>{{ $t('contacts.CTA') }}
     </pre>
 		<address class="contacts-block-links">
@@ -9,7 +9,7 @@
       https://www.iconpacks.net/
       -->
 
-			<a class="glow-on-hover-light" href="tel:+380933789883">
+			<a class="glow-on-hover" href="tel:+380933789883">
 				<svg
 					height="256"
 					version="1.1"
@@ -43,7 +43,7 @@
 								stroke-linecap: butt;
 								stroke-linejoin: miter;
 								stroke-miterlimit: 10;
-								fill: var(--dark-green);
+								fill: var(--text-main);
 								fill-rule: nonzero;
 								opacity: 1;
 							"
@@ -55,7 +55,7 @@
 				{{ $t('contacts.phone') }}
 			</a>
 
-			<a class="glow-on-hover-light" href="https://wa.me/380933789883">
+			<a class="glow-on-hover" href="https://wa.me/380933789883">
 				<svg
 					height="256"
 					version="1.1"
@@ -89,7 +89,7 @@
 								stroke-linecap: butt;
 								stroke-linejoin: miter;
 								stroke-miterlimit: 10;
-								fill: var(--dark-green);
+								fill: var(--text-main);
 								fill-rule: evenodd;
 								opacity: 1;
 							"
@@ -100,9 +100,9 @@
 
 				WhatsApp
 			</a>
-			<a class="glow-on-hover-light" href="http://t.me/vadim4web">
+			<a class="glow-on-hover" href="http://t.me/vadim4web">
 				<svg
-					fill="var(--dark-green)"
+					fill="var(--text-main)"
 					height="800px"
 					viewBox="0 0 24 24"
 					width="800px"

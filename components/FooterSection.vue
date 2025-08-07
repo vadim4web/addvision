@@ -2,11 +2,11 @@
 	<footer
 		id="contacts"
 		:aria-label="$t('aria.contact')"
-		class="contacts-section text-shade"
+		class="contacts-section box-shade text-shade light-bg-section"
 		role="contentinfo"
 	>
 		<div class="content">
-			<SectionHeading class="heading glow-on-hover-light dark-green text-shade">
+			<SectionHeading class="heading glow-on-hover text-shade">
 				<span class="heading-text">{{ $t('contacts.title') }}</span>
 				<i class="arrow"><SvgArrow /></i>
 			</SectionHeading>
@@ -15,10 +15,10 @@
 
 			<ContactForm :set-show-thanks />
 
-			<p class="copy glow-on-hover-light dark-green text-shade">
+			<p class="copy glow-on-hover text-shade">
 				&copy; 2013 - {{ new Date().getFullYear() }}
-				<span style="color: var(--gray)">{</span><span class="lowercase">Add</span
-				><span style="color: var(--gray)">}</span
+				<span style="color: var(--accent)">{</span><span class="lowercase">Add</span
+				><span style="color: var(--accent)">}</span
 				><span class="uppercase">Vision</span>
 				{{ $t('rights') }}
 			</p>
@@ -37,8 +37,7 @@ const { setShowThanks } = defineProps({
 
 <style lang="scss">
 .contacts-section {
-	background: var(--accent);
-	color: var(--dark-green);
+
 	font-weight: bolder;
 
 	.content {
@@ -87,11 +86,8 @@ const { setShowThanks } = defineProps({
 			grid-area: copyright;
 			align-self: end;
 			text-align: center;
+			font-weight: 300;
 		}
 	}
-}
-
-.dim {
-	color: var(--white50);
 }
 </style>

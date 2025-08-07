@@ -2,31 +2,31 @@
 	<section
 		id="services"
 		:aria-label="$t('aria.services')"
-		class="services-section dark-green box-shade"
+		class="services-section box-shade light-bg-section"
 	>
 		<div class="content">
-			<SectionHeading class="glow-on-hover-light dark-green text-shade">
+			<SectionHeading class="glow-on-hover text-shade">
 				<span class="heading-text">{{ $t('services.title') }}</span>
 				<i class="arrow"><SvgArrow /></i>
 			</SectionHeading>
 
-			<strong class="services-title glow-on-hover-light dark-green text-shade">
+			<strong class="services-title glow-on-hover text-shade">
 				{{ $t('services.heading') }}
 			</strong>
 
-			<p class="services-description glow-on-hover-light dark-green text-shade">
+			<p class="services-description glow-on-hover text-shade">
 				{{ $t('services.description') }}
 			</p>
 
 			<div class="services-categories">
-				<hr class="box-shade">
+				<hr>
 
 				<div
 					v-for="(category, index) in services?.categories || []"
 					:key="index"
-					class="category glow-on-hover-light dark-green text-shade"
+					class="category glow-on-hover text-shade"
 				>
-					<hr class="box-shade">
+					<hr>
 
 					<h3 class="font-yanone-light category-title">{{ category.title }}</h3>
 
@@ -42,10 +42,10 @@
 
 					<i class="category-arrow"><SvgArrow /></i>
 
-					<hr class="box-shade">
+					<hr>
 				</div>
 
-				<hr class="box-shade">
+				<hr>
 			</div>
 		</div>
 	</section>
@@ -59,8 +59,7 @@ const services = computed(() => messages.value[locale.value]?.services || {})
 
 <style lang="scss">
 .services-section {
-	background: var(--accent);
-	color: var(--dark-green);
+	// background: var(--accent);
 	display: flex;
 	flex-direction: column;
 
@@ -89,9 +88,9 @@ const services = computed(() => messages.value[locale.value]?.services || {})
 			right: 0;
 			margin: 0;
 			height: 1px;
-			background: var(--dark-green);
+			background: var(--text-main);
 			border: none;
-			box-shadow: 0 0 0.25vmin 0.05vmin var(--dark-green);
+			box-shadow: 0 0 0.25vmin var(--bg75);
 
 				&:first-of-type {
 					top: 0;

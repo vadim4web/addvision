@@ -157,7 +157,8 @@ function handleClick(index) {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		max-height: 33.5rem;
+		// max-height: 33.5rem;
+		height: 100%;
 
 		@media (orientation: landscape) {
 			position: absolute;
@@ -172,17 +173,18 @@ function handleClick(index) {
 
 		.overflow-cutting-wrapper {
 			overflow: hidden;
-			aspect-ratio: 9 / 16;
-			max-height: 33.5rem;
+			aspect-ratio: 10 / 16;
+			// max-height: 33.5rem;
+			height: 100%;
 
 			.preview {
 				object-fit: cover;
 				width: 100%;
-				aspect-ratio: 9 / 16;
+				aspect-ratio: 10 / 16;
 				max-height: 34.2rem;
 				position: relative;
-				left: -2.5%;
-				transform: scale(1.03) translate(0, 1.5%);
+				left: 0;
+				transform: scale(1, 1.03) translate(-1%, 1.5%);
 			}
 		}
 	}

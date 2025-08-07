@@ -44,7 +44,6 @@ watch(() => route.fullPath, () => {
 	right: 0;
 
 	mix-blend-mode: difference;
-	mix-blend-mode: exclusion;
 
 	a {
 		padding-inline: 1.5rem !important;

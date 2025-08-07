@@ -97,9 +97,31 @@
 }
 
 .text-shade {
-	text-shadow: 0 0 0.66vmin var(--bg75);
+	text-shadow: 0 0 0.75vmin var(--bg75);
 }
 
 .box-shade {
 	box-shadow: 0 0 1.5vmin 0.15vmin var(--bg75);
+}
+
+.light-bg-section {
+	background: linear-gradient(90deg, var(--gray), var(--accent25), var(--gray));
+	position: relative;
+	max-width: 100%;
+}
+
+.light-bg-section::after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	content: '';
+	background: linear-gradient(
+		0deg,
+		transparent,
+		var(--accent25),
+		transparent
+	);
+	z-index: -1;
 }
