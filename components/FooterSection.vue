@@ -15,6 +15,8 @@
 
 			<ContactForm :set-show-thanks />
 
+			<ThankYou v-if="showThanks" :set-show-thanks />
+
 			<p class="copy glow-on-hover text-shade">
 				&copy; 2013 - {{ new Date().getFullYear() }}
 				<span style="color: var(--accent)">{</span><span class="lowercase">Add</span
@@ -27,12 +29,8 @@
 </template>
 
 <script setup>
-const { setShowThanks } = defineProps({
-	setShowThanks: {
-		type: Function,
-		required: true,
-	},
-})
+const showThanks = ref(false)
+const setShowThanks = value => (showThanks.value = value)
 </script>
 
 <style lang="scss">

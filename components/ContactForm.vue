@@ -72,13 +72,18 @@
 				{{ $t('contacts.send') }}
 			</button>
 		</form>
-
-		<ThankYou v-if="showThanks" :set-show-thanks />
 	</div>
 </template>
 
 <script setup>
 const { t } = useI18n()
+
+const { setShowThanks } = defineProps({
+	setShowThanks: {
+		type: Function,
+		required: true,
+	},
+})
 
 const form = ref({
 	name: '',
@@ -93,9 +98,6 @@ const options = computed(() => [
 	{ label: t('contacts.type_support'), value: 'support' },
 	{ label: t('contacts.type_feedback'), value: 'feedback' },
 ])
-
-const showThanks = ref(false)
-const setShowThanks = value => (showThanks.value = value)
 
 const submitForm = async () => {
 	try {
@@ -112,7 +114,7 @@ const submitForm = async () => {
 		)
 
 		if (response.ok) {
-			showThanks.value = true
+			setShowThanks(true)
 			form.value = {
 				name: '',
 				email: '',
@@ -135,7 +137,6 @@ const submitForm = async () => {
 	grid-template-rows: 1fr 6fr;
 	background: var(--text-main);
 	padding: 3.75rem;
-	position: relative;
 	color: var(--bg);
 
 	@media (orientation: portrait) {
