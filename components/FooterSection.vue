@@ -35,8 +35,9 @@ const setShowThanks = value => (showThanks.value = value)
 
 <style lang="scss">
 .contacts-section {
-
-	font-weight: bolder;
+	@media (min-width: 1081px) and (max-width: 1344px) {
+		padding-inline: 2rem;
+	}
 
 	.content {
 		display: grid;
@@ -84,7 +85,7 @@ const setShowThanks = value => (showThanks.value = value)
 			grid-area: copyright;
 			align-self: end;
 			text-align: center;
-			font-weight: 300;
+			// font-weight: 300;
 		}
 	}
 }

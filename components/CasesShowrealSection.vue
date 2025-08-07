@@ -19,14 +19,7 @@
 	background: linear-gradient(90deg, var(--gray), var(--accent25), var(--gray));
 	position: relative;
 	max-width: 100%;
-
-	@media (orientation: landscape) {
-		height: 75vmin;
-	}
-
-	@media (orientation: portrait) {
-		height: 75vmin;
-	}
+	height: 75dvh;
 
 	.content {
 		display: flex;

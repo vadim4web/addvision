@@ -30,7 +30,6 @@ const localePath = useLocalePath()
 <style lang="scss">
 .cases-section {
 	background: var(--dark-green);
-	padding-bottom: 5rem;
 
 	.head {
 		display: grid;

@@ -43,6 +43,8 @@ watch(() => route.fullPath, () => {
 	bottom: 0;
 	right: 0;
 
+	border: 1px solid red;
+
 	mix-blend-mode: difference;
 
 	a {

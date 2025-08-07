@@ -140,43 +140,57 @@ a {
 	-webkit-filter: drop-shadow(0 0 0.1rem var(--accent));
 }
 
-h2:not(.coop-heading, .cases-heading, .testimonials-heading) {
+h2:not(
+	.coop-heading
+	,.cases-heading
+	,.testimonials-heading
+	) {
 	padding-bottom: 3rem;
 }
 
-main section:not(
-		:first-of-type,
-		.services-section,
-		.why-us-section,
-		.cases-section
+section:not(
+	:first-of-type
+	,.what-we-do-section
+	,.why-us-section
+	,.cases-section
 	) {
+	padding-block: 8rem;
+}
+
+.what-we-do-section {
+	padding-top: 8rem;
+	padding-bottom: 4rem;
+}
+
+.why-us-section {
+	padding-inline: 8rem;
+}
+
+.cases-section {
+	padding-top: 4rem;
+	padding-bottom: 8rem;
+}
+
+footer {
 	padding-block: 5rem;
 }
 
 main section:first-of-type {
 	padding-bottom: 2rem;
 }
-
-footer,
-.services-section {
-	padding-block: 2rem;
-}
-
-.why-us-section {
-	padding-block: 5rem;
-}
-
-.cases-section {
-	padding-block: 0;
-}
-
-@media (max-width: 1440px) {
-	section:not(.hero-section),
-	footer h2 {
-		padding-inline: 1.5rem;
+/* 1280 + 64 = 1344px */
+@media (max-width: 1344px) {
+	section:not(.hero-section) {
+		padding-inline: 2rem;
 	}
 
 	h2 {
 		font-size: 3rem;
+	}
+}
+
+@media (max-width: 1080px) {
+	footer h2 {
+		padding-inline: 2rem;
 	}
 }

@@ -49,8 +49,6 @@
 
 <style lang="scss" scoped>
 .why-us-section {
-	overflow: hidden;
-
 	.coop {
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);

@@ -112,7 +112,6 @@ function handleClickOutside() {
 
 	.faq-items {
 		margin-block: 2rem;
-		max-width: 50vw;
 		align-self: flex-end;
 		display: flex;
 		flex-direction: column;
@@ -135,6 +134,10 @@ function handleClickOutside() {
 				&:last-of-type {
 					bottom: 0;
 				}
+		}
+
+		@media (orientation: landscape), (min-width: 90ch) {
+			max-width: 50vw;
 		}
 
 		@media (max-width: 1080px) {

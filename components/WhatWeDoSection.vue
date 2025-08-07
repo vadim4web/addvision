@@ -43,9 +43,10 @@
 	.heading-text .before {
 		position: relative;
 		display: inline-block;
+		max-width: 1280px;
 
-		@media (min-width: 360px) {
-			padding-right: 2ch;
+		@media (orientation: portrait), (max-width: 1440px) {
+			max-width: calc(100dvw - 4rem);
 		}
 
 		.arrow {

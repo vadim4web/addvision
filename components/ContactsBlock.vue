@@ -1,6 +1,6 @@
 <template>
 	<div class="contacts-block">
-		<pre class="call-to-action glow-on-hover"
+		<pre class="call-to-action glow-on-hover text-shade"
 			>{{ $t('contacts.CTA') }}
     </pre>
 		<address class="contacts-block-links">

@@ -167,8 +167,9 @@ onMounted(() => {
 	color: var(--bg);
 	position: relative;
 	height: fit-content;
-	overflow: hidden;
 	width: 100%;
+	max-width: 100%;
+	overflow: hidden !important;
 	z-index: 1;
 
 	@media (orientation: landscape) {
@@ -181,6 +182,8 @@ onMounted(() => {
 
 	.hero-text {
 		width: 100%;
+		max-width: 100%;
+		overflow: hidden !important;
 		display: grid;
 		grid-template-columns: repeat(5, 1fr);
 		grid-template-rows: 6.5rem repeat(3, 1fr);
