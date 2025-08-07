@@ -27,8 +27,8 @@
 						</span>
 					</strong>
 
-					<div class="coop-top-right-visual">
-						<img alt="" class="box-shade" height="400" src="/images/coop.webp" width="400" />
+					<div class="coop-top-right-visual glow-on-hover">
+						<img alt="" height="400" src="/images/coop.webp" width="400" />
 					</div>
 				</div>
 
@@ -80,7 +80,7 @@
 			grid-area: topRight;
 			display: flex;
 			justify-self: end;
-			gap: 0.5rem;
+			gap: 0.25rem;
 
 			@media (orientation: portrait) {
 				margin-bottom: 2rem;
@@ -100,11 +100,16 @@
 				height: 100%;
 				aspect-ratio: 1;
 				position: relative;
+				box-shadow: 0 0 2.5vmin var(--bg75);
+				border-radius: 50%;
+				overflow: visible;
 
 				img {
 					width: 100%;
 					height: 100%;
 					border-radius: 50%;
+					position: relative;
+					z-index: -1;
 				}
 
 				&::after {
@@ -119,7 +124,7 @@
 					background: radial-gradient(
 						circle at center,
 						transparent,
-						var(--dark-green) 71%
+						var(--accent25) 71%
 					);
 				}
 			}

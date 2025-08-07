@@ -1,6 +1,6 @@
 <template>
 	<div class="form-container glow-on-hover-light box-shade">
-		<h3 class="dark-green glow-on-hover-light">{{ $t('contacts.emailUs') }}</h3>
+		<h3 class="text-shade">{{ $t('contacts.emailUs') }}</h3>
 
 		<form
 			:aria-label="$t('contacts.aria_label')"
@@ -133,10 +133,10 @@ const submitForm = async () => {
 .form-container {
 	display: grid;
 	grid-template-rows: 1fr 6fr;
-	color: var(--dark-green);
 	background: var(--text-main);
 	padding: 3.75rem;
 	position: relative;
+	color: var(--bg);
 
 	@media (orientation: portrait) {
 		font-size: 2rem;
