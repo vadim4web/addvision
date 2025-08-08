@@ -70,9 +70,12 @@ const services = computed(() => messages.value[locale.value]?.services || {});
   }
 
   .services-description {
-    max-width: 66%;
     margin: 3.2rem auto 4rem 0;
     text-align: justify;
+
+    @media (orientation: landscape) {
+      max-width: 66%;
+    }
   }
 
   .services-categories {

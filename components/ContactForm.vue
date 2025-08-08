@@ -4,7 +4,7 @@
 
     <form
       :aria-label="$t('contacts.aria_label')"
-      class="contact-form font-inter-regular font-20"
+      class="contact-form font-inter-regular font-24"
       @submit.prevent="submitForm"
     >
       <label>
@@ -68,7 +68,7 @@
       </label>
 
       <button
-        class="form-submit glow-on-hover-light text-shade font-montserrat-medium font-20"
+        class="form-submit glow-on-hover-light text-shade font-montserrat-medium font-24"
         type="submit"
       >
         {{ $t("contacts.send") }}
@@ -135,11 +135,11 @@ const submitForm = async () => {
   display: grid;
   grid-template-rows: 1fr 6fr;
   background: var(--text-main);
-  padding: 6rem;
+  padding: 6em;
   color: var(--bg);
 
   @media (max-width: 480px) {
-    padding: 2rem;
+    padding: 4em;
   }
 
   @media (max-width: 1080px) {
@@ -175,7 +175,7 @@ const submitForm = async () => {
     }
 
     input {
-      padding: 1rem 2rem;
+      padding: 1em 2em;
     }
 
     & > *:not(button) {
@@ -204,7 +204,7 @@ const submitForm = async () => {
       width: max-content;
       text-transform: uppercase;
       justify-self: center;
-      padding: 1rem 6rem;
+      padding: 1em 6em;
     }
   }
 }

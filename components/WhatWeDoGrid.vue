@@ -10,7 +10,7 @@ const sectionRefs = ref([]);
 const listeners = [];
 
 const isPortraitQuery = window.matchMedia("(orientation: portrait)");
-const getYOffset = () => (isPortraitQuery.matches ? "6rem" : "4rem");
+const getYOffset = () => (isPortraitQuery.matches ? "85%" : "50%");
 
 onMounted(async () => {
   await nextTick();
@@ -93,11 +93,11 @@ onUnmounted(() => {
         {{ section.title }}
       </h3>
 
-      <ul>
+      <ul class="font-24">
         <li
           v-for="(item, idx) in section.items"
           :key="idx"
-          class="glow-on-hover text-shade font-inter-semibold font-24"
+          class="glow-on-hover text-shade font-inter-semibold"
         >
           {{ item }}
         </li>
@@ -120,10 +120,9 @@ onUnmounted(() => {
   .what-section {
     aspect-ratio: 1;
     display: grid;
-    grid-template-rows: 1fr 0.5fr 3fr;
+    grid-template-rows: 1fr 1fr;
     grid-template-areas:
       "heading"
-      "."
       "desc";
 
     position: relative;
@@ -166,12 +165,21 @@ onUnmounted(() => {
       position: relative;
       z-index: 1;
       will-change: transform;
+      align-self: center;
+
+      @media (max-width: 1439px), (orientation: portrait) {
+        font-size: 5.4rem;
+      }
     }
 
     ul {
       grid-area: desc;
       position: relative;
       z-index: 2;
+
+      @media (max-width: 1439px), (orientation: portrait) {
+        font-size: 3.6rem;
+      }
     }
   }
 }

@@ -1,0 +1,75 @@
+/* Default desktop */
+html {
+  font-size: 10px;
+}
+
+@media (min-width: 1920px) {
+  html {
+    font-size: 10px;
+  }
+}
+
+@media (min-width: 1440px) {
+  html {
+    font-size: 10px;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1439px) {
+  html {
+    font-size: 9px;
+  }
+}
+
+/* Tablets / small laptops */
+@media (max-width: 1024px) {
+  html {
+    font-size: 8px;
+  }
+}
+
+/* Phones */
+@media (max-width: 768px) {
+  html {
+    font-size: 8px;
+  }
+}
+
+/* Small phones (e.g. 320–480px) */
+@media (max-width: 480px) {
+  html {
+    font-size: 6px;
+  }
+}
+
+/* Ultra-small (275–300px) */
+@media (max-width: 360px) {
+  html {
+    font-size: 5px;
+  }
+}
+
+/* Ultra-small (275–300px) */
+@media (max-width: 320px) {
+  html {
+    font-size: 4px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .hide-on-lg {
+    display: none;
+  }
+}
+
+@media (orientation: landscape) {
+  :root {
+    --header-height: 10.5rem;
+  }
+}
+
+@media (orientation: portrait) {
+  :root {
+    --header-height: 15rem;
+  }
+}

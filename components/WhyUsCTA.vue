@@ -100,16 +100,7 @@
     z-index: 2;
     transition: transform 0.5s ease;
     margin-inline: auto;
-
     overflow: visible;
-
-    @media (max-width: 719px) and (aspect-ratio < 0.4) {
-      font-size: 1.3rem;
-    }
-
-    @media (max-width: 719px), (orientation: portrait) {
-      font-size: 1.5rem;
-    }
 
     &::after {
       content: "";

@@ -63,6 +63,20 @@ const sources = [
 .hero-video {
   width: 100%;
   height: 100%;
-  object-position: 50% 50%;
+  object-position: 58% 40%;
+}
+
+@media (orientation: portrait) {
+  .hero-section .hero-video {
+    transform: scale(1.33);
+    object-position: 58% 42%;
+  }
+}
+
+@media (aspect-ratio <= 0.5) {
+  .hero-section .hero-video {
+    transform: scale(1.5);
+    object-position: 50% 50%;
+  }
 }
 </style>

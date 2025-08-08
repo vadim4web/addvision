@@ -48,7 +48,11 @@ body {
 	color: var(--text-main);
 	background: var(--dark-green);
 	position: relative;
-	/* overflow: hidden; */
+	overflow-x: hidden;
+}
+
+#__nuxt {
+	overflow: hidden;
 }
 
 @keyframes lightningSwing {

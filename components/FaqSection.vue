@@ -101,13 +101,13 @@ function handleClickOutside() {
       margin-bottom: 2rem;
       display: block;
       text-align: justify;
+      margin-bottom: 10%;
     }
 
     .faq-image {
       grid-area: img;
       max-width: 90%;
-      margin-top: -5%;
-      margin-bottom: 5%;
+      margin-bottom: 10%;
       margin-inline: auto;
     }
   }

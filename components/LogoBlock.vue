@@ -26,6 +26,24 @@
   gap: 0.125rem;
   z-index: 1;
 
+  @media (max-width: 1280px) {
+    grid-template-columns: 1.5rem 10.5rem auto;
+    grid-template-areas: ". img txt";
+  }
+
+  @media (max-width: 1080px) {
+    justify-content: center;
+  }
+
+  @media (orientation: portrait) {
+    padding-top: 2rem;
+    grid-template-columns: none;
+    grid-template-rows: 7rem auto;
+    gap: 0;
+    grid-template-areas: ". img" ". txt";
+    justify-content: center;
+  }
+
   &-image {
     width: 10.5rem;
     height: 10.5rem;
@@ -50,6 +68,10 @@
     position: relative;
     filter: none;
     transition: filter 1s ease;
+
+    // @media (max-width: 1080px) {
+    //   transform: scale(0.75) translateY(-33%);
+    // }
   }
 
   &-subline {
@@ -99,11 +121,6 @@
       display: inline-block;
     }
   }
-
-  @media (max-width: 1280px) {
-    grid-template-columns: 1.5rem 10.5rem auto;
-    grid-template-areas: ". img txt";
-  }
 }
 
 [lang="uk"] .logo-subline {
@@ -115,36 +132,4 @@
 [lang="en"] .logo-subline {
   letter-spacing: 0.58em;
 }
-
-@media (max-width: 1080px) {
-  [lang="uk"] .logo-subline {
-    letter-spacing: 0.22em;
-  }
-  [lang="ru"] .logo-subline {
-    letter-spacing: 0.04em;
-  }
-  [lang="en"] .logo-subline {
-    letter-spacing: 0.255em;
-  }
-}
-
-// @media (max-width: 640px) {
-//   .logo {
-//     grid-template-columns: none;
-//     grid-template-rows: 3.5rem auto;
-//     grid-template-areas: "img" "txt";
-//     justify-content: center;
-//     padding: 0.25rem;
-//   }
-
-//   .logo-image {
-//     width: 5rem;
-//     height: 5rem;
-//   }
-
-//   .logo-text {
-//     transform: scale(0.66);
-//     margin: -0.25rem;
-//   }
-// }
 </style>

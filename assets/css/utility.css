@@ -47,21 +47,21 @@
 }
 
 .grid-four {
-	display: grid;
-	gap: 1.5rem;
-	margin: 0 auto;
+  display: grid;
+  gap: 1.5rem;
+  margin: 0 auto;
 }
 
 @media (orientation: landscape), (min-width: 1440px) {
-	.grid-four {
-		grid-template-columns: repeat(4, 1fr);
-	}
+  .grid-four {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 @media (min-width: 720px) and (max-width: 1439px) {
-	.grid-four {
-		grid-template-columns: repeat(2, 1fr);
-	}
+  .grid-four {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .accent {

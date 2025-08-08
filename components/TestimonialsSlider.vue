@@ -8,7 +8,7 @@
       class="main-slider no-shadow"
       :duration="8000"
       fade
-      :fixed-height="'40rem'"
+      :fixed-height="true"
       :infinite="true"
       :transition-speed="1200"
       @slide="$refs.thumbSlider.goToSlide($event.currentSlide.index, { emit: false })"
@@ -92,7 +92,7 @@ const testimonials = computed(
 
 .main-slider {
   width: 100%;
-  min-height: 40rem;
+  min-height: 45rem;
 
   @media (orientation: landscape) {
     aspect-ratio: 1.66;

@@ -24,7 +24,7 @@ const languages = [
 
 <style lang="scss">
 .language-switcher {
-  height: 10.5rem;
+  height: var(--header-height);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -81,8 +81,8 @@ const languages = [
 }
 
 @media (max-width: 640px) {
-  .language-switcher {
-    font-size: 1rem;
-  }
+  // .language-switcher {
+  //   font-size: 1rem;
+  // }
 }
 </style>

@@ -58,17 +58,19 @@
       "heading  heading  topRight  topRight"
       ".        values   values  .";
 
+    gap: 4rem;
+
     @media (orientation: portrait) {
       aspect-ratio: 2;
-      grid-template-rows: 6rem 6rem 1fr;
+      grid-template-rows: 1fr 1fr 2fr;
       grid-template-areas:
         "heading  heading  heading  heading"
-        ".  . topRight  topRight"
+        ".  topRight topRight  topRight"
         "values   values   values  values";
     }
 
     @media (orientation: landscape) {
-      grid-template-rows: repeat(2, minmax(12rem, 1fr));
+      grid-template-rows: repeat(2, minmax(20rem, 1fr));
       aspect-ratio: 3;
     }
 
@@ -80,11 +82,7 @@
       grid-area: topRight;
       display: flex;
       justify-self: end;
-      gap: 0.25rem;
-
-      @media (orientation: portrait) {
-        margin-bottom: 2rem;
-      }
+      gap: 1rem;
 
       &-strong {
         align-self: center;

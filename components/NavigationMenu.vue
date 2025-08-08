@@ -161,7 +161,7 @@ useObserveVisibility(menuRef, (visible) => {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    height: 10.5rem;
+    height: var(--header-height);
     transition: transform 1s, filter 1s ease;
     filter: contrast(1) hue-rotate(0deg);
 
@@ -183,7 +183,7 @@ useObserveVisibility(menuRef, (visible) => {
     width: calc(100%);
     overflow: hidden;
     display: grid;
-    grid-template-rows: 10.5rem repeat(5, 1fr);
+    grid-template-rows: var(--header-height) repeat(5, 1fr);
     grid-template-areas:
       "."
       "cases"
@@ -197,7 +197,7 @@ useObserveVisibility(menuRef, (visible) => {
     top: 0;
     left: 0;
     right: 0;
-    transform: translate(0, calc(10.5rem - 100%));
+    transform: translate(0, calc(var(--header-height) - 100%));
     padding: 0 1rem;
 
     box-shadow: inset 0 0 0 0 var(--accent50);

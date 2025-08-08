@@ -192,57 +192,6 @@ useHead({
   --dark-green: #082424;
 }
 
-/* Default desktop */
-:root {
-  font-size: 10px;
-}
-
-@media (min-width: 1920px) {
-  :root {
-    font-size: 10px;
-  }
-}
-
-@media (min-width: 1440px) {
-  :root {
-    font-size: 10px;
-  }
-}
-
-@media (min-width: 1024px) and (min-width: 1439px) {
-  :root {
-    font-size: 10px;
-  }
-}
-
-/* Tablets / small laptops */
-@media (max-width: 1024px) {
-  :root {
-    font-size: 10px;
-  }
-}
-
-/* Phones */
-@media (max-width: 768px) {
-  :root {
-    font-size: 10px;
-  }
-}
-
-/* Small phones (e.g. 320–480px) */
-@media (max-width: 480px) {
-  :root {
-    font-size: 5px;
-  }
-}
-
-/* Ultra-small (275–300px) */
-@media (max-width: 320px) {
-  :root {
-    font-size: 10px;
-  }
-}
-
 .font-14 {
   font-size: 1.4rem;
 }

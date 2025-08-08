@@ -9,15 +9,22 @@
         <span class="heading-text">
           <span class="before">
             {{ $t("what.titleParts.before") }}
+
             <i class="arrow"><SvgArrow /></i>
           </span>
-          <br />
+
+          <br/>
+
           <span class="brown-deep">
             {{ $t("what.titleParts.brownDeep1") }}
           </span>
+
           <span class="accent">
             {{ $t("what.titleParts.accent") }}
           </span>
+
+          <br class="hide-on-lg" />
+
           <span class="brown-deep">{{ $t("what.titleParts.brownDeep2") }}</span>
         </span>
       </SectionHeading>
@@ -51,6 +58,10 @@
 
     @media (orientation: landscape), (min-width: 1316px) {
       padding-right: 2ch;
+    }
+
+    @media (orientation: portrait) and (max-width: 50ch) {
+      word-break: break-word;
     }
 
     .arrow {

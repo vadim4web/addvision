@@ -68,7 +68,7 @@ const localePath = useLocalePath();
         width: 4rem;
         height: 4rem;
         position: relative;
-        top: 0.5rem;
+        top: 0.8rem;
       }
     }
 
