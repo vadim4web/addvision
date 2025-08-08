@@ -1,87 +1,86 @@
 <template>
-	<section
-		id="what-we-do"
-		:aria-label="$t('aria.whatWeDo')"
-		class="what-we-do-section masked-section"
-	>
-		<div class="content">
-			<SectionHeading class="glow-on-hover text-shade">
-				<span class="heading-text">
-					<span class="before">
-						{{ $t('what.titleParts.before') }}
-						<i class="arrow"><SvgArrow /></i>
-					</span>
-					<br>
-					<span class="brown-deep">
-						{{ $t('what.titleParts.brownDeep1') }}
-					</span>
-					<span class="accent">
-						{{ $t('what.titleParts.accent') }}
-					</span>
-					<span class="brown-deep">{{ $t('what.titleParts.brownDeep2') }}</span>
-				</span>
+  <section
+    id="what-we-do"
+    :aria-label="$t('aria.whatWeDo')"
+    class="what-we-do-section masked-section"
+  >
+    <div class="content">
+      <SectionHeading class="glow-on-hover text-shade">
+        <span class="heading-text">
+          <span class="before">
+            {{ $t("what.titleParts.before") }}
+            <i class="arrow"><SvgArrow /></i>
+          </span>
+          <br />
+          <span class="brown-deep">
+            {{ $t("what.titleParts.brownDeep1") }}
+          </span>
+          <span class="accent">
+            {{ $t("what.titleParts.accent") }}
+          </span>
+          <span class="brown-deep">{{ $t("what.titleParts.brownDeep2") }}</span>
+        </span>
+      </SectionHeading>
 
-			</SectionHeading>
+      <WhatWeDoGrid />
 
-			<WhatWeDoGrid />
-
-			<div class="cta-container">
-				<em class="cta glow-on-hover text-shade">
-					{{ $t('what.cta') }}
-				</em>
-			</div>
-		</div>
-	</section>
+      <div class="cta-container">
+        <em class="cta glow-on-hover text-shade font-inter-medium font-26">
+          {{ $t("what.cta") }}
+        </em>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script setup></script>
 
 <style lang="scss" scoped>
 .what-we-do-section {
-	background: var(--dark-green);
+  background: var(--dark-green);
 
-	.heading-text .before {
-		position: relative;
-		display: inline-block;
-		max-width: 1280px;
+  .heading-text .before {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 1280px;
 
-		@media (orientation: portrait), (max-width: 1440px) {
-			max-width: calc(100dvw - 4rem);
-		}
+    @media (orientation: portrait), (max-width: 1440px) {
+      max-width: calc(100dvw - 6.4rem);
+    }
 
-		.arrow {
-			position: absolute;
-			top: 0;
-			right: 0;
-		}
-	}
+    @media (orientation: landscape), (min-width: 1316px) {
+      padding-right: 2ch;
+    }
 
-	.cta-container {
-		display: grid;
-		grid-template-columns: repeat(8, 1fr);
-		grid-template-rows: 1rem 1fr 1rem;
-		gap: 1rem;
+    .arrow {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
 
-		grid-template-areas:
-			'.   .   .   .   .   .   .   .'
-			'.   .   .   .   cta cta cta .'
-			'.   .   .   .   .   .   .   .';
+  .cta-container {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 2rem 1fr 2rem;
+    gap: 2rem;
 
-		@media (orientation: portrait) {
-			grid-template-areas:
-				'.   .   .   .   .   .   .   .'
-				'.   .   cta cta cta cta cta .'
-				'.   .   .   .   .   .   .   .';
-		}
+    grid-template-areas:
+      ".   .   .   .   .   .   .   ."
+      ".   .   .   .   cta cta cta ."
+      ".   .   .   .   .   .   .   .";
 
-		.cta {
-			grid-area: cta;
-			font-size: 1.75rem;
+    @media (orientation: portrait) {
+      grid-template-areas:
+        ".   .   .   .   .   .   .   ."
+        ".   .   cta cta cta cta cta ."
+        ".   .   .   .   .   .   .   .";
+    }
 
-			@media (orientation: portrait) {
-				font-size: 1.25rem;
-			}
-		}
-	}
+    .cta {
+      grid-area: cta;
+    }
+  }
 }
 </style>

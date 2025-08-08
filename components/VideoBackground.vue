@@ -1,79 +1,68 @@
 <template>
-	<div aria-hidden="true" class="video-container">
-		<video
-			aria-hidden="true"
-			autoplay
-			class="hero-video"
-			loop
-			muted
-			playsinline
-			tabindex="-1"
-		>
-			<!-- Optional: <track> with no captions to explicitly state "no captions" -->
-			<track kind="captions" label="No audio content" src="" srclang="en" />
+  <div aria-hidden="true" class="video-container">
+    <video
+      aria-hidden="true"
+      autoplay
+      class="hero-video"
+      loop
+      muted
+      playsinline
+      preload="auto"
+      :style="{ objectFit: fit }"
+      tabindex="-1"
+    >
+      <track kind="captions" label="No audio content" src="" srclang="en" />
 
-			<source
-				media="(min-width: 1920px)"
-				src="/video/add_vision_3840x2160.mp4"
-				type="video/mp4"
-			/>
-			<source
-				media="(min-width: 1600px)"
-				src="/video/add_vision_1920x1080.mp4"
-				type="video/mp4"
-			/>
-			<source
-				media="(min-width: 1280px)"
-				src="/video/add_vision_1600x900.mp4"
-				type="video/mp4"
-			/>
-			<source
-				media="(min-width: 1024px)"
-				src="/video/add_vision_1280x720.mp4"
-				type="video/mp4"
-			/>
-			<source
-				media="(min-width: 800px)"
-				src="/video/add_vision_1024x600.mp4"
-				type="video/mp4"
-			/>
-			<source
-				media="(min-width: 768px)"
-				src="/video/add_vision_854x480.mp4"
-				type="video/mp4"
-			/>
-			<source
-				media="(min-width: 600px)"
-				src="/video/add_vision_768x480.mp4"
-				type="video/mp4"
-			/>
-			<source
-				media="(min-width: 400px)"
-				src="/video/add_vision_400x240.mp4"
-				type="video/mp4"
-			/>
-			<source
-				media="(min-width: 300px)"
-				src="/video/add_vision_384x240.mp4"
-				type="video/mp4"
-			/>
-			<source src="/video/add_vision_256x160.mp4" type="video/mp4" />
-		</video>
-	</div>
+      <source
+        v-for="source in sources"
+        :key="source.res"
+        :media="source.media"
+        :src="basePath + source.res + '.mp4'"
+        type="video/mp4"
+      />
+    </video>
+  </div>
 </template>
+
+<script setup>
+const { basePath, fit } = defineProps({
+  basePath: {
+    type: String,
+    default: "/video/hero-section/", // fallback if none is passed
+  },
+  fit: {
+    type: String,
+    default: "contain", // fallback if none is passed
+  },
+});
+
+// Define video resolutions in descending order of size
+const sources = [
+  { media: "(min-width: 1920px)", res: "3840x2160" },
+  { media: "(min-width: 1600px)", res: "1920x1080" },
+  { media: "(min-width: 1280px)", res: "1600x900" },
+  { media: "(min-width: 1024px)", res: "1280x720" },
+  { media: "(min-width: 800px)", res: "1024x600" },
+  { media: "(min-width: 768px)", res: "854x480" },
+  { media: "(min-width: 600px)", res: "768x480" },
+  { media: "(min-width: 400px)", res: "400x240" },
+  { media: "(min-width: 300px)", res: "384x240" },
+  { media: "", res: "256x160" }, // default/fallback
+];
+</script>
 
 <style lang="scss">
 .video-container {
-	inset: 0;
-	z-index: -1;
-	pointer-events: none;
-	position: absolute;
-	filter: contrast(1.2) brightness(1.5);
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  position: absolute;
+  filter: contrast(1.2) brightness(1.5);
 }
 
 .hero-video {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-position: 50% 50%;
 }
 </style>

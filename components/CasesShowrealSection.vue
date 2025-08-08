@@ -6,7 +6,7 @@
 				><strong class="font-kanit-black vision">VISION</strong>
 			</h2>
 
-			<VideoBackground class="box-shade" style="margin: 0 auto" />
+			<VideoBackground base-path="/video/cases-showreal-section/" class="box-shade" fit="cover" style="margin: 0 auto" />
 		</div>
 	</section>
 </template>

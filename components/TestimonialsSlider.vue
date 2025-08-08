@@ -1,34 +1,32 @@
 <template>
-	<div class="testimonial-slider">
-		<vueper-slides
-			ref="mainSlider"
-			:arrows="false"
-			:autoplay="true"
-			:bullets="false"
-			class="main-slider no-shadow"
-			:duration="8000"
-			fade
-			:fixed-height="true"
-			:infinite="true"
-			:transition-speed="1200"
-			@slide="
-				$refs.thumbSlider.goToSlide($event.currentSlide.index, { emit: false })
-			"
-		>
-			<vueper-slide
-				v-for="(testimonial, i) in testimonials"
-				:key="i"
-				:content="`
+  <div class="testimonial-slider">
+    <vueper-slides
+      ref="mainSlider"
+      :arrows="false"
+      :autoplay="true"
+      :bullets="false"
+      class="main-slider no-shadow"
+      :duration="8000"
+      fade
+      :fixed-height="'40rem'"
+      :infinite="true"
+      :transition-speed="1200"
+      @slide="$refs.thumbSlider.goToSlide($event.currentSlide.index, { emit: false })"
+    >
+      <vueper-slide
+        v-for="(testimonial, i) in testimonials"
+        :key="i"
+        :content="`
           <div class='testimonial-content'>
             <img
 							alt='${testimonial.author} photo'
 							class='author-photo box-shade'
 							src='/clients/client${i + 1}.jpg'
 						/>
-            <p class='testimonial-text font-inter-regular glow-on-hover text-shade'>
+            <p class='testimonial-text font-inter-regular glow-on-hover text-shade font-40'>
 							${testimonial.text}
 						</p>
-            <p class='testimonial-author glow-on-hover'>
+            <p class='testimonial-author glow-on-hover font-24'>
               <strong class='font-inter-regular text-shade'>
 								${testimonial.author}.
 							</strong>
@@ -39,224 +37,219 @@
             </p>
           </div>
         `"
-			/>
-		</vueper-slides>
+      />
+    </vueper-slides>
 
-		<vueper-slides
-			ref="thumbSlider"
-			:arrows="false"
-			:bullets="false"
-			:bullets-outside="false"
-			class="thumbnails no-shadow box-shade"
-			fixed-height="3rem"
-			:gap="1"
-			:touchable="false"
-			:visible-slides="5"
-			@slide="
-				$refs.mainSlider.goToSlide($event.currentSlide.index, { emit: false })
-			"
-		>
-			<vueper-slide
-				v-for="(_, i) in testimonials"
-				:key="i"
-				class="box-shade"
-				:image="`/clients/client${i + 1}.jpg`"
-				@click="$refs.mainSlider.goToSlide(i)"
-			>
-			</vueper-slide>
-		</vueper-slides>
-	</div>
+    <vueper-slides
+      ref="thumbSlider"
+      :arrows="false"
+      :bullets="false"
+      :bullets-outside="false"
+      class="thumbnails no-shadow box-shade"
+      fixed-height="10rem"
+      :gap="2"
+      :touchable="false"
+      :visible-slides="5"
+      @slide="$refs.mainSlider.goToSlide($event.currentSlide.index, { emit: false })"
+    >
+      <vueper-slide
+        v-for="(_, i) in testimonials"
+        :key="i"
+        class="box-shade"
+        :image="`/clients/client${i + 1}.jpg`"
+        @click="$refs.mainSlider.goToSlide(i)"
+      >
+      </vueper-slide>
+    </vueper-slides>
+  </div>
 </template>
 
 <script setup>
-import { VueperSlides, VueperSlide } from 'vueperslides'
-import 'vueperslides/dist/vueperslides.css'
+import { VueperSlides, VueperSlide } from "vueperslides";
+import "vueperslides/dist/vueperslides.css";
 
-const { locale, messages } = useI18n()
+const { locale, messages } = useI18n();
 const testimonials = computed(
-	() => messages.value[locale.value]?.testimonials?.list || []
-)
+  () => messages.value[locale.value]?.testimonials?.list || []
+);
 </script>
 
 <style lang="scss">
 .testimonial-slider {
-	position: relative;
+  position: relative;
+  padding-block: 6.4rem;
 
-	@media (orientation: landscape) {
-		padding-inline: 10%;
-		width: 90%;
-	}
+  @media (orientation: landscape) {
+    padding-inline: 10%;
+    width: 90%;
+  }
 }
 
 .testimonial-slider,
 .main-slider {
-	margin: 0 auto;
+  margin: 0 auto;
 }
 
 .main-slider {
-	width: 100%;
+  width: 100%;
+  min-height: 40rem;
 
-	@media (orientation: landscape) {
-		aspect-ratio: 1.66;
-	}
+  @media (orientation: landscape) {
+    aspect-ratio: 1.66;
+  }
 
-	@media (orientation: portrait), (max-width: 768px) {
-		aspect-ratio: 1;
-	}
+  @media (orientation: portrait), (max-width: 768px) {
+    aspect-ratio: 1;
+  }
 
-	@media (max-width: 640px) {
-		aspect-ratio: 0.75;
-	}
+  @media (max-width: 640px) {
+    aspect-ratio: 0.75;
+  }
 
-	@media (max-width: 480px) {
-		aspect-ratio: 0.65;
-	}
+  @media (max-width: 480px) {
+    aspect-ratio: 0.65;
+  }
 
-	@media (max-width: 400px) {
-		aspect-ratio: 0.55;
-	}
+  @media (max-width: 400px) {
+    aspect-ratio: 0.55;
+  }
 
-	@media (max-width: 340px) {
-		aspect-ratio: 0.5;
-	}
+  @media (max-width: 340px) {
+    aspect-ratio: 0.5;
+  }
 
-	@media (max-width: 300px) {
-		aspect-ratio: 0.4;
-	}
+  @media (max-width: 300px) {
+    aspect-ratio: 0.4;
+  }
 
-	@media (max-width: 275px) {
-		aspect-ratio: 0.3;
-	}
+  @media (max-width: 275px) {
+    aspect-ratio: 0.3;
+  }
 
-	& .vueperslides__parallax-wrapper,
-	& .vueperslides__track {
-		overflow: visible;
-	}
+  & .vueperslides__parallax-wrapper,
+  & .vueperslides__track {
+    overflow: visible;
+  }
 
-	.vueperslides__inner {
-		height: 100%;
-	}
+  .vueperslides__inner {
+    height: 100%;
+  }
 }
 
 .testimonial-content {
-	text-align: center;
-	padding: 1rem;
-	overflow: visible;
+  text-align: center;
+  padding: 1.6rem;
+  overflow: visible;
 
-	display: grid;
-	grid-template-columns: 2fr 3fr;
-	grid-template-rows: 1fr 1fr 1fr;
-	grid-template-areas:
-		'text text'
-		'photo author'
-		'photo .';
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 3fr 1fr;
+  grid-template-areas:
+    "text text"
+    "text text"
+    "photo author";
 
-	@media (orientation: portrait) {
-		aspect-ratio: 1;
-		gap: 0.5rem;
+  @media (orientation: portrait) {
+    aspect-ratio: 1;
+    gap: 0.5rem;
 
-		grid-template-columns: 2fr 3fr;
-		grid-template-rows: 1fr 1fr 0.25fr;
-		grid-template-areas:
-			'text text'
-			'photo author'
-			'photo .';
-	}
+    grid-template-columns: 2fr 3fr;
+    grid-template-rows: 1fr 1fr 0.25fr;
+    grid-template-areas:
+      "text text"
+      "photo author"
+      "photo .";
+  }
 }
 
 .author-photo {
-	grid-area: photo;
-	width: 100%;
-	aspect-ratio: 1;
-	border-radius: 50%;
-	object-fit: cover;
-	margin-bottom: 0.75rem;
-	filter: brightness(1.2) contrast(1.2);
+  grid-area: photo;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0.75rem;
+  filter: brightness(1.2) contrast(1.2);
 }
 
 .testimonial-text {
-	max-width: 80%;
-	text-align: justify;
-	grid-area: text;
-	font-size: 1.25rem;
-	margin-bottom: 0.5rem;
-	align-self: center;
-	position: relative;
-	overflow: visible;
+  text-align: justify;
+  grid-area: text;
+  margin-bottom: 0.5rem;
+  align-self: center;
+  position: relative;
+  overflow: visible;
 
-	@media (orientation: portrait) {
-		max-width: 100%;
-	}
+  @media (orientation: portrait) {
+    max-width: 100%;
+  }
 
-	&::before,
-	&::after {
-		font-size: 150%;
-		line-height: 100%;
-		color: var(--accent);
-		padding-inline: 0.1em;
-		font-family: 'Galada', cursive;
-		font-weight: 400;
-	}
+  &::before,
+  &::after {
+    font-size: 150%;
+    line-height: 100%;
+    color: var(--accent);
+    padding-inline: 0.1em;
+    font-family: "Galada", cursive;
+    font-weight: 400;
+  }
 
-	&::before {
-		content: '“';
-		position: absolute;
-		left: calc(-0.25em - 1ch);
-		z-index: 5;
-	}
+  &::before {
+    content: "“";
+    position: absolute;
+    left: calc(-0.25em - 1ch);
+    z-index: 5;
+  }
 
-	&::after {
-		content: '”';
-	}
+  &::after {
+    content: "”";
+  }
 }
 
 .testimonial-author {
-	text-align: left;
-	grid-area: author;
-	font-size: 1rem;
+  text-align: left;
+  grid-area: author;
 }
 
 .thumbnails {
-	overflow: visible;
-	width: 18rem;
-	position: absolute;
-	bottom: 0;
+  overflow: visible;
+  width: 54rem;
+  position: absolute;
+  bottom: 0;
 
-	@media (orientation: landscape) {
-		right: 11.25%;
-	}
+  @media (orientation: landscape) {
+    right: 11.25%;
+  }
 
-	@media (orientation: portrait) {
-		right: 0;
-	}
+  @media (orientation: portrait) {
+    right: 0;
+  }
 
-	@media (max-width: 340px) {
-		width: 100%;
-	}
+  @media (max-width: 340px) {
+    width: 100%;
+  }
 }
 
 .thumbnails .vueperslide {
-	box-sizing: border-box;
-	border: 1px solid var(--text-main75);
-	transition: all 0.3s ease-in-out;
-	opacity: 0.7;
-	cursor: pointer;
-	height: 100%;
-	aspect-ratio: 1;
-	overflow: visible;
+  box-sizing: border-box;
+  border: 1px solid var(--text-main75);
+  transition: all 0.3s ease-in-out;
+  opacity: 0.7;
+  cursor: pointer;
+  overflow: visible;
+  height: 100%;
 }
 
 .thumbnails .vueperslide--active {
-	filter: drop-shadow(0 0 0.5em var(--accent75));
-	opacity: 1;
-	border-color: var(--accent75);
+  filter: drop-shadow(0 0 0.5em var(--accent75));
+  opacity: 1;
+  border-color: var(--accent75);
 }
 
 .thumb-image {
-	width: 2rem;
-	height: 2rem;
-	aspect-ratio: 1;
-	object-fit: cover;
-	filter: saturate(0.8);
+  height: 4rem !important;
+  width: 4rem !important;
+  object-fit: cover;
+  filter: saturate(0.8);
 }
 </style>

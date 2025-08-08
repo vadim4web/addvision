@@ -1,92 +1,90 @@
 <template>
-	<footer
-		id="contacts"
-		:aria-label="$t('aria.contact')"
-		class="contacts-section box-shade text-shade light-bg-section"
-		role="contentinfo"
-	>
-		<div class="content">
-			<SectionHeading class="heading glow-on-hover text-shade">
-				<span class="heading-text">{{ $t('contacts.title') }}</span>
-				<i class="arrow"><SvgArrow /></i>
-			</SectionHeading>
+  <footer
+    id="contacts"
+    :aria-label="$t('aria.contact')"
+    class="contacts-section box-shade text-shade light-bg-section"
+    role="contentinfo"
+  >
+    <div class="content">
+      <SectionHeading class="heading glow-on-hover text-shade">
+        <span class="heading-text">{{ $t("contacts.title") }}</span>
+        <i class="arrow"><SvgArrow /></i>
+      </SectionHeading>
 
-			<ContactsBlock />
+      <ContactsBlock />
 
-			<ContactForm :set-show-thanks />
+      <ContactForm :set-show-thanks />
 
-			<ThankYou v-if="showThanks" :set-show-thanks />
+      <ThankYou v-if="showThanks" :set-show-thanks />
 
-			<p class="copy glow-on-hover text-shade">
-				&copy; 2013 - {{ new Date().getFullYear() }}
-				<span style="color: var(--accent)">{</span><span class="lowercase">Add</span
-				><span style="color: var(--accent)">}</span
-				><span class="uppercase">Vision</span>
-				{{ $t('rights') }}
-			</p>
-		</div>
-	</footer>
+      <p class="copy glow-on-hover text-shade font-inter-regular font-20">
+        &copy; 2013 - {{ new Date().getFullYear() }}
+        <span style="color: var(--accent)">{</span><span class="lowercase">Add</span
+        ><span style="color: var(--accent)">}</span><span class="uppercase">Vision</span>
+        {{ $t("rights") }}
+      </p>
+    </div>
+  </footer>
 </template>
 
 <script setup>
-const showThanks = ref(false)
-const setShowThanks = value => (showThanks.value = value)
+const showThanks = ref(false);
+const setShowThanks = (value) => (showThanks.value = value);
 </script>
 
 <style lang="scss">
 .contacts-section {
-	@media (min-width: 1081px) and (max-width: 1344px) {
-		padding-inline: 2rem;
-	}
+  @media (min-width: 1081px) and (max-width: 1344px) {
+    padding-inline: 3.2rem;
+  }
 
-	.content {
-		display: grid;
-		align-content: center;
-		gap: 1rem;
+  .content {
+    display: grid;
+    align-content: center;
+    gap: 2rem;
 
-		grid-template-columns: repeat(2, 1fr);
-		grid-template-rows: 1fr auto 1fr;
-		grid-template-areas:
-			'heading   heading'
-			'contacts   form'
-			'copyright copyright';
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr auto 1fr;
+    grid-template-areas:
+      "heading   heading"
+      "contacts   form"
+      "copyright copyright";
 
-		@media (max-width: 1080px) {
-			grid-template-columns: none;
-			grid-template-rows: auto auto 1fr auto;
-			grid-template-areas:
-				'heading'
-				'contacts'
-				'form'
-				'copyright';
-		}
+    @media (max-width: 1080px) {
+      grid-template-columns: none;
+      grid-template-rows: auto auto 1fr auto;
+      grid-template-areas:
+        "heading"
+        "contacts"
+        "form"
+        "copyright";
+    }
 
-		.heading {
-			grid-area: heading;
-		}
+    .heading {
+      grid-area: heading;
+    }
 
-		.contacts-block {
-			grid-area: contacts;
-		}
+    .contacts-block {
+      grid-area: contacts;
+    }
 
-		.form-container {
-			grid-area: form;
+    .form-container {
+      grid-area: form;
 
-			@media (orientation: portrait) {
-				margin-bottom: 4rem;
-			}
+      @media (orientation: portrait) {
+        margin-bottom: 6rem;
+      }
 
-			@media (orientation: landscape) {
-				align-self: start;
-			}
-		}
+      @media (orientation: landscape) {
+        align-self: start;
+      }
+    }
 
-		.copy {
-			grid-area: copyright;
-			align-self: end;
-			text-align: center;
-			// font-weight: 300;
-		}
-	}
+    .copy {
+      grid-area: copyright;
+      align-self: end;
+      text-align: center;
+    }
+  }
 }
 </style>

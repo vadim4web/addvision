@@ -96,7 +96,8 @@ video {
 *,
 *::before,
 *::after {
-	box-sizing: border-box;
+	line-height: 100%;
+	box-sizing: inherit;
 }
 
 html {

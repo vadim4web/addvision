@@ -17,7 +17,7 @@ useObserveVisibility(headerRef, visible => (headerVisible.value = visible))
 
 <style lang="scss">
 .header-section .content {
-	height: 6.6rem;
+	height: 10.5rem;
 	display: grid;
 	grid-template-columns: 1fr 1.5fr 0.5fr;
 	align-content: center;

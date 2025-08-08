@@ -33,7 +33,7 @@
 	scrollbar-color: var(--accent75) var(--bg25);
 }
 
-@media (orientation: portrait) {
+/* @media (orientation: portrait) {
 	:root {
 		font-size: 16px;
 	}
@@ -42,7 +42,7 @@
 	:root {
 		font-size: 16px;
 	}
-}
+} */
 
 body {
 	color: var(--text-main);
@@ -154,43 +154,41 @@ section:not(
 	,.why-us-section
 	,.cases-section
 	) {
-	padding-block: 8rem;
+	padding-block: 12rem;
 }
 
 .what-we-do-section {
-	padding-top: 8rem;
-	padding-bottom: 4rem;
+	padding-top: 12rem;
+	padding-bottom: 6rem;
 }
 
 .why-us-section {
-	padding-inline: 8rem;
+	padding-inline: 12rem;
 }
 
 .cases-section {
-	padding-top: 4rem;
-	padding-bottom: 8rem;
+	padding-top: 6rem;
+	padding-bottom: 12rem;
 }
 
 footer {
-	padding-block: 5rem;
+	padding-block: 8rem;
 }
 
 main section:first-of-type {
-	padding-bottom: 2rem;
+	padding-bottom: 3.2rem;
 }
 /* 1280 + 64 = 1344px */
 @media (max-width: 1344px) {
 	section:not(.hero-section) {
-		padding-inline: 2rem;
-	}
-
-	h2 {
-		font-size: 3rem;
+		padding-inline: 3.2rem;
 	}
 }
 
 @media (max-width: 1080px) {
 	footer h2 {
-		padding-inline: 2rem;
+		padding-inline: 3.2rem;
+		max-width: calc(100% - 6.4rem);
+		width: calc(100% - 6.4rem);
 	}
 }
