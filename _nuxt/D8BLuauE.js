@@ -1,1 +1,0 @@
-import{_ as a,c as o,a as s,d as n,t as r,o as c}from"./Bh7tpU2R.js";const l={},d={class:"cases-page"};function i(t,e){return c(),o("main",d,[s("h1",null,"{add}VISION : "+r(t.$t("cases.title")),1),e[0]||(e[0]=s("hr",null,null,-1)),e[1]||(e[1]=n(" * * * ",-1))])}const p=a(l,[["render",i],["__scopeId","data-v-ee96058c"]]);export{p as default};
