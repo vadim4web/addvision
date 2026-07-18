@@ -1,5 +1,6 @@
 <script setup>
 const { t, locale } = useI18n();
+const publicAsset = useAssetUrl;
 
 useHead({
   htmlAttrs: {
@@ -18,70 +19,70 @@ useHead({
       property: "og:url",
       content: `https://addvision.dev${locale.value === "uk" ? "" : "/" + locale.value}`,
     },
-    { property: "og:image", content: "/og-image.jpg" },
+    { property: "og:image", content: publicAsset("/og-image.jpg") },
     { name: "twitter:card", content: "summary_large_image" },
     { name: "twitter:title", content: t("meta.title") },
     { name: "twitter:description", content: t("meta.description") },
-    { name: "twitter:image", content: "/og-image.jpg" },
+    { name: "twitter:image", content: publicAsset("/og-image.jpg") },
     { name: "theme-color", content: "#ffffff" },
     { name: "msapplication-TileColor", content: "#ffffff" },
-    { name: "msapplication-TileImage", content: "/ms-icon-144x144.png" },
+    { name: "msapplication-TileImage", content: publicAsset("/ms-icon-144x144.png") },
   ],
   link: [
-    { rel: "apple-touch-icon", sizes: "57x57", href: "/apple-icon-57x57.png" },
-    { rel: "apple-touch-icon", sizes: "60x60", href: "/apple-icon-60x60.png" },
-    { rel: "apple-touch-icon", sizes: "72x72", href: "/apple-icon-72x72.png" },
-    { rel: "apple-touch-icon", sizes: "76x76", href: "/apple-icon-76x76.png" },
+    { rel: "apple-touch-icon", sizes: "57x57", href: publicAsset("/apple-icon-57x57.png") },
+    { rel: "apple-touch-icon", sizes: "60x60", href: publicAsset("/apple-icon-60x60.png") },
+    { rel: "apple-touch-icon", sizes: "72x72", href: publicAsset("/apple-icon-72x72.png") },
+    { rel: "apple-touch-icon", sizes: "76x76", href: publicAsset("/apple-icon-76x76.png") },
     {
       rel: "apple-touch-icon",
       sizes: "114x114",
-      href: "/apple-icon-114x114.png",
+      href: publicAsset("/apple-icon-114x114.png"),
     },
     {
       rel: "apple-touch-icon",
       sizes: "120x120",
-      href: "/apple-icon-120x120.png",
+      href: publicAsset("/apple-icon-120x120.png"),
     },
     {
       rel: "apple-touch-icon",
       sizes: "144x144",
-      href: "/apple-icon-144x144.png",
+      href: publicAsset("/apple-icon-144x144.png"),
     },
     {
       rel: "apple-touch-icon",
       sizes: "152x152",
-      href: "/apple-icon-152x152.png",
+      href: publicAsset("/apple-icon-152x152.png"),
     },
     {
       rel: "apple-touch-icon",
       sizes: "180x180",
-      href: "/apple-icon-180x180.png",
+      href: publicAsset("/apple-icon-180x180.png"),
     },
     {
       rel: "icon",
       type: "image/png",
       sizes: "192x192",
-      href: "/android-icon-192x192.png",
+      href: publicAsset("/android-icon-192x192.png"),
     },
     {
       rel: "icon",
       type: "image/png",
       sizes: "32x32",
-      href: "/favicon-32x32.png",
+      href: publicAsset("/favicon-32x32.png"),
     },
     {
       rel: "icon",
       type: "image/png",
       sizes: "96x96",
-      href: "/favicon-96x96.png",
+      href: publicAsset("/favicon-96x96.png"),
     },
     {
       rel: "icon",
       type: "image/png",
       sizes: "16x16",
-      href: "/favicon-16x16.png",
+      href: publicAsset("/favicon-16x16.png"),
     },
-    { rel: "manifest", href: "/manifest.json" },
+    { rel: "manifest", href: publicAsset("/manifest.json") },
     { rel: "alternate", hreflang: "x-default", href: "https://addvision.dev/" },
     { rel: "alternate", hreflang: "uk", href: "https://addvision.dev/" },
     { rel: "alternate", hreflang: "ru", href: "https://addvision.dev/ru/" },
@@ -93,6 +94,11 @@ useHead({
       async: true,
       defer: true,
       tagPosition: "body",
+    },
+  ],
+  style: [
+    {
+      children: `:root { --background-icon: url("${publicAsset('/apple-icon.png')}"); }`,
     },
   ],
 });
@@ -132,7 +138,7 @@ useHead({
   <FooterSection />
 </template>
 
-<style lang="scss">
+<style>
 :root {
   /* === Базові кольори === */
   --white: #ffffff;

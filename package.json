@@ -6,11 +6,11 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
+    "generate": "cross-env NUXT_APP_BASE_URL=/addvision/ nuxt generate",
+    "generate:preview": "cross-env NUXT_APP_BASE_URL=/ nuxt generate",
+    "preview": "npm run generate:preview && serve .output/public",
     "postinstall": "nuxt prepare",
-    "deploy": "nuxi generate && gh-pages -d dist",
-    "deploy_": "nuxt generate && gh-pages -d .output/public",
+    "deploy": "npm run generate && gh-pages -d .output/public --dotfiles",
     "export:locales": "node scripts/export-locales.js",
     "prettify": "prettier --write \"**/*.{js,ts,vue}\"",
     "lint": "eslint \"**/*.{js,ts,vue}\" --fix",
@@ -33,6 +33,7 @@
     "vueperslides": "^3.6.0"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "eslint-plugin-vuejs-accessibility": "^2.4.1",
     "gh-pages": "^6.3.0",
     "sass-embedded": "^1.89.0"

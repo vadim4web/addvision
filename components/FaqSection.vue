@@ -28,7 +28,7 @@
           alt="faq_heading.webp"
           class="faq-image glow-on-hover"
           height="300"
-          src="/images/faq_heading.webp"
+          :src="useAssetUrl('/images/faq_heading.webp')"
           width="360"
         />
       </div>

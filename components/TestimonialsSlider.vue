@@ -21,7 +21,7 @@
             <img
 							alt='${testimonial.author} photo'
 							class='author-photo box-shade'
-							src='/clients/client${i + 1}.jpg'
+							src='${clientImage(i)}'
 						/>
             <p class='testimonial-text font-inter-regular glow-on-hover text-shade font-40'>
 							${testimonial.text}
@@ -56,7 +56,7 @@
         v-for="(_, i) in testimonials"
         :key="i"
         class="box-shade"
-        :image="`/clients/client${i + 1}.jpg`"
+        :image="clientImage(i)"
         @click="$refs.mainSlider.goToSlide(i)"
       >
       </vueper-slide>
@@ -69,6 +69,7 @@ import { VueperSlides, VueperSlide } from "vueperslides";
 import "vueperslides/dist/vueperslides.css";
 
 const { locale, messages } = useI18n();
+const clientImage = (index) => useAssetUrl(`/clients/client${index + 1}.jpg`);
 const testimonials = computed(
   () => messages.value[locale.value]?.testimonials?.list || []
 );

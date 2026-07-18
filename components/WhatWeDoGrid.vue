@@ -107,7 +107,7 @@ onUnmounted(() => {
         <img
           :alt="`${section.title} image`"
           height="320"
-          :src="`/images/services${index + 1}.webp`"
+          :src="useAssetUrl(`/images/services${index + 1}.webp`)"
           width="320"
         />
       </div>

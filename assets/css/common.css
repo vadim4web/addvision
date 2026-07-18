@@ -99,7 +99,7 @@ body::after {
 
 body::after {
 	position: absolute;
-	background-image:     url('/apple-icon.png'),    url('/apple-icon.png');
+	background-image: var(--background-icon), var(--background-icon);
 	background-repeat: repeat-y, repeat-y;
 	background-size: 75vmin, 150vmin;
 	background-position:    calc(100% + 25vmin) 0%,    -50vmin 75vmin;

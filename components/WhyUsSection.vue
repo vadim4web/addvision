@@ -30,7 +30,7 @@
           </strong>
 
           <div class="coop-top-right-visual glow-on-hover">
-            <img alt="" height="400" src="/images/coop.webp" width="400" />
+            <img alt="" height="400" :src="useAssetUrl('/images/coop.webp')" width="400" />
           </div>
         </div>
 

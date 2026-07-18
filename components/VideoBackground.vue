@@ -17,7 +17,7 @@
         v-for="source in sources"
         :key="source.res"
         :media="source.media"
-        :src="basePath + source.res + '.mp4'"
+        :src="useAssetUrl(basePath + source.res + '.mp4')"
         type="video/mp4"
       />
     </video>

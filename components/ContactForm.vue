@@ -137,6 +137,11 @@ const submitForm = async () => {
   background: var(--text-main);
   padding: 6em;
   color: var(--bg);
+  min-width: 0;
+
+  @media (orientation: landscape) and (max-width: 1344px) {
+    padding: 4em;
+  }
 
   @media (max-width: 480px) {
     padding: 4em;
@@ -151,6 +156,7 @@ const submitForm = async () => {
     grid-template-rows: repeat(5, 1fr);
     gap: 2.5rem;
     padding-top: 1rem;
+    min-width: 0;
 
     @media (max-width: 480px) {
       padding: 0;
@@ -175,14 +181,20 @@ const submitForm = async () => {
     }
 
     input {
-      padding: 1em 2em;
+      width: 100%;
+      min-width: 0;
+      padding: 1em clamp(1rem, 1.5vw, 2em);
     }
 
     & > *:not(button) {
       display: grid;
-      grid-template-columns: 50% 50%;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
       align-items: center;
       position: relative;
+
+      @media (orientation: landscape) and (min-width: 641px) {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+      }
 
       @media (max-width: 640px) {
         grid-template-columns: none;
@@ -191,6 +203,14 @@ const submitForm = async () => {
 
     .type {
       z-index: 1;
+
+      @media (orientation: landscape) and (min-width: 641px) {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      }
+
+      .custom-select {
+        min-width: 0;
+      }
 
       @media (max-width: 480px) {
         display: flex;
@@ -201,10 +221,10 @@ const submitForm = async () => {
 
     button.form-submit {
       background: var(--accent);
-      width: max-content;
+      width: min(100%, 36rem);
       text-transform: uppercase;
       justify-self: center;
-      padding: 1em 6em;
+      padding: 1em 2em;
     }
   }
 }

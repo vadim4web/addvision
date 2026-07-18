@@ -107,6 +107,7 @@ const selectFocusedOption = () => {
 
 .select-button {
   width: 100%;
+  min-width: 0;
   color: var(--bg);
   padding: 0.5rem 1rem;
   text-align: left;
@@ -114,6 +115,13 @@ const selectFocusedOption = () => {
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
+}
+
+.select-button span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .select-button .arrow {
